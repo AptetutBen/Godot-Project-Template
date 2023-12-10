@@ -1,0 +1,30 @@
+ea4bc82a6ad023ab7ee23ee620429895
+::res://::1702226206
+::res://Audio/::1702170536
+::res://Audio/Music/::1702218391
+Game Music.mp3::AudioStreamMP3::8646992428580255971::1702170567::1702218388::1::::<><>::
+Main Menu Music.mp3::AudioStreamMP3::3437924099022130751::1702170567::1702218391::1::::<><>::
+::res://Audio/SFX/::1702170536
+click1.ogg::AudioStreamOggVorbis::2885457998689685678::1702170533::1702170536::1::::<><>::
+click2.ogg::AudioStreamOggVorbis::3061269520564392681::1702170533::1702170536::1::::<><>::
+rollover1.ogg::AudioStreamOggVorbis::7470663469919656223::1702170533::1702170536::1::::<><>::
+rollover2.ogg::AudioStreamOggVorbis::736167784220709710::1702170533::1702170536::1::::<><>::
+switch2.ogg::AudioStreamOggVorbis::5539464575622984594::1702170533::1702170536::1::::<><>::
+switch3.ogg::AudioStreamOggVorbis::5145434842828123623::1702170533::1702170536::1::::<><>::
+::res://Fonts/::1702157374
+font1.tres::FontFile::-1::1702157374::0::1::::<><>::uid://gdj14lgr8kk8::::res://Fonts/Roboto-Medium.ttf
+Roboto-Medium.ttf::FontFile::427920619133441077::1698074263::1702157374::1::::<><>::
+::res://Prefabs/::1702222853
+options_panel.tscn::PackedScene::6704296224948302474::1702222853::0::1::::<><>::res://Scenes/Options Panel.gd<>res://Fonts/font1.tres
+::res://Scenes/::1702226070
+Game.tscn::PackedScene::3107870423960825618::1702218974::0::1::::<><>::res://Scripts/Game Controller.gd<>res://Fonts/font1.tres<>uid://bw2bc6oekwjlp::::res://Sprites/icon.svg
+Main Menu.tscn::PackedScene::7772909248775964131::1702226070::0::1::::<><>::res://Scripts/Main Menu Controller.gd<>res://Fonts/font1.tres<>uid://c2ru1q5gvx8uw::::res://Prefabs/options_panel.tscn<>uid://gdj14lgr8kk8::::res://Fonts/Roboto-Medium.ttf
+Options Panel.gd::GDScript::-1::1702222192::0::1::::<>Panel<>::
+::res://Scripts/::1702226068
+AudioManager.gd::GDScript::-1::1702222852::0::1::::<>Node<>::
+FlowController.gd::GDScript::-1::1702187887::0::1::::<>Node<>::
+Game Controller.gd::GDScript::-1::1702226068::0::1::::<>Control<>::
+Main Menu Controller.gd::GDScript::-1::1702224390::0::1::::<>Control<>::
+SaveController.gd::GDScript::-1::1702226048::0::1::::<>Node<>::
+::res://Sprites/::1702157383
+icon.svg::CompressedTexture2D::3986379381717100537::1698074263::1702157383::1::::<><>::

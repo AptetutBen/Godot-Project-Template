@@ -1,0 +1,86 @@
+[gd_scene load_steps=7 format=3 uid="uid://di0ixdytwx1hv"]
+
+[ext_resource type="Script" path="res://Scripts/Main Menu Controller.gd" id="1_6svde"]
+[ext_resource type="FontFile" path="res://Fonts/font1.tres" id="2_13fio"]
+[ext_resource type="PackedScene" uid="uid://c2ru1q5gvx8uw" path="res://Prefabs/options_panel.tscn" id="3_85ift"]
+[ext_resource type="FontFile" uid="uid://gdj14lgr8kk8" path="res://Fonts/Roboto-Medium.ttf" id="3_q0paf"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_xppeu"]
+font = ExtResource("3_q0paf")
+font_size = 56
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iy524"]
+bg_color = Color(0, 0, 0, 0)
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_6svde")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 72.48
+offset_bottom = -483.02
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_13fio")
+text = "Game Name"
+label_settings = SubResource("LabelSettings_xppeu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button Group" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 454.0
+offset_top = 257.0
+offset_right = -446.0
+offset_bottom = -231.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start Game Button" type="Button" parent="Button Group"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_13fio")
+text = "Start Game"
+
+[node name="Options Button" type="Button" parent="Button Group"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_13fio")
+text = "Options"
+
+[node name="Exit Button" type="Button" parent="Button Group"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_13fio")
+text = "Exit"
+
+[node name="Options Panel" parent="." instance=ExtResource("3_85ift")]
+visible = false
+layout_mode = 0
+offset_left = 352.0
+offset_top = 79.0
+offset_right = 832.0
+offset_bottom = 531.0
+
+[node name="Fade Panel" type="Panel" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_iy524")
+
+[connection signal="pressed" from="Button Group/Start Game Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button Group/Options Button" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Button Group/Exit Button" to="." method="_on_exit_button_pressed"]
