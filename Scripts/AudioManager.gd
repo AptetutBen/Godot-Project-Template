@@ -131,21 +131,19 @@ func _create_musicAudioSources(count : int):
 # get all audio files in the 'Audio' folder and store them in a dictionary
 func _get_audio_files(path,dic):
 	var dir = DirAccess.open(path)
-	
-	if dir:
-		dir.list_dir_begin()
-		var file_name = dir.get_next()
-		while file_name != "":
-			if dir.current_is_dir():
-				# Recursively call dir_contents for subdirectories
-				_get_audio_files(path + "/" + file_name,dic)
-			else:
-				var extention = file_name.get_extension().to_lower()
-				if audioFormats.has(extention):
-					dic[file_name.substr(0,file_name.length()-4)] = path + "/" + file_name
-			file_name = dir.get_next()
-	else:
-		print("An error occurred when trying to access the path.")
+	dir.list_dir_begin()
+	var filename = dir.get_next()
+	while filename != '':
+		
+		if filename.get_extension() == "import":
+			print(filename)
+			filename = filename.left(len(filename) - len('.import'))
+			print(filename)
+			if audioFormats.has(filename.get_extension().to_lower()):
+				var shortName = filename.left(len(filename) - (len(filename.get_extension() )+ 1))
+				dic[shortName] = ProjectSettings.globalize_path( path + "/" + filename)
+				
+		filename = dir.get_next()
 
 var sfxVolumeLevel : float
 var musicVolumeLevel : float
