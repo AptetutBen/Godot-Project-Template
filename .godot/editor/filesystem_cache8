@@ -1,30 +1,184 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1702226206
-::res://Audio/::1702170536
-::res://Audio/Music/::1702218391
-Game Music.mp3::AudioStreamMP3::8646992428580255971::1702170567::1702218388::1::::<><>::
-Main Menu Music.mp3::AudioStreamMP3::3437924099022130751::1702170567::1702218391::1::::<><>::
-::res://Audio/SFX/::1702170536
-click1.ogg::AudioStreamOggVorbis::2885457998689685678::1702170533::1702170536::1::::<><>::
-click2.ogg::AudioStreamOggVorbis::3061269520564392681::1702170533::1702170536::1::::<><>::
-rollover1.ogg::AudioStreamOggVorbis::7470663469919656223::1702170533::1702170536::1::::<><>::
-rollover2.ogg::AudioStreamOggVorbis::736167784220709710::1702170533::1702170536::1::::<><>::
-switch2.ogg::AudioStreamOggVorbis::5539464575622984594::1702170533::1702170536::1::::<><>::
-switch3.ogg::AudioStreamOggVorbis::5145434842828123623::1702170533::1702170536::1::::<><>::
-::res://Fonts/::1702157374
-font1.tres::FontFile::-1::1702157374::0::1::::<><>::uid://gdj14lgr8kk8::::res://Fonts/Roboto-Medium.ttf
-Roboto-Medium.ttf::FontFile::427920619133441077::1698074263::1702157374::1::::<><>::
-::res://Prefabs/::1702222853
-options_panel.tscn::PackedScene::6704296224948302474::1702222853::0::1::::<><>::res://Scenes/Options Panel.gd<>res://Fonts/font1.tres
-::res://Scenes/::1702226070
-Game.tscn::PackedScene::3107870423960825618::1702218974::0::1::::<><>::res://Scripts/Game Controller.gd<>res://Fonts/font1.tres<>uid://bw2bc6oekwjlp::::res://Sprites/icon.svg
-Main Menu.tscn::PackedScene::7772909248775964131::1702226070::0::1::::<><>::res://Scripts/Main Menu Controller.gd<>res://Fonts/font1.tres<>uid://c2ru1q5gvx8uw::::res://Prefabs/options_panel.tscn<>uid://gdj14lgr8kk8::::res://Fonts/Roboto-Medium.ttf
-Options Panel.gd::GDScript::-1::1702222192::0::1::::<>Panel<>::
-::res://Scripts/::1702226068
-AudioManager.gd::GDScript::-1::1702222852::0::1::::<>Node<>::
-FlowController.gd::GDScript::-1::1702187887::0::1::::<>Node<>::
-Game Controller.gd::GDScript::-1::1702226068::0::1::::<>Control<>::
-Main Menu Controller.gd::GDScript::-1::1702224390::0::1::::<>Control<>::
-SaveController.gd::GDScript::-1::1702226048::0::1::::<>Node<>::
-::res://Sprites/::1702157383
-icon.svg::CompressedTexture2D::3986379381717100537::1698074263::1702157383::1::::<><>::
+::res://::1734668696
+icon.png::CompressedTexture2D::557325075131260776::1734643794::1734643802::1::::<><>::
+::res://addons/::1734643791
+::res://addons/terrain_3d/::1734643793
+editor.gd::GDScript::-1::1734643792::0::1::::<>EditorPlugin<>::
+LICENSE.txt::TextFile::-1::1734643791::0::1::::<><>::
+plugin.cfg::TextFile::-1::1734643793::0::1::::<><>::
+README.md::TextFile::-1::1734643791::0::1::::<><>::
+terrain.gdextension::GDExtension::-1::1734643793::0::1::::<><>::
+::res://addons/terrain_3d/bin/::1734643791
+::res://addons/terrain_3d/bin/libterrain.macos.debug.framework/::1734643791
+::res://addons/terrain_3d/bin/libterrain.macos.release.framework/::1734643791
+::res://addons/terrain_3d/extras/::1734643792
+import_sgt.gd::GDScript::-1::1734643792::0::1::::<>Terrain3D<>::
+minimum.gdshader::Shader::-1::1734643792::0::1::::<><>::
+project_on_terrain3d.gd::GDScript::-1::1734643792::0::1::::<>RefCounted<>::
+::res://addons/terrain_3d/icons/::1734643802
+autoshader.svg::CompressedTexture2D::2643274391178341217::1734643792::1734643802::1::::<><>::
+color_paint.svg::CompressedTexture2D::738037264959165742::1734643792::1734643802::1::::<><>::
+height_add.svg::CompressedTexture2D::2551661123966185934::1734643792::1734643802::1::::<><>::
+height_div.svg::CompressedTexture2D::7186582126980917722::1734643792::1734643802::1::::<><>::
+height_flat.svg::CompressedTexture2D::5986190407186579724::1734643792::1734643802::1::::<><>::
+height_mul.svg::CompressedTexture2D::3849017924698988715::1734643792::1734643802::1::::<><>::
+height_slope.svg::CompressedTexture2D::1759090111221642070::1734643792::1734643802::1::::<><>::
+height_smooth.svg::CompressedTexture2D::5299361044254028739::1734643792::1734643802::1::::<><>::
+height_sub.svg::CompressedTexture2D::872880673408351296::1734643792::1734643802::1::::<><>::
+holes.svg::CompressedTexture2D::3674633701816631779::1734643792::1734643802::1::::<><>::
+layers.svg::CompressedTexture2D::6090583645565862918::1734643792::1734643802::1::::<><>::
+multimesh.svg::CompressedTexture2D::5427391786099256013::1734643792::1734643802::1::::<><>::
+navigation.svg::CompressedTexture2D::409684150827103899::1734643792::1734643802::1::::<><>::
+picker_checked.svg::CompressedTexture2D::2877130841666407487::1734643792::1734643802::1::::<><>::
+region_add.svg::CompressedTexture2D::6567628363799703520::1734643792::1734643802::1::::<><>::
+region_remove.svg::CompressedTexture2D::4874899699697418333::1734643792::1734643802::1::::<><>::
+terrain3d.svg::CompressedTexture2D::3337497743794818701::1734643792::1734643802::1::::<><>::
+texture_paint.svg::CompressedTexture2D::8593981392022078875::1734643793::1734643802::1::::<><>::
+texture_spray.svg::CompressedTexture2D::1890372997461750014::1734643793::1734643802::1::::<><>::
+wetness.svg::CompressedTexture2D::2539594556547046321::1734643793::1734643802::1::::<><>::
+::res://addons/terrain_3d/src/::1734643793
+asset_dock.gd::GDScript::-1::1734643793::0::1::::<>PanelContainer<>::
+asset_dock.tscn::PackedScene::7865110026461604383::1734643793::0::1::::<><>::res://addons/terrain_3d/src/asset_dock.gd
+baker.gd::GDScript::-1::1734643793::0::1::::<>Node<>::
+bake_lod_dialog.gd::GDScript::-1::1734643793::0::1::::<>ConfirmationDialog<>::
+bake_lod_dialog.tscn::PackedScene::2922157702694130781::1734643793::0::1::::<><>::res://addons/terrain_3d/src/bake_lod_dialog.gd
+channel_packer.gd::GDScript::-1::1734643793::0::1::::<>RefCounted<>::
+channel_packer.tscn::PackedScene::953980224932829149::1734643793::0::1::::<><>::
+channel_packer_dragdrop.gd::GDScript::-1::1734643793::0::1::::<>Button<>::
+channel_packer_import_template.txt::TextFile::-1::1734643793::0::1::::<><>::
+directory_setup.gd::GDScript::-1::1734643793::0::1::::<>Node<>::
+directory_setup.tscn::PackedScene::4129394475485463890::1734643793::0::1::::<><>::
+double_slider.gd::GDScript::-1::1734643793::0::1::::DoubleSlider<>Control<>::
+gradient_operation_builder.gd::GDScript::-1::1734643793::0::1::::<>RefCounted<>::
+multi_picker.gd::GDScript::-1::1734643793::0::1::::<>HBoxContainer<>::
+operation_builder.gd::GDScript::-1::1734643793::0::1::::<>RefCounted<>::
+region_gizmo.gd::GDScript::-1::1734643793::0::1::::<>EditorNode3DGizmo<>::
+terrain_menu.gd::GDScript::-1::1734643793::0::1::::<>HBoxContainer<>::
+toolbar.gd::GDScript::-1::1734643793::0::1::::<>VFlowContainer<>::
+tool_settings.gd::GDScript::-1::1734643793::0::1::::<>PanelContainer<>::
+ui.gd::GDScript::-1::1734643793::0::1::::<>Node<>::
+::res://addons/terrain_3d/tools/::1734643793
+importer.gd::GDScript::-1::1734643793::0::1::::<>Terrain3D<>::
+importer.tscn::PackedScene::3158990868267418980::1734643793::0::1::::<><>::res://addons/terrain_3d/tools/importer.gd
+::res://addons/terrain_3d/utils/::1734643793
+terrain_3d_objects.gd::GDScript::-1::1734643793::0::1::::Terrain3DObjects<>Node3D<>::
+transform_changed_notifier.gd::GDScript::-1::1734643793::0::1::::<>Node3D<>::
+::res://addons/weekend Dialogue/::1734555814
+::res://addons/weekend Dialogue/Prefabs/::1734670348
+dialogue_node.tscn::PackedScene::6188390080551873385::1734670378::0::1::::<><>::res://addons/weekend Dialogue/Scripts/DialogueNode.gd
+::res://addons/weekend Dialogue/Scenes/::1734670348
+Dialogue Graph.tscn::PackedScene::4440426548288426286::1734670378::0::1::::<><>::res://addons/weekend Dialogue/Scripts/weekendDialogueEditor.gd<>uid://cufx4633uoge0::::res://addons/weekend Dialogue/Prefabs/dialogue_node.tscn
+::res://addons/weekend Dialogue/Scripts/::1734600246
+DialogueNode.gd::GDScript::-1::1734600246::0::1::::<>GraphNode<>::
+DialogueNodeData.gd::GDScript::-1::1734599101::0::1::::DisalogueData<>RefCounted<>::
+weekendDialogueEditor.gd::GDScript::-1::1734568620::0::1::::<>Control<>::
+::res://Audio/::1734430980
+::res://Audio/Music/::1734431009
+Game Music.mp3::AudioStreamMP3::8646992428580255971::1734430980::1734431009::1::::<><>::
+Main Menu Music.mp3::AudioStreamMP3::3437924099022130751::1734430980::1734431009::1::::<><>::
+::res://Audio/SFX/::1734431009
+click1.ogg::AudioStreamOggVorbis::2885457998689685678::1734430980::1734431009::1::::<><>::
+click2.ogg::AudioStreamOggVorbis::3061269520564392681::1734430980::1734431009::1::::<><>::
+rollover1.ogg::AudioStreamOggVorbis::7470663469919656223::1734430980::1734431009::1::::<><>::
+rollover2.ogg::AudioStreamOggVorbis::736167784220709710::1734430980::1734431009::1::::<><>::
+switch2.ogg::AudioStreamOggVorbis::5539464575622984594::1734430980::1734431009::1::::<><>::
+switch3.ogg::AudioStreamOggVorbis::5145434842828123623::1734430980::1734431009::1::::<><>::
+::res://Data/::1734643913
+::res://Data/Terrain/::1734656122
+terrain3d-01-01.res::Terrain3DRegion::4977133703188151713::1734656122::0::1::::<><>::
+terrain3d-01_00.res::Terrain3DRegion::5282795077711664046::1734654895::0::1::::<><>::
+terrain3d_00-01.res::Terrain3DRegion::4003959598695574550::1734656122::0::1::::<><>::
+terrain3d_00_00.res::Terrain3DRegion::1399915020133630233::1734654895::0::1::::<><>::
+::res://demo/::1734643794
+CodeGeneratedDemo.tscn::PackedScene::5766609049318048670::1734643793::0::1::::<><>::res://demo/src/CodeGenerated.gd<>uid://domhm87hbhbg1::::res://demo/components/Player.tscn<>uid://bb2lp50sjndus::::res://demo/components/Environment.tscn<>uid://di5fovhcyd7re::::res://demo/components/Enemy.tscn<>uid://d2jihfohphuue::::res://demo/components/UI.tscn<>res://demo/src/RuntimeNavigationBaker.gd
+Demo.tscn::PackedScene::5293781890024210248::1734643793::0::1::::<><>::res://demo/src/DemoScene.gd<>uid://d2jihfohphuue::::res://demo/components/UI.tscn<>uid://dwnhqfjq7v1pq::::res://demo/components/Borders.tscn<>uid://domhm87hbhbg1::::res://demo/components/Player.tscn<>uid://djhl3foqkj4e2::::res://demo/components/Tunnel.tscn<>uid://bb2lp50sjndus::::res://demo/components/Environment.tscn<>uid://dal3jhw6241qg::::res://demo/data/assets.tres
+NavigationDemo.tscn::PackedScene::1673915473815048340::1734643793::0::1::::<><>::res://demo/src/DemoScene.gd<>uid://bb2lp50sjndus::::res://demo/components/Environment.tscn<>uid://dwnhqfjq7v1pq::::res://demo/components/Borders.tscn<>uid://domhm87hbhbg1::::res://demo/components/Player.tscn<>uid://djhl3foqkj4e2::::res://demo/components/Tunnel.tscn<>uid://d2jihfohphuue::::res://demo/components/UI.tscn<>uid://yf3fu23666k8::::res://demo/data/nav_mesh.res<>uid://dal3jhw6241qg::::res://demo/data/assets.tres<>uid://di5fovhcyd7re::::res://demo/components/Enemy.tscn
+::res://demo/assets/::1734643793
+::res://demo/assets/materials/::1734643793
+M_crystal_blue.tres::StandardMaterial3D::372031320502569055::1734643793::0::1::::<><>::uid://br7bfxcxh60df::::res://demo/assets/textures/rock030_alb_ht.png<>uid://cr72kjil43vgj::::res://demo/assets/textures/rock030_nrm_rgh.png
+M_crystal_purple.tres::StandardMaterial3D::6066912994794361678::1734643793::0::1::::<><>::uid://br7bfxcxh60df::::res://demo/assets/textures/rock030_alb_ht.png<>uid://cr72kjil43vgj::::res://demo/assets/textures/rock030_nrm_rgh.png
+M_rock30.tres::StandardMaterial3D::7957307544442689234::1734643793::0::1::::<><>::uid://br7bfxcxh60df::::res://demo/assets/textures/rock030_alb_ht.png<>uid://cr72kjil43vgj::::res://demo/assets/textures/rock030_nrm_rgh.png
+M_rock30_tp.tres::StandardMaterial3D::7905614165749889619::1734643793::0::1::::<><>::uid://br7bfxcxh60df::::res://demo/assets/textures/rock030_alb_ht.png<>uid://cr72kjil43vgj::::res://demo/assets/textures/rock030_nrm_rgh.png
+::res://demo/assets/models/::1734643809
+CrystalC.tscn::PackedScene::5982640349226821032::1734643793::0::1::::<><>::uid://c8cx4xjwluvxw::::res://demo/assets/models/RockC.glb<>uid://fkhkir6t1hml::::res://demo/assets/materials/M_crystal_blue.tres
+RockA.glb::PackedScene::4046695924926250789::1734643793::1734643809::1::::<><>::
+RockA.tscn::PackedScene::2731991749350214203::1734643793::0::1::::<><>::uid://bxwiqxgwoh630::::res://demo/assets/models/RockA.glb<>uid://dlmtxs0c66hj3::::res://demo/assets/materials/M_rock30.tres
+RockB.glb::PackedScene::951729098719127583::1734643793::1734643809::1::::<><>::
+RockB.tscn::PackedScene::3975092670503483564::1734643793::0::1::::<><>::uid://nta3sef6c2el::::res://demo/assets/models/RockB.glb<>uid://dlmtxs0c66hj3::::res://demo/assets/materials/M_rock30.tres
+RockC.glb::PackedScene::7094651464761644232::1734643793::1734643809::1::::<><>::
+RockC.tscn::PackedScene::810545015481710900::1734643793::0::1::::<><>::uid://c8cx4xjwluvxw::::res://demo/assets/models/RockC.glb<>uid://dlmtxs0c66hj3::::res://demo/assets/materials/M_rock30.tres
+Tunnel.glb::PackedScene::648330476698116424::1734643793::1734643809::1::::<><>::uid://dkvsksxpkl1vj::::res://demo/assets/materials/M_rock30_tp.tres
+Tunnel.tscn::PackedScene::1517361014733673259::1734643793::0::1::::<><>::uid://jib546bbort5::::res://demo/assets/models/Tunnel.glb
+::res://demo/assets/textures/::1734643804
+asset_licenses.txt::TextFile::-1::1734643793::0::1::::<><>::
+ground037_alb_ht.png::CompressedTexture2D::7401858713486131787::1734643793::1734643803::1::::<><>::
+ground037_nrm_rgh.png::CompressedTexture2D::6627840073837815244::1734643793::1734643803::1::::<><>::
+rock030_alb_ht.png::CompressedTexture2D::3645761971814134039::1734643793::1734643803::1::::<><>::
+rock030_nrm_rgh.png::CompressedTexture2D::6033769499714663993::1734643793::1734643804::1::::<><>::
+::res://demo/components/::1734643794
+Borders.tscn::PackedScene::8730707390861212254::1734643794::0::1::::<><>::uid://cr72kjil43vgj::::res://demo/assets/textures/rock030_nrm_rgh.png<>uid://br7bfxcxh60df::::res://demo/assets/textures/rock030_alb_ht.png
+DemoBase.tscn::PackedScene::8885026162472399387::1734643794::0::1::::<><>::res://demo/src/DemoScene.gd<>uid://bb2lp50sjndus::::res://demo/components/Environment.tscn<>uid://dwnhqfjq7v1pq::::res://demo/components/Borders.tscn<>uid://domhm87hbhbg1::::res://demo/components/Player.tscn<>uid://d2jihfohphuue::::res://demo/components/UI.tscn<>uid://dal3jhw6241qg::::res://demo/data/assets.tres
+Enemy.tscn::PackedScene::7783033832810938718::1734643794::0::1::::<><>::res://demo/src/Enemy.gd
+Environment.tscn::PackedScene::2513044015670746430::1734643794::0::1::::<><>::
+Player.tscn::PackedScene::8167126626560654738::1734643794::0::1::::<><>::res://demo/src/Player.gd<>res://demo/src/CameraManager.gd
+Tunnel.tscn::PackedScene::7806130462234511359::1734643794::0::1::::<><>::uid://be6nrf0b8j4l0::::res://demo/assets/models/RockA.tscn<>uid://bwvtgwartxt0g::::res://demo/assets/models/RockB.tscn<>uid://lsvs8a7urkca::::res://demo/assets/models/RockC.tscn<>uid://vvayjv3rbx1d::::res://demo/assets/models/Tunnel.tscn<>uid://cribhhvg03u8g::::res://demo/assets/models/CrystalC.tscn<>uid://cso4f2iyuxpmc::::res://demo/assets/materials/M_crystal_purple.tres<>uid://br7bfxcxh60df::::res://demo/assets/textures/rock030_alb_ht.png<>uid://cr72kjil43vgj::::res://demo/assets/textures/rock030_nrm_rgh.png<>res://demo/src/CaveEntrance.gd
+UI.tscn::PackedScene::9073438750174585988::1734643794::0::1::::<><>::res://demo/src/UI.gd
+::res://demo/data/::1734643794
+assets.tres::Terrain3DAssets::7183686757411463558::1734643794::0::1::::<><>::uid://br7bfxcxh60df::::res://demo/assets/textures/rock030_alb_ht.png<>uid://cr72kjil43vgj::::res://demo/assets/textures/rock030_nrm_rgh.png<>uid://ddprscrpsofah::::res://demo/assets/textures/ground037_alb_ht.png<>uid://c1ots7w6i0i1q::::res://demo/assets/textures/ground037_nrm_rgh.png
+nav_mesh.res::NavigationMesh::1696564234341656601::1734643794::0::1::::<><>::
+terrain3d_00-01.res::Terrain3DRegion::489566701116439619::1734643794::0::1::::<><>::
+terrain3d_00-02.res::Terrain3DRegion::7168624212953799330::1734643794::0::1::::<><>::
+terrain3d_00_00.res::Terrain3DRegion::3003020531041116028::1734643794::0::1::::<><>::
+::res://demo/src/::1734643794
+CameraManager.gd::GDScript::-1::1734643794::0::1::::<>Node3D<>::
+CaveEntrance.gd::GDScript::-1::1734643794::0::1::::<>Area3D<>::
+CodeGenerated.gd::GDScript::-1::1734643794::0::1::::<>Node<>::
+DemoScene.gd::GDScript::-1::1734643794::0::1::::<>Node<>::
+Enemy.gd::GDScript::-1::1734643794::0::1::::<>CharacterBody3D<>::
+Player.gd::GDScript::-1::1734643794::0::1::::<>CharacterBody3D<>::
+RuntimeNavigationBaker.gd::GDScript::-1::1734643794::0::1::::<>Node<>::
+UI.gd::GDScript::-1::1734643794::0::1::::<>Control<>::
+::res://Fonts/::1734431287
+Chewy-Regular.ttf::FontFile::4375452444816710315::1734431281::1734431287::1::::<><>::
+font1.tres::FontFile::-1::1734430980::0::1::::<><>::uid://gdj14lgr8kk8::::res://Fonts/Roboto-Medium.ttf
+Roboto-Medium.ttf::FontFile::427920619133441077::1734430980::1734431009::1::::<><>::
+::res://Prefabs/::1734667668
+pickup.tscn::PackedScene::2504436734987634717::1734667668::0::1::::<><>::res://Scripts/Pickup.gd
+::res://Prefabs/UI/::1734667620
+options_panel.tscn::PackedScene::6704296224948302474::1734522773::0::1::::<><>::res://Scenes/Options Panel.gd<>res://Fonts/font1.tres
+pause_menu.tscn::PackedScene::6898631142279607125::1734501506::0::1::::<><>::res://Scripts/Pause Menu/PauseMenu.gd<>res://Fonts/font1.tres<>uid://b3lrceixb0548::::res://Fonts/Chewy-Regular.ttf<>res://Scripts/Main Menu/StartMenuButtonGroup.gd<>uid://chi28l03dgsy2::::res://Themes/MenuTextStandard.tres<>res://Scripts/Main Menu/MenuText.gd<>uid://d2n2o7gyj2klb::::res://Themes/MenuTextHighlighted.tres
+::res://Scenes/::1734670349
+Game.tscn::PackedScene::3107870423960825618::1734670349::0::1::::<><>::res://Scripts/Controllers/Game Controller.gd<>res://Scripts/NotificationSystem.gd<>uid://deiwbfqvy65s3::::res://Themes/Narritive.tres<>res://Scripts/Controllers/ConversationController.gd<>uid://c5j0pg0krwk4t::::res://Prefabs/UI/pause_menu.tscn<>res://Scripts/PlayerController.gd<>res://Scripts/FollowCamera.gd<>uid://bbxfybo0g183r::::res://Prefabs/pickup.tscn
+Main Menu.tscn::PackedScene::7772909248775964131::1734670378::0::1::::<><>::res://Scripts/Main Menu/Main Menu Controller.gd<>res://Fonts/font1.tres<>uid://c2ru1q5gvx8uw::::res://Prefabs/UI/options_panel.tscn<>uid://b3lrceixb0548::::res://Fonts/Chewy-Regular.ttf<>res://Scripts/Main Menu/StartMenuButtonGroup.gd<>uid://d2n2o7gyj2klb::::res://Themes/MenuTextHighlighted.tres<>res://Scripts/Main Menu/MenuText.gd<>uid://chi28l03dgsy2::::res://Themes/MenuTextStandard.tres
+Options Panel.gd::GDScript::-1::1734493913::0::1::::<>Panel<>::
+Splash.tscn::PackedScene::5597916559264501703::1734670378::0::1::::<><>::uid://b44mhbi487fyf::::res://Sprites/Splash/spash_logo.jpg<>res://Scripts/Splash Screen/SplashScreen.gd
+::res://Scripts/::1734670347
+FollowCamera.gd::GDScript::-1::1734653507::0::1::::FollowCamera<>Camera3D<>::
+InteractObject.gd::GDScript::-1::1734669586::0::1::::InteractObject<>Node3D<>::
+NotificationSystem.gd::GDScript::-1::1734669952::0::1::::<>Control<>::
+Pickup.gd::GDScript::-1::1734669586::0::1::::Pickup<>InteractObject<>::
+PlayerController.gd::GDScript::-1::1734670347::0::1::::Player<>CharacterBody3D<>::
+::res://Scripts/Controllers/::1734668379
+AudioManager.gd::GDScript::-1::1734500176::0::1::::<>Node<>::
+ConversationController.gd::GDScript::-1::1734554654::0::1::::ConversationController<>Control<>::
+EventBus.gd::GDScript::-1::1734668379::0::1::::<>Node<>::
+FlowController.gd::GDScript::-1::1734639855::0::1::::<>Node<>::
+Game Controller.gd::GDScript::-1::1734602413::0::1::::<>Node<>::
+SaveController.gd::GDScript::-1::1734498619::0::1::::<>Node<>::
+::res://Scripts/Main Menu/::1734667765
+Main Menu Controller.gd::GDScript::-1::1734643861::0::1::::<>Control<>::
+MenuText.gd::GDScript::-1::1734505534::0::1::::MenuText<>RichTextLabel<>::
+MenuTextToggle.gd::GDScript::-1::1734520189::0::1::::MenuTextToggle<>MenuText<>::
+StartMenuButtonGroup.gd::GDScript::-1::1734520302::0::1::::<>VBoxContainer<>::
+::res://Scripts/Pause Menu/::1734500589
+PauseMenu.gd::GDScript::-1::1734500589::0::1::::<>Control<>::
+::res://Scripts/Splash Screen/::1734667857
+SplashScreen.gd::GDScript::-1::1734432401::0::1::::<>Node<>::
+::res://Sprites/::1734431426
+icon.svg::CompressedTexture2D::3986379381717100537::1734430980::1734431009::1::::<><>::
+::res://Sprites/Splash/::1734431443
+spash_logo.jpg::CompressedTexture2D::4482505274779081721::1734431432::1734431443::1::::<><>::
+::res://Themes/::1734521446
+MenuTextHighlighted.tres::Theme::9082863791147899143::1734485108::0::1::::<><>::
+MenuTextStandard.tres::Theme::5282377202541883443::1734485472::0::1::::<><>::
+Narritive.tres::Theme::7457870295619769104::1734521446::0::1::::<><>::uid://b3lrceixb0548::::res://Fonts/Chewy-Regular.ttf

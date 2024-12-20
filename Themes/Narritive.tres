@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://deiwbfqvy65s3"]
+
+[ext_resource type="FontFile" uid="uid://b3lrceixb0548" path="res://Fonts/Chewy-Regular.ttf" id="1_wo2oo"]
+
+[resource]
+RichTextLabel/colors/default_color = Color(0.183417, 0.0929364, 0.0190482, 1)
+RichTextLabel/font_sizes/normal_font_size = 29
+RichTextLabel/fonts/normal_font = ExtResource("1_wo2oo")

@@ -1,0 +1,210 @@
+[gd_scene load_steps=2 format=3 uid="uid://cufx4633uoge0"]
+
+[ext_resource type="Script" path="res://addons/weekend Dialogue/Scripts/DialogueNode.gd" id="1_tkl7i"]
+
+[node name="Dialogue Node" type="GraphNode"]
+offset_left = 267.0
+offset_top = 93.0
+offset_right = 578.0
+offset_bottom = 501.0
+mouse_filter = 1
+position_offset = Vector2(108, 131)
+resizable = true
+title = "Node"
+slot/0/left_enabled = true
+slot/0/left_type = 0
+slot/0/left_color = Color(1, 1, 1, 1)
+slot/0/left_icon = null
+slot/0/right_enabled = false
+slot/0/right_type = 0
+slot/0/right_color = Color(0.86, 0.573333, 0, 1)
+slot/0/right_icon = null
+slot/0/draw_stylebox = true
+slot/1/left_enabled = false
+slot/1/left_type = 0
+slot/1/left_color = Color(1, 1, 1, 1)
+slot/1/left_icon = null
+slot/1/right_enabled = false
+slot/1/right_type = 0
+slot/1/right_color = Color(1, 1, 1, 1)
+slot/1/right_icon = null
+slot/1/draw_stylebox = true
+slot/2/left_enabled = false
+slot/2/left_type = 0
+slot/2/left_color = Color(1, 1, 1, 1)
+slot/2/left_icon = null
+slot/2/right_enabled = false
+slot/2/right_type = 0
+slot/2/right_color = Color(1, 1, 1, 1)
+slot/2/right_icon = null
+slot/2/draw_stylebox = true
+slot/3/left_enabled = false
+slot/3/left_type = 0
+slot/3/left_color = Color(1, 1, 1, 1)
+slot/3/left_icon = null
+slot/3/right_enabled = true
+slot/3/right_type = 0
+slot/3/right_color = Color(1, 1, 1, 1)
+slot/3/right_icon = null
+slot/3/draw_stylebox = true
+slot/4/left_enabled = false
+slot/4/left_type = 0
+slot/4/left_color = Color(1, 1, 1, 1)
+slot/4/left_icon = null
+slot/4/right_enabled = true
+slot/4/right_type = 0
+slot/4/right_color = Color(1, 1, 1, 1)
+slot/4/right_icon = null
+slot/4/draw_stylebox = true
+slot/5/left_enabled = false
+slot/5/left_type = 0
+slot/5/left_color = Color(1, 1, 1, 1)
+slot/5/left_icon = null
+slot/5/right_enabled = false
+slot/5/right_type = 0
+slot/5/right_color = Color(1, 1, 1, 1)
+slot/5/right_icon = null
+slot/5/draw_stylebox = true
+script = ExtResource("1_tkl7i")
+
+[node name="Header" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="OptionButton" type="OptionButton" parent="Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+selected = 1
+item_count = 2
+popup/item_0/text = "First"
+popup/item_1/text = "Second"
+popup/item_1/id = 1
+
+[node name="Minimise Button" type="Button" parent="Header"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(31.14, 0)
+layout_mode = 2
+text = "V"
+
+[node name="MaximiseButton" type="Button" parent="Header"]
+unique_name_in_owner = true
+visible = false
+custom_minimum_size = Vector2(31.14, 0)
+layout_mode = 2
+text = "^"
+
+[node name="Close Button" type="Button" parent="Header"]
+custom_minimum_size = Vector2(31.14, 0)
+layout_mode = 2
+text = "X"
+
+[node name="Editor Group" type="VBoxContainer" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 120.68)
+layout_mode = 2
+
+[node name="TextEdit" type="TextEdit" parent="Editor Group"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+text = "This is sample text"
+deselect_on_focus_loss_enabled = false
+wrap_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Editor Group"]
+custom_minimum_size = Vector2(0, 22.69)
+layout_mode = 2
+
+[node name="Bold Button" type="Button" parent="Editor Group/HBoxContainer"]
+layout_mode = 2
+text = "B"
+
+[node name="Italic Button" type="Button" parent="Editor Group/HBoxContainer"]
+layout_mode = 2
+text = "I"
+
+[node name="Underline Button" type="Button" parent="Editor Group/HBoxContainer"]
+layout_mode = 2
+text = "u"
+
+[node name="Wave Button" type="Button" parent="Editor Group/HBoxContainer"]
+layout_mode = 2
+text = "wave"
+
+[node name="Shake Button" type="Button" parent="Editor Group/HBoxContainer"]
+layout_mode = 2
+text = "shake"
+
+[node name="Tornado Button" type="Button" parent="Editor Group/HBoxContainer"]
+layout_mode = 2
+text = "tornado"
+
+[node name="ColorPickerButton" type="ColorPickerButton" parent="Editor Group/HBoxContainer"]
+layout_mode = 2
+text = "co"
+color = Color(1, 1, 1, 1)
+edit_alpha = false
+
+[node name="Preview" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(0, 91.72)
+layout_mode = 2
+color = Color(0.2757, 0.2757, 0.2757, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="Preview"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 5
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 5
+theme_override_constants/margin_bottom = 5
+
+[node name="Preview Text" type="RichTextLabel" parent="Preview/MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+bbcode_enabled = true
+shortcut_keys_enabled = false
+
+[node name="Default" type="Label" parent="."]
+custom_minimum_size = Vector2(0, 33.51)
+layout_mode = 2
+text = "Default
+"
+vertical_alignment = 1
+
+[node name="Option1" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="Option1"]
+custom_minimum_size = Vector2(40.22, 0)
+layout_mode = 2
+text = "X"
+
+[node name="Option" type="TextEdit" parent="Option1"]
+custom_minimum_size = Vector2(0, 37.62)
+layout_mode = 2
+size_flags_horizontal = 3
+text = "He adasifjiksd fadksfj aldskfj lksdfj lasdkfj lasdfl"
+wrap_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Button" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+text = "Add Option +"
+
+[connection signal="delete_request" from="." to="." method="_on_delete_request"]
+[connection signal="dragged" from="." to="." method="_on_dragged"]
+[connection signal="pressed" from="Header/Minimise Button" to="." method="_on_minimise_button_press"]
+[connection signal="pressed" from="Header/MaximiseButton" to="." method="_on_maximise_button_press"]
+[connection signal="text_changed" from="Editor Group/TextEdit" to="." method="_on_text_changed"]
+[connection signal="pressed" from="Editor Group/HBoxContainer/Bold Button" to="." method="_on_bold_button_press"]
+[connection signal="pressed" from="Editor Group/HBoxContainer/Italic Button" to="." method="_on_italic_button_press"]
+[connection signal="pressed" from="Editor Group/HBoxContainer/Underline Button" to="." method="_on_underline_button_press"]
+[connection signal="pressed" from="Editor Group/HBoxContainer/Wave Button" to="." method="_on_wave_button_press"]
+[connection signal="pressed" from="Editor Group/HBoxContainer/Shake Button" to="." method="_on_shake_button_press"]
+[connection signal="pressed" from="Editor Group/HBoxContainer/Tornado Button" to="." method="_on_tornado_button_press"]

@@ -1,13 +1,17 @@
-[gd_scene load_steps=7 format=3 uid="uid://di0ixdytwx1hv"]
+[gd_scene load_steps=11 format=3 uid="uid://di0ixdytwx1hv"]
 
-[ext_resource type="Script" path="res://Scripts/Main Menu Controller.gd" id="1_6svde"]
+[ext_resource type="Script" path="res://Scripts/Main Menu/Main Menu Controller.gd" id="1_6svde"]
 [ext_resource type="FontFile" path="res://Fonts/font1.tres" id="2_13fio"]
-[ext_resource type="PackedScene" uid="uid://c2ru1q5gvx8uw" path="res://Prefabs/options_panel.tscn" id="3_85ift"]
-[ext_resource type="FontFile" uid="uid://gdj14lgr8kk8" path="res://Fonts/Roboto-Medium.ttf" id="3_q0paf"]
+[ext_resource type="PackedScene" uid="uid://c2ru1q5gvx8uw" path="res://Prefabs/UI/options_panel.tscn" id="3_85ift"]
+[ext_resource type="FontFile" uid="uid://b3lrceixb0548" path="res://Fonts/Chewy-Regular.ttf" id="3_mdvdu"]
+[ext_resource type="Script" path="res://Scripts/Main Menu/StartMenuButtonGroup.gd" id="4_88j2r"]
+[ext_resource type="Theme" uid="uid://d2n2o7gyj2klb" path="res://Themes/MenuTextHighlighted.tres" id="5_g2hd1"]
+[ext_resource type="Script" path="res://Scripts/Main Menu/MenuText.gd" id="5_j2368"]
+[ext_resource type="Theme" uid="uid://chi28l03dgsy2" path="res://Themes/MenuTextStandard.tres" id="7_xrvh8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xppeu"]
-font = ExtResource("3_q0paf")
-font_size = 56
+font = ExtResource("3_mdvdu")
+font_size = 76
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iy524"]
 bg_color = Color(0, 0, 0, 0)
@@ -19,6 +23,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(1.00149, 1)
 script = ExtResource("1_6svde")
 
 [node name="Title" type="Label" parent="."]
@@ -26,8 +31,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = 72.48
-offset_bottom = -483.02
+offset_left = 80.0
+offset_top = 59.0
+offset_right = -721.0
+offset_bottom = -456.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_13fio")
@@ -36,32 +43,144 @@ label_settings = SubResource("LabelSettings_xppeu")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Button Group" type="VBoxContainer" parent="."]
+[node name="Main Buttons" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 454.0
-offset_top = 257.0
-offset_right = -446.0
-offset_bottom = -231.0
+offset_left = 95.0
+offset_top = 274.0
+offset_right = -901.0
+offset_bottom = -174.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("4_88j2r")
 
-[node name="Start Game Button" type="Button" parent="Button Group"]
+[node name="Start Button" type="RichTextLabel" parent="Main Buttons"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 64.9)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_13fio")
-text = "Start Game"
+theme = ExtResource("7_xrvh8")
+theme_override_fonts/normal_font = ExtResource("3_mdvdu")
+theme_override_font_sizes/normal_font_size = 51
+bbcode_enabled = true
+text = "Start
+"
+scroll_active = false
+autowrap_mode = 0
+script = ExtResource("5_j2368")
+normalTheme = ExtResource("7_xrvh8")
+highlightTheme = ExtResource("5_g2hd1")
 
-[node name="Options Button" type="Button" parent="Button Group"]
+[node name="Options Button" type="RichTextLabel" parent="Main Buttons"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 64.9)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_13fio")
+theme = ExtResource("7_xrvh8")
+theme_override_fonts/normal_font = ExtResource("3_mdvdu")
+theme_override_font_sizes/normal_font_size = 51
+bbcode_enabled = true
 text = "Options"
+scroll_active = false
+autowrap_mode = 0
+script = ExtResource("5_j2368")
+normalTheme = ExtResource("7_xrvh8")
+highlightTheme = ExtResource("5_g2hd1")
 
-[node name="Exit Button" type="Button" parent="Button Group"]
+[node name="Exit Button" type="RichTextLabel" parent="Main Buttons"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 64.9)
 layout_mode = 2
-theme_override_fonts/font = ExtResource("2_13fio")
+theme = ExtResource("7_xrvh8")
+theme_override_constants/shadow_offset_x = 6
+theme_override_fonts/normal_font = ExtResource("3_mdvdu")
+theme_override_font_sizes/normal_font_size = 51
+bbcode_enabled = true
 text = "Exit"
+scroll_active = false
+autowrap_mode = 0
+script = ExtResource("5_j2368")
+normalTheme = ExtResource("7_xrvh8")
+highlightTheme = ExtResource("5_g2hd1")
+
+[node name="Options Buttons" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 367.453
+offset_top = 274.0
+offset_right = -628.547
+offset_bottom = -174.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_88j2r")
+active = false
+
+[node name="Start Button" type="RichTextLabel" parent="Options Buttons"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 64.9)
+layout_mode = 2
+theme = ExtResource("7_xrvh8")
+theme_override_fonts/normal_font = ExtResource("3_mdvdu")
+theme_override_font_sizes/normal_font_size = 51
+bbcode_enabled = true
+text = "Start
+"
+scroll_active = false
+autowrap_mode = 0
+script = ExtResource("5_j2368")
+normalTheme = ExtResource("7_xrvh8")
+highlightTheme = ExtResource("5_g2hd1")
+
+[node name="Fullscreen Button" type="RichTextLabel" parent="Options Buttons"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 64.9)
+layout_mode = 2
+theme = ExtResource("7_xrvh8")
+theme_override_fonts/normal_font = ExtResource("3_mdvdu")
+theme_override_font_sizes/normal_font_size = 51
+bbcode_enabled = true
+text = "Fullscreen"
+scroll_active = false
+autowrap_mode = 0
+script = ExtResource("5_j2368")
+normalTheme = ExtResource("7_xrvh8")
+highlightTheme = ExtResource("5_g2hd1")
+
+[node name="Fullscreen Toggle Text" type="RichTextLabel" parent="Options Buttons/Fullscreen Button"]
+unique_name_in_owner = true
+clip_contents = false
+custom_minimum_size = Vector2(0, 64.9)
+layout_mode = 2
+offset_left = 293.563
+offset_top = -1.0
+offset_right = 449.563
+offset_bottom = 63.9
+theme = ExtResource("7_xrvh8")
+theme_override_fonts/normal_font = ExtResource("3_mdvdu")
+theme_override_font_sizes/normal_font_size = 51
+bbcode_enabled = true
+text = "On"
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Back Button" type="RichTextLabel" parent="Options Buttons"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 64.9)
+layout_mode = 2
+theme = ExtResource("7_xrvh8")
+theme_override_constants/shadow_offset_x = 6
+theme_override_fonts/normal_font = ExtResource("3_mdvdu")
+theme_override_font_sizes/normal_font_size = 51
+bbcode_enabled = true
+text = "Back"
+scroll_active = false
+autowrap_mode = 0
+script = ExtResource("5_j2368")
+normalTheme = ExtResource("7_xrvh8")
+highlightTheme = ExtResource("5_g2hd1")
 
 [node name="Options Panel" parent="." instance=ExtResource("3_85ift")]
 visible = false
@@ -81,6 +200,25 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_iy524")
 
-[connection signal="pressed" from="Button Group/Start Game Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="Button Group/Options Button" to="." method="_on_options_button_pressed"]
-[connection signal="pressed" from="Button Group/Exit Button" to="." method="_on_exit_button_pressed"]
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -48.0
+offset_top = -30.0
+offset_right = -8.0
+offset_bottom = -7.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "v 0.1"
+horizontal_alignment = 2
+
+[connection signal="buttonAction" from="Main Buttons/Start Button" to="." method="_on_start_button_pressed"]
+[connection signal="buttonAction" from="Main Buttons/Options Button" to="." method="_on_options_button_pressed"]
+[connection signal="buttonAction" from="Main Buttons/Exit Button" to="." method="_on_exit_button_pressed"]
+[connection signal="buttonAction" from="Options Buttons/Start Button" to="." method="_on_start_button_pressed"]
+[connection signal="buttonAction" from="Options Buttons/Fullscreen Button" to="." method="_on_options_button_pressed"]
+[connection signal="buttonAction" from="Options Buttons/Back Button" to="." method="_on_exit_button_pressed"]

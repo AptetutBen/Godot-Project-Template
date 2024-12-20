@@ -1,0 +1,109 @@
+[gd_scene load_steps=11 format=3 uid="uid://c5j0pg0krwk4t"]
+
+[ext_resource type="Script" path="res://Scripts/Pause Menu/PauseMenu.gd" id="1_tm1hf"]
+[ext_resource type="FontFile" path="res://Fonts/font1.tres" id="2_5vmv3"]
+[ext_resource type="FontFile" uid="uid://b3lrceixb0548" path="res://Fonts/Chewy-Regular.ttf" id="3_thy0x"]
+[ext_resource type="Script" path="res://Scripts/Main Menu/StartMenuButtonGroup.gd" id="4_n7qms"]
+[ext_resource type="Theme" uid="uid://chi28l03dgsy2" path="res://Themes/MenuTextStandard.tres" id="5_3n05p"]
+[ext_resource type="Script" path="res://Scripts/Main Menu/MenuText.gd" id="6_jy3lh"]
+[ext_resource type="Theme" uid="uid://d2n2o7gyj2klb" path="res://Themes/MenuTextHighlighted.tres" id="7_h82f5"]
+
+[sub_resource type="Gradient" id="Gradient_e2pts"]
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_xadrl"]
+gradient = SubResource("Gradient_e2pts")
+
+[sub_resource type="LabelSettings" id="LabelSettings_0430q"]
+font = ExtResource("3_thy0x")
+font_size = 76
+
+[node name="Pause Menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tm1hf")
+
+[node name="Gradient" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 603.0
+grow_vertical = 2
+texture = SubResource("GradientTexture1D_xadrl")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 338.0
+grow_vertical = 2
+color = Color(0.0357173, 0.100152, 0.126787, 1)
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 88.0
+offset_top = 74.0
+offset_right = -794.0
+offset_bottom = -447.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("2_5vmv3")
+text = "Paused"
+label_settings = SubResource("LabelSettings_0430q")
+vertical_alignment = 1
+
+[node name="Button Group" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 95.0
+offset_top = 324.0
+offset_right = -901.0
+offset_bottom = -174.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_n7qms")
+
+[node name="Resume Button" type="RichTextLabel" parent="Button Group"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 64.9)
+layout_mode = 2
+theme = ExtResource("5_3n05p")
+theme_override_fonts/normal_font = ExtResource("3_thy0x")
+theme_override_font_sizes/normal_font_size = 51
+bbcode_enabled = true
+text = "Resume
+"
+scroll_active = false
+autowrap_mode = 0
+script = ExtResource("6_jy3lh")
+normalTheme = ExtResource("5_3n05p")
+highlightTheme = ExtResource("7_h82f5")
+
+[node name="Quit Button" type="RichTextLabel" parent="Button Group"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 64.9)
+layout_mode = 2
+theme = ExtResource("5_3n05p")
+theme_override_constants/shadow_offset_x = 6
+theme_override_fonts/normal_font = ExtResource("3_thy0x")
+theme_override_font_sizes/normal_font_size = 51
+bbcode_enabled = true
+text = "Quit	"
+scroll_active = false
+autowrap_mode = 0
+script = ExtResource("6_jy3lh")
+normalTheme = ExtResource("5_3n05p")
+highlightTheme = ExtResource("7_h82f5")
+
+[connection signal="buttonAction" from="Button Group/Resume Button" to="." method="_on_resume_button_button_action"]
+[connection signal="buttonAction" from="Button Group/Quit Button" to="." method="_on_quit_button_button_action"]
