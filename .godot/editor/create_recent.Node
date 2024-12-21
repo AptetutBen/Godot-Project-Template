@@ -1,9 +1,11 @@
+Node
+CollisionPolygon3D
+Area3D
+MeshInstance3D
 Control
 Marker3D
 ColorRect
-MeshInstance3D
 CollisionShape3D
-Area3D
 Node3D
 GPUParticles3D
 Terrain3D
@@ -11,4 +13,3 @@ StaticBody3D
 SubViewport
 WorldEnvironment
 DirectionalLight3D
-Camera3D

@@ -1,9 +1,7 @@
-res://Scenes/Main Menu.tscn
-res://Scripts/PlayerController.gd
 res://Scenes/Game.tscn
+res://Shaders/sea.gdshader
+res://Scripts/PlayerController.gd
+res://Scenes/Main Menu.tscn
 res://Scenes/Splash.tscn
 res://addons/weekend Dialogue/Scenes/Dialogue Graph.tscn
 res://addons/weekend Dialogue/Prefabs/dialogue_node.tscn
-res://Scripts/InteractObject.gd
-res://Scripts/Pickup.gd
-res://Scripts/NotificationSystem.gd
