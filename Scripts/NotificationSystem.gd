@@ -15,7 +15,7 @@ func _process(_delta: float) -> void:
 	if !notification_icon.is_visible_in_tree():
 		return
 	
-	var notification_pos = get_viewport().get_camera_3d().unproject_position(player.notification_marker.global_position)
+	var notification_pos = FollowCamera.Instance.main_camera.unproject_position(player.notification_marker.global_position)
 	notification_icon.position = notification_pos
 
 func _on_enter_interact_object(interact_object:InteractObject):

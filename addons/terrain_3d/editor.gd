@@ -13,6 +13,7 @@ var modifier_alt: bool
 var modifier_shift: bool
 var _last_modifiers: int = 0
 var _input_mode: int = 0 # -1: camera move, 0: none, 1: operating
+var _use_meta: bool = false
 
 var terrain: Terrain3D
 var _last_terrain: Terrain3D
@@ -29,6 +30,9 @@ var godot_editor_window: Window # The Godot Editor window
 
 
 func _init() -> void:
+	if OS.get_name() == "macOS":
+		_use_meta = true
+	
 	# Get the Godot Editor window. Structure is root:Window/EditorNode/Base Control
 	godot_editor_window = EditorInterface.get_base_control().get_parent().get_parent()
 	godot_editor_window.focus_entered.connect(_on_godot_focus_entered)
@@ -113,10 +117,6 @@ func _edit(p_object: Object) -> void:
 		ui.set_visible(true)
 		terrain.set_meta("_edit_lock_", true)
 
-		# Deprecated 0.9.3 - Remove 1.0
-		if terrain.storage:
-			ui.terrain_menu.directory_setup.directory_setup_popup()
-		
 		# Get alerted when a new asset list is loaded
 		if not terrain.assets_changed.is_connected(asset_dock.update_assets):
 			terrain.assets_changed.connect(asset_dock.update_assets)
@@ -153,7 +153,7 @@ func _clear() -> void:
 func _forward_3d_gui_input(p_viewport_camera: Camera3D, p_event: InputEvent) -> int:
 	if not is_terrain_valid():
 		return AFTER_GUI_INPUT_PASS
-	
+
 	_read_input(p_event)
 	
 	## Handle mouse movement
@@ -181,7 +181,7 @@ func _forward_3d_gui_input(p_viewport_camera: Camera3D, p_event: InputEvent) -> 
 			mouse_global_position = (camera_pos + t * camera_dir)
 		else:			
 			# Else look for intersection with terrain
-			var intersection_point: Vector3 = terrain.get_intersection(camera_pos, camera_dir)
+			var intersection_point: Vector3 = terrain.get_intersection(camera_pos, camera_dir, true)
 			if intersection_point.z > 3.4e38 or is_nan(intersection_point.y): # max double or nan
 				return AFTER_GUI_INPUT_STOP
 			mouse_global_position = intersection_point
@@ -273,7 +273,7 @@ func _read_input(p_event: InputEvent = null) -> void:
 
 	## Determine modifiers pressed
 	modifier_shift = Input.is_key_pressed(KEY_SHIFT)
-	modifier_ctrl = Input.is_key_pressed(KEY_CTRL)
+	modifier_ctrl = Input.is_key_pressed(KEY_META) if _use_meta else Input.is_key_pressed(KEY_CTRL)
 	# Keybind enum: Alt,Space,Meta,Capslock
 	var alt_key: int
 	match get_setting("terrain3d/config/alt_key_bind", 0):
@@ -369,29 +369,6 @@ func setup_editor_settings() -> void:
 		"hint_string": "Alt,Space,Meta,Capslock"
 	}
 	editor_settings.add_property_info(property_info)
-
-	_cleanup_old_settings()
-
-	
-# Remove or rename old settings
-func _cleanup_old_settings() -> void:
-	# Rename deprecated settings - Remove in 1.0
-	var value: Variant
-	var rename_arr := [ "terrain3d/config/dock_slot", "terrain3d/config/dock_tile_size", 
-	"terrain3d/config/dock_floating", "terrain3d/config/dock_always_on_top",
-	"terrain3d/config/dock_window_size", "terrain3d/config/dock_window_position", ]
-	for es: String in rename_arr:
-		if editor_settings.has_setting(es):
-			value = editor_settings.get_setting(es)
-			editor_settings.erase(es)
-			editor_settings.set_setting(es.replace("/config/dock_", "/dock/"), value)
-
-	# Special handling
-	var es: String = "terrain3d/tool_settings/slope"
-	if editor_settings.has_setting(es):
-		value = editor_settings.get_setting(es)
-		if typeof(value) == TYPE_FLOAT:
-			editor_settings.erase(es)
 	
 
 func set_setting(p_str: String, p_value: Variant) -> void:

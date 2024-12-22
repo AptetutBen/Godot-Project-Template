@@ -47,7 +47,7 @@ var normal_vector: Vector3
 func pack_textures_popup() -> void:
 	if window != null:
 		window.show()
-		window.move_to_foreground()
+		window.grab_focus()
 		window.move_to_center()
 		return
 	window = (load(WINDOW_SCENE) as PackedScene).instantiate()
@@ -108,9 +108,8 @@ func pack_textures_popup() -> void:
 	_init_texture_picker(window.find_child("HeightVBox"), IMAGE_HEIGHT)
 	_init_texture_picker(window.find_child("NormalVBox"), IMAGE_NORMAL)
 	_init_texture_picker(window.find_child("RoughnessVBox"), IMAGE_ROUGHNESS)
-	
-	var pack_button_path: String = "Panel/MarginContainer/VBoxContainer/PackButton" 
-	(window.get_node(pack_button_path) as Button).pressed.connect(_on_pack_button_pressed)
+
+	(window.find_child("PackButton") as Button).pressed.connect(_on_pack_button_pressed)
 
 
 func _on_close_requested() -> void:
@@ -370,7 +369,7 @@ func _on_save_file_selected(p_dst_path) -> void:
 		save_file_dialog.title = "Save Packed Normal/Roughness Texture"
 		
 		save_file_dialog.call_deferred("popup_centered_ratio")
-		save_file_dialog.call_deferred("move_to_foreground")
+		save_file_dialog.call_deferred("grab_focus")
 
 
 func _alignment_basis(normal: Vector3) -> Basis:

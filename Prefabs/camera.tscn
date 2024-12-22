@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfray3p1qt7l2"]
+
+[ext_resource type="Script" path="res://Scripts/FollowCamera.gd" id="1_uhter"]
+
+[sub_resource type="GDScript" id="GDScript_510nf"]
+script/source = "extends Control
+
+@export var cam : FollowCamera
+@export var canvas : CanvasLayer
+
+func _process(_delta: float) -> void:
+	queue_redraw()
+	
+
+func  _draw() -> void:
+	draw_rect(cam.deadzone_rect,Color.INDIAN_RED,false,5,false)
+	draw_circle(cam.player_screen_pos,5,Color.AQUA if cam.player_in_deadzone else Color.FIREBRICK,true)
+	if(!cam.player_in_deadzone):
+		draw_circle(cam.closest_player_screen_pos,5,Color.INDIAN_RED,true)
+	draw_circle(cam.player_nav_pos,5,Color.GREEN,true)
+	draw_dashed_line(cam.player_nav_pos,cam.player_nav_slide_position,Color.GREEN,2)
+"
+
+[node name="Camera" type="Node3D"]
+script = ExtResource("1_uhter")
+deadzone_margin_x = 400.0
+deadzone_margin_y = 300.0
+metadata/_edit_group_ = true
+
+[node name="Camera Target" type="Marker3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
+
+[node name="Main Camera" type="Camera3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 0.481845, 0.876256, 0, -0.876256, 0.481845, 0, 14, 14)
+fov = 38.1
+size = 9.31
+
+[node name="Debug Viewer" type="Control" parent="Main Camera" node_paths=PackedStringArray("cam")]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = SubResource("GDScript_510nf")
+cam = NodePath("../..")

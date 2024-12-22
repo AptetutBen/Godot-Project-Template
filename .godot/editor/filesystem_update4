@@ -1,7 +1,17 @@
 res://Scenes/Game.tscn
 res://Shaders/sea.gdshader
-res://Scripts/PlayerController.gd
+res://Scripts/NPC.gd
 res://Scenes/Main Menu.tscn
 res://Scenes/Splash.tscn
 res://addons/weekend Dialogue/Scenes/Dialogue Graph.tscn
 res://addons/weekend Dialogue/Prefabs/dialogue_node.tscn
+res://Scripts/CharacterInteract.gd
+res://Scripts/InteractObject.gd
+res://Scripts/Pickup.gd
+res://Scripts/PlayerController.gd
+res://Scripts/FollowCamera.gd
+res://Prefabs/camera.tscn
+res://Scripts/NotificationSystem.gd
+res://Prefabs/character.tscn
+res://Scripts/Controllers/ConversationController.gd
+res://addons/terrain_3d/src/channel_packer.gd
