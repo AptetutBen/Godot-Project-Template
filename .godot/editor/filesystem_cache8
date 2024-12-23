@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1734928026
+::res://::1734935612
 ::res://addons/::1734815473
 ::res://addons/terrain_3d/::1734815518
 editor.gd::GDScript::-1::1734180884::0::1::::<>EditorPlugin<>::
@@ -63,10 +63,10 @@ importer.tscn::PackedScene::3158990868267418980::1734180884::0::1::::<><>::res:/
 terrain_3d_objects.gd::GDScript::-1::1734180884::0::1::::Terrain3DObjects<>Node3D<>::
 transform_changed_notifier.gd::GDScript::-1::1734180884::0::1::::<>Node3D<>::
 ::res://addons/weekend Dialogue/::1734555814
-::res://addons/weekend Dialogue/Prefabs/::1734933593
-dialogue_node.tscn::PackedScene::6188390080551873385::1734933593::0::1::::<><>::res://addons/weekend Dialogue/Scripts/DialogueNode.gd
-::res://addons/weekend Dialogue/Scenes/::1734933593
-Dialogue Graph.tscn::PackedScene::4440426548288426286::1734933593::0::1::::<><>::res://addons/weekend Dialogue/Scripts/weekendDialogueEditor.gd<>uid://cufx4633uoge0::::res://addons/weekend Dialogue/Prefabs/dialogue_node.tscn
+::res://addons/weekend Dialogue/Prefabs/::1734949059
+dialogue_node.tscn::PackedScene::6188390080551873385::1734949059::0::1::::<><>::res://addons/weekend Dialogue/Scripts/DialogueNode.gd
+::res://addons/weekend Dialogue/Scenes/::1734949059
+Dialogue Graph.tscn::PackedScene::4440426548288426286::1734949059::0::1::::<><>::res://addons/weekend Dialogue/Scripts/weekendDialogueEditor.gd<>uid://cufx4633uoge0::::res://addons/weekend Dialogue/Prefabs/dialogue_node.tscn
 ::res://addons/weekend Dialogue/Scripts/::1734910517
 DialogueData.gd::GDScript::-1::1734910517::0::1::::DialogueData<>Resource<>::
 DialogueNode.gd::GDScript::-1::1734600246::0::1::::<>GraphNode<>::
@@ -74,6 +74,12 @@ DialogueNodeData.gd::GDScript::-1::1734910415::0::1::::DialogueNodeData<>Resourc
 DialogueOption.gd::GDScript::-1::1734909247::0::1::::DialogueOption<>Resource<>::
 StartDialogueNodeData.gd::GDScript::-1::1734908434::0::1::::StartDialogueNodeData<>Resource<>::
 weekendDialogueEditor.gd::GDScript::-1::1734568620::0::1::::<>Control<>::
+::res://Animations/::1734935616
+::res://Animations/Characters/::1734948631
+character_dash.res::Animation::3557052302254417496::1734939500::0::1::::<><>::
+character_idle.res::Animation::7288884931838470935::1734938489::0::1::::<><>::
+character_move.res::Animation::6873547224858934085::1734939943::0::1::::<><>::
+character_walk.res::Animation::2021968790788501883::1734948631::0::1::::<><>::
 ::res://Audio/::1734430980
 ::res://Audio/Music/::1734431009
 Game Music.mp3::AudioStreamMP3::8646992428580255971::1734430980::1734431009::1::::<><>::
@@ -112,7 +118,7 @@ Roboto-Medium.ttf::FontFile::427920619133441077::1734430980::1734431009::1::::<>
 ::res://Materials/::1734674463
 ::res://Models/::1734921838
 ::res://Models/Yippy Kawaii/::1734922086
-::res://Models/Yippy Kawaii/Animations/::1734921874
+::res://Models/Yippy Kawaii/Animations/::1734939943
 Anim@Alert.fbx::PackedScene::3582676566838670184::1734921840::1734921870::1::::<><>::
 Anim@ATK1.fbx::PackedScene::5721016588722667847::1734921840::1734921870::1::::<><>::
 Anim@ATK2.fbx::PackedScene::4481165554219727572::1734921840::1734921870::1::::<><>::
@@ -120,22 +126,22 @@ Anim@ATK3.fbx::PackedScene::1899767133116583641::1734921839::1734921870::1::::<>
 Anim@ATK4.fbx::PackedScene::7957115617262415886::1734921840::1734921870::1::::<><>::
 Anim@Block.fbx::PackedScene::3720198373503536564::1734921840::1734921870::1::::<><>::
 Anim@Damage.fbx::PackedScene::448825065724965194::1734921840::1734921869::1::::<><>::
-Anim@Dash.fbx::PackedScene::4695883317105360994::1734921840::1734921869::1::::<><>::
+Anim@Dash.fbx::PackedScene::4695883317105360994::1734921840::1734939500::1::::<><>::uid://bqxceqjmtuxwa::::res://Animations/Characters/character_dash.res
 Anim@Die1.fbx::PackedScene::394465220454111987::1734921840::1734921869::1::::<><>::
 Anim@Die2.fbx::PackedScene::7452117334698847020::1734921839::1734921869::1::::<><>::
-Anim@Idle.fbx::PackedScene::6041962944278669585::1734921840::1734921870::1::::<><>::
+Anim@Idle.fbx::PackedScene::6041962944278669585::1734921840::1734938489::1::::<><>::uid://db314tu4lfxnj::::res://Animations/Characters/character_idle.res
 Anim@Jump.fbx::PackedScene::2409696744535201153::1734921840::1734921870::1::::<><>::
-Anim@Move.fbx::PackedScene::101300948276637092::1734921840::1734921870::1::::<><>::
+Anim@Move.fbx::PackedScene::101300948276637092::1734921840::1734939943::1::::<><>::uid://c46uk3irlfus0::::res://Animations/Characters/character_move.res
 Anim@Move_L.fbx::PackedScene::608613771101132019::1734921839::1734921870::1::::<><>::
 Anim@Move_R.fbx::PackedScene::2063725441880058979::1734921840::1734921870::1::::<><>::
 Anim@Sit.fbx::PackedScene::3644094858755974804::1734921840::1734921874::1::::<><>::
 Anim@Victory.fbx::PackedScene::2866619189988607614::1734921840::1734921874::1::::<><>::
 Avartar_animal.fbx::PackedScene::8646580746253501027::1734921840::1734921874::1::::<><>::
-::res://Models/Yippy Kawaii/Animations/Animation_v2/::1734921871
+::res://Models/Yippy Kawaii/Animations/Animation_v2/::1734935713
 AnimSD@IdleA.fbx::PackedScene::7549619467833127170::1734921840::1734921871::1::::<><>::
 AnimSD@NormalATK.fbx::PackedScene::1200672982721479689::1734921840::1734921871::1::::<><>::
 AnimSD@Sleep.fbx::PackedScene::2984527578637747980::1734921840::1734921871::1::::<><>::
-AnimSD@Walk.fbx::PackedScene::6491459921814467172::1734921840::1734921871::1::::<><>::
+AnimSD@Walk.fbx::PackedScene::6491459921814467172::1734921840::1734935713::1::::<><>::uid://32psbltcbkw6::::res://Animations/Characters/character_walk.res
 AvatarSD.fbx::PackedScene::8863823929763547313::1734921840::1734921870::1::::<><>::
 ::res://Models/Yippy Kawaii/Animations/Lighting/::1734921840
 DirecLigth.anim::::-1::1734921840::0::1::::<><>::
@@ -145,11 +151,11 @@ ButterflyA.fbx::PackedScene::7778120848609565246::1734921839::1734921873::1::::<
 ButterflyA_0.png::CompressedTexture2D::8766279937126153481::1734921873::1734921874::1::::<><>::
 ::res://Models/Yippy Kawaii/Environments/ButterflyA.fbm/::1734921862
 Butterfly.png::CompressedTexture2D::8082655779326797724::1734921839::1734921862::1::::<><>::
-::res://Models/Yippy Kawaii/FBX/::1734933252
+::res://Models/Yippy Kawaii/FBX/::1734949060
 Bear.fbx::PackedScene::4267262928581831433::1734921839::1734922991::1::::<><>::uid://2llw4ysiwfid::::res://Models/Yippy Kawaii/Texture/Bear/Bear00.png
-bear.tscn::PackedScene::3134199351797786046::1734922966::0::1::::<><>::uid://b12dgxyb5q2xp::::res://Models/Yippy Kawaii/FBX/Bear.fbx<>uid://sb28yc0glmh5::::res://Models/Yippy Kawaii/Texture/Face/Face02.tres<>uid://c0iepjgfdia8u::::res://Models/Yippy Kawaii/Texture/Bear/Bear08.tres
+bear.tscn::PackedScene::3134199351797786046::1734949060::0::1::::<><>::uid://b12dgxyb5q2xp::::res://Models/Yippy Kawaii/FBX/Bear.fbx<>uid://sb28yc0glmh5::::res://Models/Yippy Kawaii/Texture/Face/Face02.tres<>uid://c0iepjgfdia8u::::res://Models/Yippy Kawaii/Texture/Bear/Bear08.tres<>uid://db314tu4lfxnj::::res://Animations/Characters/character_idle.res
 Bunny.fbx::PackedScene::928540467572662700::1734921839::1734923101::1::::<><>::
-bunny.tscn::PackedScene::7192788966748214829::1734933252::0::1::::<><>::uid://nh16qjguq31i::::res://Models/Yippy Kawaii/FBX/Bunny.fbx<>uid://bf04ir2bsy2ye::::res://Models/Yippy Kawaii/Texture/Face/Face04.tres<>uid://dlyfj5big4a7f::::res://Models/Yippy Kawaii/Texture/Bunny/Bunny02.tres
+bunny.tscn::PackedScene::7192788966748214829::1734949060::0::1::::<><>::uid://nh16qjguq31i::::res://Models/Yippy Kawaii/FBX/Bunny.fbx<>uid://bf04ir2bsy2ye::::res://Models/Yippy Kawaii/Texture/Face/Face04.tres<>uid://dlyfj5big4a7f::::res://Models/Yippy Kawaii/Texture/Bunny/Bunny02.tres<>uid://32psbltcbkw6::::res://Animations/Characters/character_walk.res<>uid://db314tu4lfxnj::::res://Animations/Characters/character_idle.res<>uid://bqxceqjmtuxwa::::res://Animations/Characters/character_dash.res<>uid://c46uk3irlfus0::::res://Animations/Characters/character_move.res
 Cat.fbx::PackedScene::7268163795422919093::1734921839::1734921871::1::::<><>::uid://b4xujwb1502kf::::res://Models/Yippy Kawaii/Texture/Cat/Cat00.png
 Miniscene.fbx::PackedScene::3613405417198203880::1734921839::1734921871::1::::<><>::uid://bj0abb7phwvce::::res://Models/Yippy Kawaii/Texture/Miniscene.png
 ::res://Models/Yippy Kawaii/FBX/Accessories/::1734921873
@@ -335,7 +341,7 @@ Santabag_N.png::CompressedTexture2D::4700077094515758580::1734921839::1734921852
 Santahat_N.png::CompressedTexture2D::4550386129191161483::1734921839::1734921852::1::::<><>::
 Scarf_N.png::CompressedTexture2D::5277849727753067220::1734921839::1734921852::1::::<><>::
 Walking_stick_N.png::CompressedTexture2D::6330655396618371421::1734921839::1734921852::1::::<><>::
-::res://Models/Yippy Kawaii/UI/::1734921922
+::res://Models/Yippy Kawaii/UI/::1734937642
 animation.png::CompressedTexture2D::2063497922462368438::1734921838::1734921853::1::::<><>::
 anim_button1.png::CompressedTexture2D::4048390075514167966::1734921838::1734921853::1::::<><>::
 bearbg.png::CompressedTexture2D::2531977494566714988::1734921838::1734921853::1::::<><>::
@@ -348,29 +354,29 @@ Floor_creation.png::CompressedTexture2D::1338680100688893898::1734921838::173492
 frame.png::CompressedTexture2D::1766979139174525822::1734921838::1734921853::1::::<><>::
 HeadAccessories.png::CompressedTexture2D::1945571012816189449::1734921838::1734921853::1::::<><>::
 Snowflake.png::CompressedTexture2D::1303629633502744046::1734921838::1734921853::1::::<><>::
-::res://Prefabs/::1734933593
+::res://Prefabs/::1734949060
 camera.tscn::PackedScene::5158924361478454569::1734902561::0::1::::<><>::res://Scripts/FollowCamera.gd
-character.tscn::PackedScene::6385998169661608071::1734933593::0::1::::<><>::res://Scripts/NPC.gd<>uid://bkwh2nb54b6v7::::res://Models/Yippy Kawaii/FBX/bear.tscn<>res://Scripts/InteractObject.gd
+character.tscn::PackedScene::6385998169661608071::1734949060::0::1::::<><>::res://Scripts/NPC.gd<>uid://bkwh2nb54b6v7::::res://Models/Yippy Kawaii/FBX/bear.tscn<>res://Scripts/InteractObject.gd
 pickup.tscn::PackedScene::2504436734987634717::1734865350::0::1::::<><>::res://Scripts/Pickup.gd<>res://Scripts/InteractObject.gd
-player.tscn::PackedScene::3890995264120754473::1734933252::0::1::::<><>::res://Scripts/PlayerController.gd<>uid://daqigiapwq35b::::res://Models/Yippy Kawaii/FBX/bunny.tscn
+player.tscn::PackedScene::3890995264120754473::1734949060::0::1::::<><>::res://Scripts/PlayerController.gd<>uid://daqigiapwq35b::::res://Models/Yippy Kawaii/FBX/bunny.tscn
 ::res://Prefabs/UI/::1734667620
 options_panel.tscn::PackedScene::6704296224948302474::1734522773::0::1::::<><>::res://Scenes/Options Panel.gd<>res://Fonts/font1.tres
 pause_menu.tscn::PackedScene::6898631142279607125::1734501506::0::1::::<><>::res://Scripts/Pause Menu/PauseMenu.gd<>res://Fonts/font1.tres<>uid://b3lrceixb0548::::res://Fonts/Chewy-Regular.ttf<>res://Scripts/Main Menu/StartMenuButtonGroup.gd<>uid://chi28l03dgsy2::::res://Themes/MenuTextStandard.tres<>res://Scripts/Main Menu/MenuText.gd<>uid://d2n2o7gyj2klb::::res://Themes/MenuTextHighlighted.tres
-::res://Scenes/::1734933593
-Game.tscn::PackedScene::3107870423960825618::1734933592::0::1::::<><>::res://Scripts/Controllers/Game Controller.gd<>res://Scripts/NotificationSystem.gd<>uid://dbrmxigkqokgw::::res://Sprites/Icons/Exclamation mark.png<>uid://deiwbfqvy65s3::::res://Themes/Narritive.tres<>res://Scripts/Controllers/ConversationController.gd<>uid://c5j0pg0krwk4t::::res://Prefabs/UI/pause_menu.tscn<>uid://bvo3eg11jru1n::::res://Prefabs/player.tscn<>res://Shaders/sea.gdshader<>uid://bbxfybo0g183r::::res://Prefabs/pickup.tscn<>uid://cdopu5ugea4cm::::res://Textures/packed_albedo_height.png<>uid://cfray3p1qt7l2::::res://Prefabs/camera.tscn<>res://Scripts/ItemSpawnArea.gd<>res://Scripts/CameraZone.gd<>uid://cw8opsd74al7l::::res://Prefabs/character.tscn<>uid://duo0jic738cwv::::res://Data/Dialogue/Test Dialogue.tres
-Main Menu.tscn::PackedScene::7772909248775964131::1734933593::0::1::::<><>::res://Scripts/Main Menu/Main Menu Controller.gd<>res://Fonts/font1.tres<>uid://c2ru1q5gvx8uw::::res://Prefabs/UI/options_panel.tscn<>uid://b3lrceixb0548::::res://Fonts/Chewy-Regular.ttf<>res://Scripts/Main Menu/StartMenuButtonGroup.gd<>uid://d2n2o7gyj2klb::::res://Themes/MenuTextHighlighted.tres<>res://Scripts/Main Menu/MenuText.gd<>uid://chi28l03dgsy2::::res://Themes/MenuTextStandard.tres
+::res://Scenes/::1734949060
+Game.tscn::PackedScene::3107870423960825618::1734949054::0::1::::<><>::res://Scripts/Controllers/Game Controller.gd<>res://Scripts/NotificationSystem.gd<>uid://dbrmxigkqokgw::::res://Sprites/Icons/Exclamation mark.png<>uid://deiwbfqvy65s3::::res://Themes/Narritive.tres<>res://Scripts/Controllers/ConversationController.gd<>uid://c5j0pg0krwk4t::::res://Prefabs/UI/pause_menu.tscn<>uid://bvo3eg11jru1n::::res://Prefabs/player.tscn<>res://Shaders/sea.gdshader<>uid://bbxfybo0g183r::::res://Prefabs/pickup.tscn<>uid://cdopu5ugea4cm::::res://Textures/packed_albedo_height.png<>uid://cfray3p1qt7l2::::res://Prefabs/camera.tscn<>res://Scripts/ItemSpawnArea.gd<>res://Scripts/CameraZone.gd<>uid://cw8opsd74al7l::::res://Prefabs/character.tscn<>uid://duo0jic738cwv::::res://Data/Dialogue/Test Dialogue.tres
+Main Menu.tscn::PackedScene::7772909248775964131::1734949059::0::1::::<><>::res://Scripts/Main Menu/Main Menu Controller.gd<>res://Fonts/font1.tres<>uid://c2ru1q5gvx8uw::::res://Prefabs/UI/options_panel.tscn<>uid://b3lrceixb0548::::res://Fonts/Chewy-Regular.ttf<>res://Scripts/Main Menu/StartMenuButtonGroup.gd<>uid://d2n2o7gyj2klb::::res://Themes/MenuTextHighlighted.tres<>res://Scripts/Main Menu/MenuText.gd<>uid://chi28l03dgsy2::::res://Themes/MenuTextStandard.tres
 Options Panel.gd::GDScript::-1::1734493913::0::1::::<>Panel<>::
-Splash.tscn::PackedScene::5597916559264501703::1734933593::0::1::::<><>::uid://b44mhbi487fyf::::res://Sprites/Splash/spash_logo.jpg<>res://Scripts/Splash Screen/SplashScreen.gd
-::res://Scripts/::1734933592
+Splash.tscn::PackedScene::5597916559264501703::1734949059::0::1::::<><>::uid://b44mhbi487fyf::::res://Sprites/Splash/spash_logo.jpg<>res://Scripts/Splash Screen/SplashScreen.gd
+::res://Scripts/::1734939559
 CameraZone.gd::GDScript::-1::1734726969::0::1::::CameraZone<>Area3D<>::
 CharacterInteract.gd::GDScript::-1::1734866468::0::1::::CharacterInteract<>InteractObject<>::
 FollowCamera.gd::GDScript::-1::1734913536::0::1::::FollowCamera<>Node3D<>::
 InteractObject.gd::GDScript::-1::1734866954::0::1::::InteractObject<>Area3D<>::
 ItemSpawnArea.gd::GDScript::-1::1734858323::0::1::::ItemSpawnArea<>Node3D<>::
 NotificationSystem.gd::GDScript::-1::1734899630::0::1::::<>Control<>::
-NPC.gd::GDScript::-1::1734932708::0::1::::NPC<>Node<>::
+NPC.gd::GDScript::-1::1734933850::0::1::::NPC<>Node<>::
 Pickup.gd::GDScript::-1::1734866970::0::1::::Pickup<>Node3D<>::
-PlayerController.gd::GDScript::-1::1734933592::0::1::::Player<>CharacterBody3D<>::
+PlayerController.gd::GDScript::-1::1734939559::0::1::::Player<>CharacterBody3D<>::
 PlayerNavController.gd::GDScript::-1::1734851741::0::1::::PlayerNav<>CharacterBody3D<>::
 ::res://Scripts/Controllers/::1734914035
 AudioManager.gd::GDScript::-1::1734500176::0::1::::<>Node<>::
@@ -388,8 +394,8 @@ StartMenuButtonGroup.gd::GDScript::-1::1734520302::0::1::::<>VBoxContainer<>::
 PauseMenu.gd::GDScript::-1::1734500589::0::1::::<>Control<>::
 ::res://Scripts/Splash Screen/::1734667857
 SplashScreen.gd::GDScript::-1::1734432401::0::1::::<>Node<>::
-::res://Shaders/::1734933593
-sea.gdshader::Shader::-1::1734933593::0::1::::<><>::
+::res://Shaders/::1734949060
+sea.gdshader::Shader::-1::1734949060::0::1::::<><>::
 ::res://Sprites/::1734914224
 icon.svg::CompressedTexture2D::3986379381717100537::1734430980::1734431009::1::::<><>::
 ::res://Sprites/Icons/::1734914243

@@ -1,13 +1,137 @@
-[gd_scene load_steps=4 format=3 uid="uid://bkwh2nb54b6v7"]
+[gd_scene load_steps=10 format=3 uid="uid://bkwh2nb54b6v7"]
 
 [ext_resource type="PackedScene" uid="uid://b12dgxyb5q2xp" path="res://Models/Yippy Kawaii/FBX/Bear.fbx" id="1_ssee5"]
 [ext_resource type="Material" uid="uid://sb28yc0glmh5" path="res://Models/Yippy Kawaii/Texture/Face/Face02.tres" id="2_tcpdr"]
 [ext_resource type="Material" uid="uid://c0iepjgfdia8u" path="res://Models/Yippy Kawaii/Texture/Bear/Bear08.tres" id="3_x7o3l"]
+[ext_resource type="Animation" uid="uid://db314tu4lfxnj" path="res://Animations/Characters/character_idle.res" id="4_ruumw"]
+
+[sub_resource type="Animation" id="Animation_1mrnv"]
+resource_name = "Take 001"
+length = 4.95833
+tracks/0/type = "rotation_3d"
+tracks/0/imported = true
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skeleton3D:Hip_R")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(1.24176e-09, 1, -0.119607, -0.992686, 0.00682203, -0.0149044)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = true
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skeleton3D:Hip_L")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(1.24176e-09, 1, -0.992686, 0.119607, 0.0149044, 0.00682203)
+tracks/2/type = "rotation_3d"
+tracks/2/imported = true
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skeleton3D:Scapula_L")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = PackedFloat32Array(1.24176e-09, 1, -0.706868, 0.0205646, 0.706742, 0.0207534)
+tracks/3/type = "rotation_3d"
+tracks/3/imported = true
+tracks/3/enabled = true
+tracks/3/path = NodePath("Group/Main/MotionSystem/FKIKSystem/FKIKParentConstraintSpine_M/FKIKSpine_M")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = PackedFloat32Array(1.24176e-09, 1, -0.535963, -0.461242, -0.535963, 0.461242)
+tracks/4/type = "rotation_3d"
+tracks/4/imported = true
+tracks/4/enabled = true
+tracks/4/path = NodePath("Skeleton3D:Ear_root")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = PackedFloat32Array(1.24176e-09, 1, -0.5, -0.5, -0.5, 0.5)
+tracks/5/type = "rotation_3d"
+tracks/5/imported = true
+tracks/5/enabled = true
+tracks/5/path = NodePath("Skeleton3D:ear6")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = PackedFloat32Array(1.24176e-09, 1, -1, 1.21756e-08, 1.53645e-08, 2.89298e-08)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_543el"]
+_data = {
+"Take 001": SubResource("Animation_1mrnv")
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_unigc"]
+_data = {
+"character_idle": ExtResource("4_ruumw")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_itqs1"]
+animation = &"Animations/character_idle"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_t6i51"]
+graph_offset = Vector2(125.164, 157.429)
+"nodes/Animation 2/node" = SubResource("AnimationNodeAnimation_itqs1")
+"nodes/Animation 2/position" = Vector2(262.876, 273.117)
+nodes/output/position = Vector2(680, 180)
+node_connections = [&"output", 0, &"Animation 2"]
 
 [node name="Bear" instance=ExtResource("1_ssee5")]
+
+[node name="Skeleton3D" parent="." index="0"]
+bones/0/position = Vector3(-8.69844e-05, 0.0890737, -0.00180009)
+bones/0/rotation = Quaternion(0.552444, 0.471461, 0.519276, 0.450426)
+bones/1/rotation = Quaternion(0.186027, 0.979737, -0.0514397, 0.0535063)
+bones/2/rotation = Quaternion(-0.00871816, 0.119744, -0.4123, 0.903103)
+bones/3/rotation = Quaternion(-0.0248701, -0.0755286, 0.303505, 0.949506)
+bones/4/rotation = Quaternion(0.00455933, -0.00398228, 0.657825, 0.753146)
+bones/6/rotation = Quaternion(0.0273829, -0.00463608, -0.0727595, 0.996963)
+bones/7/rotation = Quaternion(0.0276274, 0.00283537, 0.0276573, 0.999232)
+bones/9/rotation = Quaternion(-0.138915, 0.534621, -0.153063, 0.819424)
+bones/10/position = Vector3(0.0636549, 3.82113e-08, -1.10177e-08)
+bones/10/rotation = Quaternion(0.00410471, -0.00174297, 0.26972, 0.962928)
+bones/11/rotation = Quaternion(-0.00262746, 0.0872899, 0.0302343, 0.995721)
+bones/34/rotation = Quaternion(0.00964101, 0.000505381, 0.0278395, 0.999566)
+bones/35/rotation = Quaternion(-1.03398e-25, -1.12122e-24, -0.0569724, 0.998376)
+bones/38/rotation = Quaternion(0.999642, -0.000122801, -0.0123955, -0.0237299)
+bones/39/rotation = Quaternion(-0.00171258, 0.00283898, 0.519627, 0.854387)
+bones/40/rotation = Quaternion(8.20954e-06, 0.00240829, 0.00178482, 0.999996)
+bones/41/rotation = Quaternion(-0.00229595, 0.00384123, -0.521219, 0.853411)
+bones/43/rotation = Quaternion(0.0257468, -0.0134489, 0.000138208, 0.999578)
+bones/44/rotation = Quaternion(-0.00191275, 0.00317093, 0.519605, 0.854399)
+bones/45/rotation = Quaternion(9.20197e-06, 0.00271404, 0.0017889, 0.999995)
+bones/46/rotation = Quaternion(-0.00258656, 0.00432742, -0.521206, 0.853416)
+bones/49/rotation = Quaternion(0.706868, -0.0205646, -0.706742, -0.0207534)
+bones/50/rotation = Quaternion(-0.220416, 0.435926, -0.05835, 0.870621)
+bones/51/position = Vector3(-0.063655, -3.60147e-07, -3.70461e-07)
+bones/51/rotation = Quaternion(0.123286, 0.137518, 0.567779, 0.802195)
+bones/76/rotation = Quaternion(0.929636, -0.365424, -0.0472056, 0.00373149)
+bones/77/position = Vector3(-0.0497413, 6.4726e-07, -6.21105e-08)
+bones/77/rotation = Quaternion(-0.00476651, 0.11058, -0.39228, 0.913163)
+bones/78/rotation = Quaternion(-0.00752384, -0.0658524, 0.103492, 0.992419)
+bones/81/rotation = Quaternion(0.0063413, 0.0125964, -0.75493, 0.655654)
+bones/82/rotation = Quaternion(2.68612e-16, -2.31627e-15, 0.121306, 0.992615)
+bones/83/rotation = Quaternion(3.90233e-16, -1.24594e-15, 0.340611, 0.940204)
 
 [node name="Face01" parent="Skeleton3D" index="0"]
 material_override = ExtResource("2_tcpdr")
 
 [node name="Bear" parent="Skeleton3D" index="1"]
 material_override = ExtResource("3_x7o3l")
+
+[node name="FKIKSpine_M" parent="Group/Main/MotionSystem/FKIKSystem/FKIKParentConstraintSpine_M" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.12379, -8.88178e-18, 0.0927581)
+
+[node name="AnimationPlayer" parent="." index="3"]
+libraries = {
+"": SubResource("AnimationLibrary_543el"),
+"Animations": SubResource("AnimationLibrary_unigc")
+}
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="4"]
+tree_root = SubResource("AnimationNodeBlendTree_t6i51")
+anim_player = NodePath("../AnimationPlayer")
+parameters/current_length = 4.54167
+parameters/current_position = 4.18257
+parameters/current_delta = 0.0166667
+"parameters/Animation 2/current_length" = 4.54167
+"parameters/Animation 2/current_position" = 4.18257
+"parameters/Animation 2/current_delta" = 0.0166667
+parameters/output/current_length = 4.54167
+parameters/output/current_position = 4.18257
+parameters/output/current_delta = 0.0166667

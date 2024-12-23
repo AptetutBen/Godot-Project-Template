@@ -13,3 +13,8 @@ res://Models/Yippy Kawaii/FBX/bunny.tscn
 res://Prefabs/player.tscn
 res://Scripts/PlayerController.gd
 res://Scripts/NPC.gd
+res://Animations/Characters/character_walk.res
+res://Animations/Characters/character_idle.res
+res://Animations/Characters/character_dash.res
+res://Animations/Characters/character_move.res
+res://Models/Yippy Kawaii/FBX/bear.tscn

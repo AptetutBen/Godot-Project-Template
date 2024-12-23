@@ -32,4 +32,5 @@ func _on_finish_conversation():
 	turn_tween.tween_property(self, "rotation_degrees", Vector3(0, rad_to_deg(start_rotation_y), 0), 0.5)
 	turn_tween.set_ease(Tween.EASE_OUT_IN)
 	turn_tween.set_trans(Tween.TRANS_SINE)
+	await get_tree().create_timer(2).timeout
 	area_3d.monitoring = true

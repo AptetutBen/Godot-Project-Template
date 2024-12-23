@@ -6,6 +6,7 @@ static var Instance : Player
 
 @onready var camera_pivot: FollowCamera = %"Camera"
 @onready var notification_marker: Marker3D = %NotificationMarker
+@onready var animation_tree : AnimationTree = $"Mesh/AnimationTree"
 @onready var mesh: Node3D = $Mesh
 
 var enabled : bool = true
@@ -30,8 +31,11 @@ func _move(_delta : float):
 	input = input.rotated(-camera_angle)
 	
 	if enabled:
-		velocity.x = input.x * speed
-		velocity.z = input.y * speed
+		velocity.x = input.x
+		velocity.z = input.y 
+		animation_tree.set("parameters/speed/blend_position",velocity.length())
+		#animation_tree.set("parameters/pseed/blend_position",velocity.length())
+		velocity *= speed
 
 		if velocity.length() > 0:
 			mesh.rotation.y = lerp_angle(mesh.rotation.y, atan2(velocity.x, velocity.z), 0.1)
@@ -57,6 +61,7 @@ func _on_exit_interact_object(interact_object:InteractObject):
 
 func _on_start_conversation(_node):
 	velocity = Vector3.ZERO
+	animation_tree.set("parameters/speed/blend_position",0)
 	enabled = false
 	mesh.rotation_degrees.y = wrapf(mesh.rotation_degrees.y,0,360)
 	var turn_tween : Tween = get_tree().create_tween()
