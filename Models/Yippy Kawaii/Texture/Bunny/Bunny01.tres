@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c221io5dj8eki"]
+
+[ext_resource type="Texture2D" uid="uid://bfr8hy4v0im6k" path="res://Models/Yippy Kawaii/Texture/Bunny/Bunny00.png" id="1_utf74"]
+
+[resource]
+albedo_texture = ExtResource("1_utf74")

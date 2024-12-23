@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://konleh4jus7q"]
+
+[ext_resource type="Texture2D" uid="uid://ciemrkhhy1ev" path="res://Models/Yippy Kawaii/Texture/Face/Face05.png" id="1_ex8f3"]
+
+[resource]
+transparency = 1
+albedo_texture = ExtResource("1_ex8f3")

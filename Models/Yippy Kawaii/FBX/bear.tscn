@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bkwh2nb54b6v7"]
+
+[ext_resource type="PackedScene" uid="uid://b12dgxyb5q2xp" path="res://Models/Yippy Kawaii/FBX/Bear.fbx" id="1_ssee5"]
+[ext_resource type="Material" uid="uid://sb28yc0glmh5" path="res://Models/Yippy Kawaii/Texture/Face/Face02.tres" id="2_tcpdr"]
+[ext_resource type="Material" uid="uid://c0iepjgfdia8u" path="res://Models/Yippy Kawaii/Texture/Bear/Bear08.tres" id="3_x7o3l"]
+
+[node name="Bear" instance=ExtResource("1_ssee5")]
+
+[node name="Face01" parent="Skeleton3D" index="0"]
+material_override = ExtResource("2_tcpdr")
+
+[node name="Bear" parent="Skeleton3D" index="1"]
+material_override = ExtResource("3_x7o3l")

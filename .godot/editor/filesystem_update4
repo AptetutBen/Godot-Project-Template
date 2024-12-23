@@ -1,17 +1,15 @@
-res://Scenes/Game.tscn
-res://Shaders/sea.gdshader
-res://Scripts/NPC.gd
 res://Scenes/Main Menu.tscn
+res://Models/Yippy Kawaii/Texture/Face/Face04.tres
+res://Models/Yippy Kawaii/Texture/Bunny/Bunny02.tres
+res://Shaders/sea.gdshader
+res://Models/Yippy Kawaii/Texture/Bear/Bear08.tres
+res://Data/Dialogue/Test Dialogue.tres
 res://Scenes/Splash.tscn
 res://addons/weekend Dialogue/Scenes/Dialogue Graph.tscn
 res://addons/weekend Dialogue/Prefabs/dialogue_node.tscn
-res://Scripts/CharacterInteract.gd
-res://Scripts/InteractObject.gd
-res://Scripts/Pickup.gd
-res://Scripts/PlayerController.gd
-res://Scripts/FollowCamera.gd
-res://Prefabs/camera.tscn
-res://Scripts/NotificationSystem.gd
+res://Scenes/Game.tscn
 res://Prefabs/character.tscn
-res://Scripts/Controllers/ConversationController.gd
-res://addons/terrain_3d/src/channel_packer.gd
+res://Models/Yippy Kawaii/FBX/bunny.tscn
+res://Prefabs/player.tscn
+res://Scripts/PlayerController.gd
+res://Scripts/NPC.gd

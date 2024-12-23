@@ -1,6 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1734899287
-icon.png::CompressedTexture2D::557325075131260776::1734643794::1734643802::1::::<><>::
+::res://::1734928026
 ::res://addons/::1734815473
 ::res://addons/terrain_3d/::1734815518
 editor.gd::GDScript::-1::1734180884::0::1::::<>EditorPlugin<>::
@@ -64,13 +63,16 @@ importer.tscn::PackedScene::3158990868267418980::1734180884::0::1::::<><>::res:/
 terrain_3d_objects.gd::GDScript::-1::1734180884::0::1::::Terrain3DObjects<>Node3D<>::
 transform_changed_notifier.gd::GDScript::-1::1734180884::0::1::::<>Node3D<>::
 ::res://addons/weekend Dialogue/::1734555814
-::res://addons/weekend Dialogue/Prefabs/::1734902561
-dialogue_node.tscn::PackedScene::6188390080551873385::1734902650::0::1::::<><>::res://addons/weekend Dialogue/Scripts/DialogueNode.gd
-::res://addons/weekend Dialogue/Scenes/::1734902561
-Dialogue Graph.tscn::PackedScene::4440426548288426286::1734902650::0::1::::<><>::res://addons/weekend Dialogue/Scripts/weekendDialogueEditor.gd<>uid://cufx4633uoge0::::res://addons/weekend Dialogue/Prefabs/dialogue_node.tscn
-::res://addons/weekend Dialogue/Scripts/::1734600246
+::res://addons/weekend Dialogue/Prefabs/::1734933593
+dialogue_node.tscn::PackedScene::6188390080551873385::1734933593::0::1::::<><>::res://addons/weekend Dialogue/Scripts/DialogueNode.gd
+::res://addons/weekend Dialogue/Scenes/::1734933593
+Dialogue Graph.tscn::PackedScene::4440426548288426286::1734933593::0::1::::<><>::res://addons/weekend Dialogue/Scripts/weekendDialogueEditor.gd<>uid://cufx4633uoge0::::res://addons/weekend Dialogue/Prefabs/dialogue_node.tscn
+::res://addons/weekend Dialogue/Scripts/::1734910517
+DialogueData.gd::GDScript::-1::1734910517::0::1::::DialogueData<>Resource<>::
 DialogueNode.gd::GDScript::-1::1734600246::0::1::::<>GraphNode<>::
-DialogueNodeData.gd::GDScript::-1::1734599101::0::1::::DisalogueData<>RefCounted<>::
+DialogueNodeData.gd::GDScript::-1::1734910415::0::1::::DialogueNodeData<>Resource<>::
+DialogueOption.gd::GDScript::-1::1734909247::0::1::::DialogueOption<>Resource<>::
+StartDialogueNodeData.gd::GDScript::-1::1734908434::0::1::::StartDialogueNodeData<>Resource<>::
 weekendDialogueEditor.gd::GDScript::-1::1734568620::0::1::::<>Control<>::
 ::res://Audio/::1734430980
 ::res://Audio/Music/::1734431009
@@ -83,57 +85,297 @@ rollover1.ogg::AudioStreamOggVorbis::7470663469919656223::1734430980::1734431009
 rollover2.ogg::AudioStreamOggVorbis::736167784220709710::1734430980::1734431009::1::::<><>::
 switch2.ogg::AudioStreamOggVorbis::5539464575622984594::1734430980::1734431009::1::::<><>::
 switch3.ogg::AudioStreamOggVorbis::5145434842828123623::1734430980::1734431009::1::::<><>::
-::res://Data/::1734643913
-::res://Data/Terrain/::1734864700
-terrain3d-01-01.res::Terrain3DRegion::4977133703188151713::1734864700::0::1::::<><>::
+::res://Data/::1734907058
+::res://Data/Dialogue/::1734928040
+Test Dialogue.tres::Resource/DialogueData::8593474634130154449::1734928040::0::1::::<><>::res://addons/weekend Dialogue/Scripts/DialogueData.gd<>res://addons/weekend Dialogue/Scripts/DialogueNodeData.gd<>res://addons/weekend Dialogue/Scripts/StartDialogueNodeData.gd<>res://addons/weekend Dialogue/Scripts/DialogueOption.gd
+::res://Data/Terrain/::1734922685
+terrain3d-01-01.res::Terrain3DRegion::4977133703188151713::1734903659::0::1::::<><>::
 terrain3d-01-02.res::Terrain3DRegion::1086211638704479434::1734864700::0::1::::<><>::
-terrain3d-01_00.res::Terrain3DRegion::5282795077711664046::1734864700::0::1::::<><>::
-terrain3d-01_01.res::Terrain3DRegion::9061941924798306770::1734864700::0::1::::<><>::
+terrain3d-01_00.res::Terrain3DRegion::5282795077711664046::1734922685::0::1::::<><>::
+terrain3d-01_01.res::Terrain3DRegion::9061941924798306770::1734922685::0::1::::<><>::
 terrain3d-02-01.res::Terrain3DRegion::1189978990484249995::1734864700::0::1::::<><>::
 terrain3d-02-02.res::Terrain3DRegion::8638769989282305835::1734864700::0::1::::<><>::
 terrain3d-02_00.res::Terrain3DRegion::8647341508477791860::1734864700::0::1::::<><>::
-terrain3d-02_01.res::Terrain3DRegion::3298054952477260209::1734864700::0::1::::<><>::
-terrain3d_00-01.res::Terrain3DRegion::4003959598695574550::1734864700::0::1::::<><>::
+terrain3d-02_01.res::Terrain3DRegion::3298054952477260209::1734903659::0::1::::<><>::
+terrain3d_00-01.res::Terrain3DRegion::4003959598695574550::1734922685::0::1::::<><>::
 terrain3d_00-02.res::Terrain3DRegion::7236779608665146385::1734864700::0::1::::<><>::
-terrain3d_00_00.res::Terrain3DRegion::1399915020133630233::1734864700::0::1::::<><>::
-terrain3d_00_01.res::Terrain3DRegion::3982512188379878150::1734864700::0::1::::<><>::
-terrain3d_01-01.res::Terrain3DRegion::16409837444168565::1734864700::0::1::::<><>::
+terrain3d_00_00.res::Terrain3DRegion::1399915020133630233::1734922685::0::1::::<><>::
+terrain3d_00_01.res::Terrain3DRegion::3982512188379878150::1734922685::0::1::::<><>::
+terrain3d_01-01.res::Terrain3DRegion::16409837444168565::1734922685::0::1::::<><>::
 terrain3d_01-02.res::Terrain3DRegion::491201524800219263::1734864700::0::1::::<><>::
-terrain3d_01_00.res::Terrain3DRegion::6237251609225062452::1734864700::0::1::::<><>::
-terrain3d_01_01.res::Terrain3DRegion::5010216977221626745::1734864700::0::1::::<><>::
+terrain3d_01_00.res::Terrain3DRegion::6237251609225062452::1734922685::0::1::::<><>::
+terrain3d_01_01.res::Terrain3DRegion::5010216977221626745::1734922685::0::1::::<><>::
 ::res://Fonts/::1734431287
 Chewy-Regular.ttf::FontFile::4375452444816710315::1734431281::1734431287::1::::<><>::
 font1.tres::FontFile::-1::1734430980::0::1::::<><>::uid://gdj14lgr8kk8::::res://Fonts/Roboto-Medium.ttf
 Roboto-Medium.ttf::FontFile::427920619133441077::1734430980::1734431009::1::::<><>::
 ::res://Materials/::1734674463
-::res://Prefabs/::1734902561
+::res://Models/::1734921838
+::res://Models/Yippy Kawaii/::1734922086
+::res://Models/Yippy Kawaii/Animations/::1734921874
+Anim@Alert.fbx::PackedScene::3582676566838670184::1734921840::1734921870::1::::<><>::
+Anim@ATK1.fbx::PackedScene::5721016588722667847::1734921840::1734921870::1::::<><>::
+Anim@ATK2.fbx::PackedScene::4481165554219727572::1734921840::1734921870::1::::<><>::
+Anim@ATK3.fbx::PackedScene::1899767133116583641::1734921839::1734921870::1::::<><>::
+Anim@ATK4.fbx::PackedScene::7957115617262415886::1734921840::1734921870::1::::<><>::
+Anim@Block.fbx::PackedScene::3720198373503536564::1734921840::1734921870::1::::<><>::
+Anim@Damage.fbx::PackedScene::448825065724965194::1734921840::1734921869::1::::<><>::
+Anim@Dash.fbx::PackedScene::4695883317105360994::1734921840::1734921869::1::::<><>::
+Anim@Die1.fbx::PackedScene::394465220454111987::1734921840::1734921869::1::::<><>::
+Anim@Die2.fbx::PackedScene::7452117334698847020::1734921839::1734921869::1::::<><>::
+Anim@Idle.fbx::PackedScene::6041962944278669585::1734921840::1734921870::1::::<><>::
+Anim@Jump.fbx::PackedScene::2409696744535201153::1734921840::1734921870::1::::<><>::
+Anim@Move.fbx::PackedScene::101300948276637092::1734921840::1734921870::1::::<><>::
+Anim@Move_L.fbx::PackedScene::608613771101132019::1734921839::1734921870::1::::<><>::
+Anim@Move_R.fbx::PackedScene::2063725441880058979::1734921840::1734921870::1::::<><>::
+Anim@Sit.fbx::PackedScene::3644094858755974804::1734921840::1734921874::1::::<><>::
+Anim@Victory.fbx::PackedScene::2866619189988607614::1734921840::1734921874::1::::<><>::
+Avartar_animal.fbx::PackedScene::8646580746253501027::1734921840::1734921874::1::::<><>::
+::res://Models/Yippy Kawaii/Animations/Animation_v2/::1734921871
+AnimSD@IdleA.fbx::PackedScene::7549619467833127170::1734921840::1734921871::1::::<><>::
+AnimSD@NormalATK.fbx::PackedScene::1200672982721479689::1734921840::1734921871::1::::<><>::
+AnimSD@Sleep.fbx::PackedScene::2984527578637747980::1734921840::1734921871::1::::<><>::
+AnimSD@Walk.fbx::PackedScene::6491459921814467172::1734921840::1734921871::1::::<><>::
+AvatarSD.fbx::PackedScene::8863823929763547313::1734921840::1734921870::1::::<><>::
+::res://Models/Yippy Kawaii/Animations/Lighting/::1734921840
+DirecLigth.anim::::-1::1734921840::0::1::::<><>::
+::res://Models/Yippy Kawaii/Environments/::1734921874
+Butterfly.png::CompressedTexture2D::6029850448384811302::1734921839::1734921862::1::::<><>::
+ButterflyA.fbx::PackedScene::7778120848609565246::1734921839::1734921873::1::::<><>::uid://dw5pl5mltofk8::::res://Models/Yippy Kawaii/Environments/ButterflyA_0.png
+ButterflyA_0.png::CompressedTexture2D::8766279937126153481::1734921873::1734921874::1::::<><>::
+::res://Models/Yippy Kawaii/Environments/ButterflyA.fbm/::1734921862
+Butterfly.png::CompressedTexture2D::8082655779326797724::1734921839::1734921862::1::::<><>::
+::res://Models/Yippy Kawaii/FBX/::1734933252
+Bear.fbx::PackedScene::4267262928581831433::1734921839::1734922991::1::::<><>::uid://2llw4ysiwfid::::res://Models/Yippy Kawaii/Texture/Bear/Bear00.png
+bear.tscn::PackedScene::3134199351797786046::1734922966::0::1::::<><>::uid://b12dgxyb5q2xp::::res://Models/Yippy Kawaii/FBX/Bear.fbx<>uid://sb28yc0glmh5::::res://Models/Yippy Kawaii/Texture/Face/Face02.tres<>uid://c0iepjgfdia8u::::res://Models/Yippy Kawaii/Texture/Bear/Bear08.tres
+Bunny.fbx::PackedScene::928540467572662700::1734921839::1734923101::1::::<><>::
+bunny.tscn::PackedScene::7192788966748214829::1734933252::0::1::::<><>::uid://nh16qjguq31i::::res://Models/Yippy Kawaii/FBX/Bunny.fbx<>uid://bf04ir2bsy2ye::::res://Models/Yippy Kawaii/Texture/Face/Face04.tres<>uid://dlyfj5big4a7f::::res://Models/Yippy Kawaii/Texture/Bunny/Bunny02.tres
+Cat.fbx::PackedScene::7268163795422919093::1734921839::1734921871::1::::<><>::uid://b4xujwb1502kf::::res://Models/Yippy Kawaii/Texture/Cat/Cat00.png
+Miniscene.fbx::PackedScene::3613405417198203880::1734921839::1734921871::1::::<><>::uid://bj0abb7phwvce::::res://Models/Yippy Kawaii/Texture/Miniscene.png
+::res://Models/Yippy Kawaii/FBX/Accessories/::1734921873
+BackpackA.fbx::PackedScene::1868572388241690794::1734921839::1734921873::1::::<><>::uid://nvc1k2ncap08::::res://Models/Yippy Kawaii/Texture/Accessories/BackpackA.png
+BagA.fbx::PackedScene::7547536188283869173::1734921839::1734921873::1::::<><>::uid://dbebv2ra74an4::::res://Models/Yippy Kawaii/Texture/Accessories/BagA.png
+CleaverA.fbx::PackedScene::6027461716946381047::1734921839::1734921873::1::::<><>::uid://dox3a8nai6u4q::::res://Models/Yippy Kawaii/Texture/Accessories/CleaverA.png
+FishmaceA.fbx::PackedScene::5565833993547949665::1734921839::1734921873::1::::<><>::
+GlassesA.fbx::PackedScene::8102911662632921971::1734921839::1734921873::1::::<><>::
+HatA.fbx::PackedScene::4549592263255404385::1734921839::1734921873::1::::<><>::uid://ciftm8ngrofke::::res://Models/Yippy Kawaii/Texture/Accessories/HatA.png
+MinihatA.fbx::PackedScene::2881542122303887898::1734921839::1734921872::1::::<><>::
+MustacheA.fbx::PackedScene::6792127448995194925::1734921839::1734921872::1::::<><>::uid://ybrm718q1g6e::::res://Models/Yippy Kawaii/Texture/Accessories/MustacheA.png
+SantabagA.fbx::PackedScene::8068140872792620366::1734921839::1734921872::1::::<><>::uid://1sfclo8jqk5s::::res://Models/Yippy Kawaii/Texture/Accessories/SantabagA.png
+SantahatA.fbx::PackedScene::4961098186428203762::1734921839::1734921872::1::::<><>::uid://dehlwtc8xahdg::::res://Models/Yippy Kawaii/Texture/Accessories/SantahatA.png
+ScarfA.fbx::PackedScene::8002759490086038356::1734921839::1734921872::1::::<><>::uid://caqssbfepxc28::::res://Models/Yippy Kawaii/Texture/Accessories/ScarfA.png
+Walking stickA.fbx::PackedScene::7177307548291308022::1734921839::1734921872::1::::<><>::
+::res://Models/Yippy Kawaii/Prefab/::1734921839
+::res://Models/Yippy Kawaii/Prefab/Accessories/::1734921839
+::res://Models/Yippy Kawaii/Prefab/Bear/::1734921839
+::res://Models/Yippy Kawaii/Prefab/Bunny/::1734921839
+::res://Models/Yippy Kawaii/Prefab/Cat/::1734921839
+::res://Models/Yippy Kawaii/Prefab/ExampleCustomize/::1734921839
+::res://Models/Yippy Kawaii/Prefab/Preview_scene/::1734921839
+::res://Models/Yippy Kawaii/Scripts/::1734921839
+::res://Models/Yippy Kawaii/Scripts/Camera Scripts/::1734921839
+::res://Models/Yippy Kawaii/Texture/::1734921874
+Miniscene.png::CompressedTexture2D::3069731608729658012::1734921839::1734921874::1::::<><>::
+::res://Models/Yippy Kawaii/Texture/Accessories/::1734921874
+BackpackA2.png::CompressedTexture2D::1578448711355220862::1734921839::1734921863::1::::<><>::
+BackpackA3.png::CompressedTexture2D::1621203011813273285::1734921839::1734921862::1::::<><>::
+BackpackA4.png::CompressedTexture2D::1438705623074726892::1734921839::1734921862::1::::<><>::
+BackpackA.png::CompressedTexture2D::955975332293308591::1734921839::1734921874::1::::<><>::
+BagA2.png::CompressedTexture2D::4540500505449357821::1734921839::1734921862::1::::<><>::
+BagA3.png::CompressedTexture2D::917195964327606270::1734921839::1734921862::1::::<><>::
+BagA4.png::CompressedTexture2D::7147537613482966219::1734921839::1734921861::1::::<><>::
+BagA.png::CompressedTexture2D::7237808068834375935::1734921839::1734921874::1::::<><>::
+CleaverA.png::CompressedTexture2D::8191088379517537778::1734921839::1734921874::1::::<><>::
+FishmaceA2.png::CompressedTexture2D::5996962228710165238::1734921839::1734921860::1::::<><>::
+FishmaceA3.png::CompressedTexture2D::1660705215247144410::1734921839::1734921860::1::::<><>::
+FishmaceA4.png::CompressedTexture2D::7889558933724782908::1734921839::1734921860::1::::<><>::
+FishmaceA.png::CompressedTexture2D::478132288804307634::1734921839::1734921860::1::::<><>::
+GlassesA2.png::CompressedTexture2D::6319607424746908319::1734921839::1734921859::1::::<><>::
+GlassesA3.png::CompressedTexture2D::5252376671429783957::1734921839::1734921858::1::::<><>::
+GlassesA4.png::CompressedTexture2D::3494806941997079496::1734921839::1734921859::1::::<><>::
+GlassesA.png::CompressedTexture2D::302433139590976367::1734921839::1734921859::1::::<><>::
+HatA.png::CompressedTexture2D::5345850811299080428::1734921839::1734921874::1::::<><>::
+MinihatA2.png::CompressedTexture2D::958054987181310471::1734921839::1734921859::1::::<><>::
+MinihatA3.png::CompressedTexture2D::2752862507309219254::1734921839::1734921857::1::::<><>::
+MinihatA4.png::CompressedTexture2D::7731209681848955450::1734921839::1734921858::1::::<><>::
+MinihatA.png::CompressedTexture2D::2141891230757395002::1734921839::1734921858::1::::<><>::
+MustacheA2.png::CompressedTexture2D::2498810687848008371::1734921839::1734921858::1::::<><>::
+MustacheA.png::CompressedTexture2D::1687651965904625322::1734921839::1734921874::1::::<><>::
+SantabagA2.png::CompressedTexture2D::7003355324625113753::1734921839::1734921867::1::::<><>::
+SantabagA.png::CompressedTexture2D::1862376491609710950::1734921839::1734921874::1::::<><>::
+SantahatA2.png::CompressedTexture2D::124986425503575353::1734921839::1734921867::1::::<><>::
+SantahatA.png::CompressedTexture2D::7455176246859564440::1734921839::1734921874::1::::<><>::
+ScarfA2.png::CompressedTexture2D::237809659992392828::1734921839::1734921868::1::::<><>::
+ScarfA3.png::CompressedTexture2D::6186529172176604420::1734921839::1734921867::1::::<><>::
+ScarfA.png::CompressedTexture2D::4806996522061309223::1734921839::1734921874::1::::<><>::
+Walking stickA2.png::CompressedTexture2D::8354242009846228737::1734921839::1734921868::1::::<><>::
+Walking stickA3.png::CompressedTexture2D::8064870487706278770::1734921839::1734921868::1::::<><>::
+Walking stickA4.png::CompressedTexture2D::3450031957477008019::1734921839::1734921869::1::::<><>::
+Walking stickA.png::CompressedTexture2D::1752335955722897393::1734921839::1734921869::1::::<><>::
+::res://Models/Yippy Kawaii/Texture/Bear/::1734928040
+Bear00.png::CompressedTexture2D::1918515668989729943::1734921839::1734922991::1::::<><>::
+Bear00.tres::StandardMaterial3D::3028107336434452166::1734922119::0::1::::<><>::
+Bear01.png::CompressedTexture2D::7099416117466299126::1734921839::1734922185::1::::<><>::
+Bear01.tres::StandardMaterial3D::7564969107155018889::1734922181::0::1::::<><>::uid://2llw4ysiwfid::::res://Models/Yippy Kawaii/Texture/Bear/Bear00.png
+Bear02.png::CompressedTexture2D::8732751338111927900::1734921839::1734922200::1::::<><>::
+Bear02.tres::StandardMaterial3D::7516826814826335833::1734922195::0::1::::<><>::uid://c8fal1hyh6ptm::::res://Models/Yippy Kawaii/Texture/Bear/Bear01.png
+Bear03.png::CompressedTexture2D::5522694580708746324::1734921839::1734922254::1::::<><>::
+Bear03.tres::StandardMaterial3D::4239599145732029904::1734922251::0::1::::<><>::uid://dwoheykgyynbg::::res://Models/Yippy Kawaii/Texture/Bear/Bear02.png
+Bear04.png::CompressedTexture2D::1367744253832040307::1734921839::1734922263::1::::<><>::
+Bear04.tres::StandardMaterial3D::8661189216338350479::1734922259::0::1::::<><>::uid://ckxh8cvvgv8g3::::res://Models/Yippy Kawaii/Texture/Bear/Bear03.png
+Bear05.png::CompressedTexture2D::2018688583544056223::1734921839::1734922274::1::::<><>::
+Bear05.tres::StandardMaterial3D::7954829486006332588::1734922271::0::1::::<><>::uid://tqssvr2egp6j::::res://Models/Yippy Kawaii/Texture/Bear/Bear04.png
+Bear06.png::CompressedTexture2D::1075867837452282381::1734921839::1734922298::1::::<><>::
+Bear06.tres::StandardMaterial3D::8429771986116697653::1734922294::0::1::::<><>::uid://304rg8jkc7ap::::res://Models/Yippy Kawaii/Texture/Bear/Bear05.png
+Bear07.png::CompressedTexture2D::8895766984772057829::1734921839::1734922308::1::::<><>::
+Bear07.tres::StandardMaterial3D::4316849318493866663::1734922315::0::1::::<><>::uid://dy0f8n3g1jcjd::::res://Models/Yippy Kawaii/Texture/Bear/Bear07.png
+Bear08.png::CompressedTexture2D::6125568161868772745::1734921839::1734922348::1::::<><>::
+Bear08.tres::StandardMaterial3D::6544347617459608710::1734928040::0::1::::<><>::uid://dy0f8n3g1jcjd::::res://Models/Yippy Kawaii/Texture/Bear/Bear07.png
+Bear09.png::CompressedTexture2D::5290641491101036875::1734921839::1734922359::1::::<><>::
+Bear09.tres::StandardMaterial3D::6472006663704631866::1734922356::0::1::::<><>::uid://ctjjhh30uphif::::res://Models/Yippy Kawaii/Texture/Bear/Bear08.png
+Bear10.png::CompressedTexture2D::65556893404274217::1734921839::1734922368::1::::<><>::
+Bear10.tres::StandardMaterial3D::4783921696140304429::1734922364::0::1::::<><>::uid://chm3de2e13hhb::::res://Models/Yippy Kawaii/Texture/Bear/Bear09.png
+Bear11.png::CompressedTexture2D::5834487538310565191::1734921839::1734922376::1::::<><>::
+Bear11.tres::StandardMaterial3D::2812198937945342446::1734922372::0::1::::<><>::uid://60yhund86kb::::res://Models/Yippy Kawaii/Texture/Bear/Bear10.png
+Bear12.png::CompressedTexture2D::5647526255043747518::1734921839::1734922383::1::::<><>::
+Bear12.tres::StandardMaterial3D::484678832068362987::1734922379::0::1::::<><>::uid://cpejfl4tkkft4::::res://Models/Yippy Kawaii/Texture/Bear/Bear11.png
+Bear13.png::CompressedTexture2D::6917495998952321456::1734921839::1734922390::1::::<><>::
+Bear13.tres::StandardMaterial3D::8768134165121803411::1734922387::0::1::::<><>::uid://cmpx6x0m7k5m5::::res://Models/Yippy Kawaii/Texture/Bear/Bear12.png
+Bear14.png::CompressedTexture2D::8810595778984944422::1734921839::1734922397::1::::<><>::
+Bear14.tres::StandardMaterial3D::3006406562122263748::1734922640::0::1::::<><>::uid://dxr6hwmwu3t1g::::res://Models/Yippy Kawaii/Texture/Bear/Bear14.png
+::res://Models/Yippy Kawaii/Texture/Bunny/::1734928040
+Bunny00.png::CompressedTexture2D::2774476791368519944::1734921839::1734923174::1::::<><>::
+Bunny00.tres::StandardMaterial3D::9001948878167000142::1734923168::0::1::::<><>::
+Bunny01.png::CompressedTexture2D::7357591228911868205::1734921839::1734923203::1::::<><>::
+Bunny01.tres::StandardMaterial3D::6725272054956527460::1734923198::0::1::::<><>::uid://bfr8hy4v0im6k::::res://Models/Yippy Kawaii/Texture/Bunny/Bunny00.png
+Bunny02.png::CompressedTexture2D::3418340655020660055::1734921839::1734923215::1::::<><>::
+Bunny02.tres::StandardMaterial3D::7981205631922021453::1734928040::0::1::::<><>::uid://box4toi73p3bn::::res://Models/Yippy Kawaii/Texture/Bunny/Bunny02.png
+Bunny03.png::CompressedTexture2D::2350558792717821016::1734921839::1734921848::1::::<><>::
+Bunny04.png::CompressedTexture2D::6990761458479828731::1734921839::1734921848::1::::<><>::
+Bunny05.png::CompressedTexture2D::8273232955221380342::1734921839::1734921848::1::::<><>::
+Bunny06.png::CompressedTexture2D::2158804095668382977::1734921839::1734921848::1::::<><>::
+Bunny07.png::CompressedTexture2D::5747893888438966606::1734921839::1734921850::1::::<><>::
+Bunny08.png::CompressedTexture2D::3216371022619485990::1734921839::1734921849::1::::<><>::
+Bunny09.png::CompressedTexture2D::7544920253357260716::1734921839::1734921849::1::::<><>::
+Bunny10.png::CompressedTexture2D::6733339368334549058::1734921839::1734921850::1::::<><>::
+Bunny11.png::CompressedTexture2D::7115998114043846040::1734921839::1734921850::1::::<><>::
+Bunny12.png::CompressedTexture2D::4260537818160808587::1734921839::1734921850::1::::<><>::
+Bunny13.png::CompressedTexture2D::631460229273423138::1734921839::1734921851::1::::<><>::
+Bunny14.png::CompressedTexture2D::8673419084523049003::1734921839::1734921851::1::::<><>::
+::res://Models/Yippy Kawaii/Texture/Cat/::1734921874
+Cat00.png::CompressedTexture2D::4470609407820821229::1734921839::1734921874::1::::<><>::
+Cat01.png::CompressedTexture2D::1293539269743764411::1734921839::1734921852::1::::<><>::
+Cat02.png::CompressedTexture2D::8821046892626443689::1734921839::1734921852::1::::<><>::
+Cat03.png::CompressedTexture2D::3107034882806377656::1734921839::1734921852::1::::<><>::
+Cat04.png::CompressedTexture2D::3911424398155693174::1734921839::1734921853::1::::<><>::
+Cat05.png::CompressedTexture2D::263961908564416245::1734921839::1734921853::1::::<><>::
+Cat06.png::CompressedTexture2D::8468266035139755621::1734921839::1734921853::1::::<><>::
+Cat07.png::CompressedTexture2D::7959298366207860659::1734921839::1734921842::1::::<><>::
+Cat08.png::CompressedTexture2D::6671956641176940859::1734921839::1734921842::1::::<><>::
+Cat09.png::CompressedTexture2D::6008456505628589929::1734921839::1734921842::1::::<><>::
+Cat10.png::CompressedTexture2D::1125545920417196718::1734921839::1734921842::1::::<><>::
+Cat11.png::CompressedTexture2D::850666849949801705::1734921839::1734921842::1::::<><>::
+Cat12.png::CompressedTexture2D::3576917571543205237::1734921839::1734921842::1::::<><>::
+Cat13.png::CompressedTexture2D::4666282662960504449::1734921839::1734921843::1::::<><>::
+Cat14.png::CompressedTexture2D::832506795781332080::1734921839::1734921844::1::::<><>::
+::res://Models/Yippy Kawaii/Texture/Face/::1734928040
+Face01.png::CompressedTexture2D::1022249891883600716::1734921839::1734922441::1::::<><>::
+Face01.tres::StandardMaterial3D::793617161571971230::1734922435::0::1::::<><>::
+Face02.png::CompressedTexture2D::3436295220283413795::1734921839::1734922498::1::::<><>::
+Face02.tres::StandardMaterial3D::1267163118036561172::1734922489::0::1::::<><>::uid://otgkofo565sy::::res://Models/Yippy Kawaii/Texture/Face/Face01.png
+Face03.png::CompressedTexture2D::2872902559401812454::1734921839::1734922515::1::::<><>::
+Face03.tres::StandardMaterial3D::5641201727857254668::1734922510::0::1::::<><>::uid://bo7tjr7ef3tbf::::res://Models/Yippy Kawaii/Texture/Face/Face02.png
+Face04.png::CompressedTexture2D::662241631995243892::1734921839::1734922527::1::::<><>::
+Face04.tres::StandardMaterial3D::2790750359553360480::1734928040::0::1::::<><>::uid://bg6wjx7bb21dq::::res://Models/Yippy Kawaii/Texture/Face/Face03.png
+Face05.png::CompressedTexture2D::157157915479840021::1734921839::1734922536::1::::<><>::
+Face05.tres::StandardMaterial3D::7291984599189698500::1734922532::0::1::::<><>::uid://jo2a1raq7cx5::::res://Models/Yippy Kawaii/Texture/Face/Face04.png
+Face06.png::CompressedTexture2D::3709565514007574910::1734921839::1734922546::1::::<><>::
+Face06.tres::StandardMaterial3D::731598911813572392::1734922542::0::1::::<><>::uid://ciemrkhhy1ev::::res://Models/Yippy Kawaii/Texture/Face/Face05.png
+Face07.png::CompressedTexture2D::8834310733224137539::1734921839::1734922569::1::::<><>::
+Face07.tres::StandardMaterial3D::4585156605250108071::1734922566::0::1::::<><>::uid://bs37acmh85jo5::::res://Models/Yippy Kawaii/Texture/Face/Face06.png
+Face08.png::CompressedTexture2D::8144848742996056594::1734921839::1734922582::1::::<><>::
+Face08.tres::StandardMaterial3D::6048695235665547631::1734922574::0::1::::<><>::uid://dx4n2o78aydvn::::res://Models/Yippy Kawaii/Texture/Face/Face07.png
+Face09.png::CompressedTexture2D::2305846892590739287::1734921839::1734922601::1::::<><>::
+Face09.tres::StandardMaterial3D::7617072769713376542::1734922640::0::1::::<><>::uid://hbersa5ri8w2::::res://Models/Yippy Kawaii/Texture/Face/Face10.png
+Face10.png::CompressedTexture2D::493660456494171931::1734921839::1734922620::1::::<><>::
+Face10.tres::StandardMaterial3D::1329996043032696588::1734922640::0::1::::<><>::uid://hbersa5ri8w2::::res://Models/Yippy Kawaii/Texture/Face/Face10.png
+Face11.png::CompressedTexture2D::1095614320183214208::1734921839::1734921846::1::::<><>::
+Face12.png::CompressedTexture2D::6498172695006018346::1734921839::1734921846::1::::<><>::
+Face13.png::CompressedTexture2D::2832475085571979926::1734921839::1734921846::1::::<><>::
+Face14.png::CompressedTexture2D::7685765903216947391::1734921839::1734921846::1::::<><>::
+Face15.png::CompressedTexture2D::8050646531158944792::1734921839::1734921855::1::::<><>::
+Face16.png::CompressedTexture2D::6275811707038455925::1734921839::1734921855::1::::<><>::
+Face17.png::CompressedTexture2D::5704350852312240949::1734921839::1734921855::1::::<><>::
+Face18.png::CompressedTexture2D::8429873415902413182::1734921839::1734921855::1::::<><>::
+Face19.png::CompressedTexture2D::5514705432387678678::1734921839::1734921856::1::::<><>::
+Face20.png::CompressedTexture2D::4177819930033270257::1734921839::1734921856::1::::<><>::
+Face21.png::CompressedTexture2D::8308511220181999274::1734921839::1734921856::1::::<><>::
+Face22.png::CompressedTexture2D::3017767824593465374::1734921839::1734921855::1::::<><>::
+Face23.png::CompressedTexture2D::4331733302801384962::1734921839::1734921855::1::::<><>::
+Face24.png::CompressedTexture2D::6205299053714507010::1734921839::1734921856::1::::<><>::
+Face25.png::CompressedTexture2D::7312625325236442668::1734921839::1734921857::1::::<><>::
+Face26.png::CompressedTexture2D::45647791972823724::1734921839::1734921857::1::::<><>::
+Face27.png::CompressedTexture2D::5511390948704478840::1734921839::1734921857::1::::<><>::
+Face28.png::CompressedTexture2D::443996254169413503::1734921839::1734921857::1::::<><>::
+::res://Models/Yippy Kawaii/Texture/Normal _Map/::1734921853
+Bear_N.png::CompressedTexture2D::2768334727297313355::1734921839::1734921853::1::::<><>::
+Bunny_N.png::CompressedTexture2D::3477195350431233460::1734921839::1734921853::1::::<><>::
+Cat_N.png::CompressedTexture2D::4144067446124317181::1734921839::1734921853::1::::<><>::
+::res://Models/Yippy Kawaii/Texture/Normal _Map/Accessories/::1734921857
+Backpack_N.png::CompressedTexture2D::5904850859536905676::1734921839::1734921856::1::::<><>::
+Bag_N.png::CompressedTexture2D::2540908318381922964::1734921839::1734921856::1::::<><>::
+Cleaver_N.png::CompressedTexture2D::6175783244638461087::1734921839::1734921856::1::::<><>::
+Fishmace_N.png::CompressedTexture2D::7738381804707891519::1734921839::1734921856::1::::<><>::
+Glasses_N.png::CompressedTexture2D::5935287420798158377::1734921839::1734921857::1::::<><>::
+Hat_N.png::CompressedTexture2D::8662942621539851764::1734921839::1734921857::1::::<><>::
+Minihat_N.png::CompressedTexture2D::4341470421879768033::1734921839::1734921857::1::::<><>::
+Miniscene_N.png::CompressedTexture2D::2276430120482803350::1734921839::1734921857::1::::<><>::
+Mustache_N.png::CompressedTexture2D::6500800900055129849::1734921839::1734921857::1::::<><>::
+Santabag_N.png::CompressedTexture2D::4700077094515758580::1734921839::1734921852::1::::<><>::
+Santahat_N.png::CompressedTexture2D::4550386129191161483::1734921839::1734921852::1::::<><>::
+Scarf_N.png::CompressedTexture2D::5277849727753067220::1734921839::1734921852::1::::<><>::
+Walking_stick_N.png::CompressedTexture2D::6330655396618371421::1734921839::1734921852::1::::<><>::
+::res://Models/Yippy Kawaii/UI/::1734921922
+animation.png::CompressedTexture2D::2063497922462368438::1734921838::1734921853::1::::<><>::
+anim_button1.png::CompressedTexture2D::4048390075514167966::1734921838::1734921853::1::::<><>::
+bearbg.png::CompressedTexture2D::2531977494566714988::1734921838::1734921853::1::::<><>::
+BearBt.png::CompressedTexture2D::720687858480949783::1734921838::1734921853::1::::<><>::
+Bear_icon.png::CompressedTexture2D::7507594214799019759::1734921838::1734921853::1::::<><>::
+BunnyBt.png::CompressedTexture2D::3663022422325041901::1734921838::1734921853::1::::<><>::
+CatBt.png::CompressedTexture2D::9018403874351451232::1734921838::1734921853::1::::<><>::
+ChestAccessories.png::CompressedTexture2D::6252127004979706207::1734921838::1734921853::1::::<><>::
+Floor_creation.png::CompressedTexture2D::1338680100688893898::1734921838::1734921853::1::::<><>::
+frame.png::CompressedTexture2D::1766979139174525822::1734921838::1734921853::1::::<><>::
+HeadAccessories.png::CompressedTexture2D::1945571012816189449::1734921838::1734921853::1::::<><>::
+Snowflake.png::CompressedTexture2D::1303629633502744046::1734921838::1734921853::1::::<><>::
+::res://Prefabs/::1734933593
 camera.tscn::PackedScene::5158924361478454569::1734902561::0::1::::<><>::res://Scripts/FollowCamera.gd
-character.tscn::PackedScene::6385998169661608071::1734902561::0::1::::<><>::res://Scripts/NPC.gd<>res://Scripts/InteractObject.gd
+character.tscn::PackedScene::6385998169661608071::1734933593::0::1::::<><>::res://Scripts/NPC.gd<>uid://bkwh2nb54b6v7::::res://Models/Yippy Kawaii/FBX/bear.tscn<>res://Scripts/InteractObject.gd
 pickup.tscn::PackedScene::2504436734987634717::1734865350::0::1::::<><>::res://Scripts/Pickup.gd<>res://Scripts/InteractObject.gd
-player.tscn::PackedScene::3890995264120754473::1734898847::0::1::::<><>::res://Scripts/PlayerController.gd
+player.tscn::PackedScene::3890995264120754473::1734933252::0::1::::<><>::res://Scripts/PlayerController.gd<>uid://daqigiapwq35b::::res://Models/Yippy Kawaii/FBX/bunny.tscn
 ::res://Prefabs/UI/::1734667620
 options_panel.tscn::PackedScene::6704296224948302474::1734522773::0::1::::<><>::res://Scenes/Options Panel.gd<>res://Fonts/font1.tres
 pause_menu.tscn::PackedScene::6898631142279607125::1734501506::0::1::::<><>::res://Scripts/Pause Menu/PauseMenu.gd<>res://Fonts/font1.tres<>uid://b3lrceixb0548::::res://Fonts/Chewy-Regular.ttf<>res://Scripts/Main Menu/StartMenuButtonGroup.gd<>uid://chi28l03dgsy2::::res://Themes/MenuTextStandard.tres<>res://Scripts/Main Menu/MenuText.gd<>uid://d2n2o7gyj2klb::::res://Themes/MenuTextHighlighted.tres
-::res://Scenes/::1734902650
-Game.tscn::PackedScene::3107870423960825618::1734902561::0::1::::<><>::res://Scripts/Controllers/Game Controller.gd<>res://Scripts/NotificationSystem.gd<>uid://deiwbfqvy65s3::::res://Themes/Narritive.tres<>res://Scripts/Controllers/ConversationController.gd<>uid://c5j0pg0krwk4t::::res://Prefabs/UI/pause_menu.tscn<>uid://bvo3eg11jru1n::::res://Prefabs/player.tscn<>res://Shaders/sea.gdshader<>uid://bbxfybo0g183r::::res://Prefabs/pickup.tscn<>uid://cdopu5ugea4cm::::res://Textures/packed_albedo_height.png<>uid://cfray3p1qt7l2::::res://Prefabs/camera.tscn<>res://Scripts/ItemSpawnArea.gd<>res://Scripts/CameraZone.gd<>uid://cw8opsd74al7l::::res://Prefabs/character.tscn
-Main Menu.tscn::PackedScene::7772909248775964131::1734902650::0::1::::<><>::res://Scripts/Main Menu/Main Menu Controller.gd<>res://Fonts/font1.tres<>uid://c2ru1q5gvx8uw::::res://Prefabs/UI/options_panel.tscn<>uid://b3lrceixb0548::::res://Fonts/Chewy-Regular.ttf<>res://Scripts/Main Menu/StartMenuButtonGroup.gd<>uid://d2n2o7gyj2klb::::res://Themes/MenuTextHighlighted.tres<>res://Scripts/Main Menu/MenuText.gd<>uid://chi28l03dgsy2::::res://Themes/MenuTextStandard.tres
+::res://Scenes/::1734933593
+Game.tscn::PackedScene::3107870423960825618::1734933592::0::1::::<><>::res://Scripts/Controllers/Game Controller.gd<>res://Scripts/NotificationSystem.gd<>uid://dbrmxigkqokgw::::res://Sprites/Icons/Exclamation mark.png<>uid://deiwbfqvy65s3::::res://Themes/Narritive.tres<>res://Scripts/Controllers/ConversationController.gd<>uid://c5j0pg0krwk4t::::res://Prefabs/UI/pause_menu.tscn<>uid://bvo3eg11jru1n::::res://Prefabs/player.tscn<>res://Shaders/sea.gdshader<>uid://bbxfybo0g183r::::res://Prefabs/pickup.tscn<>uid://cdopu5ugea4cm::::res://Textures/packed_albedo_height.png<>uid://cfray3p1qt7l2::::res://Prefabs/camera.tscn<>res://Scripts/ItemSpawnArea.gd<>res://Scripts/CameraZone.gd<>uid://cw8opsd74al7l::::res://Prefabs/character.tscn<>uid://duo0jic738cwv::::res://Data/Dialogue/Test Dialogue.tres
+Main Menu.tscn::PackedScene::7772909248775964131::1734933593::0::1::::<><>::res://Scripts/Main Menu/Main Menu Controller.gd<>res://Fonts/font1.tres<>uid://c2ru1q5gvx8uw::::res://Prefabs/UI/options_panel.tscn<>uid://b3lrceixb0548::::res://Fonts/Chewy-Regular.ttf<>res://Scripts/Main Menu/StartMenuButtonGroup.gd<>uid://d2n2o7gyj2klb::::res://Themes/MenuTextHighlighted.tres<>res://Scripts/Main Menu/MenuText.gd<>uid://chi28l03dgsy2::::res://Themes/MenuTextStandard.tres
 Options Panel.gd::GDScript::-1::1734493913::0::1::::<>Panel<>::
-Splash.tscn::PackedScene::5597916559264501703::1734902650::0::1::::<><>::uid://b44mhbi487fyf::::res://Sprites/Splash/spash_logo.jpg<>res://Scripts/Splash Screen/SplashScreen.gd
-::res://Scripts/::1734902560
+Splash.tscn::PackedScene::5597916559264501703::1734933593::0::1::::<><>::uid://b44mhbi487fyf::::res://Sprites/Splash/spash_logo.jpg<>res://Scripts/Splash Screen/SplashScreen.gd
+::res://Scripts/::1734933592
 CameraZone.gd::GDScript::-1::1734726969::0::1::::CameraZone<>Area3D<>::
 CharacterInteract.gd::GDScript::-1::1734866468::0::1::::CharacterInteract<>InteractObject<>::
-FollowCamera.gd::GDScript::-1::1734902560::0::1::::FollowCamera<>Node3D<>::
+FollowCamera.gd::GDScript::-1::1734913536::0::1::::FollowCamera<>Node3D<>::
 InteractObject.gd::GDScript::-1::1734866954::0::1::::InteractObject<>Area3D<>::
 ItemSpawnArea.gd::GDScript::-1::1734858323::0::1::::ItemSpawnArea<>Node3D<>::
 NotificationSystem.gd::GDScript::-1::1734899630::0::1::::<>Control<>::
-NPC.gd::GDScript::-1::1734899872::0::1::::<>Node<>::
+NPC.gd::GDScript::-1::1734932708::0::1::::NPC<>Node<>::
 Pickup.gd::GDScript::-1::1734866970::0::1::::Pickup<>Node3D<>::
-PlayerController.gd::GDScript::-1::1734902650::0::1::::Player<>CharacterBody3D<>::
+PlayerController.gd::GDScript::-1::1734933592::0::1::::Player<>CharacterBody3D<>::
 PlayerNavController.gd::GDScript::-1::1734851741::0::1::::PlayerNav<>CharacterBody3D<>::
-::res://Scripts/Controllers/::1734902315
+::res://Scripts/Controllers/::1734914035
 AudioManager.gd::GDScript::-1::1734500176::0::1::::<>Node<>::
-ConversationController.gd::GDScript::-1::1734902315::0::1::::ConversationController<>Control<>::
-EventBus.gd::GDScript::-1::1734866150::0::1::::<>Node<>::
+ConversationController.gd::GDScript::-1::1734914035::0::1::::ConversationController<>Control<>::
+EventBus.gd::GDScript::-1::1734910517::0::1::::<>Node<>::
 FlowController.gd::GDScript::-1::1734639855::0::1::::<>Node<>::
 Game Controller.gd::GDScript::-1::1734602413::0::1::::<>Node<>::
 SaveController.gd::GDScript::-1::1734498619::0::1::::<>Node<>::
@@ -146,10 +388,12 @@ StartMenuButtonGroup.gd::GDScript::-1::1734520302::0::1::::<>VBoxContainer<>::
 PauseMenu.gd::GDScript::-1::1734500589::0::1::::<>Control<>::
 ::res://Scripts/Splash Screen/::1734667857
 SplashScreen.gd::GDScript::-1::1734432401::0::1::::<>Node<>::
-::res://Shaders/::1734902561
-sea.gdshader::Shader::-1::1734902650::0::1::::<><>::
-::res://Sprites/::1734431426
+::res://Shaders/::1734933593
+sea.gdshader::Shader::-1::1734933593::0::1::::<><>::
+::res://Sprites/::1734914224
 icon.svg::CompressedTexture2D::3986379381717100537::1734430980::1734431009::1::::<><>::
+::res://Sprites/Icons/::1734914243
+Exclamation mark.png::CompressedTexture2D::7265315423641287226::1734914230::1734914243::1::::<><>::
 ::res://Sprites/Splash/::1734431443
 spash_logo.jpg::CompressedTexture2D::4482505274779081721::1734431432::1734431443::1::::<><>::
 ::res://Textures/::1734859641

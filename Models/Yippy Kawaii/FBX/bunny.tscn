@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://daqigiapwq35b"]
+
+[ext_resource type="PackedScene" uid="uid://nh16qjguq31i" path="res://Models/Yippy Kawaii/FBX/Bunny.fbx" id="1_3mcbx"]
+[ext_resource type="Material" uid="uid://bf04ir2bsy2ye" path="res://Models/Yippy Kawaii/Texture/Face/Face04.tres" id="2_ui0fa"]
+[ext_resource type="Material" uid="uid://dlyfj5big4a7f" path="res://Models/Yippy Kawaii/Texture/Bunny/Bunny02.tres" id="3_u5pam"]
+
+[node name="Bunny" instance=ExtResource("1_3mcbx")]
+
+[node name="Skeleton3D" parent="." index="0"]
+bones/1/rotation = Quaternion(0.119607, 0.992686, -0.00682204, 0.0149044)
+bones/49/rotation = Quaternion(0.706868, -0.0205646, -0.706742, -0.0207534)
+bones/76/rotation = Quaternion(0.992686, -0.119607, -0.0149044, -0.00682204)
+
+[node name="Face01" parent="Skeleton3D" index="0"]
+material_override = ExtResource("2_ui0fa")
+
+[node name="Bunny" parent="Skeleton3D" index="1"]
+material_override = ExtResource("3_u5pam")
+
+[node name="FKIKSpine_M" parent="Group/Main/MotionSystem/FKIKSystem/FKIKParentConstraintSpine_M" index="0"]
+transform = Transform3D(-1.05598e-07, 0.988834, 0.149024, 2.2502e-08, -0.149024, 0.988834, 1, 1.07773e-07, -6.51404e-09, 0.12379, -8.88178e-18, 0.0927581)

@@ -1,22 +1,18 @@
 [gd_scene load_steps=6 format=3 uid="uid://cw8opsd74al7l"]
 
 [ext_resource type="Script" path="res://Scripts/NPC.gd" id="1_5c7xq"]
+[ext_resource type="PackedScene" uid="uid://bkwh2nb54b6v7" path="res://Models/Yippy Kawaii/FBX/bear.tscn" id="2_a0mtl"]
 [ext_resource type="Script" path="res://Scripts/InteractObject.gd" id="2_baxsr"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_7i6g6"]
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_pvc4o"]
-radius = 2.14362
+radius = 3.5
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ijacs"]
 
 [node name="Character" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5.79202, 54.212)
 script = ExtResource("1_5c7xq")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.11783, 0)
-mesh = SubResource("CapsuleMesh_7i6g6")
+[node name="Mesh" parent="." instance=ExtResource("2_a0mtl")]
 
 [node name="Area3D" type="Area3D" parent="."]
 unique_name_in_owner = true

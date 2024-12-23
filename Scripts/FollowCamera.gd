@@ -68,7 +68,7 @@ func _physics_process(delta):
 		
 		position = position.move_toward(player.position,distance * 0.2 * delta)
 
-func _on_start_conversation():
+func _on_start_conversation(_node):
 	_transition(Vector3(0,3,5),60,1,Tween.TRANS_SINE)
 	
 func _on_finish_conversation():

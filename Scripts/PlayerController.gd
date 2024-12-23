@@ -1,14 +1,19 @@
 class_name Player extends CharacterBody3D
 
+static var Instance : Player
 @export var speed : float = 7.0
 @export var gravity : float = 9.8
 
 @onready var camera_pivot: FollowCamera = %"Camera"
 @onready var notification_marker: Marker3D = %NotificationMarker
+@onready var mesh: Node3D = $Mesh
 
 var enabled : bool = true
 var current_interact_object : InteractObject
 
+func _init() -> void:
+	Instance = self
+	
 func _ready() -> void:
 	EventBus.enter_interact_object.connect(_on_enter_interact_object)
 	EventBus.exit_interact_object.connect(_on_exit_interact_object)
@@ -28,6 +33,10 @@ func _move(_delta : float):
 		velocity.x = input.x * speed
 		velocity.z = input.y * speed
 
+		if velocity.length() > 0:
+			mesh.rotation.y = lerp_angle(mesh.rotation.y, atan2(velocity.x, velocity.z), 0.1)
+
+	#mesh.rotate_y(_delta)
 	if !is_on_floor():
 		velocity.y += -gravity 
 
@@ -46,9 +55,16 @@ func _on_exit_interact_object(interact_object:InteractObject):
 		return
 	current_interact_object = null
 
-func _on_start_conversation():
+func _on_start_conversation(_node):
 	velocity = Vector3.ZERO
 	enabled = false
+	mesh.rotation_degrees.y = wrapf(mesh.rotation_degrees.y,0,360)
+	var turn_tween : Tween = get_tree().create_tween()
+	var direction = (current_interact_object.global_transform.origin - global_transform.origin).normalized()
+	var target_rotation_y = atan2(direction.x, direction.z)
+	turn_tween.tween_property(mesh, "rotation_degrees", Vector3(0, rad_to_deg(target_rotation_y), 0), 0.5)
+	turn_tween.set_ease(Tween.EASE_OUT_IN)
+	turn_tween.set_trans(Tween.TRANS_SINE)
 	
 func _on_finish_conversation():
 	enabled = true

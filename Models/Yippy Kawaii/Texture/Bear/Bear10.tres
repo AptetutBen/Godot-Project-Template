@@ -1,0 +1,6 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cafmqyb22cdb6"]
+
+[ext_resource type="Texture2D" uid="uid://chm3de2e13hhb" path="res://Models/Yippy Kawaii/Texture/Bear/Bear09.png" id="1_m64we"]
+
+[resource]
+albedo_texture = ExtResource("1_m64we")
