@@ -1,3 +1,11 @@
+TextEdit
+Label
+HBoxContainer
+GraphNode
+FileDialog
+VBoxContainer
+Control
+DialogueNode
 AnimationTree
 TextureRect
 CollisionShape3D
@@ -5,10 +13,3 @@ StaticBody3D
 Area3D
 MeshInstance3D
 Node3D
-CSGBox3D
-CSGCombiner3D
-Marker3D
-CollisionPolygon3D
-NavigationObstacle3D
-NavigationAgent3D
-CSGCylinder3D

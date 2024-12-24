@@ -62,18 +62,23 @@ importer.tscn::PackedScene::3158990868267418980::1734180884::0::1::::<><>::res:/
 ::res://addons/terrain_3d/utils/::1734815444
 terrain_3d_objects.gd::GDScript::-1::1734180884::0::1::::Terrain3DObjects<>Node3D<>::
 transform_changed_notifier.gd::GDScript::-1::1734180884::0::1::::<>Node3D<>::
-::res://addons/weekend Dialogue/::1734555814
-::res://addons/weekend Dialogue/Prefabs/::1734949059
-dialogue_node.tscn::PackedScene::6188390080551873385::1734949059::0::1::::<><>::res://addons/weekend Dialogue/Scripts/DialogueNode.gd
-::res://addons/weekend Dialogue/Scenes/::1734949059
-Dialogue Graph.tscn::PackedScene::4440426548288426286::1734949059::0::1::::<><>::res://addons/weekend Dialogue/Scripts/weekendDialogueEditor.gd<>uid://cufx4633uoge0::::res://addons/weekend Dialogue/Prefabs/dialogue_node.tscn
-::res://addons/weekend Dialogue/Scripts/::1734910517
+::res://addons/weekend Dialogue/::1735014502
+::res://addons/weekend Dialogue/Prefabs/::1735015018
+dialoge_option.tscn::PackedScene::7211068270781592457::1735015018::0::1::::<><>::res://addons/weekend Dialogue/Scripts/DialogeOptionUI.gd
+dialogue_node.tscn::PackedScene::6188390080551873385::1735015304::0::1::::<><>::res://addons/weekend Dialogue/Scripts/DialogueNode.gd<>uid://da0digpeup2bd::::res://addons/weekend Dialogue/Prefabs/dialoge_option.tscn
+::res://addons/weekend Dialogue/Scenes/::1735015018
+Dialogue Graph.tscn::PackedScene::4440426548288426286::1735015304::0::1::::<><>::res://addons/weekend Dialogue/Scripts/weekendDialogueEditor.gd<>uid://cufx4633uoge0::::res://addons/weekend Dialogue/Prefabs/dialogue_node.tscn<>uid://duo0jic738cwv::::res://Data/Dialogue/Test Dialogue.tres<>res://addons/weekend Dialogue/Scripts/TextEditorDialogueNode.gd
+::res://addons/weekend Dialogue/Scripts/::1735014461
+DialogeOptionUI.gd::GDScript::-1::1734994124::0::1::::DialogueOptionUI<>Control<>::
 DialogueData.gd::GDScript::-1::1734910517::0::1::::DialogueData<>Resource<>::
-DialogueNode.gd::GDScript::-1::1734600246::0::1::::<>GraphNode<>::
-DialogueNodeData.gd::GDScript::-1::1734910415::0::1::::DialogueNodeData<>Resource<>::
+DialogueNode.gd::GDScript::-1::1735013700::0::1::::DialogueNode<>GraphNode<>::
+DialogueNodeData.gd::GDScript::-1::1734987960::0::1::::DialogueNodeData<>Resource<>::
 DialogueOption.gd::GDScript::-1::1734909247::0::1::::DialogueOption<>Resource<>::
 StartDialogueNodeData.gd::GDScript::-1::1734908434::0::1::::StartDialogueNodeData<>Resource<>::
-weekendDialogueEditor.gd::GDScript::-1::1734568620::0::1::::<>Control<>::
+TextEditorDialogueNode.gd::GDScript::-1::1735014461::0::1::::DialogueTextEditor<>GraphNode<>::
+weekendDialogueEditor.gd::GDScript::-1::1735011508::0::1::::<>Control<>::
+::res://addons/weekend Dialogue/Themes/::1735014526
+Dialogue Editor.tres::Theme::1128098500138560980::1735014526::0::1::::<><>::
 ::res://Animations/::1734935616
 ::res://Animations/Characters/::1734948631
 character_dash.res::Animation::3557052302254417496::1734939500::0::1::::<><>::
@@ -92,25 +97,31 @@ rollover2.ogg::AudioStreamOggVorbis::736167784220709710::1734430980::1734431009:
 switch2.ogg::AudioStreamOggVorbis::5539464575622984594::1734430980::1734431009::1::::<><>::
 switch3.ogg::AudioStreamOggVorbis::5145434842828123623::1734430980::1734431009::1::::<><>::
 ::res://Data/::1734907058
-::res://Data/Dialogue/::1734928040
-Test Dialogue.tres::Resource/DialogueData::8593474634130154449::1734928040::0::1::::<><>::res://addons/weekend Dialogue/Scripts/DialogueData.gd<>res://addons/weekend Dialogue/Scripts/DialogueNodeData.gd<>res://addons/weekend Dialogue/Scripts/StartDialogueNodeData.gd<>res://addons/weekend Dialogue/Scripts/DialogueOption.gd
-::res://Data/Terrain/::1734922685
-terrain3d-01-01.res::Terrain3DRegion::4977133703188151713::1734903659::0::1::::<><>::
+::res://Data/Dialogue/::1735014852
+Test Dialogue.tres::Resource/DialogueData::8593474634130154449::1735014852::0::1::::<><>::res://addons/weekend Dialogue/Scripts/DialogueData.gd<>res://addons/weekend Dialogue/Scripts/DialogueNodeData.gd<>res://addons/weekend Dialogue/Scripts/StartDialogueNodeData.gd<>res://addons/weekend Dialogue/Scripts/DialogueOption.gd
+::res://Data/Terrain/::1734990510
+terrain3d-01-01.res::Terrain3DRegion::4977133703188151713::1734990509::0::1::::<><>::
 terrain3d-01-02.res::Terrain3DRegion::1086211638704479434::1734864700::0::1::::<><>::
-terrain3d-01_00.res::Terrain3DRegion::5282795077711664046::1734922685::0::1::::<><>::
-terrain3d-01_01.res::Terrain3DRegion::9061941924798306770::1734922685::0::1::::<><>::
-terrain3d-02-01.res::Terrain3DRegion::1189978990484249995::1734864700::0::1::::<><>::
+terrain3d-01_00.res::Terrain3DRegion::5282795077711664046::1734950392::0::1::::<><>::
+terrain3d-01_01.res::Terrain3DRegion::9061941924798306770::1734990509::0::1::::<><>::
+terrain3d-02-01.res::Terrain3DRegion::1189978990484249995::1734990509::0::1::::<><>::
 terrain3d-02-02.res::Terrain3DRegion::8638769989282305835::1734864700::0::1::::<><>::
-terrain3d-02_00.res::Terrain3DRegion::8647341508477791860::1734864700::0::1::::<><>::
-terrain3d-02_01.res::Terrain3DRegion::3298054952477260209::1734903659::0::1::::<><>::
+terrain3d-02_00.res::Terrain3DRegion::8647341508477791860::1734990509::0::1::::<><>::
+terrain3d-02_01.res::Terrain3DRegion::3298054952477260209::1734990509::0::1::::<><>::
 terrain3d_00-01.res::Terrain3DRegion::4003959598695574550::1734922685::0::1::::<><>::
 terrain3d_00-02.res::Terrain3DRegion::7236779608665146385::1734864700::0::1::::<><>::
-terrain3d_00_00.res::Terrain3DRegion::1399915020133630233::1734922685::0::1::::<><>::
-terrain3d_00_01.res::Terrain3DRegion::3982512188379878150::1734922685::0::1::::<><>::
-terrain3d_01-01.res::Terrain3DRegion::16409837444168565::1734922685::0::1::::<><>::
-terrain3d_01-02.res::Terrain3DRegion::491201524800219263::1734864700::0::1::::<><>::
-terrain3d_01_00.res::Terrain3DRegion::6237251609225062452::1734922685::0::1::::<><>::
-terrain3d_01_01.res::Terrain3DRegion::5010216977221626745::1734922685::0::1::::<><>::
+terrain3d_00_00.res::Terrain3DRegion::1399915020133630233::1734950392::0::1::::<><>::
+terrain3d_00_01.res::Terrain3DRegion::3982512188379878150::1734950392::0::1::::<><>::
+terrain3d_00_02.res::Terrain3DRegion::6971493610630166009::1734990509::0::1::::<><>::
+terrain3d_01-01.res::Terrain3DRegion::16409837444168565::1734990509::0::1::::<><>::
+terrain3d_01-02.res::Terrain3DRegion::491201524800219263::1734950392::0::1::::<><>::
+terrain3d_01_00.res::Terrain3DRegion::6237251609225062452::1734990509::0::1::::<><>::
+terrain3d_01_01.res::Terrain3DRegion::5010216977221626745::1734990509::0::1::::<><>::
+terrain3d_01_02.res::Terrain3DRegion::4591351478561818074::1734990509::0::1::::<><>::
+terrain3d_02-01.res::Terrain3DRegion::1308639999428886266::1734990509::0::1::::<><>::
+terrain3d_02_00.res::Terrain3DRegion::5402362336978339267::1734990510::0::1::::<><>::
+terrain3d_02_01.res::Terrain3DRegion::4139315078543316501::1734990510::0::1::::<><>::
+terrain3d_02_02.res::Terrain3DRegion::1191990647773823516::1734990510::0::1::::<><>::
 ::res://Fonts/::1734431287
 Chewy-Regular.ttf::FontFile::4375452444816710315::1734431281::1734431287::1::::<><>::
 font1.tres::FontFile::-1::1734430980::0::1::::<><>::uid://gdj14lgr8kk8::::res://Fonts/Roboto-Medium.ttf
@@ -151,11 +162,11 @@ ButterflyA.fbx::PackedScene::7778120848609565246::1734921839::1734921873::1::::<
 ButterflyA_0.png::CompressedTexture2D::8766279937126153481::1734921873::1734921874::1::::<><>::
 ::res://Models/Yippy Kawaii/Environments/ButterflyA.fbm/::1734921862
 Butterfly.png::CompressedTexture2D::8082655779326797724::1734921839::1734921862::1::::<><>::
-::res://Models/Yippy Kawaii/FBX/::1734949060
+::res://Models/Yippy Kawaii/FBX/::1734951325
 Bear.fbx::PackedScene::4267262928581831433::1734921839::1734922991::1::::<><>::uid://2llw4ysiwfid::::res://Models/Yippy Kawaii/Texture/Bear/Bear00.png
-bear.tscn::PackedScene::3134199351797786046::1734949060::0::1::::<><>::uid://b12dgxyb5q2xp::::res://Models/Yippy Kawaii/FBX/Bear.fbx<>uid://sb28yc0glmh5::::res://Models/Yippy Kawaii/Texture/Face/Face02.tres<>uid://c0iepjgfdia8u::::res://Models/Yippy Kawaii/Texture/Bear/Bear08.tres<>uid://db314tu4lfxnj::::res://Animations/Characters/character_idle.res
+bear.tscn::PackedScene::3134199351797786046::1734951325::0::1::::<><>::uid://b12dgxyb5q2xp::::res://Models/Yippy Kawaii/FBX/Bear.fbx<>uid://sb28yc0glmh5::::res://Models/Yippy Kawaii/Texture/Face/Face02.tres<>uid://c0iepjgfdia8u::::res://Models/Yippy Kawaii/Texture/Bear/Bear08.tres<>uid://db314tu4lfxnj::::res://Animations/Characters/character_idle.res
 Bunny.fbx::PackedScene::928540467572662700::1734921839::1734923101::1::::<><>::
-bunny.tscn::PackedScene::7192788966748214829::1734949060::0::1::::<><>::uid://nh16qjguq31i::::res://Models/Yippy Kawaii/FBX/Bunny.fbx<>uid://bf04ir2bsy2ye::::res://Models/Yippy Kawaii/Texture/Face/Face04.tres<>uid://dlyfj5big4a7f::::res://Models/Yippy Kawaii/Texture/Bunny/Bunny02.tres<>uid://32psbltcbkw6::::res://Animations/Characters/character_walk.res<>uid://db314tu4lfxnj::::res://Animations/Characters/character_idle.res<>uid://bqxceqjmtuxwa::::res://Animations/Characters/character_dash.res<>uid://c46uk3irlfus0::::res://Animations/Characters/character_move.res
+bunny.tscn::PackedScene::7192788966748214829::1734951325::0::1::::<><>::uid://nh16qjguq31i::::res://Models/Yippy Kawaii/FBX/Bunny.fbx<>uid://bf04ir2bsy2ye::::res://Models/Yippy Kawaii/Texture/Face/Face04.tres<>uid://dlyfj5big4a7f::::res://Models/Yippy Kawaii/Texture/Bunny/Bunny02.tres<>uid://32psbltcbkw6::::res://Animations/Characters/character_walk.res<>uid://db314tu4lfxnj::::res://Animations/Characters/character_idle.res<>uid://bqxceqjmtuxwa::::res://Animations/Characters/character_dash.res<>uid://c46uk3irlfus0::::res://Animations/Characters/character_move.res
 Cat.fbx::PackedScene::7268163795422919093::1734921839::1734921871::1::::<><>::uid://b4xujwb1502kf::::res://Models/Yippy Kawaii/Texture/Cat/Cat00.png
 Miniscene.fbx::PackedScene::3613405417198203880::1734921839::1734921871::1::::<><>::uid://bj0abb7phwvce::::res://Models/Yippy Kawaii/Texture/Miniscene.png
 ::res://Models/Yippy Kawaii/FBX/Accessories/::1734921873
@@ -218,7 +229,7 @@ Walking stickA2.png::CompressedTexture2D::8354242009846228737::1734921839::17349
 Walking stickA3.png::CompressedTexture2D::8064870487706278770::1734921839::1734921868::1::::<><>::
 Walking stickA4.png::CompressedTexture2D::3450031957477008019::1734921839::1734921869::1::::<><>::
 Walking stickA.png::CompressedTexture2D::1752335955722897393::1734921839::1734921869::1::::<><>::
-::res://Models/Yippy Kawaii/Texture/Bear/::1734928040
+::res://Models/Yippy Kawaii/Texture/Bear/::1734990509
 Bear00.png::CompressedTexture2D::1918515668989729943::1734921839::1734922991::1::::<><>::
 Bear00.tres::StandardMaterial3D::3028107336434452166::1734922119::0::1::::<><>::
 Bear01.png::CompressedTexture2D::7099416117466299126::1734921839::1734922185::1::::<><>::
@@ -236,7 +247,7 @@ Bear06.tres::StandardMaterial3D::8429771986116697653::1734922294::0::1::::<><>::
 Bear07.png::CompressedTexture2D::8895766984772057829::1734921839::1734922308::1::::<><>::
 Bear07.tres::StandardMaterial3D::4316849318493866663::1734922315::0::1::::<><>::uid://dy0f8n3g1jcjd::::res://Models/Yippy Kawaii/Texture/Bear/Bear07.png
 Bear08.png::CompressedTexture2D::6125568161868772745::1734921839::1734922348::1::::<><>::
-Bear08.tres::StandardMaterial3D::6544347617459608710::1734928040::0::1::::<><>::uid://dy0f8n3g1jcjd::::res://Models/Yippy Kawaii/Texture/Bear/Bear07.png
+Bear08.tres::StandardMaterial3D::6544347617459608710::1734990509::0::1::::<><>::uid://dy0f8n3g1jcjd::::res://Models/Yippy Kawaii/Texture/Bear/Bear07.png
 Bear09.png::CompressedTexture2D::5290641491101036875::1734921839::1734922359::1::::<><>::
 Bear09.tres::StandardMaterial3D::6472006663704631866::1734922356::0::1::::<><>::uid://ctjjhh30uphif::::res://Models/Yippy Kawaii/Texture/Bear/Bear08.png
 Bear10.png::CompressedTexture2D::65556893404274217::1734921839::1734922368::1::::<><>::
@@ -249,13 +260,13 @@ Bear13.png::CompressedTexture2D::6917495998952321456::1734921839::1734922390::1:
 Bear13.tres::StandardMaterial3D::8768134165121803411::1734922387::0::1::::<><>::uid://cmpx6x0m7k5m5::::res://Models/Yippy Kawaii/Texture/Bear/Bear12.png
 Bear14.png::CompressedTexture2D::8810595778984944422::1734921839::1734922397::1::::<><>::
 Bear14.tres::StandardMaterial3D::3006406562122263748::1734922640::0::1::::<><>::uid://dxr6hwmwu3t1g::::res://Models/Yippy Kawaii/Texture/Bear/Bear14.png
-::res://Models/Yippy Kawaii/Texture/Bunny/::1734928040
+::res://Models/Yippy Kawaii/Texture/Bunny/::1734990509
 Bunny00.png::CompressedTexture2D::2774476791368519944::1734921839::1734923174::1::::<><>::
 Bunny00.tres::StandardMaterial3D::9001948878167000142::1734923168::0::1::::<><>::
 Bunny01.png::CompressedTexture2D::7357591228911868205::1734921839::1734923203::1::::<><>::
 Bunny01.tres::StandardMaterial3D::6725272054956527460::1734923198::0::1::::<><>::uid://bfr8hy4v0im6k::::res://Models/Yippy Kawaii/Texture/Bunny/Bunny00.png
 Bunny02.png::CompressedTexture2D::3418340655020660055::1734921839::1734923215::1::::<><>::
-Bunny02.tres::StandardMaterial3D::7981205631922021453::1734928040::0::1::::<><>::uid://box4toi73p3bn::::res://Models/Yippy Kawaii/Texture/Bunny/Bunny02.png
+Bunny02.tres::StandardMaterial3D::7981205631922021453::1734990509::0::1::::<><>::uid://box4toi73p3bn::::res://Models/Yippy Kawaii/Texture/Bunny/Bunny02.png
 Bunny03.png::CompressedTexture2D::2350558792717821016::1734921839::1734921848::1::::<><>::
 Bunny04.png::CompressedTexture2D::6990761458479828731::1734921839::1734921848::1::::<><>::
 Bunny05.png::CompressedTexture2D::8273232955221380342::1734921839::1734921848::1::::<><>::
@@ -284,7 +295,7 @@ Cat11.png::CompressedTexture2D::850666849949801705::1734921839::1734921842::1:::
 Cat12.png::CompressedTexture2D::3576917571543205237::1734921839::1734921842::1::::<><>::
 Cat13.png::CompressedTexture2D::4666282662960504449::1734921839::1734921843::1::::<><>::
 Cat14.png::CompressedTexture2D::832506795781332080::1734921839::1734921844::1::::<><>::
-::res://Models/Yippy Kawaii/Texture/Face/::1734928040
+::res://Models/Yippy Kawaii/Texture/Face/::1734990509
 Face01.png::CompressedTexture2D::1022249891883600716::1734921839::1734922441::1::::<><>::
 Face01.tres::StandardMaterial3D::793617161571971230::1734922435::0::1::::<><>::
 Face02.png::CompressedTexture2D::3436295220283413795::1734921839::1734922498::1::::<><>::
@@ -292,7 +303,7 @@ Face02.tres::StandardMaterial3D::1267163118036561172::1734922489::0::1::::<><>::
 Face03.png::CompressedTexture2D::2872902559401812454::1734921839::1734922515::1::::<><>::
 Face03.tres::StandardMaterial3D::5641201727857254668::1734922510::0::1::::<><>::uid://bo7tjr7ef3tbf::::res://Models/Yippy Kawaii/Texture/Face/Face02.png
 Face04.png::CompressedTexture2D::662241631995243892::1734921839::1734922527::1::::<><>::
-Face04.tres::StandardMaterial3D::2790750359553360480::1734928040::0::1::::<><>::uid://bg6wjx7bb21dq::::res://Models/Yippy Kawaii/Texture/Face/Face03.png
+Face04.tres::StandardMaterial3D::2790750359553360480::1734990509::0::1::::<><>::uid://bg6wjx7bb21dq::::res://Models/Yippy Kawaii/Texture/Face/Face03.png
 Face05.png::CompressedTexture2D::157157915479840021::1734921839::1734922536::1::::<><>::
 Face05.tres::StandardMaterial3D::7291984599189698500::1734922532::0::1::::<><>::uid://jo2a1raq7cx5::::res://Models/Yippy Kawaii/Texture/Face/Face04.png
 Face06.png::CompressedTexture2D::3709565514007574910::1734921839::1734922546::1::::<><>::
@@ -354,20 +365,20 @@ Floor_creation.png::CompressedTexture2D::1338680100688893898::1734921838::173492
 frame.png::CompressedTexture2D::1766979139174525822::1734921838::1734921853::1::::<><>::
 HeadAccessories.png::CompressedTexture2D::1945571012816189449::1734921838::1734921853::1::::<><>::
 Snowflake.png::CompressedTexture2D::1303629633502744046::1734921838::1734921853::1::::<><>::
-::res://Prefabs/::1734949060
+::res://Prefabs/::1734951325
 camera.tscn::PackedScene::5158924361478454569::1734902561::0::1::::<><>::res://Scripts/FollowCamera.gd
-character.tscn::PackedScene::6385998169661608071::1734949060::0::1::::<><>::res://Scripts/NPC.gd<>uid://bkwh2nb54b6v7::::res://Models/Yippy Kawaii/FBX/bear.tscn<>res://Scripts/InteractObject.gd
+character.tscn::PackedScene::6385998169661608071::1734951325::0::1::::<><>::res://Scripts/NPC.gd<>uid://bkwh2nb54b6v7::::res://Models/Yippy Kawaii/FBX/bear.tscn<>res://Scripts/InteractObject.gd
 pickup.tscn::PackedScene::2504436734987634717::1734865350::0::1::::<><>::res://Scripts/Pickup.gd<>res://Scripts/InteractObject.gd
-player.tscn::PackedScene::3890995264120754473::1734949060::0::1::::<><>::res://Scripts/PlayerController.gd<>uid://daqigiapwq35b::::res://Models/Yippy Kawaii/FBX/bunny.tscn
+player.tscn::PackedScene::3890995264120754473::1734951325::0::1::::<><>::res://Scripts/PlayerController.gd<>uid://daqigiapwq35b::::res://Models/Yippy Kawaii/FBX/bunny.tscn
 ::res://Prefabs/UI/::1734667620
 options_panel.tscn::PackedScene::6704296224948302474::1734522773::0::1::::<><>::res://Scenes/Options Panel.gd<>res://Fonts/font1.tres
 pause_menu.tscn::PackedScene::6898631142279607125::1734501506::0::1::::<><>::res://Scripts/Pause Menu/PauseMenu.gd<>res://Fonts/font1.tres<>uid://b3lrceixb0548::::res://Fonts/Chewy-Regular.ttf<>res://Scripts/Main Menu/StartMenuButtonGroup.gd<>uid://chi28l03dgsy2::::res://Themes/MenuTextStandard.tres<>res://Scripts/Main Menu/MenuText.gd<>uid://d2n2o7gyj2klb::::res://Themes/MenuTextHighlighted.tres
-::res://Scenes/::1734949060
-Game.tscn::PackedScene::3107870423960825618::1734949054::0::1::::<><>::res://Scripts/Controllers/Game Controller.gd<>res://Scripts/NotificationSystem.gd<>uid://dbrmxigkqokgw::::res://Sprites/Icons/Exclamation mark.png<>uid://deiwbfqvy65s3::::res://Themes/Narritive.tres<>res://Scripts/Controllers/ConversationController.gd<>uid://c5j0pg0krwk4t::::res://Prefabs/UI/pause_menu.tscn<>uid://bvo3eg11jru1n::::res://Prefabs/player.tscn<>res://Shaders/sea.gdshader<>uid://bbxfybo0g183r::::res://Prefabs/pickup.tscn<>uid://cdopu5ugea4cm::::res://Textures/packed_albedo_height.png<>uid://cfray3p1qt7l2::::res://Prefabs/camera.tscn<>res://Scripts/ItemSpawnArea.gd<>res://Scripts/CameraZone.gd<>uid://cw8opsd74al7l::::res://Prefabs/character.tscn<>uid://duo0jic738cwv::::res://Data/Dialogue/Test Dialogue.tres
-Main Menu.tscn::PackedScene::7772909248775964131::1734949059::0::1::::<><>::res://Scripts/Main Menu/Main Menu Controller.gd<>res://Fonts/font1.tres<>uid://c2ru1q5gvx8uw::::res://Prefabs/UI/options_panel.tscn<>uid://b3lrceixb0548::::res://Fonts/Chewy-Regular.ttf<>res://Scripts/Main Menu/StartMenuButtonGroup.gd<>uid://d2n2o7gyj2klb::::res://Themes/MenuTextHighlighted.tres<>res://Scripts/Main Menu/MenuText.gd<>uid://chi28l03dgsy2::::res://Themes/MenuTextStandard.tres
+::res://Scenes/::1735015018
+Game.tscn::PackedScene::3107870423960825618::1735014852::0::1::::<><>::res://Scripts/Controllers/Game Controller.gd<>res://Scripts/NotificationSystem.gd<>uid://dbrmxigkqokgw::::res://Sprites/Icons/Exclamation mark.png<>uid://deiwbfqvy65s3::::res://Themes/Narritive.tres<>res://Scripts/Controllers/ConversationController.gd<>uid://c5j0pg0krwk4t::::res://Prefabs/UI/pause_menu.tscn<>uid://bvo3eg11jru1n::::res://Prefabs/player.tscn<>res://Shaders/sea.gdshader<>uid://bbxfybo0g183r::::res://Prefabs/pickup.tscn<>uid://cdopu5ugea4cm::::res://Textures/packed_albedo_height.png<>uid://cfray3p1qt7l2::::res://Prefabs/camera.tscn<>res://Scripts/ItemSpawnArea.gd<>res://Scripts/CameraZone.gd<>uid://cw8opsd74al7l::::res://Prefabs/character.tscn<>uid://duo0jic738cwv::::res://Data/Dialogue/Test Dialogue.tres
+Main Menu.tscn::PackedScene::7772909248775964131::1735015304::0::1::::<><>::res://Scripts/Main Menu/Main Menu Controller.gd<>res://Fonts/font1.tres<>uid://c2ru1q5gvx8uw::::res://Prefabs/UI/options_panel.tscn<>uid://b3lrceixb0548::::res://Fonts/Chewy-Regular.ttf<>res://Scripts/Main Menu/StartMenuButtonGroup.gd<>uid://d2n2o7gyj2klb::::res://Themes/MenuTextHighlighted.tres<>res://Scripts/Main Menu/MenuText.gd<>uid://chi28l03dgsy2::::res://Themes/MenuTextStandard.tres
 Options Panel.gd::GDScript::-1::1734493913::0::1::::<>Panel<>::
-Splash.tscn::PackedScene::5597916559264501703::1734949059::0::1::::<><>::uid://b44mhbi487fyf::::res://Sprites/Splash/spash_logo.jpg<>res://Scripts/Splash Screen/SplashScreen.gd
-::res://Scripts/::1734939559
+Splash.tscn::PackedScene::5597916559264501703::1735015304::0::1::::<><>::uid://b44mhbi487fyf::::res://Sprites/Splash/spash_logo.jpg<>res://Scripts/Splash Screen/SplashScreen.gd
+::res://Scripts/::1734950813
 CameraZone.gd::GDScript::-1::1734726969::0::1::::CameraZone<>Area3D<>::
 CharacterInteract.gd::GDScript::-1::1734866468::0::1::::CharacterInteract<>InteractObject<>::
 FollowCamera.gd::GDScript::-1::1734913536::0::1::::FollowCamera<>Node3D<>::
@@ -376,7 +387,7 @@ ItemSpawnArea.gd::GDScript::-1::1734858323::0::1::::ItemSpawnArea<>Node3D<>::
 NotificationSystem.gd::GDScript::-1::1734899630::0::1::::<>Control<>::
 NPC.gd::GDScript::-1::1734933850::0::1::::NPC<>Node<>::
 Pickup.gd::GDScript::-1::1734866970::0::1::::Pickup<>Node3D<>::
-PlayerController.gd::GDScript::-1::1734939559::0::1::::Player<>CharacterBody3D<>::
+PlayerController.gd::GDScript::-1::1734950813::0::1::::Player<>CharacterBody3D<>::
 PlayerNavController.gd::GDScript::-1::1734851741::0::1::::PlayerNav<>CharacterBody3D<>::
 ::res://Scripts/Controllers/::1734914035
 AudioManager.gd::GDScript::-1::1734500176::0::1::::<>Node<>::
@@ -394,8 +405,8 @@ StartMenuButtonGroup.gd::GDScript::-1::1734520302::0::1::::<>VBoxContainer<>::
 PauseMenu.gd::GDScript::-1::1734500589::0::1::::<>Control<>::
 ::res://Scripts/Splash Screen/::1734667857
 SplashScreen.gd::GDScript::-1::1734432401::0::1::::<>Node<>::
-::res://Shaders/::1734949060
-sea.gdshader::Shader::-1::1734949060::0::1::::<><>::
+::res://Shaders/::1735015019
+sea.gdshader::Shader::-1::1735015304::0::1::::<><>::
 ::res://Sprites/::1734914224
 icon.svg::CompressedTexture2D::3986379381717100537::1734430980::1734431009::1::::<><>::
 ::res://Sprites/Icons/::1734914243

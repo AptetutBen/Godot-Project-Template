@@ -1,26 +1,55 @@
-[gd_resource type="Resource" script_class="DialogueData" load_steps=9 format=3 uid="uid://duo0jic738cwv"]
+[gd_resource type="Resource" script_class="DialogueData" load_steps=14 format=3 uid="uid://duo0jic738cwv"]
 
 [ext_resource type="Script" path="res://addons/weekend Dialogue/Scripts/DialogueData.gd" id="1_e8qyd"]
 [ext_resource type="Script" path="res://addons/weekend Dialogue/Scripts/DialogueNodeData.gd" id="1_ha705"]
 [ext_resource type="Script" path="res://addons/weekend Dialogue/Scripts/StartDialogueNodeData.gd" id="2_mk4en"]
 [ext_resource type="Script" path="res://addons/weekend Dialogue/Scripts/DialogueOption.gd" id="2_pcjag"]
 
-[sub_resource type="Resource" id="Resource_xsi4g"]
+[sub_resource type="Resource" id="Resource_0sgc7"]
 script = ExtResource("2_pcjag")
-text = "test"
-node_id = "2"
+text = "Option text"
+node_id = ""
+
+[sub_resource type="Resource" id="Resource_l76x4"]
+script = ExtResource("2_pcjag")
+text = "Option text"
+node_id = ""
 
 [sub_resource type="Resource" id="Resource_n8jtu"]
 script = ExtResource("1_ha705")
-text = "This is an example of what text looks like"
+text = "This is an [wave amp=50.0 freq=5.0 connected=1]example [/wave]"
 id = "1"
-options = Array[ExtResource("2_pcjag")]([SubResource("Resource_xsi4g")])
+options = Array[ExtResource("2_pcjag")]([SubResource("Resource_0sgc7"), SubResource("Resource_l76x4")])
+position = Vector2(800, -20)
 
 [sub_resource type="Resource" id="Resource_ecyc0"]
 script = ExtResource("1_ha705")
-text = "this is the second text"
+text = "This is an [u]example[/u] of what a [b]character[/b] can [i]say[/i]."
 id = "2"
 options = Array[ExtResource("2_pcjag")]([])
+position = Vector2(-80, -160)
+
+[sub_resource type="Resource" id="Resource_oka0w"]
+script = ExtResource("2_pcjag")
+text = "Option text"
+node_id = ""
+
+[sub_resource type="Resource" id="Resource_2nhuq"]
+script = ExtResource("2_pcjag")
+text = "Option text"
+node_id = ""
+
+[sub_resource type="Resource" id="Resource_yui5n"]
+script = ExtResource("2_pcjag")
+text = "Option text"
+node_id = ""
+
+[sub_resource type="Resource" id="Resource_fmvi3"]
+script = ExtResource("1_ha705")
+text = "[rainbow freq=0.2 sat=10 val=20]This is a [tornado radius=5 freq=2]thing[/tornado][/rainbow]"
+id = ""
+options = Array[ExtResource("2_pcjag")]([SubResource("Resource_oka0w"), SubResource("Resource_2nhuq"), SubResource("Resource_yui5n")])
+position = Vector2(-300, 180)
 
 [sub_resource type="Resource" id="Resource_dck4d"]
 script = ExtResource("2_mk4en")
@@ -30,4 +59,4 @@ first_node_id = "1"
 [resource]
 script = ExtResource("1_e8qyd")
 start_data = Array[ExtResource("2_mk4en")]([SubResource("Resource_dck4d")])
-data = Array[ExtResource("1_ha705")]([SubResource("Resource_n8jtu"), SubResource("Resource_ecyc0")])
+data = Array[ExtResource("1_ha705")]([SubResource("Resource_n8jtu"), SubResource("Resource_ecyc0"), SubResource("Resource_fmvi3")])

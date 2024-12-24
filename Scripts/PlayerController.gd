@@ -24,7 +24,7 @@ func _ready() -> void:
 func _physics_process(delta):
 	_move(delta)
 
-func _move(_delta : float):
+func _move(delta : float):
 	var camera_angle = camera_pivot.rotation.y
 	var input = Input.get_vector("Move Left", "Move Right", "Move Up", "Move Down")
 	
@@ -42,7 +42,7 @@ func _move(_delta : float):
 
 	#mesh.rotate_y(_delta)
 	if !is_on_floor():
-		velocity.y += -gravity 
+		velocity.y += -gravity * delta
 
 	move_and_slide()
 	RenderingServer.global_shader_parameter_set("player_position", global_position)
@@ -63,10 +63,15 @@ func _on_start_conversation(_node):
 	velocity = Vector3.ZERO
 	animation_tree.set("parameters/speed/blend_position",0)
 	enabled = false
+	print(mesh.rotation_degrees.y)
 	mesh.rotation_degrees.y = wrapf(mesh.rotation_degrees.y,0,360)
+	print(mesh.rotation_degrees.y)
+	
 	var turn_tween : Tween = get_tree().create_tween()
 	var direction = (current_interact_object.global_transform.origin - global_transform.origin).normalized()
 	var target_rotation_y = atan2(direction.x, direction.z)
+	
+	print(target_rotation_y)
 	turn_tween.tween_property(mesh, "rotation_degrees", Vector3(0, rad_to_deg(target_rotation_y), 0), 0.5)
 	turn_tween.set_ease(Tween.EASE_OUT_IN)
 	turn_tween.set_trans(Tween.TRANS_SINE)

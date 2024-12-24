@@ -5,4 +5,4 @@ class_name DialogueNodeData extends Resource
 @export var options : Array[DialogueOption]
 
 var dialoge_data : DialogueData
-var position : Vector2
+@export var position : Vector2

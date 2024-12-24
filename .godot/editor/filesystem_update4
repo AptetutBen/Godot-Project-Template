@@ -18,3 +18,27 @@ res://Animations/Characters/character_idle.res
 res://Animations/Characters/character_dash.res
 res://Animations/Characters/character_move.res
 res://Models/Yippy Kawaii/FBX/bear.tscn
+res://Data/Terrain/terrain3d-01-01.res
+res://Data/Terrain/terrain3d-01_00.res
+res://Data/Terrain/terrain3d-01_01.res
+res://Data/Terrain/terrain3d-02-01.res
+res://Data/Terrain/terrain3d-02_00.res
+res://Data/Terrain/terrain3d-02_01.res
+res://Data/Terrain/terrain3d_00_00.res
+res://Data/Terrain/terrain3d_00_01.res
+res://Data/Terrain/terrain3d_01-01.res
+res://Data/Terrain/terrain3d_01-02.res
+res://Data/Terrain/terrain3d_01_00.res
+res://Data/Terrain/terrain3d_01_01.res
+res://addons/weekend Dialogue/Scripts/DialogueNode.gd
+res://addons/weekend Dialogue/Scripts/weekendDialogueEditor.gd
+res://addons/weekend Dialogue/Scripts/DialogueNodeData.gd
+res://Data/Terrain/terrain3d_00_02.res
+res://Data/Terrain/terrain3d_01_02.res
+res://Data/Terrain/terrain3d_02-01.res
+res://Data/Terrain/terrain3d_02_00.res
+res://Data/Terrain/terrain3d_02_01.res
+res://Data/Terrain/terrain3d_02_02.res
+res://addons/weekend Dialogue/Prefabs/dialoge_option.tscn
+res://addons/weekend Dialogue/Scripts/DialogeOptionUI.gd
+res://addons/weekend Dialogue/Scripts/TextEditorDialogueNode.gd
