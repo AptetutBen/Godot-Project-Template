@@ -42,7 +42,10 @@ func _move(delta : float):
 
 	#mesh.rotate_y(_delta)
 	if !is_on_floor():
+		pass
 		velocity.y += -gravity * delta
+	else:
+		velocity.y = 0
 
 	move_and_slide()
 	RenderingServer.global_shader_parameter_set("player_position", global_position)

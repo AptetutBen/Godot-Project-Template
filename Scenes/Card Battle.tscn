@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://dcv1gkvuelxif"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fmmyp"]
+sky_top_color = Color(0.657416, 0.770349, 0.923257, 1)
+sky_horizon_color = Color(0.422307, 0.685323, 0.882779, 1)
+
+[sub_resource type="Sky" id="Sky_0ev6d"]
+sky_material = SubResource("ProceduralSkyMaterial_fmmyp")
+
+[sub_resource type="Environment" id="Environment_yp3sa"]
+background_mode = 2
+background_color = Color(0.00392157, 0.368627, 0.619608, 1)
+sky = SubResource("Sky_0ev6d")
+ambient_light_source = 2
+ambient_light_color = Color(0.368479, 0.368479, 0.368479, 1)
+ambient_light_energy = 2.81
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 4.46
+glow_strength = 1.26
+glow_bloom = 0.03
+volumetric_fog_density = 0.0223
+volumetric_fog_albedo = Color(0.593575, 0.764455, 0.906575, 1)
+volumetric_fog_length = 0.01
+
+[node name="CardBattle" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_yp3sa")

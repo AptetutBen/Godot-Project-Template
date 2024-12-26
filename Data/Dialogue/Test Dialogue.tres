@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogueData" load_steps=10 format=3 uid="uid://duo0jic738cwv"]
+[gd_resource type="Resource" script_class="DialogueData" load_steps=12 format=3 uid="uid://duo0jic738cwv"]
 
 [ext_resource type="Script" path="res://addons/weekend Dialogue/Scripts/DialogueData.gd" id="1_e8qyd"]
 [ext_resource type="Script" path="res://addons/weekend Dialogue/Scripts/DialogueNodeData.gd" id="1_ha705"]
@@ -34,7 +34,19 @@ id = "@GraphNode@148"
 options = Array[ExtResource("2_pcjag")]([SubResource("Resource_oka0w"), SubResource("Resource_2nhuq"), SubResource("Resource_yui5n")])
 position = Vector2(0, -20)
 
+[sub_resource type="Resource" id="Resource_dck4d"]
+script = ExtResource("2_mk4en")
+start_key = "test"
+linking_node = ""
+position = Vector2(20, 660)
+
+[sub_resource type="Resource" id="Resource_fmvxk"]
+script = ExtResource("2_mk4en")
+start_key = ""
+linking_node = ""
+position = Vector2(460, 360)
+
 [resource]
 script = ExtResource("1_e8qyd")
-start_data = Array[ExtResource("2_mk4en")]([])
+start_data = Array[ExtResource("2_mk4en")]([SubResource("Resource_dck4d"), SubResource("Resource_dck4d"), SubResource("Resource_dck4d"), SubResource("Resource_dck4d"), SubResource("Resource_fmvxk")])
 data = Array[ExtResource("1_ha705")]([SubResource("Resource_ecyc0"), SubResource("Resource_fmvi3")])

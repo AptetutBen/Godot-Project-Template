@@ -1,3 +1,5 @@
+res://Prefabs/
+/Users/benjaminnaulls/Documents/Git/Godot-Project-Template
 res://addons/weekend Dialogue/Prefabs/
 res://addons/weekend Dialogue/Themes/
 res://addons/weekend Dialogue/Scripts
@@ -7,8 +9,6 @@ res://Models/Yippy Kawaii/FBX
 res://Models/Yippy Kawaii/Texture/Face/
 res://Models/Yippy Kawaii/Texture/Bear/
 res://Data/Dialogue/
-res://Prefabs/
-/Users/benjaminnaulls/Documents/Git/Godot-Project-Template
 res://Scripts
 res://Data/Terrain
 res://Themes/
