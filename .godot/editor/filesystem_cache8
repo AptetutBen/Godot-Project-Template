@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1734935612
+::res://::1735020603
 ::res://addons/::1734815473
 ::res://addons/terrain_3d/::1734815518
 editor.gd::GDScript::-1::1734180884::0::1::::<>EditorPlugin<>::
@@ -63,20 +63,22 @@ importer.tscn::PackedScene::3158990868267418980::1734180884::0::1::::<><>::res:/
 terrain_3d_objects.gd::GDScript::-1::1734180884::0::1::::Terrain3DObjects<>Node3D<>::
 transform_changed_notifier.gd::GDScript::-1::1734180884::0::1::::<>Node3D<>::
 ::res://addons/weekend Dialogue/::1735014502
-::res://addons/weekend Dialogue/Prefabs/::1735015018
-dialoge_option.tscn::PackedScene::7211068270781592457::1735015018::0::1::::<><>::res://addons/weekend Dialogue/Scripts/DialogeOptionUI.gd
-dialogue_node.tscn::PackedScene::6188390080551873385::1735015304::0::1::::<><>::res://addons/weekend Dialogue/Scripts/DialogueNode.gd<>uid://da0digpeup2bd::::res://addons/weekend Dialogue/Prefabs/dialoge_option.tscn
-::res://addons/weekend Dialogue/Scenes/::1735015018
-Dialogue Graph.tscn::PackedScene::4440426548288426286::1735015304::0::1::::<><>::res://addons/weekend Dialogue/Scripts/weekendDialogueEditor.gd<>uid://cufx4633uoge0::::res://addons/weekend Dialogue/Prefabs/dialogue_node.tscn<>uid://duo0jic738cwv::::res://Data/Dialogue/Test Dialogue.tres<>res://addons/weekend Dialogue/Scripts/TextEditorDialogueNode.gd
-::res://addons/weekend Dialogue/Scripts/::1735014461
-DialogeOptionUI.gd::GDScript::-1::1734994124::0::1::::DialogueOptionUI<>Control<>::
-DialogueData.gd::GDScript::-1::1734910517::0::1::::DialogueData<>Resource<>::
-DialogueNode.gd::GDScript::-1::1735013700::0::1::::DialogueNode<>GraphNode<>::
+::res://addons/weekend Dialogue/Prefabs/::1735159031
+dialoge_option.tscn::PackedScene::7211068270781592457::1735159031::0::1::::<><>::res://addons/weekend Dialogue/Scripts/DialogeOptionUI.gd
+dialogue_node.tscn::PackedScene::6188390080551873385::1735159289::0::1::::<><>::res://addons/weekend Dialogue/Scripts/DialogueNode.gd<>uid://da0digpeup2bd::::res://addons/weekend Dialogue/Prefabs/dialoge_option.tscn
+start_node.tscn::PackedScene::7452517368835647735::1735159031::0::1::::<><>::res://addons/weekend Dialogue/Scripts/DialogueStartNode.gd
+::res://addons/weekend Dialogue/Scenes/::1735159030
+Dialogue Graph.tscn::PackedScene::4440426548288426286::1735159289::0::1::::<><>::res://addons/weekend Dialogue/Scripts/weekendDialogueEditor.gd<>uid://cufx4633uoge0::::res://addons/weekend Dialogue/Prefabs/dialogue_node.tscn<>uid://duo0jic738cwv::::res://Data/Dialogue/Test Dialogue.tres<>uid://degb4wkppnlpv::::res://addons/weekend Dialogue/Prefabs/start_node.tscn<>res://addons/weekend Dialogue/Scripts/TextEditorDialogueNode.gd
+::res://addons/weekend Dialogue/Scripts/::1735159030
+DialogeOptionUI.gd::GDScript::-1::1735028385::0::1::::DialogueOptionUI<>Control<>::
+DialogueData.gd::GDScript::-1::1735021106::0::1::::DialogueData<>Resource<>::
+DialogueNode.gd::GDScript::-1::1735079041::0::1::::DialogueNode<>GraphNode<>::
 DialogueNodeData.gd::GDScript::-1::1734987960::0::1::::DialogueNodeData<>Resource<>::
-DialogueOption.gd::GDScript::-1::1734909247::0::1::::DialogueOption<>Resource<>::
-StartDialogueNodeData.gd::GDScript::-1::1734908434::0::1::::StartDialogueNodeData<>Resource<>::
-TextEditorDialogueNode.gd::GDScript::-1::1735014461::0::1::::DialogueTextEditor<>GraphNode<>::
-weekendDialogueEditor.gd::GDScript::-1::1735011508::0::1::::<>Control<>::
+DialogueOption.gd::GDScript::-1::1735076883::0::1::::DialogueOption<>Resource<>::
+DialogueStartNode.gd::GDScript::-1::1735076872::0::1::::DialogueStartNode<>GraphNode<>::
+DialogueStartNodeData.gd::GDScript::-1::1735076819::0::1::::DialogueStartNodeData<>Resource<>::
+TextEditorDialogueNode.gd::GDScript::-1::1735078100::0::1::::DialogueTextEditor<>GraphNode<>::
+weekendDialogueEditor.gd::GDScript::-1::1735159289::0::1::::<>Control<>::
 ::res://addons/weekend Dialogue/Themes/::1735014526
 Dialogue Editor.tres::Theme::1128098500138560980::1735014526::0::1::::<><>::
 ::res://Animations/::1734935616
@@ -97,8 +99,8 @@ rollover2.ogg::AudioStreamOggVorbis::736167784220709710::1734430980::1734431009:
 switch2.ogg::AudioStreamOggVorbis::5539464575622984594::1734430980::1734431009::1::::<><>::
 switch3.ogg::AudioStreamOggVorbis::5145434842828123623::1734430980::1734431009::1::::<><>::
 ::res://Data/::1734907058
-::res://Data/Dialogue/::1735014852
-Test Dialogue.tres::Resource/DialogueData::8593474634130154449::1735014852::0::1::::<><>::res://addons/weekend Dialogue/Scripts/DialogueData.gd<>res://addons/weekend Dialogue/Scripts/DialogueNodeData.gd<>res://addons/weekend Dialogue/Scripts/StartDialogueNodeData.gd<>res://addons/weekend Dialogue/Scripts/DialogueOption.gd
+::res://Data/Dialogue/::1735159030
+Test Dialogue.tres::Resource/DialogueData::8593474634130154449::1735159030::0::1::::<><>::res://addons/weekend Dialogue/Scripts/DialogueData.gd<>res://addons/weekend Dialogue/Scripts/DialogueNodeData.gd<>res://addons/weekend Dialogue/Scripts/DialogueStartNodeData.gd<>res://addons/weekend Dialogue/Scripts/DialogueOption.gd
 ::res://Data/Terrain/::1734990510
 terrain3d-01-01.res::Terrain3DRegion::4977133703188151713::1734990509::0::1::::<><>::
 terrain3d-01-02.res::Terrain3DRegion::1086211638704479434::1734864700::0::1::::<><>::
@@ -373,11 +375,11 @@ player.tscn::PackedScene::3890995264120754473::1734951325::0::1::::<><>::res://S
 ::res://Prefabs/UI/::1734667620
 options_panel.tscn::PackedScene::6704296224948302474::1734522773::0::1::::<><>::res://Scenes/Options Panel.gd<>res://Fonts/font1.tres
 pause_menu.tscn::PackedScene::6898631142279607125::1734501506::0::1::::<><>::res://Scripts/Pause Menu/PauseMenu.gd<>res://Fonts/font1.tres<>uid://b3lrceixb0548::::res://Fonts/Chewy-Regular.ttf<>res://Scripts/Main Menu/StartMenuButtonGroup.gd<>uid://chi28l03dgsy2::::res://Themes/MenuTextStandard.tres<>res://Scripts/Main Menu/MenuText.gd<>uid://d2n2o7gyj2klb::::res://Themes/MenuTextHighlighted.tres
-::res://Scenes/::1735015018
-Game.tscn::PackedScene::3107870423960825618::1735014852::0::1::::<><>::res://Scripts/Controllers/Game Controller.gd<>res://Scripts/NotificationSystem.gd<>uid://dbrmxigkqokgw::::res://Sprites/Icons/Exclamation mark.png<>uid://deiwbfqvy65s3::::res://Themes/Narritive.tres<>res://Scripts/Controllers/ConversationController.gd<>uid://c5j0pg0krwk4t::::res://Prefabs/UI/pause_menu.tscn<>uid://bvo3eg11jru1n::::res://Prefabs/player.tscn<>res://Shaders/sea.gdshader<>uid://bbxfybo0g183r::::res://Prefabs/pickup.tscn<>uid://cdopu5ugea4cm::::res://Textures/packed_albedo_height.png<>uid://cfray3p1qt7l2::::res://Prefabs/camera.tscn<>res://Scripts/ItemSpawnArea.gd<>res://Scripts/CameraZone.gd<>uid://cw8opsd74al7l::::res://Prefabs/character.tscn<>uid://duo0jic738cwv::::res://Data/Dialogue/Test Dialogue.tres
-Main Menu.tscn::PackedScene::7772909248775964131::1735015304::0::1::::<><>::res://Scripts/Main Menu/Main Menu Controller.gd<>res://Fonts/font1.tres<>uid://c2ru1q5gvx8uw::::res://Prefabs/UI/options_panel.tscn<>uid://b3lrceixb0548::::res://Fonts/Chewy-Regular.ttf<>res://Scripts/Main Menu/StartMenuButtonGroup.gd<>uid://d2n2o7gyj2klb::::res://Themes/MenuTextHighlighted.tres<>res://Scripts/Main Menu/MenuText.gd<>uid://chi28l03dgsy2::::res://Themes/MenuTextStandard.tres
+::res://Scenes/::1735159031
+Game.tscn::PackedScene::3107870423960825618::1735158315::0::1::::<><>::res://Scripts/Controllers/Game Controller.gd<>res://Scripts/NotificationSystem.gd<>uid://dbrmxigkqokgw::::res://Sprites/Icons/Exclamation mark.png<>uid://deiwbfqvy65s3::::res://Themes/Narritive.tres<>res://Scripts/Controllers/ConversationController.gd<>uid://c5j0pg0krwk4t::::res://Prefabs/UI/pause_menu.tscn<>uid://bvo3eg11jru1n::::res://Prefabs/player.tscn<>res://Shaders/sea.gdshader<>uid://bbxfybo0g183r::::res://Prefabs/pickup.tscn<>uid://cdopu5ugea4cm::::res://Textures/packed_albedo_height.png<>uid://cfray3p1qt7l2::::res://Prefabs/camera.tscn<>res://Scripts/ItemSpawnArea.gd<>res://Scripts/CameraZone.gd<>uid://cw8opsd74al7l::::res://Prefabs/character.tscn<>uid://duo0jic738cwv::::res://Data/Dialogue/Test Dialogue.tres
+Main Menu.tscn::PackedScene::7772909248775964131::1735159289::0::1::::<><>::res://Scripts/Main Menu/Main Menu Controller.gd<>res://Fonts/font1.tres<>uid://c2ru1q5gvx8uw::::res://Prefabs/UI/options_panel.tscn<>uid://b3lrceixb0548::::res://Fonts/Chewy-Regular.ttf<>res://Scripts/Main Menu/StartMenuButtonGroup.gd<>uid://d2n2o7gyj2klb::::res://Themes/MenuTextHighlighted.tres<>res://Scripts/Main Menu/MenuText.gd<>uid://chi28l03dgsy2::::res://Themes/MenuTextStandard.tres
 Options Panel.gd::GDScript::-1::1734493913::0::1::::<>Panel<>::
-Splash.tscn::PackedScene::5597916559264501703::1735015304::0::1::::<><>::uid://b44mhbi487fyf::::res://Sprites/Splash/spash_logo.jpg<>res://Scripts/Splash Screen/SplashScreen.gd
+Splash.tscn::PackedScene::5597916559264501703::1735159289::0::1::::<><>::uid://b44mhbi487fyf::::res://Sprites/Splash/spash_logo.jpg<>res://Scripts/Splash Screen/SplashScreen.gd
 ::res://Scripts/::1734950813
 CameraZone.gd::GDScript::-1::1734726969::0::1::::CameraZone<>Area3D<>::
 CharacterInteract.gd::GDScript::-1::1734866468::0::1::::CharacterInteract<>InteractObject<>::
@@ -405,8 +407,8 @@ StartMenuButtonGroup.gd::GDScript::-1::1734520302::0::1::::<>VBoxContainer<>::
 PauseMenu.gd::GDScript::-1::1734500589::0::1::::<>Control<>::
 ::res://Scripts/Splash Screen/::1734667857
 SplashScreen.gd::GDScript::-1::1734432401::0::1::::<>Node<>::
-::res://Shaders/::1735015019
-sea.gdshader::Shader::-1::1735015304::0::1::::<><>::
+::res://Shaders/::1735159031
+sea.gdshader::Shader::-1::1735159289::0::1::::<><>::
 ::res://Sprites/::1734914224
 icon.svg::CompressedTexture2D::3986379381717100537::1734430980::1734431009::1::::<><>::
 ::res://Sprites/Icons/::1734914243

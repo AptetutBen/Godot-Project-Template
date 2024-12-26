@@ -1,16 +1,16 @@
 class_name DialogueData extends Resource
 
-@export var start_data : Array[StartDialogueNodeData]
+@export var start_data : Array[DialogueStartNodeData]
 @export var data : Array[DialogueNodeData]
 
 func get_random_dialogue() -> DialogueNodeData:
 	return get_node_from_start(start_data.pick_random().first_node_id)
 
-func get_all_start_nodes() -> Array[StartDialogueNodeData]:
+func get_all_start_nodes() -> Array[DialogueStartNodeData]:
 	return start_data
 
 func get_node_from_start(key : String) -> DialogueNodeData:
-	for node : StartDialogueNodeData in start_data:
+	for node : DialogueStartNodeData in start_data:
 		if node.start_key == key:
 			return get_node(node.first_node_id)
 	printerr("Can't find start node id: %s" % [key])

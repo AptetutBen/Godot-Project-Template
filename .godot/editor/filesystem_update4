@@ -42,3 +42,9 @@ res://Data/Terrain/terrain3d_02_02.res
 res://addons/weekend Dialogue/Prefabs/dialoge_option.tscn
 res://addons/weekend Dialogue/Scripts/DialogeOptionUI.gd
 res://addons/weekend Dialogue/Scripts/TextEditorDialogueNode.gd
+res://addons/weekend Dialogue/Scripts/DialogueStartNode.gd
+res://addons/weekend Dialogue/Scripts/StartDialogueNodeData.gd
+res://addons/weekend Dialogue/Scripts/DialogueStartNodeData.gd
+res://addons/weekend Dialogue/Scripts/DialogueData.gd
+res://addons/weekend Dialogue/Prefabs/start_node.tscn
+res://addons/weekend Dialogue/Scripts/DialogueOption.gd

@@ -1,11 +1,10 @@
 class_name DialogueNode extends GraphNode
 
 signal edit_node(node: DialogueNode)
+signal delete_node(node : DialogueNode)
 
 @onready var preview_text: RichTextLabel = %"Preview Text"
-#@onready var editor_group : VBoxContainer = %"Editor Group"
 @onready var add_option_button: Button = %"Add Option Button"
-@onready var edit_button: Button = %"Edit Button"
 
 @export var option_prefab : PackedScene
 
@@ -18,7 +17,6 @@ func _ready() -> void:
 	delete_request.connect(_on_delete_request)
 	dragged.connect(_on_dragged)
 	add_option_button.pressed.connect(_on_add_option_button_press)
-	edit_button.pressed.connect(_on_edit_button_pressed)
 
 func initiliase(data : DialogueNodeData):
 	dialogeNodeData = data
@@ -38,6 +36,7 @@ func save_node() -> void:
 	dialogeNodeData.position = position_offset
 	dialogeNodeData.text = text
 	dialogeNodeData.options.clear()
+	dialogeNodeData.id = name
 	
 	for option : DialogueOptionUI in options:
 		option.save()
@@ -47,10 +46,10 @@ func _on_edit_button_pressed():
 	edit_node.emit(self)
 
 func _on_delete_request() -> void:
-	print("Delete Request")
+	print("delete")
+	delete_node.emit(self)
 
 func _on_dragged(from: Vector2, to: Vector2) -> void:
-	print("Position Changed %s"%[to])
 	dialogeNodeData.position = position_offset
 	
 func on_text_changed(new_text : String) -> void:
@@ -70,13 +69,22 @@ func _add_option() -> DialogueOptionUI:
 	add_child(new_option)
 	new_option.delete_request.connect(on_remove_option)
 	options.append(new_option)
+	_update_links()
 	return new_option
 
 func on_remove_option(option : DialogueOptionUI):
 	options.erase(option)
-	
 	option.queue_free()
-	print("Removing Option")
+	_update_links()
+	
+func _update_links():
+	if options.size() == 0:
+		set_slot_enabled_right(2,true)
+	else:
+		set_slot_enabled_right(2,false)
+		for i in options.size():
+			set_slot_enabled_right(3 + i,true)
+			
 		
 func _on_preview_text_gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton && event.is_pressed():

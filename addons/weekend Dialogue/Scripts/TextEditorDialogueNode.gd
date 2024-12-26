@@ -12,6 +12,7 @@ func _ready() -> void:
 
 func enable(node: DialogueNode):
 	visible = true
+	text_edit.grab_focus()
 	if current_node != null:
 		current_node.position_offset_changed.disconnect(_on_current_node_move)
 		current_node.node_deselected.disconnect(_on_current_node_deselect)
