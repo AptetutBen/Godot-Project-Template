@@ -1,6 +1,10 @@
-CSGSphere3D
-CSGCylinder3D
+Node3D
+Node
+CSGPolygon3D
 CSGCombiner3D
+CSGBox3D
+CSGCylinder3D
+CSGSphere3D
 Button
 Label
 HBoxContainer
@@ -8,8 +12,3 @@ Panel
 ScrollContainer
 ColorRect
 GridContainer
-ItemList
-MarginContainer
-VBoxContainer
-Control
-TextEdit

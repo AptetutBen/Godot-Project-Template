@@ -24,3 +24,8 @@ res://Data/Terrain/terrain3d_00-01.res
 res://Data/Terrain/terrain3d_00-02.res
 res://Data/Terrain/terrain3d_01-01.res
 res://Data/Terrain/terrain3d_01-02.res
+res://addons/weekend Dialogue/Scripts/DialogueStartNodeData.gd
+res://addons/weekend Dialogue/Scripts/DialogueData.gd
+res://Scripts/Controllers/ConversationController.gd
+res://Shaders/new sea.tres
+res://Scripts/Tools/Height Map Generator.gd

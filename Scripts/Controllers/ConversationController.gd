@@ -44,6 +44,9 @@ func _input(event: InputEvent) -> void:
 		input_pressed = true
 	
 func _on_start_conversation(node : DialogueNodeData):
+	if node == null:
+		printerr("Conversatino is null")
+		return
 	current_node = node
 	display_text()
 

@@ -11,7 +11,7 @@ func get_all_start_nodes() -> Array[DialogueStartNodeData]:
 
 func get_node_from_start(key : String) -> DialogueNodeData:
 	for node : DialogueStartNodeData in start_data:
-		if node.start_key == key:
+		if node.first_node_id == key:
 			return get_node(node.first_node_id)
 	printerr("Can't find start node id: %s" % [key])
 	return null
