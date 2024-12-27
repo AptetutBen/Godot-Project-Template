@@ -17,3 +17,5 @@ res://Scenes/Card Battle.tscn
 res://Assets/GrassShader.tres
 res://Assets/Stylized3DGrass.tres
 res://Prefabs/grass.tscn
+res://Data/Terrain/terrain3d-01_00.res
+res://Data/Terrain/terrain3d_00_00.res

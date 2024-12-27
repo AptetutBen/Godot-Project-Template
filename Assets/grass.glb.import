@@ -32,6 +32,13 @@ animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
-_subresources={}
+_subresources={
+"nodes": {
+"PATH:Grass": {
+"mesh_instance/cast_shadow": 0,
+"mesh_instance/visibility_range_fade_mode": 1
+}
+}
+}
 gltf/naming_version=0
 gltf/embedded_image_handling=1
