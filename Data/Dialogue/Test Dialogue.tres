@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="DialogueData" load_steps=12 format=3 uid="uid://duo0jic738cwv"]
 
-[ext_resource type="Script" path="res://addons/weekend Dialogue/Scripts/DialogueData.gd" id="1_e8qyd"]
-[ext_resource type="Script" path="res://addons/weekend Dialogue/Scripts/DialogueNodeData.gd" id="1_ha705"]
-[ext_resource type="Script" path="res://addons/weekend Dialogue/Scripts/DialogueStartNodeData.gd" id="2_mk4en"]
-[ext_resource type="Script" path="res://addons/weekend Dialogue/Scripts/DialogueOption.gd" id="2_pcjag"]
+[ext_resource type="Script" uid="uid://rxyur4vwo6q0" path="res://addons/weekend Dialogue/Scripts/DialogueData.gd" id="1_e8qyd"]
+[ext_resource type="Script" uid="uid://mtq6i61w1mhi" path="res://addons/weekend Dialogue/Scripts/DialogueNodeData.gd" id="1_ha705"]
+[ext_resource type="Script" uid="uid://uv5we0y0dofd" path="res://addons/weekend Dialogue/Scripts/DialogueStartNodeData.gd" id="2_mk4en"]
+[ext_resource type="Script" uid="uid://sqg6wt1txbp5" path="res://addons/weekend Dialogue/Scripts/DialogueOption.gd" id="2_pcjag"]
 
 [sub_resource type="Resource" id="Resource_ecyc0"]
 script = ExtResource("1_ha705")
@@ -36,13 +36,13 @@ position = Vector2(0, -20)
 
 [sub_resource type="Resource" id="Resource_dck4d"]
 script = ExtResource("2_mk4en")
-start_key = "test"
+first_node_id = ""
 linking_node = ""
 position = Vector2(20, 660)
 
 [sub_resource type="Resource" id="Resource_fmvxk"]
 script = ExtResource("2_mk4en")
-start_key = ""
+first_node_id = ""
 linking_node = ""
 position = Vector2(460, 360)
 

@@ -3,49 +3,116 @@ extends Node3D
 
 class_name HeightmapGenerator
 
-# Exported properties
-@export var map_size: int = 256
-@export var raycast_height: float = 100.0
-@export var raycast_depth: float = 200.0
-@export var output_file: String = "res://heightmap.png"
+@export_tool_button("Create Heightmap")
+var callable : Callable = _generate_heightmap
 
-func _ready() -> void:
-	_generate_heightmap()
+@export var section : Vector2i = Vector2i(0,0)
+
+# Exported properties
+@export var map_size: int = 128
+@export var zoom: int = 1
+@export var raycast_height: float = 50.0
+@export var raycast_depth: float = -10.0
+@export var distance_falloff: float = 10
+@export var mask_value: float = 0.1
+
+@export var save_directory: String = "res://Data/Sea/"
+var output_file_name: String = "heightmap"
+var mask_file_name: String = "heightmap"
+var sdf_output_file_name: String = "sdf"
+
+@export var show_non_hits: bool = false
+@export var save_mask: bool = false
+
+var true_zoom : int
 
 func _generate_heightmap():
-	#if not Engine.is_editor_hint():
-		#return
+	if not Engine.is_editor_hint():
+		return
+	
+	true_zoom = pow(2,zoom)
+	print("Generating Height Map...")
+	var output_image = Image.create(map_size * true_zoom, map_size * true_zoom, false, Image.FORMAT_RGBAF)
 
-	var output_image = Image.create(map_size, map_size, false, Image.FORMAT_RGBAF)
+	var world_x : int = section.x * map_size
+	var world_z : int = section.y * map_size
 
-	var half_size = map_size / 2
-	for x in range(map_size):
-		for y in range(map_size):
-			var world_x = (x - half_size) / half_size * raycast_height
-			var world_y = (y - half_size) / half_size * raycast_height
+	var from_pos : Vector3 = Vector3(world_x, raycast_height, world_z)
+	var to_pos : Vector3  = Vector3(world_x, raycast_depth, world_z)
 
-			var from_pos = Vector3(world_x, raycast_height, world_y)
-			var to_pos = Vector3(world_x, -raycast_depth, world_y)
+	var space_state = get_world_3d().direct_space_state
 
-			var space_state = get_world_3d().direct_space_state
-			var query = PhysicsRayQueryParameters3D.create(from_pos, to_pos)
+	for x in range(map_size * true_zoom):
+		for y in range(map_size * true_zoom):
+			
+			var cast_pos : Vector3 = Vector3(x,0,y) / true_zoom
+			
+			print(cast_pos)
+
+			var query = PhysicsRayQueryParameters3D.create(cast_pos+from_pos, cast_pos+to_pos)
 			var result = space_state.intersect_ray(query)
 
 			var height = 0.0
 			if result.has("position"):
 				height = (raycast_height - result["position"].y) / raycast_height
-				print(height)
-				
-			var test : Vector2i = output_image.get_size()
-			output_image.set_pixel(x, y, Color(height, height, height))
+				output_image.set_pixel(x, y, Color(height, height, height))
+			else:
+				if show_non_hits:
+					output_image.set_pixel(x, y, Color(1, 0, 0))
+				else:
+					output_image.set_pixel(x, y, Color(1, 1, 1))
+					
+	var save_path : String = "%s%s : %s,%s.png"%[save_directory,output_file_name, section.x,section.y]
+	print(save_path)
+	output_image.save_png(save_path)
+	print("Finished Generating Height Map.")
 
-	output_image.flip_y()
-	output_image.save_png(output_file)
+	var mask : Image = _create_mask(output_image)
+	_create_signed_distance_field(mask)
 
-# Editor function to trigger heightmap generation
-func _on_generate_pressed():
-	_generate_heightmap()
+func _create_mask(image: Image) -> Image:
+	print("Generating Mask...")
+	var mask = Image.create(map_size * true_zoom, map_size * true_zoom, false, Image.FORMAT_L8)
 
-# Editor UI setup
-func _get_configuration_warning() -> String:
-	return "Ensure this node is placed at the center of the area you want to map, and that the level geometry is loaded."
+	for x in range(map_size * true_zoom):
+		for y in range(map_size * true_zoom):
+			var pixel = image.get_pixel(x, y).r
+			mask.set_pixel(x, y, Color.WHITE if pixel > mask_value else Color.BLACK)
+
+	if save_mask:
+		mask.save_png("%s%s : %s,%s.png"%[save_directory,mask_file_name, section.x,section.y])
+		
+	print("Finished Generating Mask.")
+	return mask
+
+func _create_signed_distance_field(image: Image):
+	print("Generating Signed Distance Field...")
+	var sdf = Image.create(map_size* true_zoom, map_size* true_zoom, false, Image.FORMAT_RGBAF)
+	var actual_falloff = distance_falloff * pow(2,zoom)
+	for x in range(map_size* true_zoom):
+		for y in range(map_size* true_zoom):
+			var nearest_dist = float(map_size)
+			var nearest_direction = Vector2.ZERO
+			var center_pixel = image.get_pixel(x, y).r > 0.5
+			for dx in range(-actual_falloff, actual_falloff +1):
+				for dy in range(-actual_falloff, actual_falloff +1):
+					var nx = x + dx
+					var ny = y + dy
+					if nx >= 0 and nx < map_size and ny >= 0 and ny < map_size:
+						var neighbor_pixel = image.get_pixel(nx, ny).r > 0.5
+						if center_pixel != neighbor_pixel:
+							var dist = Vector2(dx, dy).length()
+							if dist < nearest_dist:
+								nearest_dist = dist
+								nearest_direction = Vector2(dx, dy).normalized()
+
+			if not center_pixel:
+				nearest_dist = -nearest_dist
+
+			var distance_value : float = 1 - (nearest_dist / actual_falloff)
+			sdf.set_pixel(x, y, Color(distance_value, distance_value, distance_value))
+
+			#sdf.set_pixel(x, y, Color(distance_value, nearest_direction.x, nearest_direction.y))
+
+	sdf.save_png("%s%s : %s,%s.png"%[save_directory,sdf_output_file_name, section.x,section.y])
+	print("Finished Generating Signed Distance Field.")

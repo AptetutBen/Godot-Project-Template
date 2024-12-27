@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cl0w4ritthp7d"]
 
 [ext_resource type="Texture2D" uid="uid://b44mhbi487fyf" path="res://Sprites/Splash/spash_logo.jpg" id="1_56iqh"]
-[ext_resource type="Script" path="res://Scripts/Splash Screen/SplashScreen.gd" id="1_terli"]
+[ext_resource type="Script" uid="uid://br2vwxhxdskk1" path="res://Scripts/Splash Screen/SplashScreen.gd" id="1_terli"]
 
 [node name="Splash" type="Control"]
 layout_mode = 3

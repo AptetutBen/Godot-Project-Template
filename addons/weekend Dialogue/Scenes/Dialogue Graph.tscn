@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://b4i8gaa812i43"]
 
-[ext_resource type="Script" path="res://addons/weekend Dialogue/Scripts/weekendDialogueEditor.gd" id="1_hfyfc"]
+[ext_resource type="Script" uid="uid://cfbos3jrtyhg2" path="res://addons/weekend Dialogue/Scripts/weekendDialogueEditor.gd" id="1_hfyfc"]
 [ext_resource type="PackedScene" uid="uid://cufx4633uoge0" path="res://addons/weekend Dialogue/Prefabs/dialogue_node.tscn" id="2_5u2jf"]
 [ext_resource type="Resource" uid="uid://duo0jic738cwv" path="res://Data/Dialogue/Test Dialogue.tres" id="3_nympv"]
 [ext_resource type="PackedScene" uid="uid://degb4wkppnlpv" path="res://addons/weekend Dialogue/Prefabs/start_node.tscn" id="5_5axue"]
-[ext_resource type="Script" path="res://addons/weekend Dialogue/Scripts/TextEditorDialogueNode.gd" id="6_ngmty"]
+[ext_resource type="Script" uid="uid://cqb8dqy20rc33" path="res://addons/weekend Dialogue/Scripts/TextEditorDialogueNode.gd" id="6_ngmty"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xkana"]
 bg_color = Color(0.0920593, 0.0233568, 0.0649891, 1)

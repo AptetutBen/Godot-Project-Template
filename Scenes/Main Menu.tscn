@@ -1,12 +1,12 @@
 [gd_scene load_steps=11 format=3 uid="uid://di0ixdytwx1hv"]
 
-[ext_resource type="Script" path="res://Scripts/Main Menu/Main Menu Controller.gd" id="1_6svde"]
+[ext_resource type="Script" uid="uid://d1iet8fngqlty" path="res://Scripts/Main Menu/Main Menu Controller.gd" id="1_6svde"]
 [ext_resource type="FontFile" path="res://Fonts/font1.tres" id="2_13fio"]
 [ext_resource type="PackedScene" uid="uid://c2ru1q5gvx8uw" path="res://Prefabs/UI/options_panel.tscn" id="3_85ift"]
 [ext_resource type="FontFile" uid="uid://b3lrceixb0548" path="res://Fonts/Chewy-Regular.ttf" id="3_mdvdu"]
-[ext_resource type="Script" path="res://Scripts/Main Menu/StartMenuButtonGroup.gd" id="4_88j2r"]
+[ext_resource type="Script" uid="uid://c0igtkxsnjsgj" path="res://Scripts/Main Menu/StartMenuButtonGroup.gd" id="4_88j2r"]
 [ext_resource type="Theme" uid="uid://d2n2o7gyj2klb" path="res://Themes/MenuTextHighlighted.tres" id="5_g2hd1"]
-[ext_resource type="Script" path="res://Scripts/Main Menu/MenuText.gd" id="5_j2368"]
+[ext_resource type="Script" uid="uid://cqfqww5rcrh8n" path="res://Scripts/Main Menu/MenuText.gd" id="5_j2368"]
 [ext_resource type="Theme" uid="uid://chi28l03dgsy2" path="res://Themes/MenuTextStandard.tres" id="7_xrvh8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xppeu"]
