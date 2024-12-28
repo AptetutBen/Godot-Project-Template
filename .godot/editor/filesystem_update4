@@ -12,3 +12,10 @@ res://Shaders/GrassShader.tres
 res://Materials/Stylized3DGrass.tres
 res://Data/Sea/sea 0,-1.tres
 res://Data/Sea/sea -1,-1.tres
+res://Scenes/Main Menu.tscn
+res://Scenes/Splash.tscn
+res://addons/weekend Dialogue/Scenes/Dialogue Graph.tscn
+res://addons/weekend Dialogue/Prefabs/dialogue_node.tscn
+res://addons/weekend Dialogue/Prefabs/dialoge_option.tscn
+res://addons/weekend Dialogue/Prefabs/start_node.tscn
+res://Scenes/Card Battle.tscn
