@@ -1,7 +1,0 @@
-[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dwkhoo1cupl1v"]
-
-[ext_resource type="Shader" uid="uid://b2dwvafr4llhu" path="res://Shaders/new sea.tres" id="1_0roto"]
-
-[resource]
-render_priority = 0
-shader = ExtResource("1_0roto")

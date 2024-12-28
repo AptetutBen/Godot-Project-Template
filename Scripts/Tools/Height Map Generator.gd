@@ -10,7 +10,7 @@ var callable : Callable = _generate_heightmap
 
 # Exported properties
 @export var map_size: int = 128
-@export var zoom: int = 1
+@export var zoom: float = 1
 @export var raycast_height: float = 50.0
 @export var raycast_depth: float = -10.0
 @export var distance_falloff: float = 10
@@ -24,13 +24,13 @@ var sdf_output_file_name: String = "sdf"
 @export var show_non_hits: bool = false
 @export var save_mask: bool = false
 
-var true_zoom : int
+var true_zoom : float
 
 func _generate_heightmap():
 	if not Engine.is_editor_hint():
 		return
 	
-	true_zoom = pow(2,zoom)
+	true_zoom = pow(2,zoom-1)
 	print("Generating Height Map...")
 	var output_image = Image.create(map_size * true_zoom, map_size * true_zoom, false, Image.FORMAT_RGBAF)
 
@@ -62,7 +62,7 @@ func _generate_heightmap():
 				else:
 					output_image.set_pixel(x, y, Color(1, 1, 1))
 					
-	var save_path : String = "%s%s : %s,%s.png"%[save_directory,output_file_name, section.x,section.y]
+	var save_path : String = "%s%s %s,%s.png"%[save_directory,output_file_name, section.x,section.y]
 	print(save_path)
 	output_image.save_png(save_path)
 	print("Finished Generating Height Map.")
@@ -80,7 +80,7 @@ func _create_mask(image: Image) -> Image:
 			mask.set_pixel(x, y, Color.WHITE if pixel > mask_value else Color.BLACK)
 
 	if save_mask:
-		mask.save_png("%s%s : %s,%s.png"%[save_directory,mask_file_name, section.x,section.y])
+		mask.save_png("%s%s %s,%s.png"%[save_directory,mask_file_name, section.x,section.y])
 		
 	print("Finished Generating Mask.")
 	return mask
@@ -88,11 +88,13 @@ func _create_mask(image: Image) -> Image:
 func _create_signed_distance_field(image: Image):
 	print("Generating Signed Distance Field...")
 	var sdf = Image.create(map_size* true_zoom, map_size* true_zoom, false, Image.FORMAT_RGBAF)
-	var actual_falloff = distance_falloff * pow(2,zoom)
+	var actual_falloff = distance_falloff * zoom
+	
 	for x in range(map_size* true_zoom):
 		for y in range(map_size* true_zoom):
 			var nearest_dist = float(map_size)
 			var nearest_direction = Vector2.ZERO
+			
 			var center_pixel = image.get_pixel(x, y).r > 0.5
 			for dx in range(-actual_falloff, actual_falloff +1):
 				for dy in range(-actual_falloff, actual_falloff +1):
@@ -114,5 +116,5 @@ func _create_signed_distance_field(image: Image):
 
 			#sdf.set_pixel(x, y, Color(distance_value, nearest_direction.x, nearest_direction.y))
 
-	sdf.save_png("%s%s : %s,%s.png"%[save_directory,sdf_output_file_name, section.x,section.y])
+	sdf.save_png("%s%s %s,%s.png"%[save_directory,sdf_output_file_name, section.x,section.y])
 	print("Finished Generating Signed Distance Field.")

@@ -2,20 +2,13 @@ res://Scenes/Game.tscn
 res://Data/Dialogue/Test Dialogue.tres
 res://Models/Yippy Kawaii/Texture/Face/Face04.tres
 res://Models/Yippy Kawaii/Texture/Bunny/Bunny02.tres
-res://Shaders/new sea.tres
+res://Shaders/Sea.tres
+res://Data/Sea/sea 0,0.tres
+res://Materials/tree.tres
 res://Models/Yippy Kawaii/Texture/Bear/Bear08.tres
-res://Shaders/sea.gdshader
-res://Shaders/sea_2.gdshader
-res://Scripts/Tools/Height Map Generator.gd
-res://Scenes/Main Menu.tscn
-res://Scenes/Splash.tscn
-res://addons/weekend Dialogue/Scenes/Dialogue Graph.tscn
-res://addons/weekend Dialogue/Prefabs/dialogue_node.tscn
-res://addons/weekend Dialogue/Prefabs/dialoge_option.tscn
-res://addons/weekend Dialogue/Prefabs/start_node.tscn
-res://Scenes/Card Battle.tscn
-res://Assets/GrassShader.tres
-res://Assets/Stylized3DGrass.tres
-res://Prefabs/grass.tscn
-res://Data/Terrain/terrain3d-01_00.res
-res://Data/Terrain/terrain3d_00_00.res
+res://Shaders/new sea.tres
+res://Data/Sea/sea -1,0.tres
+res://Shaders/GrassShader.tres
+res://Materials/Stylized3DGrass.tres
+res://Data/Sea/sea 0,-1.tres
+res://Data/Sea/sea -1,-1.tres

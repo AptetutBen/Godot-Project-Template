@@ -30,6 +30,7 @@ EventBus="*res://Scripts/Controllers/EventBus.gd"
 
 gdscript/warnings/unused_signal=0
 gdscript/warnings/integer_division=0
+gdscript/warnings/narrowing_conversion=0
 
 [display]
 

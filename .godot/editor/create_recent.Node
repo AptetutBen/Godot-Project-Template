@@ -1,6 +1,10 @@
+StaticBody3D
+CollisionShape3D
 Node3D
-Node
+CollisionPolygon3D
 CSGPolygon3D
+MeshInstance3D
+Node
 CSGCombiner3D
 CSGBox3D
 CSGCylinder3D
@@ -8,7 +12,3 @@ CSGSphere3D
 Button
 Label
 HBoxContainer
-Panel
-ScrollContainer
-ColorRect
-GridContainer
