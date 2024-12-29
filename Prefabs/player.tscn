@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://bvo3eg11jru1n"]
 
-[ext_resource type="Script" path="res://Scripts/PlayerController.gd" id="1_mttcl"]
+[ext_resource type="Script" uid="uid://d4jgg4fgnmheh" path="res://Scripts/PlayerController.gd" id="1_mttcl"]
 [ext_resource type="PackedScene" uid="uid://daqigiapwq35b" path="res://Models/Yippy Kawaii/FBX/bunny.tscn" id="2_h6v5j"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ghiw7"]

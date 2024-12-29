@@ -19,3 +19,6 @@ res://addons/weekend Dialogue/Prefabs/dialogue_node.tscn
 res://addons/weekend Dialogue/Prefabs/dialoge_option.tscn
 res://addons/weekend Dialogue/Prefabs/start_node.tscn
 res://Scenes/Card Battle.tscn
+res://Scripts/game_controller.gd
+res://Scripts/Tools/Height Map Generator.gd
+res://Prefabs/player.tscn

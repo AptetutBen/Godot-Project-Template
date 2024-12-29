@@ -72,10 +72,11 @@ func _generate_heightmap():
 
 func _create_mask(image: Image) -> Image:
 	print("Generating Mask...")
-	var mask = Image.create(map_size * true_zoom, map_size * true_zoom, false, Image.FORMAT_L8)
+	var image_size : int = image.get_width()
+	var mask = Image.create(image_size, image_size, false, Image.FORMAT_L8)
 
-	for x in range(map_size * true_zoom):
-		for y in range(map_size * true_zoom):
+	for x in range(image_size):
+		for y in range(image_size):
 			var pixel = image.get_pixel(x, y).r
 			mask.set_pixel(x, y, Color.WHITE if pixel > mask_value else Color.BLACK)
 
@@ -87,11 +88,12 @@ func _create_mask(image: Image) -> Image:
 
 func _create_signed_distance_field(image: Image):
 	print("Generating Signed Distance Field...")
-	var sdf = Image.create(map_size* true_zoom, map_size* true_zoom, false, Image.FORMAT_RGBAF)
+	var image_size : int = image.get_width()
+	var sdf = Image.create(image_size, image_size, false, Image.FORMAT_RGBAF)
 	var actual_falloff = distance_falloff * zoom
 	
-	for x in range(map_size* true_zoom):
-		for y in range(map_size* true_zoom):
+	for x in range(image_size):
+		for y in range(image_size):
 			var nearest_dist = float(map_size)
 			var nearest_direction = Vector2.ZERO
 			
@@ -100,7 +102,7 @@ func _create_signed_distance_field(image: Image):
 				for dy in range(-actual_falloff, actual_falloff +1):
 					var nx = x + dx
 					var ny = y + dy
-					if nx >= 0 and nx < map_size and ny >= 0 and ny < map_size:
+					if nx >= 0 and nx < image_size and ny >= 0 and ny < image_size:
 						var neighbor_pixel = image.get_pixel(nx, ny).r > 0.5
 						if center_pixel != neighbor_pixel:
 							var dist = Vector2(dx, dy).length()

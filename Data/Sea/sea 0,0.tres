@@ -2,11 +2,11 @@
 
 [ext_resource type="Shader" uid="uid://ckowacs8cksvo" path="res://Shaders/Sea.tres" id="1_om2y8"]
 [ext_resource type="Texture2D" uid="uid://e75lw0fissx3" path="res://Textures/Noise.png" id="2_ohbbi"]
-[ext_resource type="Texture2D" uid="uid://d1bhnjvdy11e" path="res://Data/Sea/sdf : 0,0.png" id="2_sdnte"]
+[ext_resource type="Texture2D" uid="uid://cjfd05ex0iqhm" path="res://Data/Sea/sdf 0,0.png" id="3_sdnte"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_om2y8")
 shader_parameter/Sea_Colour = Color(0, 0.556062, 0.993539, 1)
-shader_parameter/SDF = ExtResource("2_sdnte")
+shader_parameter/SDF = ExtResource("3_sdnte")
 shader_parameter/Noise = ExtResource("2_ohbbi")
