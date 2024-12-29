@@ -1,7 +1,7 @@
-class_name DialogueNodeData extends Resource
+class_name DialogueConversationNodeData extends Resource
 
 @export var text : String
-@export var id : String
+@export var id : int
 @export var options : Array[DialogueOption]
 
 var dialoge_data : DialogueData

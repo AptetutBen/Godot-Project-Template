@@ -3,14 +3,14 @@ class_name DialogueTextEditor extends GraphNode
 signal on_edit(text : String)
 
 var textLines : Array[String]
-var current_node : DialogueNode
+var current_node : DialogueConversationNode
 @onready var text_edit: TextEdit = %TextEdit
 
 func _ready() -> void:
 	visible = false
 	text_edit.text_changed.connect(_on_text_changed)
 
-func enable(node: DialogueNode):
+func enable(node: DialogueConversationNode):
 	visible = true
 	text_edit.grab_focus()
 	if current_node != null:

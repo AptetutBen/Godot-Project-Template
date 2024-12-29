@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cufx4633uoge0"]
 
-[ext_resource type="Script" uid="uid://bjnde1xvxtbm1" path="res://addons/weekend Dialogue/Scripts/DialogueNode.gd" id="1_tkl7i"]
+[ext_resource type="Script" uid="uid://bjnde1xvxtbm1" path="res://addons/weekend Dialogue/Scripts/DialogueConversationNode.gd" id="1_tkl7i"]
 [ext_resource type="PackedScene" uid="uid://da0digpeup2bd" path="res://addons/weekend Dialogue/Prefabs/dialoge_option.tscn" id="2_ylejc"]
 
 [node name="Dialogue Node" type="GraphNode"]
@@ -10,6 +10,7 @@ offset_right = 322.0
 offset_bottom = 216.0
 mouse_filter = 1
 position_offset = Vector2(108, 131)
+resizable = true
 title = "Node"
 slot/0/left_enabled = true
 slot/0/left_type = 0
@@ -62,6 +63,7 @@ text = "X"
 [node name="Preview" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(0, 91.72)
 layout_mode = 2
+size_flags_vertical = 3
 color = Color(0.2757, 0.2757, 0.2757, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="Preview"]

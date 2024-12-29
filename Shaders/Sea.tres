@@ -221,7 +221,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-346.637, -630.669)
 preview_params/SDF = "Object(CompressedTexture2D,\"resource_local_to_scene\":false,\"resource_name\":\"\",\"load_path\":\"\",\"script\":null)
 "
 nodes/fragment/0/position = Vector2(2000, -460)

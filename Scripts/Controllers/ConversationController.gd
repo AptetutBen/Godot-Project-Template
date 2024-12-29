@@ -5,7 +5,7 @@ class_name ConversationController extends Control
 @onready var input_prompt_image: ColorRect = %"Input Prompt Image"
 
 var input_pressed : bool
-var current_node : DialogueNodeData
+var current_node : DialogueConversationNodeData
 
 func _ready() -> void:
 	EventBus.start_conversation.connect(_on_start_conversation)
@@ -43,7 +43,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("UI Accept") || event.is_action_pressed("Interact"):
 		input_pressed = true
 	
-func _on_start_conversation(node : DialogueNodeData):
+func _on_start_conversation(node : DialogueConversationNodeData):
 	if node == null:
 		printerr("Conversatino is null")
 		return

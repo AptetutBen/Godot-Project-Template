@@ -3,6 +3,8 @@
 [ext_resource type="Script" uid="uid://bt8nhg80djjml" path="res://addons/weekend Dialogue/Scripts/DialogeOptionUI.gd" id="1_0a03l"]
 
 [node name="Option1" type="HBoxContainer"]
+offset_right = 218.0
+offset_bottom = 37.0
 script = ExtResource("1_0a03l")
 
 [node name="Delete_button" type="Button" parent="."]

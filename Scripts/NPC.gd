@@ -15,7 +15,7 @@ func _ready() -> void:
 	EventBus.finish_conversation.connect(_on_finish_conversation)
 
 func _on_interact():
-	var node : DialogueNodeData = dialogue_data.get_node_from_start("test")
+	var node : DialogueConversationNodeData = dialogue_data.get_node_from_start("test")
 	EventBus.start_conversation.emit(node)
 	
 func _on_start_conversation(_node):

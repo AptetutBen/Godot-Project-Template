@@ -1,52 +1,60 @@
-[gd_resource type="Resource" script_class="DialogueData" load_steps=12 format=3 uid="uid://duo0jic738cwv"]
+[gd_resource type="Resource" script_class="DialogueData" load_steps=12 format=3 uid="uid://cqx01jw1chbl"]
 
-[ext_resource type="Script" uid="uid://rxyur4vwo6q0" path="res://addons/weekend Dialogue/Scripts/DialogueData.gd" id="1_e8qyd"]
+[ext_resource type="Script" uid="uid://rxyur4vwo6q0" path="res://addons/weekend Dialogue/Scripts/DialogueConversationNodeData.gd" id="1_e8qyd"]
 [ext_resource type="Script" uid="uid://mtq6i61w1mhi" path="res://addons/weekend Dialogue/Scripts/DialogueNodeData.gd" id="1_ha705"]
 [ext_resource type="Script" uid="uid://uv5we0y0dofd" path="res://addons/weekend Dialogue/Scripts/DialogueStartNodeData.gd" id="2_mk4en"]
-[ext_resource type="Script" uid="uid://sqg6wt1txbp5" path="res://addons/weekend Dialogue/Scripts/DialogueOption.gd" id="2_pcjag"]
+[ext_resource type="Script" uid="uid://sqg6wt1txbp5" path="res://addons/weekend Dialogue/Scripts/DialogueOption.gd" id="2_txva4"]
 
-[sub_resource type="Resource" id="Resource_ecyc0"]
+[sub_resource type="Resource" id="Resource_yf41g"]
+script = ExtResource("2_txva4")
+text = "default"
+linking_node_id = 5
+
+[sub_resource type="Resource" id="Resource_ftgil"]
 script = ExtResource("1_ha705")
-text = "This is an [u]example[/u] of what a [b]character[/b] can [i]say[/i]."
-id = "Dialogue Node"
-options = Array[ExtResource("2_pcjag")]([])
-position = Vector2(-420, -100)
+text = "Hello there!
+This is where I tell [b]you[/b] things!"
+id = 3
+options = Array[ExtResource("2_txva4")]([SubResource("Resource_yf41g")])
+position = Vector2(140, 160)
 
-[sub_resource type="Resource" id="Resource_oka0w"]
-script = ExtResource("2_pcjag")
-text = "Option text"
-linking_node_id = ""
-
-[sub_resource type="Resource" id="Resource_2nhuq"]
-script = ExtResource("2_pcjag")
-text = "Option text"
-linking_node_id = ""
-
-[sub_resource type="Resource" id="Resource_yui5n"]
-script = ExtResource("2_pcjag")
-text = "Option text"
-linking_node_id = ""
-
-[sub_resource type="Resource" id="Resource_fmvi3"]
+[sub_resource type="Resource" id="Resource_42ggt"]
 script = ExtResource("1_ha705")
-text = "[rainbow freq=0.2 sat=10 val=20]This is a [tornado radius=5 freq=2]thing[/tornado][/rainbow]"
-id = "@GraphNode@148"
-options = Array[ExtResource("2_pcjag")]([SubResource("Resource_oka0w"), SubResource("Resource_2nhuq"), SubResource("Resource_yui5n")])
-position = Vector2(0, -20)
+text = ""
+id = 4
+options = Array[ExtResource("2_txva4")]([])
+position = Vector2(220, 460)
 
-[sub_resource type="Resource" id="Resource_dck4d"]
-script = ExtResource("2_mk4en")
-first_node_id = ""
-linking_node = ""
-position = Vector2(20, 660)
+[sub_resource type="Resource" id="Resource_pftqe"]
+script = ExtResource("1_ha705")
+text = "This is the [wave amp=50.0 freq=5.0 connected=1]second[/wave] part of the conversation!"
+id = 5
+options = Array[ExtResource("2_txva4")]([])
+position = Vector2(560, 160)
 
-[sub_resource type="Resource" id="Resource_fmvxk"]
+[sub_resource type="Resource" id="Resource_txva4"]
 script = ExtResource("2_mk4en")
-first_node_id = ""
-linking_node = ""
-position = Vector2(460, 360)
+id = 0
+first_node_id = 3
+start_key = "testss"
+position = Vector2(-260, 140)
+
+[sub_resource type="Resource" id="Resource_k1qhg"]
+script = ExtResource("2_mk4en")
+id = 0
+first_node_id = 4
+start_key = ""
+position = Vector2(-180, 500)
+
+[sub_resource type="Resource" id="Resource_qykrk"]
+script = ExtResource("2_mk4en")
+id = 6
+first_node_id = 0
+start_key = ""
+position = Vector2(-200, 720)
 
 [resource]
 script = ExtResource("1_e8qyd")
-start_data = Array[ExtResource("2_mk4en")]([SubResource("Resource_dck4d"), SubResource("Resource_dck4d"), SubResource("Resource_dck4d"), SubResource("Resource_dck4d"), SubResource("Resource_fmvxk")])
-data = Array[ExtResource("1_ha705")]([SubResource("Resource_ecyc0"), SubResource("Resource_fmvi3")])
+start_data = Array[ExtResource("2_mk4en")]([SubResource("Resource_txva4"), SubResource("Resource_k1qhg"), SubResource("Resource_qykrk")])
+data = Array[ExtResource("1_ha705")]([SubResource("Resource_ftgil"), SubResource("Resource_42ggt"), SubResource("Resource_pftqe")])
+connnections = Array[String](["Start Node_1,0,Dialogue Node_4,0", "Start Node_0,0,Dialogue Node_3,0", "Dialogue Node_3,0,Dialogue Node_5,0"])
