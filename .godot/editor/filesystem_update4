@@ -1,27 +1,7 @@
-res://addons/weekend Dialogue/Scenes/Dialogue Graph.tscn
+res://Scenes/Main Menu.tscn
+res://Shaders/Sea.tres
 res://Data/Dialogue/Test Dialogue.tres
 res://Shaders/GrassShader.tres
-res://Shaders/Sea.tres
-res://addons/weekend Dialogue/Scripts/DialogueNode.gd
-res://addons/weekend Dialogue/Scripts/DialogueStartNode.gd
-res://addons/weekend Dialogue/Scripts/DialogueConversationNode.gd
-res://addons/weekend Dialogue/Prefabs/dialogue_node.tscn
-res://addons/weekend Dialogue/Prefabs/start_node.tscn
-res://addons/weekend Dialogue/Scripts/DialogueStartNodeData.gd
-res://addons/weekend Dialogue/Scripts/weekendDialogueEditor.gd
-res://addons/weekend Dialogue/Scripts/DialogueNodeData.gd
-res://addons/weekend Dialogue/Scripts/DialogueConversationNodeData.gd
-res://addons/weekend Dialogue/Scripts/DialogeOptionUI.gd
-res://addons/weekend Dialogue/Scripts/DialogueOption.gd
-res://Models/Yippy Kawaii/Texture/Face/Face04.tres
-res://Models/Yippy Kawaii/Texture/Bunny/Bunny02.tres
-res://Data/Sea/sea 0,0.tres
-res://Materials/tree.tres
-res://Models/Yippy Kawaii/Texture/Bear/Bear08.tres
-res://Data/Sea/sea -1,0.tres
 res://Materials/Stylized3DGrass.tres
-res://Data/Sea/sea 0,-1.tres
-res://Data/Sea/sea -1,-1.tres
 res://Scenes/Game.tscn
-res://Scripts/Controllers/ConversationController.gd
-res://Scripts/NPC.gd
+res://Scenes/GameTest.tscn

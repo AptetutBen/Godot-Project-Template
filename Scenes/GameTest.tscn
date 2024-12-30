@@ -1,0 +1,91 @@
+[gd_scene load_steps=6 format=3 uid="uid://blvrfey3062px"]
+
+[ext_resource type="Script" uid="uid://bkrdffignrdxj" path="res://Scripts/Controllers/Game Controller.gd" id="1_3vema"]
+[ext_resource type="PackedScene" uid="uid://cfray3p1qt7l2" path="res://Prefabs/camera.tscn" id="18_hh5op"]
+[ext_resource type="PackedScene" uid="uid://b3pir137tyy2v" path="res://Prefabs/road_block.tscn" id="19_l0qju"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_vvhu1"]
+radius = 1.6487
+height = 4.31604
+
+[sub_resource type="QuadMesh" id="QuadMesh_il3ve"]
+
+[node name="Main Game" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0419502, -0.245834, 0.237907)
+script = ExtResource("1_3vema")
+
+[node name="World Collisions" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0419502, 0.107002, 32.0257)
+
+[node name="Right Camping" type="CollisionPolygon3D" parent="World Collisions"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 2.39246, 5.18917, 1.24651)
+depth = 14.88
+polygon = PackedVector2Array(-9.31014, -4.6804, -3.91999, -2.65934, -2.85226, 1.52376, -8.12516, 5.52696, -14.8536, 9.77924, -15.2418, 17.1973, -9.86621, 35.2417, -8.05948, 32.8277, -7.894, 24.7113, -1.72576, 18.03, 8.16409, 7.12413, 11.8698, 12.0762, 16.061, 11.9981, 18.6586, 15.5438, 21.9391, 15.379, 25.4135, 10.11, 30.1025, 5.64417, 30.5139, 1.19646, 22.8021, -1.76228, 25.0521, -7.92414, 18.1815, -8.48561, 18.2608, -13.4593, 11.9898, -13.8436, 8.45034, -20.5461, 3.21435, -24.0085, -0.290138, -22.2514, -0.950323, -15.5855, -6.61293, -13.3267, -7.70297, -9.66763)
+metadata/_edit_lock_ = true
+
+[node name="Beach Left2" type="CollisionPolygon3D" parent="World Collisions"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -26.7112, 0, 19.2975)
+depth = 21.66
+polygon = PackedVector2Array(0.550898, 6.05987, 0.747644, 10.5851, -0.865694, 12.9067, -0.747646, 14.8349, -3.06928, 17.2746, -2.99007, 20.6706, -1.49489, 21.6542, 2.16436, 22.9527, 4.32843, 23.3855, 6.53186, 23.5429, 8.10573, 25.7069, 10.742, 24.6052, 17.1555, 31.7664, 13.1421, 36.7241, 3.30541, 31.0581, -6.05912, 27.4382, -13.9285, 23.9363, -18.7681, 18.5852, -23.5142, 13.02, -20.2971, 7.93969, -12.4915, 10.9518, -6.39105, 8.75949, -7.22208, -3.46119, -13.1169, -3.816, -15.5296, -5.93118, -14.5804, -9.09625, -18.5626, -8.66323, -20.0321, -12.7533, -19.469, -18.7726, -14.6061, -16.5069, -11.5401, -19.1988, -9.36264, -19.6743, -6.72467, -17.328, -5.21041, -17.6783, -2.93472, -21.2735, 2.69691, -21.9285, 4.75703, -19.3775, 8.77611, -19.7212, 11.6711, -22.2894, 15.7157, -21.8163, 17.2443, -19.0033, 15.6641, -15.993, 15.0348, -12.1449, 8.5681, -6.98825, 4.59358, -6.84019, 5.35262, -1.62698, 3.39993, 0.735146, 1.1927, 2.54173, 1.76565, 4.61006)
+metadata/_edit_lock_ = true
+
+[node name="Tree" type="CollisionShape3D" parent="World Collisions"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.8675, 8.77981, -9.98133)
+shape = SubResource("CapsuleShape3D_vvhu1")
+metadata/_edit_lock_ = true
+
+[node name="Cafe" type="CollisionPolygon3D" parent="World Collisions"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 34.578, 0, 51.985)
+depth = 21.66
+polygon = PackedVector2Array(0.360996, 6.75707, -0.58622, 9.40767, -4.26619, 8.83001, -5.69614, 12.68, -10.6361, 14.2211, -13.1012, 11.2968, -16.7385, 11.8983, -17.8893, 9.60547, -18.0765, 7.31011, -20.5307, 5.6209, -21.2528, -3.48466, -16.6399, -7.5083, -9.66543, -11.4327, 1.90773, -12.9102, 20.0478, -12.3232, 18.8352, -11.4871, 0.952892, -11.6758, -0.887787, -9.18817, -3.70026, -3.89643, -2.15742, 0.855797, -2.46877, 4.97929)
+metadata/_edit_lock_ = true
+
+[node name="Beach Left" type="CollisionPolygon3D" parent="World Collisions"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -26.7112, 0, 51.985)
+depth = 21.66
+polygon = PackedVector2Array(14.3611, -11.8231, 19.6545, -8.8762, 24.7106, -2.50964, 20.0581, 1.2918, 16.4422, 0.520981, 15.0016, -1.18836, 14.9111, -2.77222, 11.5236, -3.93027, 9.84029, -1.76705, 7.05389, -1.53168, 5.62951, -4.75919, 4.58372, -5.06758, 3.43021, -2.54356, -0.562193, -2.26606, -4.76236, -4.98248, -7.21328, -4.03448, -11.3019, -4.54701, -13.7789, -1.35576, -15.8489, 0.648651, -16.1245, 5.66198, -19.7803, 5.7207, -22.5369, 6.01759, -23.8486, 4.9189, -26.647, 6.96703, -28.5785, 6.68504, -30.3618, 8.88909, -34.2573, 9.16051, -36.1245, 8.0046, -36.6664, 11.0047, -37.6541, 10.813, -36.8079, 4.45959, -20.7691, -9.21807, -10.6718, -13.92, 10.3865, -12.7027)
+metadata/_edit_lock_ = true
+
+[node name="Cafe North" type="CollisionPolygon3D" parent="World Collisions"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 59.3739, 0, 30.0086)
+depth = 20.0
+polygon = PackedVector2Array(13.2519, -0.148998, 20.245, 2.11334, 21.5876, 7.01489, 26.0214, 11.096, 29.0006, 16.904, 27.7902, 20.9425, 21.9178, 16.9067, 14.4078, 16.4063, 5.22063, 17.4872, 3.50058, 25.9584, 0.153877, 26.3574, -2.3229, 24.9594, -4.00422, 26.2367, -3.31018, 30.7426, -8.75633, 34.9437, -10.6965, 34.1213, -12.38, 21.7032, -13.2869, 16.9569, -18.6097, 7.97018, -17.7009, 5.70845, -17.8366, 4.76508, -20.2642, 1.7393, -18.6224, -0.195847, -15.5596, -0.0228806, -12.9094, -2.98272, -8.78127, -6.62511, -4.48198, -5.51308, -0.8624, -6.61557, 5.15369, -3.44933)
+
+[node name="Cafe East" type="CollisionPolygon3D" parent="World Collisions"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 65.8289, 0, 49.1168)
+depth = 20.0
+polygon = PackedVector2Array(12.1641, 8.6357, 7.33881, 7.77139, 3.72874, 8.2691, -0.905037, 4.72396, -4.13866, 2.46443, -2.48982, -2.0337, -3.49488, -4.56503, -2.82363, -8.70045, -2.82288, -10.4775, -8.58213, -17.5803, -7.78885, -18.3854, 19.3782, 10.0294, 26.3265, 18.6518, 26.9671, 20.5123, 21.7497, 18.075, 16.4995, 12.8335)
+
+[node name="Camera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hh5op")]
+unique_name_in_owner = true
+player = NodePath("")
+
+[node name="Road Blocks" type="Node3D" parent="."]
+
+[node name="Road Block1" parent="Road Blocks" instance=ExtResource("19_l0qju")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.31549, 6.78775, 81.3048)
+
+[node name="Road Block2" parent="Road Blocks" instance=ExtResource("19_l0qju")]
+transform = Transform3D(0.444995, 0, -0.895533, 0, 1, 0, 0.895533, 0, 0.444995, 58.2013, 8.00537, 74.084)
+
+[node name="Road Block3" parent="Road Blocks" instance=ExtResource("19_l0qju")]
+transform = Transform3D(0.922025, 0, 0.387129, 0, 1, 0, -0.387129, 0, 0.922025, 57.5962, 7.72275, 93.0355)
+
+[node name="Road Block4" parent="Road Blocks" instance=ExtResource("19_l0qju")]
+transform = Transform3D(0.977721, 0, -0.209909, 0, 1, 0, 0.209909, 0, 0.977721, 36.9787, 7.79478, 37.9783)
+
+[node name="Road Block5" parent="Road Blocks" instance=ExtResource("19_l0qju")]
+transform = Transform3D(0.444823, 0, 0.895619, 0, 1, 0, -0.895619, 0, 0.444823, -40.9202, 7.7806, 77.8777)
+
+[node name="Road Block6" parent="Road Blocks" instance=ExtResource("19_l0qju")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -72.4434, 5.34994, 74.6658)
+
+[node name="Road Block7" parent="Road Blocks" instance=ExtResource("19_l0qju")]
+transform = Transform3D(0.558759, 0, 0.82933, 0, 1, 0, -0.82933, 0, 0.558759, 7.39781, 9.01699, -7.74567)
+
+[node name="Sea" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.653, 0)
+metadata/_edit_lock_ = true
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Sea"]
+mesh = SubResource("QuadMesh_il3ve")
