@@ -1,7 +1,7 @@
 class_name GameController extends Node
 
 var road_blocks : Array[RoadBlock]
-@onready var road_block_parent: Node3D = $"../Road Blocks"
+@onready var road_block_parent: Node3D = $"Road Blocks"
 
 @export var _use_debug : bool = false
 @export var _debug_open_roadblocks : bool = false

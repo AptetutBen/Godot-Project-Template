@@ -1,6 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://blvrfey3062px"]
+[gd_scene load_steps=6 format=3 uid="uid://xvdx8vka7qv0"]
 
-[ext_resource type="Script" uid="uid://bkrdffignrdxj" path="res://Scripts/Controllers/Game Controller.gd" id="1_3vema"]
+[ext_resource type="Script" path="res://Scripts/Controllers/Game Controller.gd" id="1_3vema"]
 [ext_resource type="PackedScene" uid="uid://cfray3p1qt7l2" path="res://Prefabs/camera.tscn" id="18_hh5op"]
 [ext_resource type="PackedScene" uid="uid://b3pir137tyy2v" path="res://Prefabs/road_block.tscn" id="19_l0qju"]
 
@@ -56,9 +56,8 @@ transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 65.828
 depth = 20.0
 polygon = PackedVector2Array(12.1641, 8.6357, 7.33881, 7.77139, 3.72874, 8.2691, -0.905037, 4.72396, -4.13866, 2.46443, -2.48982, -2.0337, -3.49488, -4.56503, -2.82363, -8.70045, -2.82288, -10.4775, -8.58213, -17.5803, -7.78885, -18.3854, 19.3782, 10.0294, 26.3265, 18.6518, 26.9671, 20.5123, 21.7497, 18.075, 16.4995, 12.8335)
 
-[node name="Camera" parent="." node_paths=PackedStringArray("player") instance=ExtResource("18_hh5op")]
+[node name="Camera" parent="." instance=ExtResource("18_hh5op")]
 unique_name_in_owner = true
-player = NodePath("")
 
 [node name="Road Blocks" type="Node3D" parent="."]
 

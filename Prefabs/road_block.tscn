@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=3 uid="uid://b3pir137tyy2v"]
 
-[ext_resource type="Script" path="res://Scripts/road_block.gd" id="1_6j7bo"]
+[ext_resource type="Script" uid="uid://y80d5lheav37" path="res://Scripts/road_block.gd" id="1_6j7bo"]
 [ext_resource type="PackedScene" uid="uid://b68jcsibg45n8" path="res://Models/safey_cone.glb" id="1_8yaye"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_vvhu1"]
-size = Vector3(20.6664, 7.84848, 3.46436)
+size = Vector3(12.3563, 7.84848, 1.33901)
 
 [node name="Road Block1" type="StaticBody3D"]
 script = ExtResource("1_6j7bo")

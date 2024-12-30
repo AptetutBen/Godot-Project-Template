@@ -1,5 +1,13 @@
+res://Scenes/Game.tscn
 res://Shaders/Sea.tres
+res://Data/Sea/sea 0,0.tres
 res://Data/Dialogue/Test Dialogue.tres
 res://Shaders/GrassShader.tres
 res://Materials/Stylized3DGrass.tres
-res://Scenes/Game.tscn
+res://Scripts/AudioPath.gd
+res://Prefabs/player.tscn
+res://Scenes/Main Menu.tscn
+res://Scenes/GameTest.tscn
+res://Prefabs/road_block.tscn
+res://Scripts/Controllers/Game Controller.gd
+res://Scripts/game_controller.gd

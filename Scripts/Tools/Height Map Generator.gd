@@ -6,6 +6,7 @@ class_name HeightmapGenerator
 @export_tool_button("Create Heightmap")
 var callable : Callable = _generate_heightmap
 
+@export var terrain_3d: Terrain3D
 @export var section : Vector2i = Vector2i(0,0)
 
 # Exported properties
@@ -29,6 +30,8 @@ var true_zoom : float
 func _generate_heightmap():
 	if not Engine.is_editor_hint():
 		return
+		
+	terrain_3d.collision_mode = Terrain3D.FULL_EDITOR
 	
 	true_zoom = pow(2,zoom-1)
 	print("Generating Height Map...")
@@ -69,6 +72,8 @@ func _generate_heightmap():
 
 	var mask : Image = _create_mask(output_image)
 	_create_signed_distance_field(mask)
+	
+	terrain_3d.collision_mode = Terrain3D.FULL_GAME
 
 func _create_mask(image: Image) -> Image:
 	print("Generating Mask...")
