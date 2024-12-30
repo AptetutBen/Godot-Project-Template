@@ -1,7 +1,5 @@
-res://Scenes/Main Menu.tscn
 res://Shaders/Sea.tres
 res://Data/Dialogue/Test Dialogue.tres
 res://Shaders/GrassShader.tres
 res://Materials/Stylized3DGrass.tres
 res://Scenes/Game.tscn
-res://Scenes/GameTest.tscn
