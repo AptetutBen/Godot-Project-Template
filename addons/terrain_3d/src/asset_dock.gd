@@ -1,6 +1,7 @@
+# Copyright © 2024 Cory Petkovsek, Roope Palmroos, and Contributors.
+# Asset Dock for Terrain3D
 @tool
 extends PanelContainer
-#class_name Terrain3DAssetDock
 
 signal confirmation_closed
 signal confirmation_confirmed
@@ -791,8 +792,8 @@ class ListEntry extends VBoxContainer:
 				var ma := Terrain3DMeshAsset.new()
 				if resource is Terrain3DMeshAsset:
 					ma.id = resource.id
-				ma.set_scene_file(res)
 				set_edited_resource(ma, false)
+				ma.set_scene_file(res)
 				resource = ma
 			elif res is Terrain3DMeshAsset and type == Terrain3DAssets.TYPE_MESH:
 				if resource is Terrain3DMeshAsset:

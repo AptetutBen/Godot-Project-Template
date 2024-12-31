@@ -1,12 +1,11 @@
-[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://cslklwg8yagmr"]
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://cslklwg8yagmr"]
 
 [ext_resource type="Shader" uid="uid://ckowacs8cksvo" path="res://Shaders/Sea.tres" id="1_vfxtn"]
 [ext_resource type="Texture2D" uid="uid://bvatnpnc32nlb" path="res://Data/Sea/sdf -1,-1.png" id="2_35hkg"]
-[ext_resource type="Texture2D" uid="uid://e75lw0fissx3" path="res://Textures/Noise.png" id="2_vbnmd"]
 
 [resource]
 render_priority = 0
 shader = ExtResource("1_vfxtn")
 shader_parameter/Sea_Colour = Color(0, 0.556062, 0.993539, 1)
 shader_parameter/SDF = ExtResource("2_35hkg")
-shader_parameter/Noise = ExtResource("2_vbnmd")
+shader_parameter/WaveCount = 8.0

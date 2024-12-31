@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://xvdx8vka7qv0"]
+[gd_scene load_steps=5 format=3 uid="uid://blvrfey3062px"]
 
-[ext_resource type="Script" path="res://Scripts/Controllers/Game Controller.gd" id="1_3vema"]
 [ext_resource type="PackedScene" uid="uid://cfray3p1qt7l2" path="res://Prefabs/camera.tscn" id="18_hh5op"]
 [ext_resource type="PackedScene" uid="uid://b3pir137tyy2v" path="res://Prefabs/road_block.tscn" id="19_l0qju"]
 
@@ -12,7 +11,6 @@ height = 4.31604
 
 [node name="Main Game" type="Node3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0419502, -0.245834, 0.237907)
-script = ExtResource("1_3vema")
 
 [node name="World Collisions" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0419502, 0.107002, 32.0257)

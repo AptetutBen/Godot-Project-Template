@@ -12,7 +12,7 @@ func _process(delta: float) -> void:
 	
 	RenderingServer.global_shader_parameter_set("sea_value", temp_timer)
 	
-	var value : float = (sin(temp_timer * speed)* 2) - 1
+	var value : float = (sin(temp_timer * speed + 0.75)* 2) - 1
 	
 	position.y = lerp(min_height,max_height,value)
 	

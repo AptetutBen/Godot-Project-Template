@@ -1,7 +1,13 @@
-AudioListener3D
+Node3D
 MeshInstance3D
+Label3D
+Node
+CollisionPolygon3D
+CollisionShape3D
+ShapeCast3D
+Area3D
+StaticBody3D
+AudioListener3D
 PathFollow3D
 Path3D
-Node3D
 AudioStreamPlayer3D
-Node
