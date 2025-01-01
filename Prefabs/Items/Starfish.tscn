@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://b3cb255e6ta81"]
+
+[ext_resource type="Script" uid="uid://c445ywb3idhh5" path="res://Scripts/Pickup.gd" id="1_ugi3m"]
+[ext_resource type="Script" uid="uid://c3ltynjvmtnsl" path="res://Scripts/InteractObject.gd" id="2_77vuk"]
+[ext_resource type="PackedScene" uid="uid://dn3oslnve6cam" path="res://Models/Items/Starfish.glb" id="3_e26by"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_vmpot"]
+radius = 1.66515
+
+[node name="Starfish" type="Node3D"]
+script = ExtResource("1_ugi3m")
+
+[node name="Area3D" type="Area3D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_77vuk")
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+shape = SubResource("SphereShape3D_vmpot")
+
+[node name="Starfish" parent="Area3D" instance=ExtResource("3_e26by")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
+[connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

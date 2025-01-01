@@ -31,7 +31,7 @@ func get_next_node(current_node : DialogueConversationNodeData, selected_option 
 		0:
 			return null
 		1:
-			return get_dialogue_node(current_node.options[0].node_id)
+			return get_dialogue_node(current_node.options[0].linking_node_id)
 		_:
 			return get_dialogue_node(current_node.options[selected_option].node_id)
 	

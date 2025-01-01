@@ -1,6 +1,6 @@
 class_name FollowCamera extends Node3D
 
-static var Instance : FollowCamera 
+static var Instance : FollowCamera
 @export var deadzone_margin_x: float = 40
 @export var deadzone_margin_y: float = 40
 @export var default_offset: Vector3 = Vector3(0,14,14)
@@ -20,9 +20,11 @@ var player_nav_pos : Vector2
 var player_nav_slide_position : Vector2
 var closest_player_screen_pos : Vector2
 var player_in_deadzone : bool
+var target_camera_position : Vector3
 
 var transition_tween : Tween
 var camera_tween_is_active : bool = false
+var camera_hijacked : bool = false
 var current_camera_zone : CameraZone
 
 func _ready() -> void:
@@ -35,6 +37,8 @@ func _ready() -> void:
 	_on_window_size_changed()
 	main_camera.look_at(camera_target.global_position)
 	debug_viewer.visible = debug
+	
+	position = player.position
 
 
 func _process(_delta: float) -> void:
@@ -50,7 +54,14 @@ func _on_window_size_changed():
 	deadzone_rect.position.y = deadzone_margin_y
 
 func _physics_process(delta):
-	if not player:
+	
+	var distance : float = (position-target_camera_position).length()
+	position = position.move_toward(target_camera_position,distance * 2 * delta)
+	
+	if !player:
+		return
+	
+	if camera_hijacked:
 		return
 		
 	# Convert player world position to screen space
@@ -63,15 +74,27 @@ func _physics_process(delta):
 			clamp(player_screen_pos.x, deadzone_rect.position.x, deadzone_rect.position.x + deadzone_rect.size.x),
 			clamp(player_screen_pos.y, deadzone_rect.position.y, deadzone_rect.position.y + deadzone_rect.size.y)
 		)
-
-		var distance : float = (closest_player_screen_pos-player_screen_pos).length()
 		
-		position = position.move_toward(player.position,distance * 0.2 * delta)
+		target_camera_position = player.position
 
-func _on_start_conversation(_node):
-	_transition(Vector3(0,3,5),60,1,Tween.TRANS_SINE)
+		#var distance : float = (closest_player_screen_pos-player_screen_pos).length()
+		#
+		#position = position.move_toward(player.position,distance * 0.2 * delta)
+	
+func _on_start_conversation(_dialogue_node, node : Node3D):
+	camera_hijacked = true
+	var camera_angle_degrees : float = (node.global_position - player.global_position).normalized().angle_to(Vector3(0,0,-1)) * 180 / PI
+	# var camera_angle : float = atan2(node.global_position.x - player.global_position.x, node.global_position.z - player.global_position.z)
+	print ("camera_angle %s" %camera_angle_degrees)
+	
+	var center_pos : Vector3 = player.global_position - (player.global_position - node.global_position) / 2
+	
+
+	_transition_to_point(Vector3(0,3,5),center_pos,camera_angle_degrees,1,Tween.TRANS_SINE)
 	
 func _on_finish_conversation():
+	target_camera_position = player.position
+	camera_hijacked = false
 	if current_camera_zone:
 		_transition(current_camera_zone.offset,current_camera_zone.angle,1,Tween.TRANS_SINE)
 	else:
@@ -80,6 +103,18 @@ func _on_finish_conversation():
 func _transition(offset : Vector3, angle: float = 0, duration : float = 5, ease_type: Tween.TransitionType = Tween.TRANS_CUBIC):
 	if transition_tween:
 		transition_tween.kill()
+	camera_tween_is_active = true
+	transition_tween = get_tree().create_tween()
+	transition_tween.tween_property(main_camera, "position", offset, duration).set_ease(Tween.EASE_IN_OUT).set_trans(ease_type)
+	transition_tween.parallel().tween_property(self, "rotation_degrees", Vector3(0,angle,0), duration).set_ease(Tween.EASE_IN_OUT).set_trans(ease_type)
+	transition_tween.tween_callback(_stop_tween)
+	transition_tween.play()
+
+func _transition_to_point(offset : Vector3, focus_posion : Vector3 , angle: float = 0, duration : float = 5, ease_type: Tween.TransitionType = Tween.TRANS_CUBIC):
+	if transition_tween:
+		transition_tween.kill()
+	
+	target_camera_position = focus_posion
 	camera_tween_is_active = true
 	transition_tween = get_tree().create_tween()
 	transition_tween.tween_property(main_camera, "position", offset, duration).set_ease(Tween.EASE_IN_OUT).set_trans(ease_type)

@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1735628151.0
+::res://::1735676795.0
 export_presets.cfg::TextFile::-1::1735338163::0::1::::<><><><>::
 Old Sky.tres::ProceduralSkyMaterial::899393065761218748::1735628151::0::1::::<><><><>::
 ::res://addons/::1735587833.0
@@ -70,12 +70,12 @@ transform_changed_notifier.gd::GDScript::74642182061230700::1735545098::0::1::::
 dialoge_option.tscn::PackedScene::7211068270781592457::1735464643::0::1::::<><><><>::uid://bt8nhg80djjml::::res://addons/weekend Dialogue/Scripts/DialogeOptionUI.gd
 dialogue_node.tscn::PackedScene::6188390080551873385::1735516767::0::1::::<><><><>::uid://bjnde1xvxtbm1::::res://addons/weekend Dialogue/Scripts/DialogueConversationNode.gd<>uid://da0digpeup2bd::::res://addons/weekend Dialogue/Prefabs/dialoge_option.tscn
 start_node.tscn::PackedScene::7452517368835647735::1735516767::0::1::::<><><><>::uid://cg3lwkbg3ebf5::::res://addons/weekend Dialogue/Scripts/DialogueStartNode.gd
-::res://addons/weekend Dialogue/Scenes/::1735516767.0
-Dialogue Graph.tscn::PackedScene::4440426548288426286::1735516767::0::1::::<><><><>::uid://cfbos3jrtyhg2::::res://addons/weekend Dialogue/Scripts/weekendDialogueEditor.gd<>uid://cufx4633uoge0::::res://addons/weekend Dialogue/Prefabs/dialogue_node.tscn<>uid://cqx01jw1chbl::::res://Data/Dialogue/Test Dialogue.tres<>uid://degb4wkppnlpv::::res://addons/weekend Dialogue/Prefabs/start_node.tscn<>uid://cqb8dqy20rc33::::res://addons/weekend Dialogue/Scripts/TextEditorDialogueNode.gd
-::res://addons/weekend Dialogue/Scripts/::1735516002.0
+::res://addons/weekend Dialogue/Scenes/::1735696938.0
+Dialogue Graph.tscn::PackedScene::4440426548288426286::1735696938::0::1::::<><><><>::uid://cfbos3jrtyhg2::::res://addons/weekend Dialogue/Scripts/weekendDialogueEditor.gd<>uid://cufx4633uoge0::::res://addons/weekend Dialogue/Prefabs/dialogue_node.tscn<>uid://be3rvd308k6xx::::res://Data/Dialogue/Test Dialogue.tres<>uid://degb4wkppnlpv::::res://addons/weekend Dialogue/Prefabs/start_node.tscn<>uid://cqb8dqy20rc33::::res://addons/weekend Dialogue/Scripts/TextEditorDialogueNode.gd
+::res://addons/weekend Dialogue/Scripts/::1735687751.0
 DialogeOptionUI.gd::GDScript::3788935367421893023::1735510706::0::1::::DialogueOptionUI<>Control<><><>::
 DialogueConversationNode.gd::GDScript::3045147883515321886::1735511295::0::1::::DialogueConversationNode<>DialogueNode<><><>::
-DialogueConversationNodeData.gd::GDScript::1242184892574828901::1735516002::0::1::::DialogueData<>Resource<><><>::
+DialogueConversationNodeData.gd::GDScript::1242184892574828901::1735687751::0::1::::DialogueData<>Resource<><><>::
 DialogueNode.gd::GDScript::103321925506047698::1735505529::0::1::::DialogueNode<>GraphNode<><><>::
 DialogueNodeData.gd::GDScript::882516601766334038::1735508109::0::1::::DialogueConversationNodeData<>Resource<><><>::
 DialogueOption.gd::GDScript::1296850077189794056::1735511041::0::1::::DialogueOption<>Resource<><><>::
@@ -104,9 +104,9 @@ rollover2.ogg::AudioStreamOggVorbis::736167784220709710::1734430980::1735516851:
 switch2.ogg::AudioStreamOggVorbis::5539464575622984594::1734430980::1735516851::1::::<><><>bdc5c83ed828a8a6922c0906e50fdcc1<>res://.godot/imported/switch2.ogg-1a2891d414453f365b751a65dcf38462.oggvorbisstr::
 switch3.ogg::AudioStreamOggVorbis::5145434842828123623::1734430980::1735516851::1::::<><><>f1b3c6ea46510785c821a9df0a0f1c77<>res://.godot/imported/switch3.ogg-e7ebc2708cbcfb487d2938cb320fb68c.oggvorbisstr::
 ::res://Data/::1735431140.0
-::res://Data/Dialogue/::1735612223.0
-Test Dialogue.tres::Resource/DialogueData::174850247567026553::1735612223::0::1::::<><><><>::uid://rxyur4vwo6q0::::res://addons/weekend Dialogue/Scripts/DialogueConversationNodeData.gd<>uid://mtq6i61w1mhi::::res://addons/weekend Dialogue/Scripts/DialogueNodeData.gd<>uid://uv5we0y0dofd::::res://addons/weekend Dialogue/Scripts/DialogueStartNodeData.gd<>uid://sqg6wt1txbp5::::res://addons/weekend Dialogue/Scripts/DialogueOption.gd
-::res://Data/Sea/::1735628278.0
+::res://Data/Dialogue/::1735687367.0
+Test Dialogue.tres::Resource/DialogueData::2726048527912925473::1735687367::0::1::::<><><><>::uid://rxyur4vwo6q0::::res://addons/weekend Dialogue/Scripts/DialogueConversationNodeData.gd<>uid://mtq6i61w1mhi::::res://addons/weekend Dialogue/Scripts/DialogueNodeData.gd<>uid://uv5we0y0dofd::::res://addons/weekend Dialogue/Scripts/DialogueStartNodeData.gd<>uid://sqg6wt1txbp5::::res://addons/weekend Dialogue/Scripts/DialogueOption.gd
+::res://Data/Sea/::1735687193.0
 heightmap 0,0.png::CompressedTexture2D::5331428195370844342::1735431373::1735516862::1::::<><><>2eed7ad03036d1e46866064f16451308<>res://.godot/imported/heightmap 0,0.png-46e086ffaf5dac2554d3514887e0336d.ctex::
 heightmap 0,-1.png::CompressedTexture2D::572798316428325116::1735553358::1735553364::1::::<><><>e6d3cfbf995b1e00bfed175b19376351<>res://.godot/imported/heightmap 0,-1.png-9cadd19b51b62745ebdefaf0674beb83.ctex::
 heightmap -1,0.png::CompressedTexture2D::5104265038901142336::1735430239::1735516862::1::::<><><>965925cef3ef4adedde1758b097e454d<>res://.godot/imported/heightmap -1,0.png-fb0bd5c4d739808839d665a3fcd48041.ctex::
@@ -119,8 +119,8 @@ sdf -1,0.png::CompressedTexture2D::875343473408992207::1735433827::1735516862::1
 sdf -1,-1.png::CompressedTexture2D::3861564046337182019::1735553358::1735553364::1::::<><><>6bf6ecb80f5d290a1b95a8ba7818f475<>res://.godot/imported/sdf -1,-1.png-8a43506895502521240c93f6196ead48.s3tc.ctex::
 sea 0,0.tres::ShaderMaterial::2998043053059133272::1735628278::0::1::::<><><><>::uid://ckowacs8cksvo::::res://Shaders/Sea.tres<>uid://cjfd05ex0iqhm::::res://Data/Sea/sdf 0,0.png
 sea 0,-1.tres::ShaderMaterial::5783834823313746079::1735515697::0::1::::<><><><>::uid://ckowacs8cksvo::::res://Shaders/Sea.tres<>uid://e75lw0fissx3::::res://Textures/Noise.png<>uid://b2atkqbxkrw5h::::res://Data/Sea/sdf 0,-1.png
-sea -1,0.tres::ShaderMaterial::3818468496695882253::1735628278::0::1::::<><><><>::uid://ckowacs8cksvo::::res://Shaders/Sea.tres<>uid://mqa1qwpd7tk6::::res://Data/Sea/sdf -1,0.png
-sea -1,-1.tres::ShaderMaterial::6059576688140039137::1735628278::0::1::::<><><><>::uid://ckowacs8cksvo::::res://Shaders/Sea.tres<>uid://bvatnpnc32nlb::::res://Data/Sea/sdf -1,-1.png
+sea -1,0.tres::ShaderMaterial::3818468496695882253::1735687193::0::1::::<><><><>::uid://ckowacs8cksvo::::res://Shaders/Sea.tres<>uid://mqa1qwpd7tk6::::res://Data/Sea/sdf -1,0.png
+sea -1,-1.tres::ShaderMaterial::6059576688140039137::1735687193::0::1::::<><><><>::uid://ckowacs8cksvo::::res://Shaders/Sea.tres<>uid://bvatnpnc32nlb::::res://Data/Sea/sdf -1,-1.png
 ::res://Data/Terrain/::1735628060.0
 terrain3d-01-01.res::Terrain3DRegion::4977133703188151713::1735588342::0::1::::<><><><>::
 terrain3d-01_00.res::Terrain3DRegion::5282795077711664046::1735593175::0::1::::<><><><>::
@@ -136,12 +136,16 @@ terrain3d_01_00.res::Terrain3DRegion::6237251609225062452::1735588342::0::1::::<
 Chewy-Regular.ttf::FontFile::4375452444816710315::1734431281::1735516851::1::::<><><>b75303d275fb01e6ba87181c73aa7e0e<>res://.godot/imported/Chewy-Regular.ttf-aff54cda9bbad3aa3de98c0c0b428985.fontdata::
 font1.tres::FontFile::-1::1734430980::0::1::::<><><><>::uid://gdj14lgr8kk8::::res://Fonts/Roboto-Medium.ttf
 Roboto-Medium.ttf::FontFile::427920619133441077::1734430980::1735516851::1::::<><><>5657aa61e070175e3320ee9794e20245<>res://.godot/imported/Roboto-Medium.ttf-03d10be5ba19ed9d7a4852287bef51aa.fontdata::
-::res://Materials/::1735612223.0
-Stylized3DGrass.tres::ShaderMaterial::294083846532337896::1735612223::0::1::::<><><><>::uid://djdvvewfn86x2::::res://Shaders/GrassShader.tres
+::res://Materials/::1735655209.0
+Stylized3DGrass.tres::ShaderMaterial::294083846532337896::1735655209::0::1::::<><><><>::uid://djdvvewfn86x2::::res://Shaders/GrassShader.tres
 tree.tres::StandardMaterial3D::6938537513245677501::1735612223::0::1::::<><><><>::uid://ba6smisxpuwce::::res://Models/Pine Tree_Gradient Texture.png
-::res://Models/::1735635248.0
+::res://Models/::1735679092.0
 Bridge.glb::PackedScene::4221988614371609805::1735591924::1735591931::1::::<><><>972794fe9d97e15df07063557d47bfe0<>res://.godot/imported/Bridge.glb-5377f3cf7f1c2c3a3a092cb1d439bb9f.scn::uid://by4if0to0865x::::res://Models/Bridge_Gradient Texture.png
 Bridge_Gradient Texture.png::CompressedTexture2D::4131315893891143719::1735591732::1735591931::1::::<><><>151297fc5e76755450514221c0decae6<>res://.godot/imported/Bridge_Gradient Texture.png-98db2e15216e7c876d2d02ee7e6fc365.s3tc.ctex::
+Fence 2.glb::PackedScene::7741531461055922696::1735652969::1735652975::1::::<><><>e472c9dc9025b2f777541511e05d1e0f<>res://.godot/imported/Fence 2.glb-c11576410d16a4de994124d2e76d178a.scn::uid://cj5tnwbenc6gq::::res://Models/Fence 2_Gradient Texture.png
+Fence 2_Gradient Texture.png::CompressedTexture2D::5467650288191349624::1735652974::1735652975::1::::<><><>1efd779794b106a8f630c0774bfeb5dc<>res://.godot/imported/Fence 2_Gradient Texture.png-6b51017340f38b609b118ad4c9e98202.s3tc.ctex::
+Fence Post.glb::PackedScene::5546266501482455151::1735652949::1735652975::1::::<><><>a9c25c26bb9d98e57770cc04d23d2b98<>res://.godot/imported/Fence Post.glb-9d4a3ac59991765ef930d984dd4de100.scn::uid://jfxn6h5c0gje::::res://Models/Fence Post_Gradient Texture.png
+Fence Post_Gradient Texture.png::CompressedTexture2D::643442828071193270::1735652975::1735652975::1::::<><><>9ab21a4361f24a2fccafcaa4c41971a0<>res://.godot/imported/Fence Post_Gradient Texture.png-73963e2daa6767162a67f9497e4b605d.s3tc.ctex::
 Fence.glb::PackedScene::6020037139803061000::1735635245::1735635248::1::::<><><>d827b876265fb3f26b400c3b91e15028<>res://.godot/imported/Fence.glb-1c4799aa127ab2c0fc1e6e5185e10125.scn::uid://xp8wmlbdygkx::::res://Models/Fence_Gradient Texture.png
 Fence_Gradient Texture.png::CompressedTexture2D::1647352665536287827::1735634510::1735635248::1::::<><><>937e945bbc74dd7789cdf8ac2bf811e9<>res://.godot/imported/Fence_Gradient Texture.png-26d035326271d508e36c814d45ad55de.s3tc.ctex::
 grass.glb::PackedScene::7722983712470935704::1735331384::1735520991::1::::<><><>245bde5ba2921ce8a92f0b2f31824f7d<>res://.godot/imported/grass.glb-9a8470ea5cbd9862eca97795b60eede2.scn::
@@ -154,6 +158,8 @@ Pine Tree_Gradient Texture.png::CompressedTexture2D::2451531178524761232::173559
 safey_cone.glb::PackedScene::4630950284712151867::1735520772::1735520789::1::::<><><>10b9785e948700d4f774b66de5769a22<>res://.godot/imported/safey_cone.glb-9814757a1c7aedf2d3430cca9d8aa731.scn::uid://dru3pcvifi7fr::::res://Models/safey_cone_Gradient Texture.png
 safey_cone_Gradient Texture.png::CompressedTexture2D::8395486948571193355::1735520776::1735520778::1::::<><><>29768dd7995bf7ff705474f9aa38d633<>res://.godot/imported/safey_cone_Gradient Texture.png-35b28365211c0dda7eb441e710ac714e.s3tc.ctex::
 Sign Post.glb::PackedScene::3053432126946186745::1735374715::1735516874::1::::<><><>0c4d090c89d4eaca02078d186d843f1c<>res://.godot/imported/Sign Post.glb-3f23d9a58d44764e160cbc13d0aa0e00.scn::
+Stump.glb::PackedScene::6507959796169272505::1735679085::1735679092::1::::<><><>05b02a246dbe14bf4cf2b1d807966264<>res://.godot/imported/Stump.glb-e13d28cabad61a07e5935cdc7032f272.scn::uid://e7qylbmsx2dj::::res://Models/Stump_Gradient Texture.png
+Stump_Gradient Texture.png::CompressedTexture2D::347830373491893747::1735678918::1735679091::1::::<><><>05803c93ace7754779b107d21c282b8a<>res://.godot/imported/Stump_Gradient Texture.png-14944c63207f26fa9cd966499fcee0c9.s3tc.ctex::
 tent.glb::PackedScene::6456064871734333252::1735605124::1735605129::1::::<><><>ab80eda84626fcfcd9a8051e870e05bb<>res://.godot/imported/tent.glb-cd89bf64289277c00624cb4b5c2d0830.scn::uid://bwslsfenboe0a::::res://Models/tent_Gradient Texture.png
 tent_Gradient Texture.png::CompressedTexture2D::3968434343902129666::1735560846::1735605128::1::::<><><>12a9151dc36afeb1f3e2e274ceb15061<>res://.godot/imported/tent_Gradient Texture.png-f9f10c1425b50d51807bb120ab029b80.s3tc.ctex::
 Tram.glb::PackedScene::8265118419335735563::1735617635::1735617640::1::::<><><>23ebf056f85ab8f3e8aa397f920fa017<>res://.godot/imported/Tram.glb-b0f68c319d8d29c27cb85f79cb41a48f.scn::uid://b0dt0paa27a0g::::res://Models/Tram_Gradient Texture.png
@@ -161,6 +167,11 @@ Tram_Gradient Texture.png::CompressedTexture2D::4148533963503867016::1735617640:
 tree_greybox.fbx::PackedScene::5651864154016768958::1735199319::1735516873::1::::<><><>75cf1b8c1db7ca735b19563e45c7c50d<>res://.godot/imported/tree_greybox.fbx-83865576c61fca3d0170fa5e7cbc6a36.scn::
 Willow Tree.glb::PackedScene::2485396162262342395::1735603569::1735603571::1::::<><><>4853f0a68ec7cd293e2d2d151dfe92a7<>res://.godot/imported/Willow Tree.glb-cb2ecdc45aafd83b20696d7a9fb09c03.scn::uid://sv0swqax46mf::::res://Models/Willow Tree_Gradient Texture.png
 Willow Tree_Gradient Texture.png::CompressedTexture2D::1308302367691773553::1735603343::1735603571::1::::<><><>9bc7653268cf72ea510f528434473a3d<>res://.godot/imported/Willow Tree_Gradient Texture.png-76bb6d7a936012b7bed8c605b5de5677.s3tc.ctex::
+::res://Models/Items/::1735676999.0
+Conch.glb::PackedScene::3913118304428736056::1735676996::1735676999::1::::<><><>a9e17ab430fb442da0034d0cad97eebb<>res://.godot/imported/Conch.glb-60d9165723a368359a9a1dac891ef656.scn::uid://c3nh15ssmcfcm::::res://Models/Items/Conch_Gradient Texture.png
+Conch_Gradient Texture.png::CompressedTexture2D::6765438953985720436::1735676602::1735676999::1::::<><><>63807780923406753943961dc2b17a48<>res://.godot/imported/Conch_Gradient Texture.png-76f35fe148ee05a8dba190168d3bc60b.s3tc.ctex::
+Starfish.glb::PackedScene::8130402376476435500::1735654573::1735676612::1::::<><><>87ee51875872f4f8f9fed6b33e2cb2cf<>res://.godot/imported/Starfish.glb-b088c40d55006982c5329e7546df0bf2.scn::uid://u2g6ffr1ofxt::::res://Models/Items/Starfish_Gradient Texture.png
+Starfish_Gradient Texture.png::CompressedTexture2D::1459935004836388773::1735676612::1735676612::1::::<><><>82a6ba4af8cdf78970b1f19a92de42ec<>res://.godot/imported/Starfish_Gradient Texture.png-23b7542de9a9178d326c7ff1bec32412.s3tc.ctex::
 ::res://Models/Yippy Kawaii/::1734922086.0
 ::res://Models/Yippy Kawaii/Animations/::1735516878.0
 Anim@Alert.fbx::PackedScene::3582676566838670184::1734921840::1735516876::1::::<><><>dbf94fee2ab568b01de319abdb51ed90<>res://.godot/imported/Anim@Alert.fbx-c7a2c06e8ad9f1c062e1a3edadcca112.scn::
@@ -398,43 +409,45 @@ Floor_creation.png::CompressedTexture2D::1338680100688893898::1734921838::173551
 frame.png::CompressedTexture2D::1766979139174525822::1734921838::1735516852::1::::<><><>3d29a82d53fd0c6a70788dcbd8417619<>res://.godot/imported/frame.png-e63b5920d894d376eb1004b06f7b88f8.ctex::
 HeadAccessories.png::CompressedTexture2D::1945571012816189449::1734921838::1735516851::1::::<><><>980318aac6295767bf5149d28c4edba8<>res://.godot/imported/HeadAccessories.png-e61eac917ab2ec383cd5efa470a09414.ctex::
 Snowflake.png::CompressedTexture2D::1303629633502744046::1734921838::1735516851::1::::<><><>7e8e89d01500937da62ac273f831220e<>res://.godot/imported/Snowflake.png-9abccbf1ec52d1a33b77215fc67c4305.ctex::
-::res://Prefabs/::1735634926.0
+::res://Prefabs/::1735696938.0
 camera.tscn::PackedScene::5158924361478454569::1734902561::0::1::::<><><><>::res://Scripts/FollowCamera.gd
 character.tscn::PackedScene::6385998169661608071::1734951325::0::1::::<><><><>::res://Scripts/NPC.gd<>uid://bkwh2nb54b6v7::::res://Models/Yippy Kawaii/FBX/bear.tscn<>res://Scripts/InteractObject.gd
 grass.tscn::PackedScene::8647075470742846610::1735358243::0::1::::<><><><>::uid://dibcob5mpje7q::::res://Models/grass.glb<>uid://egpru16uvbme::::res://Materials/Stylized3DGrass.tres
-pickup.tscn::PackedScene::2504436734987634717::1734865350::0::1::::<><><><>::res://Scripts/Pickup.gd<>res://Scripts/InteractObject.gd
-player.tscn::PackedScene::3890995264120754473::1735553358::0::1::::<><><><>::uid://d4jgg4fgnmheh::::res://Scripts/PlayerController.gd<>uid://daqigiapwq35b::::res://Models/Yippy Kawaii/FBX/bunny.tscn
-road_block.tscn::PackedScene::4383191476649342715::1735634926::0::1::::<><><><>::uid://y80d5lheav37::::res://Scripts/road_block.gd<>uid://b68jcsibg45n8::::res://Models/safey_cone.glb
+player.tscn::PackedScene::3890995264120754473::1735696938::0::1::::<><><><>::uid://d4jgg4fgnmheh::::res://Scripts/PlayerController.gd<>uid://daqigiapwq35b::::res://Models/Yippy Kawaii/FBX/bunny.tscn
+road_block.tscn::PackedScene::4383191476649342715::1735673641::0::1::::<><><><>::uid://y80d5lheav37::::res://Scripts/road_block.gd<>uid://b68jcsibg45n8::::res://Models/safey_cone.glb
 tree.tscn::PackedScene::3727735200126705008::1735198044::0::1::::<><><><>::
+::res://Prefabs/Items/::1735677000.0
+Conch.tscn::PackedScene::7242790528176839141::1735677000::0::1::::<><><><>::uid://c445ywb3idhh5::::res://Scripts/Pickup.gd<>uid://c3ltynjvmtnsl::::res://Scripts/InteractObject.gd<>uid://bv0sqsxvgfud1::::res://Models/Items/Conch.glb
+Starfish.tscn::PackedScene::4355947616762878852::1735676816::0::1::::<><><><>::uid://c445ywb3idhh5::::res://Scripts/Pickup.gd<>uid://c3ltynjvmtnsl::::res://Scripts/InteractObject.gd<>uid://dn3oslnve6cam::::res://Models/Items/Starfish.glb
 ::res://Prefabs/UI/::1734667620.0
 options_panel.tscn::PackedScene::6704296224948302474::1734522773::0::1::::<><><><>::res://Scenes/Options Panel.gd<>res://Fonts/font1.tres
 pause_menu.tscn::PackedScene::6898631142279607125::1734501506::0::1::::<><><><>::res://Scripts/Pause Menu/PauseMenu.gd<>res://Fonts/font1.tres<>uid://b3lrceixb0548::::res://Fonts/Chewy-Regular.ttf<>res://Scripts/Main Menu/StartMenuButtonGroup.gd<>uid://chi28l03dgsy2::::res://Themes/MenuTextStandard.tres<>res://Scripts/Main Menu/MenuText.gd<>uid://d2n2o7gyj2klb::::res://Themes/MenuTextHighlighted.tres
-::res://Scenes/::1735635789.0
+::res://Scenes/::1735697016.0
 Card Battle.tscn::PackedScene::7344581586354887881::1735433246::0::1::::<><><><>::
-Game.tscn::PackedScene::3107870423960825618::1735635789::0::1::::<><><><>::uid://d26l5tjfi3d7r::::res://Scripts/Tools/Height Map Generator.gd<>uid://boaeo4l702s7u::::res://Scripts/game_controller.gd<>uid://ncwnv5h30nkw::::res://Scripts/NotificationSystem.gd<>uid://dbrmxigkqokgw::::res://Sprites/Icons/Exclamation mark.png<>uid://deiwbfqvy65s3::::res://Themes/Narritive.tres<>uid://b3qfv7fu5scds::::res://Scripts/Controllers/ConversationController.gd<>uid://c5j0pg0krwk4t::::res://Prefabs/UI/pause_menu.tscn<>uid://bvo3eg11jru1n::::res://Prefabs/player.tscn<>uid://b3lrceixb0548::::res://Fonts/Chewy-Regular.ttf<>uid://bbxfybo0g183r::::res://Prefabs/pickup.tscn<>uid://h17yd3januhx::::res://Sprites/Kenny Icons/cross.png<>uid://cdopu5ugea4cm::::res://Textures/Terrain/Sand.png<>uid://cfray3p1qt7l2::::res://Prefabs/camera.tscn<>uid://cdqud7m7tcpds::::res://Scripts/ItemSpawnArea.gd<>uid://ci7eqcnc65fl0::::res://Shaders/Clouds.gdshader<>uid://m2w4wqok2pjw::::res://Old Sky.tres<>uid://d3jvmpwfn5wi2::::res://Scripts/CameraZone.gd<>uid://cqdfka61ta45s::::res://Models/Pine Tree.glb<>uid://biyjliyffnikm::::res://Data/Sea/sea 0,0.tres<>uid://c54cx1f3btu1r::::res://Materials/tree.tres<>uid://igy6434k3707::::res://Textures/Terrain/Rock.png<>uid://cw8opsd74al7l::::res://Prefabs/character.tscn<>uid://cpajvpu6vleeb::::res://Textures/Terrain/Grass.png<>uid://cqx01jw1chbl::::res://Data/Dialogue/Test Dialogue.tres<>uid://dqhw7s50wxk4j::::res://Scripts/AudioPath.gd<>uid://dq0yvagl040dj::::res://Audio/SFX/Ocean.mp3<>uid://y80d5lheav37::::res://Scripts/road_block.gd<>uid://b68jcsibg45n8::::res://Models/safey_cone.glb<>uid://c3ltynjvmtnsl::::res://Scripts/InteractObject.gd<>uid://bunxvax55b2bx::::res://Data/Sea/sea -1,0.tres<>uid://dvgycmrri83us::::res://Prefabs/grass.tscn<>uid://bs38xel7a2j8p::::res://Scripts/sea.gd<>uid://cony6df7fesx0::::res://Data/Sea/sea 0,-1.tres<>uid://b3pir137tyy2v::::res://Prefabs/road_block.tscn<>uid://cslklwg8yagmr::::res://Data/Sea/sea -1,-1.tres<>uid://bjrdt0wmk6yht::::res://Models/Sign Post.glb<>uid://ckowacs8cksvo::::res://Shaders/Sea.tres<>uid://c52fibd20jk23::::res://Models/light_house.glb<>uid://cx8mpev6sujuy::::res://Models/tent.glb<>uid://cr1feq1gkuubw::::res://Models/Fence.glb<>uid://b1ffshgy6222d::::res://Models/Bridge.glb<>uid://c2iuf5fl44cd6::::res://Models/Log.glb<>uid://bbn7d2dexvrvv::::res://Models/Willow Tree.glb<>uid://dp0xj7q5vmf5l::::res://Models/Tram.glb
-GameTest.tscn::PackedScene::3202891262868823945::1735634926::0::1::::<><><><>::uid://cfray3p1qt7l2::::res://Prefabs/camera.tscn<>uid://b3pir137tyy2v::::res://Prefabs/road_block.tscn
-Main Menu.tscn::PackedScene::7772909248775964131::1735634924::0::1::::<><><><>::uid://d1iet8fngqlty::::res://Scripts/Main Menu/Main Menu Controller.gd<>res://Fonts/font1.tres<>uid://c2ru1q5gvx8uw::::res://Prefabs/UI/options_panel.tscn<>uid://b3lrceixb0548::::res://Fonts/Chewy-Regular.ttf<>uid://c0igtkxsnjsgj::::res://Scripts/Main Menu/StartMenuButtonGroup.gd<>uid://d2n2o7gyj2klb::::res://Themes/MenuTextHighlighted.tres<>uid://cqfqww5rcrh8n::::res://Scripts/Main Menu/MenuText.gd<>uid://chi28l03dgsy2::::res://Themes/MenuTextStandard.tres
+Game.tscn::PackedScene::3107870423960825618::1735696937::0::1::::<><><><>::uid://d26l5tjfi3d7r::::res://Scripts/Tools/Height Map Generator.gd<>uid://boaeo4l702s7u::::res://Scripts/game_controller.gd<>uid://ncwnv5h30nkw::::res://Scripts/NotificationSystem.gd<>uid://dbrmxigkqokgw::::res://Sprites/Icons/Exclamation mark.png<>uid://deiwbfqvy65s3::::res://Themes/Narritive.tres<>uid://b3qfv7fu5scds::::res://Scripts/Controllers/ConversationController.gd<>uid://c5j0pg0krwk4t::::res://Prefabs/UI/pause_menu.tscn<>uid://bvo3eg11jru1n::::res://Prefabs/player.tscn<>uid://b3lrceixb0548::::res://Fonts/Chewy-Regular.ttf<>uid://b3cb255e6ta81::::res://Prefabs/Items/Starfish.tscn<>uid://h17yd3januhx::::res://Sprites/Kenny Icons/cross.png<>uid://cdopu5ugea4cm::::res://Textures/Terrain/Sand.png<>uid://cfray3p1qt7l2::::res://Prefabs/camera.tscn<>uid://cdqud7m7tcpds::::res://Scripts/ItemSpawnArea.gd<>uid://ci7eqcnc65fl0::::res://Shaders/Clouds.gdshader<>uid://m2w4wqok2pjw::::res://Old Sky.tres<>uid://d3jvmpwfn5wi2::::res://Scripts/CameraZone.gd<>uid://cqdfka61ta45s::::res://Models/Pine Tree.glb<>uid://biyjliyffnikm::::res://Data/Sea/sea 0,0.tres<>uid://c54cx1f3btu1r::::res://Materials/tree.tres<>uid://igy6434k3707::::res://Textures/Terrain/Rock.png<>uid://cw8opsd74al7l::::res://Prefabs/character.tscn<>uid://cpajvpu6vleeb::::res://Textures/Terrain/Grass.png<>uid://be3rvd308k6xx::::res://Data/Dialogue/Test Dialogue.tres<>uid://dqhw7s50wxk4j::::res://Scripts/AudioPath.gd<>uid://dq0yvagl040dj::::res://Audio/SFX/Ocean.mp3<>uid://y80d5lheav37::::res://Scripts/road_block.gd<>uid://b68jcsibg45n8::::res://Models/safey_cone.glb<>uid://c3ltynjvmtnsl::::res://Scripts/InteractObject.gd<>uid://bunxvax55b2bx::::res://Data/Sea/sea -1,0.tres<>uid://dvgycmrri83us::::res://Prefabs/grass.tscn<>uid://bs38xel7a2j8p::::res://Scripts/sea.gd<>uid://cony6df7fesx0::::res://Data/Sea/sea 0,-1.tres<>uid://b3pir137tyy2v::::res://Prefabs/road_block.tscn<>uid://cslklwg8yagmr::::res://Data/Sea/sea -1,-1.tres<>uid://bjrdt0wmk6yht::::res://Models/Sign Post.glb<>uid://ckowacs8cksvo::::res://Shaders/Sea.tres<>uid://c52fibd20jk23::::res://Models/light_house.glb<>uid://dbgpx4kdqyfi8::::res://Prefabs/Items/Conch.tscn<>uid://cx8mpev6sujuy::::res://Models/tent.glb<>uid://cr1feq1gkuubw::::res://Models/Fence.glb<>uid://b1ffshgy6222d::::res://Models/Bridge.glb<>uid://c2iuf5fl44cd6::::res://Models/Log.glb<>uid://bbn7d2dexvrvv::::res://Models/Willow Tree.glb<>uid://dp0xj7q5vmf5l::::res://Models/Tram.glb<>uid://cyyre87ns5qy0::::res://Models/Stump.glb<>uid://clawg086cdo4f::::res://Models/Fence Post.glb<>uid://dikb5ljs74poi::::res://Models/Fence 2.glb
+GameTest.tscn::PackedScene::3202891262868823945::1735673641::0::1::::<><><><>::uid://cfray3p1qt7l2::::res://Prefabs/camera.tscn<>uid://b3pir137tyy2v::::res://Prefabs/road_block.tscn
+Main Menu.tscn::PackedScene::7772909248775964131::1735697018::0::1::::<><><><>::uid://d1iet8fngqlty::::res://Scripts/Main Menu/Main Menu Controller.gd<>res://Fonts/font1.tres<>uid://c2ru1q5gvx8uw::::res://Prefabs/UI/options_panel.tscn<>uid://b3lrceixb0548::::res://Fonts/Chewy-Regular.ttf<>uid://c0igtkxsnjsgj::::res://Scripts/Main Menu/StartMenuButtonGroup.gd<>uid://d2n2o7gyj2klb::::res://Themes/MenuTextHighlighted.tres<>uid://cqfqww5rcrh8n::::res://Scripts/Main Menu/MenuText.gd<>uid://chi28l03dgsy2::::res://Themes/MenuTextStandard.tres
 Options Panel.gd::GDScript::3579145662922140081::1734493913::0::1::::<>Panel<><><>::
 Splash.tscn::PackedScene::5597916559264501703::1735433245::0::1::::<><><><>::uid://b44mhbi487fyf::::res://Sprites/Splash/spash_logo.jpg<>uid://br2vwxhxdskk1::::res://Scripts/Splash Screen/SplashScreen.gd
-::res://Scripts/::1735595633.0
+::res://Scripts/::1735696936.0
 AudioPath.gd::GDScript::-1::1735553358::0::1::::<>Node3D<><><>::
 CameraZone.gd::GDScript::9144426381187406051::1734726969::0::1::::CameraZone<>Area3D<><><>::
 CharacterInteract.gd::GDScript::1490746751909014658::1734866468::0::1::::CharacterInteract<>InteractObject<><><>::
-FollowCamera.gd::GDScript::8815426717037760307::1734913536::0::1::::FollowCamera<>Node3D<><><>::
+FollowCamera.gd::GDScript::8815426717037760307::1735696710::0::1::::FollowCamera<>Node3D<><><>::
 game_controller.gd::GDScript::3369333905369716676::1735553358::0::1::::GameController<>Node<><><>::
 InteractObject.gd::GDScript::6762034324139780699::1734866954::0::1::::InteractObject<>Area3D<><><>::
-ItemSpawnArea.gd::GDScript::5017659340366577268::1734858323::0::1::::ItemSpawnArea<>Node3D<><><>::
+ItemSpawnArea.gd::GDScript::5017659340366577268::1735676891::0::1::::ItemSpawnArea<>Node3D<><><>::
 NotificationSystem.gd::GDScript::917943861655115270::1734899630::0::1::::<>Control<><><>::
-NPC.gd::GDScript::1237945212644273029::1735515741::0::1::::NPC<>Node<><><>::
+NPC.gd::GDScript::1237945212644273029::1735692656::0::1::::NPC<>Node<><><>::
 Pickup.gd::GDScript::6870050314935102592::1734866970::0::1::::Pickup<>Node3D<><><>::
-PlayerController.gd::GDScript::9213694464280449499::1735207334::0::1::::Player<>CharacterBody3D<><><>::
+PlayerController.gd::GDScript::9213694464280449499::1735696936::0::1::::Player<>CharacterBody3D<><><>::
 PlayerNavController.gd::GDScript::8113700160233889118::1734851741::0::1::::PlayerNav<>CharacterBody3D<><><>::
 road_block.gd::GDScript::1754181588414397580::1735595633::0::1::::RoadBlock<>StaticBody3D<><><>::
 sea.gd::GDScript::3709667408853719085::1735593988::0::1::::<>Node3D<><><>::
-::res://Scripts/Controllers/::1735553358.0
+::res://Scripts/Controllers/::1735688765.0
 AudioManager.gd::GDScript::786681078365128959::1734500176::0::1::::<>Node<><><>::
-ConversationController.gd::GDScript::4385081125679534512::1735515728::0::1::::ConversationController<>Control<><><>::
-EventBus.gd::GDScript::6580132668541118888::1735505321::0::1::::<>Node<><><>::
+ConversationController.gd::GDScript::4385081125679534512::1735688765::0::1::::ConversationController<>Control<><><>::
+EventBus.gd::GDScript::6580132668541118888::1735688670::0::1::::<>Node<><><>::
 FlowController.gd::GDScript::7227445866705850463::1734639855::0::1::::<>Node<><><>::
 SaveController.gd::GDScript::436634560813932415::1734498619::0::1::::<>Node<><><>::
 ::res://Scripts/Main Menu/::1735260289.0
@@ -448,11 +461,11 @@ PauseMenu.gd::GDScript::2275749217768275282::1734500589::0::1::::<>Control<><><>
 SplashScreen.gd::GDScript::3636684789113696374::1734432401::0::1::::<>Node<><><>::
 ::res://Scripts/Tools/::1735553358.0
 Height Map Generator.gd::GDScript::9119079012505473949::1735553358::0::1::::HeightmapGenerator<>Node3D<><><>::
-::res://Shaders/::1735635790.0
-Clouds Lower.gdshader::Shader::9174971761735870843::1735635790::0::1::::<><><><>::
-Clouds.gdshader::Shader::5400683770556558467::1735635790::0::1::::<><><><>::
-GrassShader.tres::VisualShader::7798467579928853405::1735635790::0::1::::<><><><>::
-Sea.tres::VisualShader::5504967000519861040::1735635790::0::1::::<><><><>::
+::res://Shaders/::1735696938.0
+Clouds Lower.gdshader::Shader::9174971761735870843::1735697018::0::1::::<><><><>::
+Clouds.gdshader::Shader::5400683770556558467::1735697018::0::1::::<><><><>::
+GrassShader.tres::VisualShader::7798467579928853405::1735697018::0::1::::<><><><>::
+Sea.tres::VisualShader::5504967000519861040::1735697018::0::1::::<><><><>::
 ::res://Sprites/::1735516856.0
 icon.svg::CompressedTexture2D::3986379381717100537::1734430980::1735516856::1::::<><><>52cd78257c8584a65d39fa38c51e8e36<>res://.godot/imported/icon.svg-b67cfb692a937e61d2bda8561d9e8db7.ctex::
 ::res://Sprites/Icons/::1735516851.0

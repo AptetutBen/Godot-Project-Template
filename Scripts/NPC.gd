@@ -16,9 +16,9 @@ func _ready() -> void:
 
 func _on_interact():
 	var node : DialogueConversationNodeData = dialogue_data.get_node_from_start("test")
-	EventBus.start_conversation.emit(node)
+	EventBus.start_conversation.emit(node,self)
 	
-func _on_start_conversation(_node):
+func _on_start_conversation(_dialogue_node, _node):
 	var turn_tween : Tween = get_tree().create_tween()
 	var direction = (player.global_transform.origin - mesh.global_transform.origin).normalized()
 	var target_rotation_y = atan2(direction.x, direction.z)

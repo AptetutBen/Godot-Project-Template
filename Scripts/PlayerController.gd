@@ -62,12 +62,12 @@ func _on_exit_interact_object(interact_object:InteractObject):
 		return
 	current_interact_object = null
 
-func _on_start_conversation(_node):
+func _on_start_conversation(_dialogue_node, _node):
 	velocity = Vector3.ZERO
 	animation_tree.set("parameters/speed/blend_position",0)
 	enabled = false
 	print(mesh.rotation_degrees.y)
-	mesh.rotation_degrees.y = wrapf(mesh.rotation_degrees.y,0,360)
+	mesh.rotation_degrees.y = wrapf(mesh.rotation_degrees.y,-360,0)
 	print(mesh.rotation_degrees.y)
 	
 	var turn_tween : Tween = get_tree().create_tween()

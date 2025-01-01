@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogueData" load_steps=12 format=3 uid="uid://cqx01jw1chbl"]
+[gd_resource type="Resource" script_class="DialogueData" load_steps=12 format=3 uid="uid://be3rvd308k6xx"]
 
 [ext_resource type="Script" uid="uid://rxyur4vwo6q0" path="res://addons/weekend Dialogue/Scripts/DialogueConversationNodeData.gd" id="1_e8qyd"]
 [ext_resource type="Script" uid="uid://mtq6i61w1mhi" path="res://addons/weekend Dialogue/Scripts/DialogueNodeData.gd" id="1_ha705"]
@@ -36,7 +36,7 @@ position = Vector2(560, 160)
 script = ExtResource("2_mk4en")
 id = 0
 first_node_id = 3
-start_key = "testss"
+start_key = "test"
 position = Vector2(-260, 140)
 
 [sub_resource type="Resource" id="Resource_k1qhg"]
@@ -48,7 +48,7 @@ position = Vector2(-180, 500)
 
 [sub_resource type="Resource" id="Resource_qykrk"]
 script = ExtResource("2_mk4en")
-id = 6
+id = 0
 first_node_id = 0
 start_key = ""
 position = Vector2(-200, 720)

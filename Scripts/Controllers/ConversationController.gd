@@ -43,11 +43,11 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("UI Accept") || event.is_action_pressed("Interact"):
 		input_pressed = true
 	
-func _on_start_conversation(node : DialogueConversationNodeData):
-	if node == null:
+func _on_start_conversation(dialogue_node : DialogueConversationNodeData, _node : Node3D):
+	if dialogue_node == null:
 		printerr("Conversatino is null")
 		return
-	current_node = node
+	current_node = dialogue_node
 	display_text()
 
 

@@ -13,3 +13,15 @@ res://Data/Sea/sea -1,-1.tres
 res://Data/Terrain/terrain3d_01-01.res
 res://Shaders/Clouds.gdshader
 res://Shaders/Clouds Lower.gdshader
+res://Prefabs/pickup.tscn
+res://Prefabs/Items/Conch.tscn
+res://Prefabs/Items/Starfish.tscn
+res://Scripts/ItemSpawnArea.gd
+res://addons/weekend Dialogue/Scenes/Dialogue Graph.tscn
+res://addons/weekend Dialogue/Scripts/DialogueConversationNodeData.gd
+res://Scripts/FollowCamera.gd
+res://Prefabs/player.tscn
+res://Scripts/Controllers/EventBus.gd
+res://Scripts/NPC.gd
+res://Scripts/Controllers/ConversationController.gd
+res://Scripts/PlayerController.gd
