@@ -8,6 +8,7 @@ var input_pressed : bool
 var current_node : DialogueConversationNodeData
 
 func _ready() -> void:
+	visible = false
 	EventBus.start_conversation.connect(_on_start_conversation)
 	EventBus.finish_conversation.connect(_on_finish_conversation)
 

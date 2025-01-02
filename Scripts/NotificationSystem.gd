@@ -6,6 +6,7 @@ extends Control
 var current_interact_object : InteractObject
 
 func _ready() -> void:
+	visible = true
 	EventBus.enter_interact_object.connect(_on_enter_interact_object)
 	EventBus.exit_interact_object.connect(_on_exit_interact_object)
 	notification_icon.visible = false;

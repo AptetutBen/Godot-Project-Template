@@ -21,22 +21,25 @@ func _ready():
 	var centered = Vector2(screen_size.x / 2 - window_size.x / 2, screen_size.y / 2 - window_size.y / 2)
 	DisplayServer.window_set_position(centered)
 
+func start_game() -> void:
+	var time_till_next_day : float = SaveController.get_time_till_next_day()
+	if(time_till_next_day > 0):
+		SaveController.advance_current_day()
+		SaveController.set_last_played_time()
+		SaveController.save_data()
+		SaveController.get_etheral_value_bool("is_start_of_day",true)
+	load_scene("Game")
+	
+func end_day():
+	SaveController.advance_current_day()
+	SaveController.get_etheral_value_bool("is_start_of_day",false)
+	load_main_menu()
 
 func load_main_menu():
 	load_scene("Main Menu")
 
 func load_scene(scene_name):
-	# This function will usually be called from a signal callback,
-	# or some other function in the current scene.
-	# Deleting the current scene at this point is
-	# a bad idea, because it may still be executing code.
-	# This will result in a crash or unexpected behavior.
-
-	# The solution is to defer the load to a later time, when
-	# we can be sure that no code from the current scene is running:
-
 	call_deferred("_deferred_goto_scene", scene_name)
-
 
 func _deferred_goto_scene(scene_name):
 	

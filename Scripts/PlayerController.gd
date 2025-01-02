@@ -66,15 +66,12 @@ func _on_start_conversation(_dialogue_node, _node):
 	velocity = Vector3.ZERO
 	animation_tree.set("parameters/speed/blend_position",0)
 	enabled = false
-	print(mesh.rotation_degrees.y)
-	mesh.rotation_degrees.y = wrapf(mesh.rotation_degrees.y,-360,0)
-	print(mesh.rotation_degrees.y)
+	mesh.rotation_degrees.y = wrapf(mesh.rotation_degrees.y,-180,180)
 	
 	var turn_tween : Tween = get_tree().create_tween()
 	var direction = (current_interact_object.global_transform.origin - global_transform.origin).normalized()
 	var target_rotation_y = atan2(direction.x, direction.z)
 	
-	print(target_rotation_y)
 	turn_tween.tween_property(mesh, "rotation_degrees", Vector3(0, rad_to_deg(target_rotation_y), 0), 0.5)
 	turn_tween.set_ease(Tween.EASE_OUT_IN)
 	turn_tween.set_trans(Tween.TRANS_SINE)

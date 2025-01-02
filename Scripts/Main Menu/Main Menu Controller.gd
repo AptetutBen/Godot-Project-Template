@@ -8,7 +8,7 @@ func _ready():
 	controlPanel.hide()
 
 func _on_start_button_pressed():
-	FlowController.load_scene("Game")
+	FlowController.start_game()
 	AudioManager.play_sfx("click1")
 
 func _on_exit_button_pressed():

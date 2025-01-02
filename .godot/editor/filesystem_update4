@@ -1,27 +1,29 @@
 res://Scenes/Game.tscn
+res://Shaders/Clouds.gdshader
 res://Shaders/Sea.tres
 res://Data/Sea/sea 0,0.tres
 res://Materials/tree.tres
 res://Data/Dialogue/Test Dialogue.tres
+res://Data/Sea/sea -1,0.tres
 res://Shaders/GrassShader.tres
 res://Materials/Stylized3DGrass.tres
-res://Scenes/Main Menu.tscn
-res://Prefabs/road_block.tscn
-res://Scenes/GameTest.tscn
-res://Data/Sea/sea -1,0.tres
 res://Data/Sea/sea -1,-1.tres
-res://Data/Terrain/terrain3d_01-01.res
-res://Shaders/Clouds.gdshader
 res://Shaders/Clouds Lower.gdshader
-res://Prefabs/pickup.tscn
-res://Prefabs/Items/Conch.tscn
-res://Prefabs/Items/Starfish.tscn
-res://Scripts/ItemSpawnArea.gd
-res://addons/weekend Dialogue/Scenes/Dialogue Graph.tscn
-res://addons/weekend Dialogue/Scripts/DialogueConversationNodeData.gd
-res://Scripts/FollowCamera.gd
+res://Scripts/sea.gd
+res://Scenes/Main Menu.tscn
 res://Prefabs/player.tscn
+res://addons/weekend Dialogue/Scenes/Dialogue Graph.tscn
+res://Data/Terrain/terrain3d-01-01.res
+res://Data/Terrain/terrain3d-01_00.res
+res://Data/Terrain/terrain3d_00_00.res
+res://Scripts/Tools/Height Map Generator.gd
+res://Scripts/UI/EndDayPanel.gd
+res://Scripts/Controllers/FlowController.gd
+res://Scripts/Controllers/SaveController.gd
+res://Scripts/Main Menu/Main Menu Controller.gd
 res://Scripts/Controllers/EventBus.gd
-res://Scripts/NPC.gd
+res://Scripts/Tent.gd
 res://Scripts/Controllers/ConversationController.gd
-res://Scripts/PlayerController.gd
+res://Scripts/NotificationSystem.gd
+res://Prefabs/UI/pause_menu.tscn
+res://Scripts/Main Menu/StartMenuButtonGroup.gd

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogueData" load_steps=12 format=3 uid="uid://be3rvd308k6xx"]
+[gd_resource type="Resource" script_class="DialogueData" load_steps=20 format=3 uid="uid://beraqctd78tcf"]
 
 [ext_resource type="Script" uid="uid://rxyur4vwo6q0" path="res://addons/weekend Dialogue/Scripts/DialogueConversationNodeData.gd" id="1_e8qyd"]
 [ext_resource type="Script" uid="uid://mtq6i61w1mhi" path="res://addons/weekend Dialogue/Scripts/DialogueNodeData.gd" id="1_ha705"]
@@ -12,8 +12,8 @@ linking_node_id = 5
 
 [sub_resource type="Resource" id="Resource_ftgil"]
 script = ExtResource("1_ha705")
-text = "Hello there!
-This is where I tell [b]you[/b] things!"
+text = "About time you go here!
+"
 id = 3
 options = Array[ExtResource("2_txva4")]([SubResource("Resource_yf41g")])
 position = Vector2(140, 160)
@@ -23,14 +23,64 @@ script = ExtResource("1_ha705")
 text = ""
 id = 4
 options = Array[ExtResource("2_txva4")]([])
-position = Vector2(220, 460)
+position = Vector2(120, 660)
+
+[sub_resource type="Resource" id="Resource_der1h"]
+script = ExtResource("2_txva4")
+text = "123"
+linking_node_id = 0
+
+[sub_resource type="Resource" id="Resource_domak"]
+script = ExtResource("2_txva4")
+text = "Option text"
+linking_node_id = 0
+
+[sub_resource type="Resource" id="Resource_pm2rb"]
+script = ExtResource("2_txva4")
+text = "..."
+linking_node_id = 0
 
 [sub_resource type="Resource" id="Resource_pftqe"]
 script = ExtResource("1_ha705")
-text = "This is the [wave amp=50.0 freq=5.0 connected=1]second[/wave] part of the conversation!"
+text = "We have been out of things for days!
+"
 id = 5
+options = Array[ExtResource("2_txva4")]([SubResource("Resource_der1h"), SubResource("Resource_domak"), SubResource("Resource_pm2rb")])
+position = Vector2(520, 160)
+
+[sub_resource type="Resource" id="Resource_twovt"]
+script = ExtResource("2_txva4")
+text = "default"
+linking_node_id = 10
+
+[sub_resource type="Resource" id="Resource_vgxcl"]
+script = ExtResource("1_ha705")
+text = "this is where I write stuff	"
+id = 7
+options = Array[ExtResource("2_txva4")]([SubResource("Resource_twovt")])
+position = Vector2(920, 120)
+
+[sub_resource type="Resource" id="Resource_hm12j"]
+script = ExtResource("1_ha705")
+text = "and this is there"
+id = 8
 options = Array[ExtResource("2_txva4")]([])
-position = Vector2(560, 160)
+position = Vector2(920, 640)
+
+[sub_resource type="Resource" id="Resource_bnknm"]
+script = ExtResource("1_ha705")
+text = "Yeah, that's what I said!
+"
+id = 9
+options = Array[ExtResource("2_txva4")]([])
+position = Vector2(920, 380)
+
+[sub_resource type="Resource" id="Resource_buxa3"]
+script = ExtResource("1_ha705")
+text = "end"
+id = 10
+options = Array[ExtResource("2_txva4")]([])
+position = Vector2(1400, 460)
 
 [sub_resource type="Resource" id="Resource_txva4"]
 script = ExtResource("2_mk4en")
@@ -56,5 +106,5 @@ position = Vector2(-200, 720)
 [resource]
 script = ExtResource("1_e8qyd")
 start_data = Array[ExtResource("2_mk4en")]([SubResource("Resource_txva4"), SubResource("Resource_k1qhg"), SubResource("Resource_qykrk")])
-data = Array[ExtResource("1_ha705")]([SubResource("Resource_ftgil"), SubResource("Resource_42ggt"), SubResource("Resource_pftqe")])
-connnections = Array[String](["Start Node_1,0,Dialogue Node_4,0", "Start Node_0,0,Dialogue Node_3,0", "Dialogue Node_3,0,Dialogue Node_5,0"])
+data = Array[ExtResource("1_ha705")]([SubResource("Resource_ftgil"), SubResource("Resource_42ggt"), SubResource("Resource_pftqe"), SubResource("Resource_vgxcl"), SubResource("Resource_hm12j"), SubResource("Resource_bnknm"), SubResource("Resource_buxa3")])
+connnections = Array[String](["Start Node_1,0,Dialogue Node_4,0", "Start Node_0,0,Dialogue Node_3,0", "Dialogue Node_3,0,Dialogue Node_5,0", "Dialogue Node_5,0,Dialogue Node_7,0", "Dialogue Node_5,2,Dialogue Node_8,0", "Dialogue Node_5,1,Dialogue Node_9,0", "Dialogue Node_7,0,Dialogue Node_10,0"])

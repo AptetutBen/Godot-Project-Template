@@ -2,8 +2,11 @@ extends Control
 
 @export var dialogueNodePrefab : PackedScene
 @export var dialogueStartNodePrefab : PackedScene
+@export var dialogueSetVariableNodePrefab : PackedScene
+
 @onready var dialogue_editor: GraphEdit = %"Dialogue Editor"
 @onready var text_editor: DialogueTextEditor = %"Text Editor"
+
 @export var dialogue_data : DialogueData
 
 var dialogue_nodes : Array[GraphNode]
@@ -141,3 +144,10 @@ func _on_dialogue_editor_disconnection_request(from_node: StringName, from_port:
 
 func get_dialogue_node(node_name : String) -> DialogueNode:
 	return dialogue_editor.find_child(node_name,false,false)
+
+
+func _on_add_set_variabe_node_pressed() -> void:
+	pass
+	#var newNode : DialogueSetVariableNode = _add_new_start_dialogue_node()
+	#newNode.initilise_new(Vector2(100,100),next_id + 1)
+	#next_id += 1

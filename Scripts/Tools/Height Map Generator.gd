@@ -119,9 +119,9 @@ func _create_signed_distance_field(image: Image):
 				nearest_dist = -nearest_dist
 
 			var distance_value : float = 1 - (nearest_dist / actual_falloff)
-			sdf.set_pixel(x, y, Color(distance_value, distance_value, distance_value))
+			#sdf.set_pixel(x, y, Color(distance_value, distance_value, distance_value))
 
-			#sdf.set_pixel(x, y, Color(distance_value, nearest_direction.x, nearest_direction.y))
+			sdf.set_pixel(x, y, Color(distance_value, nearest_direction.x, nearest_direction.y))
 
 	sdf.save_png("%s%s %s,%s.png"%[save_directory,sdf_output_file_name, section.x,section.y])
 	print("Finished Generating Signed Distance Field.")

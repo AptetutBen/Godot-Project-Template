@@ -1,7 +1,8 @@
-extends VBoxContainer
+extends Control
 
 var buttons : Array[MenuText]
 var selectedButtonIndex : int = 0
+@export var vertical : bool = true
 @export var active : bool = true
 
 func _ready() -> void:
@@ -27,7 +28,7 @@ func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("UI Accept"):
 		buttons[selectedButtonIndex].trigger_action()
 	
-	if event.is_action_pressed("UI Up"):
+	if event.is_action_pressed("UI Up" if vertical else "UI Left"):
 		AudioManager.play_sfx("click1")
 		buttons[selectedButtonIndex].deselect_button()
 		selectedButtonIndex -= 1
@@ -35,7 +36,7 @@ func _input(event: InputEvent) -> void:
 			selectedButtonIndex = buttons.size() - 1
 		buttons[selectedButtonIndex].select_button()
 	
-	if event.is_action_pressed("UI Down"):
+	if event.is_action_pressed("UI Down" if vertical else "UI Right"):
 		AudioManager.play_sfx("click1")
 		buttons[selectedButtonIndex].deselect_button()
 		selectedButtonIndex += 1
