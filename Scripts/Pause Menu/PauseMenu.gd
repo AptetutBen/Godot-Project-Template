@@ -5,22 +5,23 @@ func _ready() -> void:
 	
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Pause"):
+		if(!FlowController.panel_can_work(self)):
+			return
 		if get_tree().paused:
 			_unpause()
 		else:
 			_pause()
 
 func _pause():
-	get_tree().paused = true
+	FlowController.pause_game(self)
 	visible = true
 
 func _unpause():
-	get_tree().paused = false
+	FlowController.unpause_game()
 	visible = false
 
 func _on_quit_button_button_action() -> void:
 	AudioManager.play_sfx("click1")
-	get_tree().paused = false
 	FlowController.load_main_menu()
 
 

@@ -15,7 +15,9 @@ func _on_positive_button_press() -> void:
 	
 func _on_negative_button_press() -> void:
 	AudioManager.play_sfx("click1")
+	FlowController.unpause_game()
 	visible = false
 
 func _on_trigger_end_day() -> void:
 	visible = true
+	FlowController.pause_game(self)
