@@ -21,10 +21,10 @@ func _ready() -> void:
 	
 func _start_sequence() -> void:
 
-	#if !FlowController.started_from_main_menu:
-		#return
-	
-	intro_sequences.start_intro_sequence()
+	if !FlowController.started_from_main_menu:
+		intro_sequences.start_default()
+	else:
+		intro_sequences.start_intro_sequence()
 	
 func _get_roadbloacks() -> void:
 	for node in road_block_parent.get_children():

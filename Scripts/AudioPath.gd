@@ -1,9 +1,12 @@
 extends Node3D
 
 @onready var path_3d: Path3D = $Path3D
-@onready var audio_stream_3d: AudioStreamPlayer3D = %AudioStreamPlayer3D
+@export var stream_player : AudioStreamPlayer3D
+
 @export var player: Player
 
 func _process(_delta: float) -> void:
+	if !is_visible_in_tree():
+		return
 	var ls : Vector3 = path_3d.to_local(player.global_position)
-	audio_stream_3d.position =  path_3d.curve.get_closest_point(ls)
+	stream_player.position = path_3d.curve.get_closest_point(ls)

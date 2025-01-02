@@ -2,6 +2,9 @@ class_name FadePanel extends ColorRect
 
 signal finished_fade
 
+func disable() -> void:
+	visible = false
+
 func fade_in(delay: float = 1,duration : float = 3) -> void:
 	visible = true
 	modulate.a = 1

@@ -1,6 +1,10 @@
 class_name FollowCamera extends Node3D
 
 static var Instance : FollowCamera
+
+@export var fov_narrow: float = 38
+@export var fov_wide: float = 75
+
 @export var deadzone_margin_x: float = 40
 @export var deadzone_margin_y: float = 40
 @export var default_offset: Vector3 = Vector3(0,14,14)
@@ -12,7 +16,6 @@ static var Instance : FollowCamera
 
 @onready var debug_viewer: Control = %"Debug Viewer"
 @onready var main_camera: Camera3D = %"Main Camera"
-@onready var camera_target: Marker3D = %"Camera Target"
 
 var deadzone_rect : Rect2
 var player_screen_pos : Vector2
@@ -20,7 +23,9 @@ var player_nav_pos : Vector2
 var player_nav_slide_position : Vector2
 var closest_player_screen_pos : Vector2
 var player_in_deadzone : bool
+
 var target_camera_position : Vector3
+var target_camera_rotation : Vector3
 
 var transition_tween : Tween
 var camera_tween_is_active : bool = false
@@ -39,8 +44,24 @@ func _ready() -> void:
 	debug_viewer.visible = debug
 
 func set_default_start() -> void:
-	main_camera.look_at(camera_target.global_position)
+	main_camera.position = default_offset
 	position = player.position
+	main_camera.look_at(player.global_position + Vector3.UP)
+	set_to_narrow_fov()
+
+func set_to_narrow_fov(duration : float = 0) -> void:
+	if duration == 0:
+		main_camera.fov = fov_narrow
+	else:
+		var fov_tween : Tween = get_tree().create_tween()
+		fov_tween.tween_property(main_camera,"fov",fov_narrow,duration).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)		
+
+func set_to_wide_fow(duration : float = 0) -> void:
+	if duration == 0:
+		main_camera.fov = fov_wide
+	else:
+		var fov_tween : Tween = get_tree().create_tween()
+		fov_tween.tween_property(main_camera,"fov",fov_narrow,duration).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)		
 
 
 func _process(delta: float) -> void:
@@ -49,8 +70,8 @@ func _process(delta: float) -> void:
 	
 	if camera_tween_is_active:
 		var xform : Transform3D = main_camera.transform
-		xform = xform.looking_at(camera_target.position)
-		main_camera.transform = main_camera.transform.interpolate_with(xform,delta * 3)
+		xform = xform.looking_at(Vector3.UP)
+		main_camera.transform = main_camera.transform.interpolate_with(xform,delta)
 		
 func _on_window_size_changed():
 	# Calculate the screen-space position of the camera's deadzone
@@ -61,17 +82,18 @@ func _on_window_size_changed():
 	deadzone_rect.position.y = deadzone_margin_y
 
 func _physics_process(delta):
+	
+	if camera_hijacked:
+		return
+	
 	var distance : float = (position-target_camera_position).length()
 	position = position.move_toward(target_camera_position,distance * 2 * delta)
 	
 	if !player:
 		return
-	
-	if camera_hijacked:
-		return
 		
 	# Convert player world position to screen space
-	player_screen_pos = get_viewport().get_camera_3d().unproject_position(player.global_transform.origin + camera_target.position)
+	player_screen_pos = get_viewport().get_camera_3d().unproject_position(player.global_transform.origin + Vector3.UP)
 	player_in_deadzone = deadzone_rect.has_point(player_screen_pos)
 	
 	if !player_in_deadzone:
@@ -146,11 +168,15 @@ func _on_camera_zone_exit(zone : CameraZone):
 
 func start_day_sequence(marker : Marker3D) -> void:
 	camera_hijacked = true
-	#target_camera_position = marker.position
-	main_camera.position = marker.position
+	set_to_wide_fow()
+	global_position = marker.global_position
+	target_camera_position = player.global_position
+	position = target_camera_position
+	main_camera.global_position = marker.global_position
 	main_camera.rotation = marker.rotation
 
 func end_day_sequence() -> void:
+	set_to_narrow_fov(5)
 	camera_hijacked = false
 	target_camera_position = player.position
 	if(current_camera_zone):

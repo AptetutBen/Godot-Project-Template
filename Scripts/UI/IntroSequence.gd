@@ -19,12 +19,11 @@ func start_sequence() -> void:
 	Player.Instance.position = player_marker.position
 	FollowCamera.Instance.start_day_sequence(camera_marker)
 	
-	AudioManager.play_sfx_fade(audio_clip)
+	AudioManager.play_sfx_fade(audio_clip,true)
 	
 	fade_panel.fade_in(1,3)
 	await fade_panel.finished_fade
 	await get_tree().create_timer(3).timeout
-	
 	FollowCamera.Instance.end_day_sequence()
 	Player.Instance.enabled = true
 	await get_tree().create_timer(3).timeout

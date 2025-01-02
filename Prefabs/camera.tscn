@@ -25,16 +25,13 @@ func  _draw() -> void:
 script = ExtResource("1_uhter")
 deadzone_margin_x = 400.0
 deadzone_margin_y = 300.0
+debug = true
 metadata/_edit_group_ = true
-
-[node name="Camera Target" type="Marker3D" parent="."]
-unique_name_in_owner = true
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 
 [node name="Main Camera" type="Camera3D" parent="."]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 0.481845, 0.876256, 0, -0.876256, 0.481845, 0, 14, 14)
-fov = 38.1
+fov = 38.0
 size = 9.31
 
 [node name="Debug Viewer" type="Control" parent="Main Camera" node_paths=PackedStringArray("cam")]
