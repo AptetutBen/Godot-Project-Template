@@ -3,7 +3,7 @@
 [sub_resource type="VisualShaderNodeColorParameter" id="VisualShaderNodeColorParameter_eb7oa"]
 parameter_name = "WindColor"
 default_value_enabled = true
-default_value = Color(0.384314, 0.529412, 0.301961, 1)
+default_value = Color(0.445049, 0.64991, 0.383326, 1)
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_ji4ym"]
 input_name = "uv"
@@ -88,7 +88,7 @@ render_mode blend_mix, depth_draw_opaque, cull_disabled, diffuse_toon, specular_
 
 uniform sampler2D WindNoise;
 uniform vec4 BaseColor : source_color = vec4(0.141176, 0.156863, 0.074510, 1.000000);
-uniform vec4 WindColor : source_color = vec4(0.384314, 0.529412, 0.301961, 1.000000);
+uniform vec4 WindColor : source_color = vec4(0.445049, 0.649910, 0.383326, 1.000000);
 
 
 

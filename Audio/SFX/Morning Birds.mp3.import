@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c0qp5wuy7kox6"
+path="res://.godot/imported/Morning Birds.mp3-3a37a7005b47bed4fbfc902c13a1f143.mp3str"
+
+[deps]
+
+source_file="res://Audio/SFX/Morning Birds.mp3"
+dest_files=["res://.godot/imported/Morning Birds.mp3-3a37a7005b47bed4fbfc902c13a1f143.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

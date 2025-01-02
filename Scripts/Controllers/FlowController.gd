@@ -3,7 +3,8 @@ extends Node
 var currentScene = null
 var sceneDirectory = {}
 
-var active_pause_panel : Control
+var active_pause_panel : Node
+var started_from_main_menu : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -24,6 +25,7 @@ func _ready():
 	DisplayServer.window_set_position(centered)
 
 func start_game() -> void:
+	started_from_main_menu = true
 	active_pause_panel = null
 	var time_till_next_day : float = SaveController.get_time_till_next_day()
 	if(time_till_next_day > 0):
@@ -39,7 +41,7 @@ func end_day():
 	load_main_menu()
 
 # Pausing the game
-func pause_game(active_panel : Control) -> void:
+func pause_game(active_panel : Node = null) -> void:
 	active_pause_panel = active_panel
 	get_tree().paused = true
 
@@ -47,7 +49,7 @@ func unpause_game() -> void:
 	get_tree().paused = false
 	active_pause_panel = null
 
-func panel_can_work(panel : Control) -> bool:
+func panel_can_work(panel : Node) -> bool:
 	return active_pause_panel == null || active_pause_panel == panel
 
 func load_main_menu():

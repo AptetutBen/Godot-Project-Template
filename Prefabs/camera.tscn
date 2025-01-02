@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cfray3p1qt7l2"]
 
-[ext_resource type="Script" path="res://Scripts/FollowCamera.gd" id="1_uhter"]
+[ext_resource type="Script" uid="uid://dxui14lj45c5p" path="res://Scripts/FollowCamera.gd" id="1_uhter"]
 
 [sub_resource type="GDScript" id="GDScript_510nf"]
 script/source = "extends Control

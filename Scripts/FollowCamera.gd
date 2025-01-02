@@ -35,16 +35,23 @@ func _ready() -> void:
 	EventBus.finish_conversation.connect(_on_finish_conversation)
 	get_tree().get_root().size_changed.connect(_on_window_size_changed)
 	_on_window_size_changed()
-	main_camera.look_at(camera_target.global_position)
-	debug_viewer.visible = debug
 	
+	debug_viewer.visible = debug
+
+func set_default_start() -> void:
+	main_camera.look_at(camera_target.global_position)
 	position = player.position
 
 
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
+	if camera_hijacked:
+		return
+	
 	if camera_tween_is_active:
-		main_camera.look_at(camera_target.global_position)
-
+		var xform : Transform3D = main_camera.transform
+		xform = xform.looking_at(camera_target.position)
+		main_camera.transform = main_camera.transform.interpolate_with(xform,delta * 3)
+		
 func _on_window_size_changed():
 	# Calculate the screen-space position of the camera's deadzone
 	var viewport_size : Vector2i = get_viewport().get_visible_rect().size
@@ -54,7 +61,6 @@ func _on_window_size_changed():
 	deadzone_rect.position.y = deadzone_margin_y
 
 func _physics_process(delta):
-	
 	var distance : float = (position-target_camera_position).length()
 	position = position.move_toward(target_camera_position,distance * 2 * delta)
 	
@@ -84,12 +90,7 @@ func _physics_process(delta):
 func _on_start_conversation(_dialogue_node, node : Node3D):
 	camera_hijacked = true
 	var camera_angle_degrees : float = (node.global_position - player.global_position).normalized().angle_to(Vector3(0,0,-1)) * 180 / PI
-	# var camera_angle : float = atan2(node.global_position.x - player.global_position.x, node.global_position.z - player.global_position.z)
-	print ("camera_angle %s" %camera_angle_degrees)
-	
 	var center_pos : Vector3 = player.global_position - (player.global_position - node.global_position) / 2
-	
-
 	_transition_to_point(Vector3(0,3,5),center_pos,camera_angle_degrees,1,Tween.TRANS_SINE)
 	
 func _on_finish_conversation():
@@ -101,6 +102,8 @@ func _on_finish_conversation():
 		_transition(default_offset,0,1,Tween.TRANS_SINE)
 	
 func _transition(offset : Vector3, angle: float = 0, duration : float = 5, ease_type: Tween.TransitionType = Tween.TRANS_CUBIC):
+	if camera_hijacked:
+		return
 	if transition_tween:
 		transition_tween.kill()
 	camera_tween_is_active = true
@@ -111,6 +114,8 @@ func _transition(offset : Vector3, angle: float = 0, duration : float = 5, ease_
 	transition_tween.play()
 
 func _transition_to_point(offset : Vector3, focus_posion : Vector3 , angle: float = 0, duration : float = 5, ease_type: Tween.TransitionType = Tween.TRANS_CUBIC):
+	if camera_hijacked:
+		return
 	if transition_tween:
 		transition_tween.kill()
 	
@@ -127,10 +132,28 @@ func _stop_tween():
 
 func _on_camera_zone_enter(zone : CameraZone):
 	current_camera_zone = zone
+	if camera_hijacked:
+		return
 	_transition(zone.offset,zone.angle)
 
 func _on_camera_zone_exit(zone : CameraZone):
+	if camera_hijacked:
+		return
 	if(zone != current_camera_zone):
 		return
 	current_camera_zone = null
 	_transition(default_offset,0)
+
+func start_day_sequence(marker : Marker3D) -> void:
+	camera_hijacked = true
+	#target_camera_position = marker.position
+	main_camera.position = marker.position
+	main_camera.rotation = marker.rotation
+
+func end_day_sequence() -> void:
+	camera_hijacked = false
+	target_camera_position = player.position
+	if(current_camera_zone):
+		_transition(current_camera_zone.offset,current_camera_zone.angle)
+	else:
+		_transition(default_offset,0)

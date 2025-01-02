@@ -36,25 +36,44 @@ func _add_bus(bus_name : String):
 	AudioServer.add_bus(1)
 	AudioServer.set_bus_name(1,bus_name)
 
-func play_sfx(clip_name : String):
+func play_sfx_fade(clip_name : String, fade_in_duration : float = 1, play_duration : float= 2, fade_out_duration : float = 3) -> AudioStreamPlayer2D:
+	var player = play_sfx(clip_name)
+	
+	var audio_tween : Tween = get_tree().create_tween()
+	if(fade_in_duration > 0):
+		db_to_linear(0)
+		audio_tween.tween_property(player, "volume_db",db_to_linear(1), fade_in_duration).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
+	audio_tween.tween_interval(play_duration)
+	if(fade_out_duration > 0):
+		audio_tween.tween_property(player, "volume_db",db_to_linear(1), fade_in_duration).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_SINE)
+		audio_tween.tween_callback(func(): player.stop())
+	audio_tween.play()
+	
+	return player
+
+func play_sfx(clip_name : String) -> AudioStreamPlayer2D:
 	if !sfx_clips.has(clip_name):
 		print("*** Audio File: %s not found." %clip_name )
 		return
 	var clip = ResourceLoader.load(sfx_clips[clip_name])
-	_play_2d_audio(clip)
+	return _play_2d_audio(clip)
 	
-func _play_2d_audio(clip : AudioStream):
+func _play_2d_audio(clip : AudioStream) -> AudioStreamPlayer2D:
 	var player : AudioStreamPlayer2D = audioStreamPlayers2D[audioStreamPointer2D]
+	player.volume_db = db_to_linear(1)
 	audioStreamPointer2D = (audioStreamPointer2D+1)%audioStreamPlayers2D.size()
 	player.stream = clip
 	player.play()
+	return player
 
-func _play_3d_audio(clip : AudioStream, position: Vector3):
+func _play_3d_audio(clip : AudioStream, position: Vector3) -> AudioStreamPlayer3D:
 	var player : AudioStreamPlayer3D = audioStreamPlayers3D[audioStreamPointer3D]
+	player.volume_db = db_to_linear(1)
 	audioStreamPointer3D = (audioStreamPointer3D+1)%audioStreamPlayers3D.size()
 	player.global_position = position
 	player.stream = clip
 	player.play()
+	return player
 
 func play_music(clip_name : String) -> AudioStreamPlayer2D:
 	if !music_clips.has(clip_name):

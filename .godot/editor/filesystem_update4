@@ -1,30 +1,14 @@
 res://Scenes/Game.tscn
-res://Shaders/Clouds.gdshader
 res://Shaders/Sea.tres
-res://Data/Sea/sea 0,0.tres
-res://Materials/tree.tres
 res://Data/Dialogue/Test Dialogue.tres
-res://Data/Sea/sea -1,0.tres
 res://Shaders/GrassShader.tres
 res://Materials/Stylized3DGrass.tres
-res://Data/Sea/sea -1,-1.tres
-res://Shaders/Clouds Lower.gdshader
-res://Scripts/sea.gd
-res://Scenes/Main Menu.tscn
-res://Prefabs/player.tscn
-res://addons/weekend Dialogue/Scenes/Dialogue Graph.tscn
-res://Data/Terrain/terrain3d-01-01.res
+res://Shaders/Plant.tres
+res://Data/Sea/sea -1,0.tres
+res://Materials/Diasies.tres
 res://Data/Terrain/terrain3d-01_00.res
+res://Scenes/Main Menu.tscn
+res://Prefabs/Terrain Items/grass.tscn
+res://Prefabs/Terrain Items/grass_small.tscn
+res://Data/Sea/sea 0,-1.tres
 res://Data/Terrain/terrain3d_00_00.res
-res://Scripts/Tools/Height Map Generator.gd
-res://Scripts/UI/EndDayPanel.gd
-res://Scripts/Controllers/FlowController.gd
-res://Scripts/Controllers/SaveController.gd
-res://Scripts/Main Menu/Main Menu Controller.gd
-res://Scripts/Controllers/EventBus.gd
-res://Scripts/Tent.gd
-res://Scripts/Controllers/ConversationController.gd
-res://Scripts/NotificationSystem.gd
-res://Prefabs/UI/pause_menu.tscn
-res://Scripts/Main Menu/StartMenuButtonGroup.gd
-res://Scripts/Pause Menu/PauseMenu.gd

@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb4tusa0ojc1d"]
+
+[ext_resource type="PackedScene" uid="uid://dibcob5mpje7q" path="res://Models/grass.glb" id="1_4qelf"]
+[ext_resource type="Material" uid="uid://egpru16uvbme" path="res://Materials/Stylized3DGrass.tres" id="2_sdvlv"]
+
+[node name="grass" instance=ExtResource("1_4qelf")]
+
+[node name="Grass" parent="." index="0"]
+surface_material_override/0 = ExtResource("2_sdvlv")

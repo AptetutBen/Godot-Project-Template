@@ -27,9 +27,7 @@ func _physics_process(delta):
 func _move(delta : float):
 	var camera_angle = camera_pivot.rotation.y
 	var input = Input.get_vector("Move Left", "Move Right", "Move Up", "Move Down")
-	
 	input = input.rotated(-camera_angle)
-	
 	if enabled:
 		velocity.x = input.x
 		velocity.z = input.y 
