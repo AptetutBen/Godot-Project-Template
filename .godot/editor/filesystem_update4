@@ -13,3 +13,5 @@ res://Scripts/Controllers/AudioManager.gd
 res://Scripts/FollowCamera.gd
 res://Data/Terrain/terrain3d-01_00.res
 res://Data/Terrain/terrain3d_00_00.res
+res://Old Sky.tres
+res://Shaders/Flag.tres
