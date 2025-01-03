@@ -116,7 +116,6 @@ offset_bottom = -174.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_88j2r")
-active = false
 
 [node name="Start Button" type="RichTextLabel" parent="Options Buttons"]
 clip_contents = false

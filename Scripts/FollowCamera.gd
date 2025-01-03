@@ -166,6 +166,15 @@ func _on_camera_zone_exit(zone : CameraZone):
 	current_camera_zone = null
 	_transition(default_offset,0)
 
+func start_watch_camera(marker : Marker3D) -> void:
+	camera_hijacked = true
+	set_to_wide_fow()
+	global_position = marker.global_position
+	target_camera_position = player.global_position
+	main_camera.rotation = marker.rotation
+	position = target_camera_position
+	main_camera.global_position = marker.global_position
+	
 func start_day_sequence(marker : Marker3D) -> void:
 	camera_hijacked = true
 	set_to_wide_fow()

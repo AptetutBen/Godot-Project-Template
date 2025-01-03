@@ -11,6 +11,12 @@ static var Instance : Player
 
 var enabled : bool = true
 var current_interact_object : InteractObject
+var input : Vector2
+
+# Sequence
+var in_sequence : bool 
+var sequence_target : Vector3
+signal sequence_end
 
 func _init() -> void:
 	Instance = self
@@ -22,31 +28,51 @@ func _ready() -> void:
 	EventBus.finish_conversation.connect(_on_finish_conversation)
 	
 func _physics_process(delta):
-	_move(delta)
+	if in_sequence:
+		_move_sequence()
+	
+	if !in_sequence:
+		_move()
+	
+	_translate_player(delta)
+	
+func play_sequence(to_position : Vector3) -> void:
+	in_sequence = true
+	sequence_target = to_position
 
-func _move(delta : float):
+func _move_sequence():
+	var direction = (sequence_target - global_position).normalized()
+	input = Vector2(direction.x,direction.z)
+	if global_position.distance_to(sequence_target) < 0.5:
+		in_sequence = false
+		input = Vector2.ZERO
+		sequence_end.emit()
+	
+func _move():
+	if !enabled:
+		return
+		
 	var camera_angle = camera_pivot.rotation.y
-	var input = Input.get_vector("Move Left", "Move Right", "Move Up", "Move Down")
+	input = Input.get_vector("Move Left", "Move Right", "Move Up", "Move Down")
 	input = input.rotated(-camera_angle)
-	if enabled:
-		velocity.x = input.x
-		velocity.z = input.y 
-		animation_tree.set("parameters/speed/blend_position",velocity.length())
-		#animation_tree.set("parameters/pseed/blend_position",velocity.length())
-		velocity *= speed
 
-		if velocity.length() > 0:
-			mesh.rotation.y = lerp_angle(mesh.rotation.y, atan2(velocity.x, velocity.z), 0.1)
-
-	#mesh.rotate_y(_delta)
+func _translate_player(delta : float):
 	if !is_on_floor():
 		pass
 		velocity.y += -gravity * delta
 	else:
 		velocity.y = 0
+	
+	velocity.x = input.x
+	velocity.z = input.y 
+	animation_tree.set("parameters/speed/blend_position",velocity.length())
+	velocity *= speed
 
+	if velocity.length() > 0:
+		mesh.rotation.y = lerp_angle(mesh.rotation.y, atan2(velocity.x, velocity.z), 0.1)
 	move_and_slide()
-	RenderingServer.global_shader_parameter_set("player_position", global_position)
+	
+	#RenderingServer.global_shader_parameter_set("player_position", global_position)
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Interact") && current_interact_object != null:

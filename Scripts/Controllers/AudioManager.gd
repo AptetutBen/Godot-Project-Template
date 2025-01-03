@@ -107,7 +107,7 @@ func fade_current_song() -> void:
 # Coroutine to fade out a song
 func _fade_song_out(audio_source : AudioStreamPlayer2D):
 	
-	if !audio_source.playing:
+	if audio_source == null || !audio_source.playing:
 		return
 		
 	# Set the timer to whatever the audio_source currently is

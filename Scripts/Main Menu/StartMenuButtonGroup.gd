@@ -22,9 +22,9 @@ func on_button_click(button_index : int) -> void:
 	buttons[selectedButtonIndex].trigger_action()
 
 func _input(event: InputEvent) -> void:
-	if !is_visible_in_tree() || !active:
+	if !is_visible_in_tree() || !active :
 		return
-	
+
 	if event.is_action_pressed("UI Accept"):
 		buttons[selectedButtonIndex].trigger_action()
 	

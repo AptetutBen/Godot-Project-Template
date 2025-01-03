@@ -1,9 +1,4 @@
-res://Animations/Characters/character_move.res
-res://Animations/Characters/character_idle.res
-res://Animations/Characters/character_dash.res
-res://Animations/Characters/character_walk.res
 res://Scenes/Main Menu.tscn
-res://Scripts/Controllers/AudioManager.gd
 res://Shaders/Sea.tres
 res://Data/Dialogue/Test Dialogue.tres
 res://Shaders/GrassShader.tres
@@ -11,9 +6,10 @@ res://Materials/Stylized3DGrass.tres
 res://Materials/Diasies.tres
 res://Scenes/Game.tscn
 res://Prefabs/camera.tscn
-res://Scripts/FollowCamera.gd
-res://Scripts/UI/IntroSequence.gd
+res://Scripts/PlayerController.gd
+res://Scripts/DayOneIntroSequence.gd
 res://Scripts/game_controller.gd
-res://Scripts/UI/FadePanel.gd
-res://Scripts/IntroSequences.gd
-res://Scripts/AudioPath.gd
+res://Scripts/Controllers/AudioManager.gd
+res://Scripts/FollowCamera.gd
+res://Data/Terrain/terrain3d-01_00.res
+res://Data/Terrain/terrain3d_00_00.res
