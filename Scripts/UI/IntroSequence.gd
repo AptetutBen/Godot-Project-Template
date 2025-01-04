@@ -28,3 +28,4 @@ func start_sequence() -> void:
 	Player.Instance.enabled = true
 	await get_tree().create_timer(3).timeout
 	visible = false
+	AudioManager.play_music("Gentle Reflections",4)

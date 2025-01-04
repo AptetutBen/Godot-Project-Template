@@ -1,6 +1,7 @@
 extends Node
 
-var audioFormats = ["wav","mp3","ogg"]
+const footstep_keys : Array[String] = ["sand","rock","grass","dirt"]
+const audioFormats = ["wav","mp3","ogg"]
 
 var audioStreamPointer2D: int = 0;
 var audioStreamPointerMusic: int = 0;
@@ -13,6 +14,7 @@ var musicAudioStreamPlayers: Array[AudioStreamPlayer2D] = []
 var sfx_clips = {}
 var music_clips = {}
 
+var footstep_clips = {}
 
 # Called when the node enters the scene tree for the first time.
 func _init():
@@ -20,6 +22,7 @@ func _init():
 	
 	_get_audio_files("res://Audio/SFX",sfx_clips)
 	_get_audio_files("res://Audio/Music",music_clips)
+	_get_footstep_audio()
 	
 	# Add new busses for the sfx and music
 	_add_bus("Music")
@@ -56,39 +59,49 @@ func play_sfx_fade(clip_name : String, play_from_random_point : bool = false, fa
 	
 	return player
 
-func play_sfx(clip_name : String) -> AudioStreamPlayer2D:
+func play_sfx(clip_name : String,volume : float = 1, pitch : float = 1) -> AudioStreamPlayer2D:
+	if volume <= 0.1:
+		return
 	if !sfx_clips.has(clip_name):
 		print("*** Audio File: %s not found." %clip_name )
 		return
 	var clip = ResourceLoader.load(sfx_clips[clip_name])
 	return _play_2d_audio(clip)
 	
-func _play_2d_audio(clip : AudioStream) -> AudioStreamPlayer2D:
+func _play_2d_audio(clip : AudioStream,volume : float = 1, pitch : float = 1) -> AudioStreamPlayer2D:
 	var player : AudioStreamPlayer2D = audioStreamPlayers2D[audioStreamPointer2D]
-	player.volume_db = 0
+	player.volume_db = linear_to_db(volume)
 	audioStreamPointer2D = (audioStreamPointer2D+1)%audioStreamPlayers2D.size()
 	player.stream = clip
 	player.play()
 	return player
 
-func _play_3d_audio(clip : AudioStream, position: Vector3) -> AudioStreamPlayer3D:
+func play_footstep_sound(data : Vector3):
+	
+	play_sfx(footstep_keys[data[0]],data[2],randf_range(0.6,1.4))
+	play_sfx(footstep_keys[data[1]],1-data[2],randf_range(0.6,1.4))
+	var clip = ResourceLoader.load(footstep_clips["grass"].pick_random())
+	_play_2d_audio(clip,1, randf_range(0.6, 1.4))
+
+func _play_3d_audio(clip : AudioStream, position: Vector3, pitch : float = 1) -> AudioStreamPlayer3D:
 	var player : AudioStreamPlayer3D = audioStreamPlayers3D[audioStreamPointer3D]
-	player.volume_db =0
+	player.volume_db = 0
+	player.pitch_scale = pitch
 	audioStreamPointer3D = (audioStreamPointer3D+1)%audioStreamPlayers3D.size()
 	player.global_position = position
 	player.stream = clip
 	player.play()
 	return player
 
-func play_music(clip_name : String) -> AudioStreamPlayer2D:
+func play_music(clip_name : String, fade_duration : float = 1) -> AudioStreamPlayer2D:
 	if !music_clips.has(clip_name):
 		print("*** Audio File: %s not found." %clip_name )
 		return
 	var clip = ResourceLoader.load(music_clips[clip_name])
-	var asp = _play_music_clip(clip)
+	var asp = _play_music_clip(clip,fade_duration)
 	return asp
 
-func _play_music_clip(clip : AudioStream) -> AudioStreamPlayer2D:
+func _play_music_clip(clip : AudioStream, fade_duration : float = 1) -> AudioStreamPlayer2D:
 	var currentPlayer : AudioStreamPlayer2D = musicAudioStreamPlayers[audioStreamPointerMusic]
 	_fade_song_out(currentPlayer)
 	
@@ -97,7 +110,7 @@ func _play_music_clip(clip : AudioStream) -> AudioStreamPlayer2D:
 	
 	var nextPlayer : AudioStreamPlayer2D = musicAudioStreamPlayers[audioStreamPointerMusic]
 	nextPlayer.stream = clip
-	_fade_song_in(musicAudioStreamPlayers[audioStreamPointerMusic])
+	_fade_song_in(musicAudioStreamPlayers[audioStreamPointerMusic],fade_duration)
 	currentMusicAudioStreamPlayer = nextPlayer
 	return nextPlayer
 
@@ -124,16 +137,16 @@ func _fade_song_out(audio_source : AudioStreamPlayer2D):
 	audio_source.stop()
 
 # Coroutine to fade out a song
-func _fade_song_in(audio_source : AudioStreamPlayer2D):
+func _fade_song_in(audio_source : AudioStreamPlayer2D, duration : float = 1):
 	
 	# Set the timer to whatever the audio_source currently is
-	var timer = get_tree().create_timer(1.0)
+	var timer = get_tree().create_timer(duration)
 	audio_source.play()
 
 	# Loop until timer gets below or equal to 0
 	while timer.time_left > 0:
 		# Set the audio_source's volume to be whatever the timer currently is
-		audio_source.set_volume_db(linear_to_db(1-timer.time_left))
+		audio_source.set_volume_db(linear_to_db(1-timer.time_left/duration))
 		# Wait till the next frame to loop around again.
 		await get_tree().process_frame
 
@@ -157,13 +170,38 @@ func _create_musicAudioSources(count : int):
 		add_child(newAudioStreamPlayer)
 		musicAudioStreamPlayers.append(newAudioStreamPlayer)
 		newAudioStreamPlayer.bus = "Music"
+
+func _get_footstep_audio():
+	_build_footstep_audio_dic("res://Audio/Footsteps/Dirt","dirt")
+	_build_footstep_audio_dic("res://Audio/Footsteps/Grass","grass")
+	_build_footstep_audio_dic("res://Audio/Footsteps/Rock","rock")
+	_build_footstep_audio_dic("res://Audio/Footsteps/Sand","sand")
+
+func _build_footstep_audio_dic(path : String, key : String):
+	footstep_clips[key] = []
+	var dir = DirAccess.open(path)
+	dir.list_dir_begin()
+	var filename = dir.get_next()
+	while filename != '':
 		
+		if filename.get_extension() == "import":
+			print(filename)
+			filename = filename.left(len(filename) - len('.import'))
+			
+			if audioFormats.has(filename.get_extension().to_lower()):
+				footstep_clips[key].append(ProjectSettings.globalize_path( path + "/" + filename))
+				
+		filename = dir.get_next()
+
 # get all audio files in the 'Audio' folder and store them in a dictionary
 func _get_audio_files(path,dic):
 	var dir = DirAccess.open(path)
 	dir.list_dir_begin()
 	var filename = dir.get_next()
 	while filename != '':
+
+		if dir.current_is_dir():
+			_get_audio_files(path + "/" + filename,dic)
 		
 		if filename.get_extension() == "import":
 			print(filename)

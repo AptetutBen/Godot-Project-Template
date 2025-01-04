@@ -13,6 +13,11 @@ var enabled : bool = true
 var current_interact_object : InteractObject
 var input : Vector2
 
+@export var terrain : Terrain3D
+
+@export var footstep_distance : float = 2
+var last_footstep_position : Vector3
+
 # Sequence
 var in_sequence : bool 
 var sequence_target : Vector3
@@ -27,7 +32,10 @@ func _ready() -> void:
 	EventBus.start_conversation.connect(_on_start_conversation)
 	EventBus.finish_conversation.connect(_on_finish_conversation)
 	
+	last_footstep_position = position
+	
 func _physics_process(delta):
+	
 	if in_sequence:
 		_move_sequence()
 	
@@ -71,6 +79,10 @@ func _translate_player(delta : float):
 	if velocity.length() > 0:
 		mesh.rotation.y = lerp_angle(mesh.rotation.y, atan2(velocity.x, velocity.z), 0.1)
 	move_and_slide()
+	
+	if position.distance_to(last_footstep_position) > footstep_distance:
+		last_footstep_position = position
+		AudioManager.play_footstep_sound(terrain.data.get_texture_id(global_position))
 	
 	#RenderingServer.global_shader_parameter_set("player_position", global_position)
 
