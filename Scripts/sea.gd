@@ -1,6 +1,7 @@
 @tool
-extends Node3D
+class_name Sea extends Node3D
 
+static var Height : float
 @export var min_height : float = 0.25 
 @export var max_height : float = 0.3
 @export var speed : float = 0.1
@@ -15,5 +16,6 @@ func _process(delta: float) -> void:
 	
 	var value : float = (sin(temp_timer * speed)* 2) - 1
 	
-	position.y = lerp(min_height,max_height,value)
+	Height = lerp(min_height,max_height,value)
+	position.y = Height
 	

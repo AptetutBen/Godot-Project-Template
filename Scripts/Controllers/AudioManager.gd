@@ -1,6 +1,6 @@
 extends Node
 
-const footstep_keys : Array[String] = ["sand","rock","grass","dirt"]
+const footstep_keys : Dictionary[int,String] = {-1:"water",0:"sand",1:"rock",2:"grass",3:"dirt"}
 const audioFormats = ["wav","mp3","ogg"]
 
 var audioStreamPointer2D: int = 0;
@@ -76,12 +76,10 @@ func _play_2d_audio(clip : AudioStream,volume : float = 1, pitch : float = 1) ->
 	player.play()
 	return player
 
-func play_footstep_sound(data : Vector3):
-	
-	play_sfx(footstep_keys[data[0]],data[2],randf_range(0.6,1.4))
-	play_sfx(footstep_keys[data[1]],1-data[2],randf_range(0.6,1.4))
-	var clip = ResourceLoader.load(footstep_clips["grass"].pick_random())
-	_play_2d_audio(clip,1, randf_range(0.6, 1.4))
+func play_footstep_sound(texure_index : int, volume : float):
+	if !footstep_keys.has(texure_index):
+		return
+	_play_2d_audio(ResourceLoader.load(footstep_clips[footstep_keys[texure_index]].pick_random()),volume,randf_range(0.6,1.4))
 
 func _play_3d_audio(clip : AudioStream, position: Vector3, pitch : float = 1) -> AudioStreamPlayer3D:
 	var player : AudioStreamPlayer3D = audioStreamPlayers3D[audioStreamPointer3D]
@@ -176,6 +174,7 @@ func _get_footstep_audio():
 	_build_footstep_audio_dic("res://Audio/Footsteps/Grass","grass")
 	_build_footstep_audio_dic("res://Audio/Footsteps/Rock","rock")
 	_build_footstep_audio_dic("res://Audio/Footsteps/Sand","sand")
+	_build_footstep_audio_dic("res://Audio/Footsteps/Water","water")
 
 func _build_footstep_audio_dic(path : String, key : String):
 	footstep_clips[key] = []

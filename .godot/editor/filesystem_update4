@@ -11,3 +11,7 @@ res://Materials/Diasies.tres
 res://Scenes/Game.tscn
 res://Scripts/Controllers/AudioManager.gd
 res://Scripts/PlayerController.gd
+res://Data/Terrain/terrain3d_00_00.res
+res://Prefabs/player.tscn
+res://Scripts/sea.gd
+res://Scripts/game_controller.gd

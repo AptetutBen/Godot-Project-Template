@@ -2,6 +2,7 @@ class_name Player extends CharacterBody3D
 
 static var Instance : Player
 @export var speed : float = 7.0
+@export var run_speed : float = 10.0
 @export var gravity : float = 9.8
 
 @onready var camera_pivot: FollowCamera = %"Camera"
@@ -9,6 +10,11 @@ static var Instance : Player
 @onready var animation_tree : AnimationTree = $"Mesh/AnimationTree"
 @onready var mesh: Node3D = $Mesh
 
+@export var grass_particles: Array[GPUParticles3D]
+@export var sand_particles: Array[GPUParticles3D]
+var particle_index : int =0
+
+var is_running : bool = false
 var enabled : bool = true
 var current_interact_object : InteractObject
 var input : Vector2
@@ -46,6 +52,7 @@ func _physics_process(delta):
 	
 func play_sequence(to_position : Vector3) -> void:
 	in_sequence = true
+	is_running = false
 	sequence_target = to_position
 
 func _move_sequence():
@@ -64,6 +71,18 @@ func _move():
 	input = Input.get_vector("Move Left", "Move Right", "Move Up", "Move Down")
 	input = input.rotated(-camera_angle)
 
+func _input(event):
+	if in_sequence:
+		return
+		
+	if event.is_action_pressed("Run"):
+		is_running = true
+	if event.is_action_released("Run"):
+		is_running = false
+	
+	if event.is_action_pressed("Interact") && current_interact_object != null:
+		current_interact_object.interact()
+
 func _translate_player(delta : float):
 	if !is_on_floor():
 		pass
@@ -74,21 +93,41 @@ func _translate_player(delta : float):
 	velocity.x = input.x
 	velocity.z = input.y 
 	animation_tree.set("parameters/speed/blend_position",velocity.length())
-	velocity *= speed
+	velocity *= speed if not is_running else run_speed
 
 	if velocity.length() > 0:
 		mesh.rotation.y = lerp_angle(mesh.rotation.y, atan2(velocity.x, velocity.z), 0.1)
 	move_and_slide()
 	
 	if position.distance_to(last_footstep_position) > footstep_distance:
+		var texture_index : int 
+		
 		last_footstep_position = position
-		AudioManager.play_footstep_sound(terrain.data.get_texture_id(global_position))
+		var texture_data : Vector3 = terrain.data.get_texture_id(global_position)
+		
+		if texture_data == null:
+			return
+			
+		
+		
+		if global_position.y < Sea.Height:
+			texture_index = -1
+		elif is_running:
+			texture_index = texture_data[0] if texture_data[2] < 0.5 else texture_data[1]
+
+		match texture_index:
+			0:
+				sand_particles[particle_index].restart()
+			2:
+				grass_particles[particle_index].restart()
+			_:
+				pass	
+			
+		AudioManager.play_footstep_sound(texture_index,1.0 if is_running else 0.5)
+		
+		particle_index = 0 if particle_index == 1 else 1
 	
 	#RenderingServer.global_shader_parameter_set("player_position", global_position)
-
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Interact") && current_interact_object != null:
-		current_interact_object.interact()
 
 func _on_enter_interact_object(interact_object:InteractObject):
 	current_interact_object = interact_object
