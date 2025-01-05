@@ -84,19 +84,22 @@ func _input(event):
 		current_interact_object.interact()
 
 func _translate_player(delta : float):
+
+	if input.length() > 0:
+		mesh.rotation.y = lerp_angle(mesh.rotation.y, atan2(velocity.x, velocity.z), 0.1)
+
+	input *= speed if not is_running else run_speed
+
 	if !is_on_floor():
-		pass
-		velocity.y += -gravity * delta
+		velocity.y = velocity.y  -gravity * delta
 	else:
 		velocity.y = 0
-	
+
 	velocity.x = input.x
 	velocity.z = input.y 
+	
 	animation_tree.set("parameters/speed/blend_position",velocity.length())
-	velocity *= speed if not is_running else run_speed
 
-	if velocity.length() > 0:
-		mesh.rotation.y = lerp_angle(mesh.rotation.y, atan2(velocity.x, velocity.z), 0.1)
 	move_and_slide()
 	
 	if position.distance_to(last_footstep_position) > footstep_distance:
@@ -115,13 +118,13 @@ func _translate_player(delta : float):
 		elif is_running:
 			texture_index = texture_data[0] if texture_data[2] < 0.5 else texture_data[1]
 
-		match texture_index:
-			0:
-				sand_particles[particle_index].restart()
-			2:
-				grass_particles[particle_index].restart()
-			_:
-				pass	
+			match texture_index:
+				0:
+					sand_particles[particle_index].restart()
+				2:
+					grass_particles[particle_index].restart()
+				_:
+					pass	
 			
 		AudioManager.play_footstep_sound(texture_index,1.0 if is_running else 0.5)
 		

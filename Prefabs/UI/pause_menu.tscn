@@ -1,8 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://c5j0pg0krwk4t"]
+[gd_scene load_steps=10 format=3 uid="uid://c5j0pg0krwk4t"]
 
 [ext_resource type="Script" uid="uid://7oni0icddkt3" path="res://Scripts/Pause Menu/PauseMenu.gd" id="1_tm1hf"]
-[ext_resource type="FontFile" path="res://Fonts/font1.tres" id="2_5vmv3"]
-[ext_resource type="FontFile" uid="uid://b3lrceixb0548" path="res://Fonts/Chewy-Regular.ttf" id="3_thy0x"]
+[ext_resource type="FontFile" uid="uid://y2fjskeskhyt" path="res://Fonts/Chewy-Regular.ttf" id="3_thy0x"]
 [ext_resource type="Script" uid="uid://c0igtkxsnjsgj" path="res://Scripts/Main Menu/StartMenuButtonGroup.gd" id="4_n7qms"]
 [ext_resource type="Theme" uid="uid://chi28l03dgsy2" path="res://Themes/MenuTextStandard.tres" id="5_3n05p"]
 [ext_resource type="Script" uid="uid://cqfqww5rcrh8n" path="res://Scripts/Main Menu/MenuText.gd" id="6_jy3lh"]
@@ -55,7 +54,6 @@ offset_right = -794.0
 offset_bottom = -447.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_5vmv3")
 text = "Paused"
 label_settings = SubResource("LabelSettings_0430q")
 vertical_alignment = 1

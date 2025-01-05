@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bvo3eg11jru1n"]
+[gd_scene load_steps=12 format=3 uid="uid://bvo3eg11jru1n"]
 
 [ext_resource type="Script" uid="uid://d4jgg4fgnmheh" path="res://Scripts/PlayerController.gd" id="1_mttcl"]
 [ext_resource type="PackedScene" uid="uid://daqigiapwq35b" path="res://Models/Yippy Kawaii/FBX/bunny.tscn" id="2_h6v5j"]
@@ -8,38 +8,6 @@
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ghiw7"]
 radius = 0.9
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2nftw"]
-transparency = 2
-alpha_scissor_threshold = 0.5
-alpha_antialiasing_mode = 0
-vertex_color_use_as_albedo = true
-albedo_texture = ExtResource("3_y5hcb")
-backlight_enabled = true
-backlight = Color(0.466181, 0.466181, 0.466181, 1)
-billboard_mode = 3
-billboard_keep_scale = true
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = false
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_2nftw"]
-angle_min = -299.0
-angle_max = 80.3
-direction = Vector3(0, 1, 0)
-spread = 11.667
-initial_velocity_min = 2.0
-initial_velocity_max = 4.0
-angular_velocity_min = -488.56
-angular_velocity_max = 456.44
-scale_min = 1.5
-scale_max = 2.5
-color = Color(0.356411, 0.558701, 0.27613, 1)
-hue_variation_min = -1.0
-hue_variation_max = -0.93
-
-[sub_resource type="QuadMesh" id="QuadMesh_hck1p"]
-size = Vector2(0.2, 0.2)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_knrd4"]
 transparency = 2
 alpha_scissor_threshold = 0.5
@@ -47,7 +15,7 @@ alpha_antialiasing_mode = 0
 vertex_color_use_as_albedo = true
 albedo_texture = ExtResource("4_2nftw")
 backlight_enabled = true
-backlight = Color(0.466181, 0.466181, 0.466181, 1)
+backlight = Color(1, 1, 1, 1)
 billboard_mode = 3
 billboard_keep_scale = true
 particles_anim_h_frames = 1
@@ -58,6 +26,38 @@ particles_anim_loop = false
 angle_min = -299.0
 angle_max = 80.3
 direction = Vector3(0, 1, 0)
+spread = 49.166
+initial_velocity_min = 2.0
+initial_velocity_max = 4.0
+angular_velocity_min = -488.56
+angular_velocity_max = 456.44
+scale_min = 4.0
+scale_max = 5.5
+color = Color(0.982089, 0.909892, 0.626554, 1)
+hue_variation_min = -1.0
+hue_variation_max = -0.93
+
+[sub_resource type="QuadMesh" id="QuadMesh_hck1p"]
+size = Vector2(0.2, 0.2)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2nftw"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+vertex_color_use_as_albedo = true
+albedo_texture = ExtResource("3_y5hcb")
+backlight_enabled = true
+backlight = Color(1, 1, 1, 1)
+billboard_mode = 3
+billboard_keep_scale = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_hck1p"]
+angle_min = -299.0
+angle_max = 80.3
+direction = Vector3(0, 1, 0)
 spread = 11.667
 initial_velocity_min = 2.0
 initial_velocity_max = 4.0
@@ -65,9 +65,12 @@ angular_velocity_min = -488.56
 angular_velocity_max = 456.44
 scale_min = 2.5
 scale_max = 3.5
-color = Color(0.982089, 0.909892, 0.626554, 1)
+color = Color(0.537498, 0.73251, 0.396728, 1)
 hue_variation_min = -1.0
 hue_variation_max = -0.93
+
+[sub_resource type="QuadMesh" id="QuadMesh_juxdh"]
+size = Vector2(0.2, 0.2)
 
 [node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("grass_particles", "sand_particles") groups=["player"]]
 slide_on_ceiling = false
@@ -94,26 +97,6 @@ current = true
 [node name="Particles" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.000161827, -0.472544)
 
-[node name="Grass Particles 2" type="GPUParticles3D" parent="Particles"]
-material_override = SubResource("StandardMaterial3D_2nftw")
-cast_shadow = 0
-emitting = false
-amount = 4
-one_shot = true
-explosiveness = 1.0
-process_material = SubResource("ParticleProcessMaterial_2nftw")
-draw_pass_1 = SubResource("QuadMesh_hck1p")
-
-[node name="Grass Particles 1" type="GPUParticles3D" parent="Particles"]
-material_override = SubResource("StandardMaterial3D_2nftw")
-cast_shadow = 0
-emitting = false
-amount = 4
-one_shot = true
-explosiveness = 1.0
-process_material = SubResource("ParticleProcessMaterial_2nftw")
-draw_pass_1 = SubResource("QuadMesh_hck1p")
-
 [node name="Sand Particles 1" type="GPUParticles3D" parent="Particles"]
 material_override = SubResource("StandardMaterial3D_knrd4")
 cast_shadow = 0
@@ -133,3 +116,23 @@ one_shot = true
 explosiveness = 1.0
 process_material = SubResource("ParticleProcessMaterial_knrd4")
 draw_pass_1 = SubResource("QuadMesh_hck1p")
+
+[node name="Grass Particles 2" type="GPUParticles3D" parent="Particles"]
+material_override = SubResource("StandardMaterial3D_2nftw")
+cast_shadow = 0
+emitting = false
+amount = 4
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_hck1p")
+draw_pass_1 = SubResource("QuadMesh_juxdh")
+
+[node name="Grass Particles 1" type="GPUParticles3D" parent="Particles"]
+material_override = SubResource("StandardMaterial3D_2nftw")
+cast_shadow = 0
+emitting = false
+amount = 4
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_hck1p")
+draw_pass_1 = SubResource("QuadMesh_juxdh")
