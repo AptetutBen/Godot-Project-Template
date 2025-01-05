@@ -1,9 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://di0ixdytwx1hv"]
+[gd_scene load_steps=10 format=3 uid="uid://di0ixdytwx1hv"]
 
 [ext_resource type="Script" uid="uid://d1iet8fngqlty" path="res://Scripts/Main Menu/Main Menu Controller.gd" id="1_6svde"]
-[ext_resource type="FontFile" path="res://Fonts/font1.tres" id="2_13fio"]
 [ext_resource type="PackedScene" uid="uid://c2ru1q5gvx8uw" path="res://Prefabs/UI/options_panel.tscn" id="3_85ift"]
-[ext_resource type="FontFile" uid="uid://8qm4qsx5g6ph" path="res://Fonts/Chewy-Regular.ttf" id="3_mdvdu"]
+[ext_resource type="FontFile" uid="uid://y2fjskeskhyt" path="res://Fonts/Chewy-Regular.ttf" id="3_mdvdu"]
 [ext_resource type="Script" uid="uid://c0igtkxsnjsgj" path="res://Scripts/Main Menu/StartMenuButtonGroup.gd" id="4_88j2r"]
 [ext_resource type="Theme" uid="uid://d2n2o7gyj2klb" path="res://Themes/MenuTextHighlighted.tres" id="5_g2hd1"]
 [ext_resource type="Script" uid="uid://cqfqww5rcrh8n" path="res://Scripts/Main Menu/MenuText.gd" id="5_j2368"]
@@ -37,7 +36,6 @@ offset_right = -721.0
 offset_bottom = -456.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("2_13fio")
 text = "Game Name"
 label_settings = SubResource("LabelSettings_xppeu")
 horizontal_alignment = 1

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c445ywb3idhh5" path="res://Scripts/Pickup.gd" id="1_jjylt"]
 [ext_resource type="Script" uid="uid://c3ltynjvmtnsl" path="res://Scripts/InteractObject.gd" id="2_shhkl"]
-[ext_resource type="PackedScene" uid="uid://bv0sqsxvgfud1" path="res://Models/Items/Conch.glb" id="3_jjylt"]
+[ext_resource type="PackedScene" uid="uid://bvq2dnljavp6t" path="res://Models/Items/Conch.glb" id="3_jjylt"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vmpot"]
 radius = 1.66515
@@ -18,7 +18,7 @@ metadata/_edit_group_ = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_vmpot")
 
-[node name="Conch" parent="Area3D" instance=ExtResource("3_jjylt")]
+[node name="Conch2" parent="." instance=ExtResource("3_jjylt")]
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]

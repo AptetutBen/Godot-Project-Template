@@ -1,12 +1,13 @@
 [gd_scene load_steps=5 format=3 uid="uid://c2ru1q5gvx8uw"]
 
-[ext_resource type="Script" path="res://Scenes/Options Panel.gd" id="1_fywyd"]
-[ext_resource type="FontFile" path="res://Fonts/font1.tres" id="2_kdnir"]
+[ext_resource type="Script" uid="uid://bq81ahdwulpgr" path="res://Scenes/Options Panel.gd" id="1_fywyd"]
+[ext_resource type="FontFile" uid="uid://y2fjskeskhyt" path="res://Fonts/Chewy-Regular.ttf" id="2_76agb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3bsf"]
 bg_color = Color(0.105882, 0.176471, 0.243137, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_68r41"]
+font = ExtResource("2_76agb")
 font_size = 34
 
 [node name="Options Panel" type="Panel"]
@@ -34,7 +35,6 @@ offset_left = 426.0
 offset_top = 7.0
 offset_right = 470.0
 offset_bottom = 49.0
-theme_override_fonts/font = ExtResource("2_kdnir")
 text = "X"
 
 [node name="TabContainer" type="TabContainer" parent="."]

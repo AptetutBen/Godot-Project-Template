@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://c445ywb3idhh5" path="res://Scripts/Pickup.gd" id="1_ugi3m"]
 [ext_resource type="Script" uid="uid://c3ltynjvmtnsl" path="res://Scripts/InteractObject.gd" id="2_77vuk"]
-[ext_resource type="PackedScene" uid="uid://dn3oslnve6cam" path="res://Models/Items/Starfish.glb" id="3_e26by"]
+[ext_resource type="PackedScene" uid="uid://dyrikr1laft5n" path="res://Models/Items/Starfish.glb" id="3_e26by"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_vmpot"]
 radius = 1.66515
@@ -18,8 +18,7 @@ metadata/_edit_group_ = true
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
 shape = SubResource("SphereShape3D_vmpot")
 
-[node name="Starfish" parent="Area3D" instance=ExtResource("3_e26by")]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+[node name="Starfish" parent="." instance=ExtResource("3_e26by")]
 
 [connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
 [connection signal="body_exited" from="Area3D" to="." method="_on_area_3d_body_exited"]
