@@ -66,7 +66,7 @@ func play_sfx(clip_name : String,volume : float = 1, pitch : float = 1) -> Audio
 		print("*** Audio File: %s not found." %clip_name )
 		return
 	var clip = ResourceLoader.load(sfx_clips[clip_name])
-	return _play_2d_audio(clip)
+	return _play_2d_audio(clip,volume,pitch)
 	
 func _play_2d_audio(clip : AudioStream,volume : float = 1, pitch : float = 1) -> AudioStreamPlayer2D:
 	var player : AudioStreamPlayer2D = audioStreamPlayers2D[audioStreamPointer2D]
