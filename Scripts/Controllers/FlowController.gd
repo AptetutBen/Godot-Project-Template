@@ -12,6 +12,7 @@ func _ready():
 	currentScene = root.get_child(root.get_child_count() - 1)
 	
 	dir_contents("res://")
+	#dir_contents_check("res://")
 	
 	SaveController._load_settings_data()
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN if SaveController.get_is_fullscreen() else DisplayServer.WINDOW_MODE_WINDOWED)
@@ -91,8 +92,11 @@ func dir_contents(path):
 				# Recursively call dir_contents for subdirectories
 				dir_contents(path + "/" + file_name)
 			else:
+				if file_name.get_extension() == "remap":
+					file_name = file_name.left(len(file_name) - len('.remap'))
 				if file_name.get_extension().to_lower() == "tscn":
-					sceneDirectory[file_name.substr(0,file_name.length()-5)] = path + "/" + file_name
+					sceneDirectory[file_name.substr(0,file_name.length()-len(".tscn"))] = path + "/" + file_name
 			file_name = dir.get_next()
 	else:
 		print("An error occurred when trying to access the path.")
+	
