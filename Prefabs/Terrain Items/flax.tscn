@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://dam7a04xib2ns"]
+
+[ext_resource type="PackedScene" uid="uid://oo1lm1m6ghrs" path="res://Models/Flax.glb" id="1_gpk0t"]
+[ext_resource type="Shader" uid="uid://djdvvewfn86x2" path="res://Shaders/GrassShader.tres" id="2_v7bny"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_fgsvt"]
+frequency = 0.0041
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_5yhwd"]
+seamless = true
+noise = SubResource("FastNoiseLite_fgsvt")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_88ukn"]
+render_priority = 0
+shader = ExtResource("2_v7bny")
+shader_parameter/WindNoise = SubResource("NoiseTexture2D_5yhwd")
+shader_parameter/BaseColor = Color(0.513726, 0.901961, 0.513726, 1)
+shader_parameter/WindColor = Color(0.486275, 0.701961, 0.384314, 1)
+shader_parameter/FloatParameter = 2.61
+
+[node name="Flax" instance=ExtResource("1_gpk0t")]
+
+[node name="Plane_007" parent="." index="0"]
+transform = Transform3D(0.947948, 0.0585385, 0.312999, -0.0651394, 0.997819, 0.0106641, -0.311692, -0.0304976, 0.949694, 0.0848692, -0.263342, 0.35142)
+surface_material_override/0 = SubResource("ShaderMaterial_88ukn")

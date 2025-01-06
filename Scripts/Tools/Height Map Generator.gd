@@ -8,6 +8,7 @@ var callable : Callable = _generate_heightmap
 
 @export var terrain_3d: Terrain3D
 @export var section : Vector2i = Vector2i(0,0)
+@export var colliders_to_ignore : Array[Node3D]
 
 # Exported properties
 @export var map_size: int = 128
@@ -30,7 +31,13 @@ var true_zoom : float
 func _generate_heightmap():
 	if not Engine.is_editor_hint():
 		return
-		
+	
+	for item in colliders_to_ignore:
+		if item is CollisionShape3D:
+			item.disabled = true
+		elif item is CollisionPolygon3D:
+			item.disabled = true
+			
 	terrain_3d.collision_mode = Terrain3D.FULL_EDITOR
 	
 	true_zoom = pow(2,zoom-1)
@@ -74,6 +81,11 @@ func _generate_heightmap():
 	_create_signed_distance_field(mask)
 	
 	terrain_3d.collision_mode = Terrain3D.FULL_GAME
+	for item in colliders_to_ignore:
+		if item is CollisionShape3D:
+			item.disabled = false
+		elif item is CollisionPolygon3D:
+			item.disabled = false
 
 func _create_mask(image: Image) -> Image:
 	print("Generating Mask...")
@@ -91,37 +103,55 @@ func _create_mask(image: Image) -> Image:
 	print("Finished Generating Mask.")
 	return mask
 
-func _create_signed_distance_field(image: Image):
+	# Helper function to check if a point is within bounds
+func is_in_bounds(x: int, y: int, image_size : int) -> bool:
+		return x >= 0 and x < image_size and y >= 0 and y < image_size
+
+func _create_signed_distance_field(image: Image) -> void:
 	print("Generating Signed Distance Field...")
-	var image_size : int = image.get_width()
-	var sdf = Image.create(image_size, image_size, false, Image.FORMAT_RGBAF)
-	var actual_falloff = distance_falloff * zoom
-	
+
+	var image_size: int = image.get_width()
+	assert(image.get_width() == image.get_height(), "Image must be square.")
+
+	# Initialize the SDF image
+	var sdf: Image = Image.create(image_size, image_size, false, Image.FORMAT_RGBAF)
+	var actual_falloff: float = distance_falloff * zoom
+
+	# Precompute a list of all edge pixels
+	var edge_pixels: Array = []
 	for x in range(image_size):
 		for y in range(image_size):
-			var nearest_dist = float(map_size)
-			var nearest_direction = Vector2.ZERO
-			
-			var center_pixel = image.get_pixel(x, y).r > 0.5
-			for dx in range(-actual_falloff, actual_falloff +1):
-				for dy in range(-actual_falloff, actual_falloff +1):
-					var nx = x + dx
-					var ny = y + dy
-					if nx >= 0 and nx < image_size and ny >= 0 and ny < image_size:
-						var neighbor_pixel = image.get_pixel(nx, ny).r > 0.5
-						if center_pixel != neighbor_pixel:
-							var dist = Vector2(dx, dy).length()
-							if dist < nearest_dist:
-								nearest_dist = dist
-								nearest_direction = Vector2(dx, dy).normalized()
+			var current_pixel: bool = image.get_pixel(x, y).r > 0.5
+			for dir in [Vector2.RIGHT, Vector2.UP, Vector2.LEFT, Vector2.DOWN]:
+				var nx: int = x + int(dir.x)
+				var ny: int = y + int(dir.y)
+				if nx >= 0 and nx < image_size and ny >= 0 and ny < image_size:
+					var neighbor_pixel: bool = image.get_pixel(nx, ny).r > 0.5
+					if current_pixel != neighbor_pixel:
+						edge_pixels.append(Vector2(x, y))
+						break
 
-			if not center_pixel:
+	# Calculate the Signed Distance Field
+	for x in range(image_size):
+		for y in range(image_size):
+			var current_pixel: bool = image.get_pixel(x, y).r > 0.5
+			var nearest_dist: float = actual_falloff
+			for edge in edge_pixels:
+				var dist: float = (Vector2(x, y) - edge).length()
+				if dist < nearest_dist:
+					nearest_dist = dist
+
+			# Invert distance for background pixels
+			if not current_pixel:
 				nearest_dist = -nearest_dist
 
-			var distance_value : float = 1 - (nearest_dist / actual_falloff)
-			#sdf.set_pixel(x, y, Color(distance_value, distance_value, distance_value))
+			# Normalize the distance value and set the pixel
+			var distance_value: float = 0.5 + (nearest_dist / actual_falloff) * 0.5
+			distance_value = clamp(distance_value, 0.0, 1.0)  # Ensure values are clamped between 0 and 1
+			sdf.set_pixel(x, y, Color(distance_value, distance_value, distance_value))
 
-			sdf.set_pixel(x, y, Color(distance_value, nearest_direction.x, nearest_direction.y))
+	# Save the resulting SDF image
+	var save_path: String = "%s/%s_%d_%d.png" % [save_directory, sdf_output_file_name, section.x, section.y]
+	sdf.save_png(save_path)
 
-	sdf.save_png("%s%s %s,%s.png"%[save_directory,sdf_output_file_name, section.x,section.y])
 	print("Finished Generating Signed Distance Field.")

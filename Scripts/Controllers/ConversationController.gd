@@ -62,6 +62,7 @@ func hide_ui():
 
 func display_text(text : String):
 	main_text.visible_characters = 0
+	input_prompt_image.visible = false
 	main_text.text = text
 	input_pressed = false
 	for i in main_text.text.length():
