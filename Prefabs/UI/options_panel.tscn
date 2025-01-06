@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c2ru1q5gvx8uw"]
 
-[ext_resource type="Script" uid="uid://bq81ahdwulpgr" path="res://Scenes/Options Panel.gd" id="1_fywyd"]
+[ext_resource type="Script" uid="uid://bq81ahdwulpgr" path="res://Scripts/UI/Options Panel.gd" id="1_fywyd"]
 [ext_resource type="FontFile" uid="uid://y2fjskeskhyt" path="res://Fonts/Chewy-Regular.ttf" id="2_76agb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_j3bsf"]

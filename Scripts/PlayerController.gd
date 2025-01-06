@@ -37,6 +37,7 @@ func _ready() -> void:
 	EventBus.exit_interact_object.connect(_on_exit_interact_object)
 	EventBus.start_conversation.connect(_on_start_conversation)
 	EventBus.finish_conversation.connect(_on_finish_conversation)
+	EventBus.start_display_message.connect(_on_start_conversation)
 	
 	last_footstep_position = position
 	
@@ -72,7 +73,8 @@ func _move():
 	input = input.rotated(-camera_angle)
 
 func _input(event):
-	if in_sequence:
+	
+	if in_sequence || !enabled:
 		return
 		
 	if event.is_action_pressed("Run"):
@@ -86,7 +88,7 @@ func _input(event):
 func _translate_player(delta : float):
 
 	if input.length() > 0:
-		mesh.rotation.y = lerp_angle(mesh.rotation.y, atan2(velocity.x, velocity.z), 0.1)
+		mesh.rotation.y = lerp_angle(mesh.rotation.y, atan2(input.x, input.y), 0.1)
 
 	var move_multipliyer = clampf(1-(Sea.Height - global_position.y),0.2,1)
 	
@@ -113,8 +115,6 @@ func _translate_player(delta : float):
 		if texture_data == null:
 			return
 			
-		
-		
 		if move_multipliyer< 1:
 			texture_index = -1
 		elif is_running:
@@ -158,4 +158,5 @@ func _on_start_conversation(_dialogue_node, _node):
 	turn_tween.set_trans(Tween.TRANS_SINE)
 	
 func _on_finish_conversation():
+	is_running = false
 	enabled = true
