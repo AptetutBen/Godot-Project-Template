@@ -3,6 +3,7 @@
 [ext_resource type="FontFile" uid="uid://y2fjskeskhyt" path="res://Fonts/Chewy-Regular.ttf" id="1_wo2oo"]
 
 [resource]
-RichTextLabel/colors/default_color = Color(0.183417, 0.0929364, 0.0190482, 1)
+Panel/styles/panel = null
+RichTextLabel/colors/default_color = Color(0.960914, 0.955839, 0.943195, 1)
 RichTextLabel/font_sizes/normal_font_size = 29
 RichTextLabel/fonts/normal_font = ExtResource("1_wo2oo")

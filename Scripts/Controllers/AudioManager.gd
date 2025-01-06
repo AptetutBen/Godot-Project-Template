@@ -70,6 +70,7 @@ func play_sfx(clip_name : String,volume : float = 1, pitch : float = 1) -> Audio
 	
 func _play_2d_audio(clip : AudioStream,volume : float = 1, pitch : float = 1) -> AudioStreamPlayer2D:
 	var player : AudioStreamPlayer2D = audioStreamPlayers2D[audioStreamPointer2D]
+	player.pitch_scale = pitch
 	player.volume_db = linear_to_db(volume)
 	audioStreamPointer2D = (audioStreamPointer2D+1)%audioStreamPlayers2D.size()
 	player.stream = clip
