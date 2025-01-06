@@ -88,7 +88,9 @@ func _translate_player(delta : float):
 	if input.length() > 0:
 		mesh.rotation.y = lerp_angle(mesh.rotation.y, atan2(velocity.x, velocity.z), 0.1)
 
-	input *= speed if not is_running else run_speed
+	var move_multipliyer = clampf(1-(Sea.Height - global_position.y),0.2,1)
+	
+	input *= (speed if not is_running else run_speed) * move_multipliyer
 
 	if !is_on_floor():
 		velocity.y = velocity.y  -gravity * delta
@@ -113,7 +115,7 @@ func _translate_player(delta : float):
 			
 		
 		
-		if global_position.y < Sea.Height:
+		if move_multipliyer< 1:
 			texture_index = -1
 		elif is_running:
 			texture_index = texture_data[0] if texture_data[2] < 0.5 else texture_data[1]
@@ -141,6 +143,7 @@ func _on_exit_interact_object(interact_object:InteractObject):
 	current_interact_object = null
 
 func _on_start_conversation(_dialogue_node, _node):
+	input = Vector2.ZERO
 	velocity = Vector3.ZERO
 	animation_tree.set("parameters/speed/blend_position",0)
 	enabled = false

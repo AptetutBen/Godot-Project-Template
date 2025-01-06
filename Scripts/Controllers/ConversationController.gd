@@ -3,44 +3,30 @@ class_name ConversationController extends Control
 @onready var main_text: RichTextLabel = %"Main Text"
 @onready var speaker_name_text: Label = %"Speaker Name Text"
 @onready var input_prompt_image: TextureRect = %"Input Prompt Image"
-@onready var main_text_panel: Control = %"Main Text Panel"
+@onready var pivot: Node2D = %Pivot
 
 var input_pressed : bool
 var current_node : DialogueConversationNodeData
 
-var blinking_tween : Tween
-var panel_hide_tween : Tween
+
 
 func _ready() -> void:
 	visible = false
 	EventBus.start_conversation.connect(_on_start_conversation)
 	EventBus.finish_conversation.connect(_on_finish_conversation)
-	
-	blinking_tween = create_tween()
-	blinking_tween.stop()
-	blinking_tween.set_loops()
-	blinking_tween.tween_property(input_prompt_image,"visible",true,0)
-	blinking_tween.tween_interval(0.5)
-	blinking_tween.tween_property(input_prompt_image,"visible",false,0)
-	blinking_tween.tween_interval(0.5)
-	
 
-	panel_hide_tween = create_tween()
-	panel_hide_tween.stop()
-	panel_hide_tween.tween_property(main_text_panel,"position:y",230,0.5).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
-	panel_hide_tween.parallel().tween_property(main_text_panel,"scale:y",0.2,0.5).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
 
 func display_text():
 	visible = true
 	input_prompt_image.visible = false
-
+	main_text.visible_characters = 0
+	pivot.scale = Vector2.ZERO
+	pivot.position = Vector2.ZERO
 	await  get_tree().process_frame
 	var panel_show_tween = create_tween()
 	panel_show_tween.tween_interval(0.1)
-	panel_show_tween.tween_property(main_text_panel,"position",Vector2.ZERO,0)
-	panel_show_tween.tween_interval(0.1)
-	panel_show_tween.tween_property(main_text_panel,"scale:x",2,0.1)
-	panel_show_tween.parallel().tween_property(main_text_panel,"scale",Vector2.ONE,2).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+	panel_show_tween.tween_property(pivot,"scale:x",1,0.4).set_trans(Tween.TRANS_SPRING).set_ease(Tween.EASE_OUT)
+	panel_show_tween.parallel().tween_property(pivot,"scale:y",1,0.4).set_trans(Tween.TRANS_BOUNCE).set_ease(Tween.EASE_OUT)
 	await panel_show_tween.finished
 	
 	while (true):
@@ -56,7 +42,13 @@ func display_text():
 				break
 			await get_tree().create_timer(0.01).timeout
 		
-		blinking_tween.play()
+		var blinking_tween = create_tween()
+		blinking_tween.set_loops()
+		blinking_tween.tween_property(input_prompt_image,"visible",true,0)
+		blinking_tween.tween_interval(0.5)
+		blinking_tween.tween_property(input_prompt_image,"visible",false,0)
+		blinking_tween.tween_interval(0.5)
+	
 		input_pressed = false
 		while (!input_pressed):
 			await get_tree().process_frame
@@ -66,7 +58,10 @@ func display_text():
 		if current_node == null:
 			break
 		
-	panel_hide_tween.play()
+	var panel_hide_tween = create_tween()
+	panel_hide_tween.tween_property(pivot,"position:y",230,0.5).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+	panel_hide_tween.parallel().tween_property(pivot,"scale:y",0.5,0.5).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_IN)
+	panel_hide_tween.parallel().tween_property(pivot,"scale:x",0.8,0.4).set_delay(0.2).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	await panel_hide_tween.finished
 	
 	visible = false

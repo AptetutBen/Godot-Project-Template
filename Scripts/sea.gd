@@ -17,5 +17,5 @@ func _process(delta: float) -> void:
 	var value : float = (sin(temp_timer * speed)* 2) - 1
 	
 	Height = lerp(min_height,max_height,value)
-	position.y = Height
+	global_position.y = Height
 	
