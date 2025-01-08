@@ -1,16 +1,24 @@
-[gd_scene load_steps=10 format=3 uid="uid://di0ixdytwx1hv"]
+[gd_scene load_steps=12 format=3 uid="uid://di0ixdytwx1hv"]
 
 [ext_resource type="Script" uid="uid://d1iet8fngqlty" path="res://Scripts/Main Menu/Main Menu Controller.gd" id="1_6svde"]
 [ext_resource type="PackedScene" uid="uid://c2ru1q5gvx8uw" path="res://Prefabs/UI/options_panel.tscn" id="3_85ift"]
 [ext_resource type="FontFile" uid="uid://y2fjskeskhyt" path="res://Fonts/Chewy-Regular.ttf" id="3_mdvdu"]
+[ext_resource type="Texture2D" uid="uid://r50oq5df1ugk" path="res://Sprites/UI/UI Panels.png" id="4_4lp62"]
 [ext_resource type="Script" uid="uid://c0igtkxsnjsgj" path="res://Scripts/Main Menu/StartMenuButtonGroup.gd" id="4_88j2r"]
-[ext_resource type="Theme" uid="uid://d2n2o7gyj2klb" path="res://Themes/MenuTextHighlighted.tres" id="5_g2hd1"]
 [ext_resource type="Script" uid="uid://cqfqww5rcrh8n" path="res://Scripts/Main Menu/MenuText.gd" id="5_j2368"]
 [ext_resource type="Theme" uid="uid://chi28l03dgsy2" path="res://Themes/MenuTextStandard.tres" id="7_xrvh8"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_xppeu"]
 font = ExtResource("3_mdvdu")
-font_size = 76
+font_size = 116
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0vewo"]
+atlas = ExtResource("4_4lp62")
+region = Rect2(924.394, 271.116, 237.791, 98.0466)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0126h"]
+atlas = ExtResource("4_4lp62")
+region = Rect2(924.394, 271.116, 237.791, 98.0466)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iy524"]
 bg_color = Color(0, 0, 0, 0)
@@ -30,34 +38,74 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 80.0
-offset_top = 59.0
-offset_right = -721.0
-offset_bottom = -456.0
+offset_left = 560.0
+offset_top = 45.0
+offset_right = -61.0
+offset_bottom = -453.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "Game Name"
+text = "Good Egg"
 label_settings = SubResource("LabelSettings_xppeu")
-horizontal_alignment = 1
+horizontal_alignment = 2
 vertical_alignment = 1
 
-[node name="Main Buttons" type="VBoxContainer" parent="."]
+[node name="Buttons Pivot" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 113.83
+offset_top = -72.0
+offset_right = 113.83
+offset_bottom = -72.0
+grow_vertical = 2
+
+[node name="Main Buttons" type="VBoxContainer" parent="Buttons Pivot" node_paths=PackedStringArray("buttons")]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 95.0
-offset_top = 274.0
-offset_right = -901.0
-offset_bottom = -174.0
+offset_left = -4.99255
+offset_top = -5.0
+offset_right = 232.007
+offset_bottom = 297.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_88j2r")
+buttons = [NodePath("Start Button"), NodePath("Options Button"), NodePath("Credits Button"), NodePath("Exit Button")]
 
-[node name="Start Button" type="RichTextLabel" parent="Main Buttons"]
+[node name="Start Button" type="Control" parent="Buttons Pivot/Main Buttons"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+script = ExtResource("5_j2368")
+
+[node name="TextureRect" type="TextureRect" parent="Buttons Pivot/Main Buttons/Start Button"]
+self_modulate = Color(0.278532, 0.0895237, 0.177514, 1)
+custom_minimum_size = Vector2(0, 67.7)
+layout_mode = 2
+offset_left = -29.955
+offset_top = -15.0
+offset_right = 207.045
+offset_bottom = 83.0
+texture = SubResource("AtlasTexture_0vewo")
+
+[node name="MarginContainer" type="MarginContainer" parent="Buttons Pivot/Main Buttons/Start Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 0
+
+[node name="Start Button" type="RichTextLabel" parent="Buttons Pivot/Main Buttons/Start Button/MarginContainer"]
 clip_contents = false
 custom_minimum_size = Vector2(0, 64.9)
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("7_xrvh8")
 theme_override_fonts/normal_font = ExtResource("3_mdvdu")
 theme_override_font_sizes/normal_font_size = 51
@@ -66,14 +114,40 @@ text = "Start
 "
 scroll_active = false
 autowrap_mode = 0
-script = ExtResource("5_j2368")
-normalTheme = ExtResource("7_xrvh8")
-highlightTheme = ExtResource("5_g2hd1")
+vertical_alignment = 1
 
-[node name="Options Button" type="RichTextLabel" parent="Main Buttons"]
+[node name="Options Button" type="Control" parent="Buttons Pivot/Main Buttons"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+script = ExtResource("5_j2368")
+
+[node name="TextureRect" type="TextureRect" parent="Buttons Pivot/Main Buttons/Options Button"]
+self_modulate = Color(0.278532, 0.0895237, 0.177514, 1)
+custom_minimum_size = Vector2(0, 67.7)
+layout_mode = 2
+offset_left = -15.9758
+offset_top = -13.0
+offset_right = 221.024
+offset_bottom = 85.0
+texture = SubResource("AtlasTexture_0126h")
+
+[node name="MarginContainer" type="MarginContainer" parent="Buttons Pivot/Main Buttons/Options Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 0
+
+[node name="Start Button" type="RichTextLabel" parent="Buttons Pivot/Main Buttons/Options Button/MarginContainer"]
 clip_contents = false
 custom_minimum_size = Vector2(0, 64.9)
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("7_xrvh8")
 theme_override_fonts/normal_font = ExtResource("3_mdvdu")
 theme_override_font_sizes/normal_font_size = 51
@@ -81,25 +155,89 @@ bbcode_enabled = true
 text = "Options"
 scroll_active = false
 autowrap_mode = 0
-script = ExtResource("5_j2368")
-normalTheme = ExtResource("7_xrvh8")
-highlightTheme = ExtResource("5_g2hd1")
+vertical_alignment = 1
 
-[node name="Exit Button" type="RichTextLabel" parent="Main Buttons"]
+[node name="Credits Button" type="Control" parent="Buttons Pivot/Main Buttons"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+script = ExtResource("5_j2368")
+
+[node name="TextureRect" type="TextureRect" parent="Buttons Pivot/Main Buttons/Credits Button"]
+self_modulate = Color(0.278532, 0.0895237, 0.177514, 1)
+custom_minimum_size = Vector2(0, 67.7)
+layout_mode = 2
+offset_left = -25.9609
+offset_top = -12.0
+offset_right = 211.039
+offset_bottom = 86.0
+texture = SubResource("AtlasTexture_0vewo")
+
+[node name="MarginContainer" type="MarginContainer" parent="Buttons Pivot/Main Buttons/Credits Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 0
+
+[node name="Start Button" type="RichTextLabel" parent="Buttons Pivot/Main Buttons/Credits Button/MarginContainer"]
 clip_contents = false
 custom_minimum_size = Vector2(0, 64.9)
 layout_mode = 2
+mouse_filter = 2
 theme = ExtResource("7_xrvh8")
-theme_override_constants/shadow_offset_x = 6
+theme_override_fonts/normal_font = ExtResource("3_mdvdu")
+theme_override_font_sizes/normal_font_size = 51
+bbcode_enabled = true
+text = "Credits"
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="Exit Button" type="Control" parent="Buttons Pivot/Main Buttons"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+script = ExtResource("5_j2368")
+
+[node name="TextureRect" type="TextureRect" parent="Buttons Pivot/Main Buttons/Exit Button"]
+self_modulate = Color(0.278532, 0.0895237, 0.177514, 1)
+custom_minimum_size = Vector2(0, 67.7)
+layout_mode = 2
+offset_left = -34.9475
+offset_top = -11.0
+offset_right = 202.052
+offset_bottom = 87.0
+texture = SubResource("AtlasTexture_0vewo")
+
+[node name="MarginContainer" type="MarginContainer" parent="Buttons Pivot/Main Buttons/Exit Button"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 0
+
+[node name="Start Button" type="RichTextLabel" parent="Buttons Pivot/Main Buttons/Exit Button/MarginContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 64.9)
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("7_xrvh8")
 theme_override_fonts/normal_font = ExtResource("3_mdvdu")
 theme_override_font_sizes/normal_font_size = 51
 bbcode_enabled = true
 text = "Exit"
 scroll_active = false
 autowrap_mode = 0
-script = ExtResource("5_j2368")
-normalTheme = ExtResource("7_xrvh8")
-highlightTheme = ExtResource("5_g2hd1")
+vertical_alignment = 1
 
 [node name="Options Buttons" type="VBoxContainer" parent="."]
 visible = false
@@ -107,10 +245,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 367.453
-offset_top = 274.0
-offset_right = -628.547
-offset_bottom = -174.0
+offset_left = 442.341
+offset_top = 562.0
+offset_right = 442.341
+offset_bottom = 762.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_88j2r")
@@ -127,9 +265,6 @@ text = "Start
 "
 scroll_active = false
 autowrap_mode = 0
-script = ExtResource("5_j2368")
-normalTheme = ExtResource("7_xrvh8")
-highlightTheme = ExtResource("5_g2hd1")
 
 [node name="Fullscreen Button" type="RichTextLabel" parent="Options Buttons"]
 clip_contents = false
@@ -142,9 +277,6 @@ bbcode_enabled = true
 text = "Fullscreen"
 scroll_active = false
 autowrap_mode = 0
-script = ExtResource("5_j2368")
-normalTheme = ExtResource("7_xrvh8")
-highlightTheme = ExtResource("5_g2hd1")
 
 [node name="Fullscreen Toggle Text" type="RichTextLabel" parent="Options Buttons/Fullscreen Button"]
 unique_name_in_owner = true
@@ -175,9 +307,6 @@ bbcode_enabled = true
 text = "Back"
 scroll_active = false
 autowrap_mode = 0
-script = ExtResource("5_j2368")
-normalTheme = ExtResource("7_xrvh8")
-highlightTheme = ExtResource("5_g2hd1")
 
 [node name="Options Panel" parent="." instance=ExtResource("3_85ift")]
 visible = false
@@ -213,9 +342,61 @@ grow_vertical = 0
 text = "v 0.1"
 horizontal_alignment = 2
 
-[connection signal="buttonAction" from="Main Buttons/Start Button" to="." method="_on_start_button_pressed"]
-[connection signal="buttonAction" from="Main Buttons/Options Button" to="." method="_on_options_button_pressed"]
-[connection signal="buttonAction" from="Main Buttons/Exit Button" to="." method="_on_exit_button_pressed"]
-[connection signal="buttonAction" from="Options Buttons/Start Button" to="." method="_on_start_button_pressed"]
-[connection signal="buttonAction" from="Options Buttons/Fullscreen Button" to="." method="_on_options_button_pressed"]
-[connection signal="buttonAction" from="Options Buttons/Back Button" to="." method="_on_exit_button_pressed"]
+[node name="Credits" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -311.394
+offset_top = -427.0
+offset_right = 308.606
+offset_bottom = -62.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_group_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Credits"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/normal_font = ExtResource("3_mdvdu")
+theme_override_fonts/italics_font = ExtResource("3_mdvdu")
+theme_override_fonts/bold_font = ExtResource("3_mdvdu")
+theme_override_font_sizes/bold_italics_font_size = 0
+theme_override_font_sizes/italics_font_size = 30
+theme_override_font_sizes/normal_font_size = 31
+theme_override_font_sizes/bold_font_size = 35
+bbcode_enabled = true
+text = "[center][b]Credits[/b][/center]
+
+This game was made in about 4 weeks in an attempt to prevent a cycle of prototypes and unfinished projects.
+
+[center][i]Programming, Design & Environmental Art[/i][/center]
+
+[center][b]Ben Naulls[/b][/center]
+
+
+[center][i]Music[/i][/center]
+
+[center][b]---?---[/b][/center]
+
+
+[center][i]Character Art & Animation[/i][/center]
+
+[center][b]---?---[/b][/center]
+
+
+NZ native bird recordings care of: 
+Department of Conservation (NZ)"
+
+[connection signal="buttonAction" from="Buttons Pivot/Main Buttons/Start Button" to="." method="_on_start_button_pressed"]
+[connection signal="buttonAction" from="Buttons Pivot/Main Buttons/Options Button" to="." method="_on_options_button_pressed"]
+[connection signal="buttonAction" from="Buttons Pivot/Main Buttons/Credits Button" to="." method="_on_credits_button_pressed"]
+[connection signal="buttonAction" from="Buttons Pivot/Main Buttons/Exit Button" to="." method="_on_exit_button_pressed"]

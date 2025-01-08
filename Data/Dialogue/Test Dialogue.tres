@@ -1,5 +1,6 @@
-[gd_resource type="Resource" script_class="DialogueData" load_steps=20 format=3 uid="uid://beraqctd78tcf"]
+[gd_resource type="Resource" script_class="DialogueData" load_steps=21 format=3 uid="uid://bhe0ufssqo8hc"]
 
+[ext_resource type="Resource" uid="uid://7nd280aiylm" path="res://Data/Dialogue/Game Characters.tres" id="1_42ggt"]
 [ext_resource type="Script" uid="uid://rxyur4vwo6q0" path="res://addons/weekend Dialogue/Scripts/DialogueConversationNodeData.gd" id="1_e8qyd"]
 [ext_resource type="Script" uid="uid://mtq6i61w1mhi" path="res://addons/weekend Dialogue/Scripts/DialogueNodeData.gd" id="1_ha705"]
 [ext_resource type="Script" uid="uid://uv5we0y0dofd" path="res://addons/weekend Dialogue/Scripts/DialogueStartNodeData.gd" id="2_mk4en"]
@@ -12,17 +13,19 @@ linking_node_id = 5
 
 [sub_resource type="Resource" id="Resource_ftgil"]
 script = ExtResource("1_ha705")
-text = "About time you go here!
-"
+text = "Kia ora, mate! ‘Bout time you rocked up, aye. Thought you might’ve gone walkabout.
+~Reckon you’re here for the job, eh? Sweet as!"
 id = 3
 options = Array[ExtResource("2_txva4")]([SubResource("Resource_yf41g")])
-position = Vector2(140, 160)
+character_id = 1
+position = Vector2(40, -140)
 
 [sub_resource type="Resource" id="Resource_42ggt"]
 script = ExtResource("1_ha705")
 text = ""
 id = 4
 options = Array[ExtResource("2_txva4")]([])
+character_id = 0
 position = Vector2(120, 660)
 
 [sub_resource type="Resource" id="Resource_der1h"]
@@ -42,11 +45,11 @@ linking_node_id = 0
 
 [sub_resource type="Resource" id="Resource_pftqe"]
 script = ExtResource("1_ha705")
-text = "We have been out of things for days!
-"
+text = "Right, let’s not muck about. I’ve got a project on the go, and I could use an extra pair of hands.~No time for faffing, though. You’re not afraid to get your mitts dirty, are ya?"
 id = 5
 options = Array[ExtResource("2_txva4")]([SubResource("Resource_der1h"), SubResource("Resource_domak"), SubResource("Resource_pm2rb")])
-position = Vector2(520, 160)
+character_id = 1
+position = Vector2(480, 160)
 
 [sub_resource type="Resource" id="Resource_twovt"]
 script = ExtResource("2_txva4")
@@ -58,6 +61,7 @@ script = ExtResource("1_ha705")
 text = "this is where I write stuff	"
 id = 7
 options = Array[ExtResource("2_txva4")]([SubResource("Resource_twovt")])
+character_id = 0
 position = Vector2(920, 120)
 
 [sub_resource type="Resource" id="Resource_hm12j"]
@@ -65,6 +69,7 @@ script = ExtResource("1_ha705")
 text = "and this is there"
 id = 8
 options = Array[ExtResource("2_txva4")]([])
+character_id = 0
 position = Vector2(920, 640)
 
 [sub_resource type="Resource" id="Resource_bnknm"]
@@ -73,6 +78,7 @@ text = "Yeah, that's what I said!
 "
 id = 9
 options = Array[ExtResource("2_txva4")]([])
+character_id = 0
 position = Vector2(920, 380)
 
 [sub_resource type="Resource" id="Resource_buxa3"]
@@ -80,6 +86,7 @@ script = ExtResource("1_ha705")
 text = "end"
 id = 10
 options = Array[ExtResource("2_txva4")]([])
+character_id = 1
 position = Vector2(1400, 460)
 
 [sub_resource type="Resource" id="Resource_txva4"]
@@ -87,7 +94,7 @@ script = ExtResource("2_mk4en")
 id = 0
 first_node_id = 3
 start_key = "test"
-position = Vector2(-260, 140)
+position = Vector2(-300, -100)
 
 [sub_resource type="Resource" id="Resource_k1qhg"]
 script = ExtResource("2_mk4en")
@@ -108,3 +115,4 @@ script = ExtResource("1_e8qyd")
 start_data = Array[ExtResource("2_mk4en")]([SubResource("Resource_txva4"), SubResource("Resource_k1qhg"), SubResource("Resource_qykrk")])
 data = Array[ExtResource("1_ha705")]([SubResource("Resource_ftgil"), SubResource("Resource_42ggt"), SubResource("Resource_pftqe"), SubResource("Resource_vgxcl"), SubResource("Resource_hm12j"), SubResource("Resource_bnknm"), SubResource("Resource_buxa3")])
 connnections = Array[String](["Start Node_1,0,Dialogue Node_4,0", "Start Node_0,0,Dialogue Node_3,0", "Dialogue Node_3,0,Dialogue Node_5,0", "Dialogue Node_5,0,Dialogue Node_7,0", "Dialogue Node_5,2,Dialogue Node_8,0", "Dialogue Node_5,1,Dialogue Node_9,0", "Dialogue Node_7,0,Dialogue Node_10,0"])
+characters = ExtResource("1_42ggt")

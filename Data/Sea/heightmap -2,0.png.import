@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d30d46usxemvk"
-path="res://.godot/imported/sdf_-1_0.png-d3dd08e51bcf2f7a69cfbb1af8f9f408.ctex"
+uid="uid://d0hfm8t1o83ah"
+path="res://.godot/imported/heightmap -2,0.png-0b1542c591b65897617d6fd7e75c31a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Data/Sea/sdf_-1_0.png"
-dest_files=["res://.godot/imported/sdf_-1_0.png-d3dd08e51bcf2f7a69cfbb1af8f9f408.ctex"]
+source_file="res://Data/Sea/heightmap -2,0.png"
+dest_files=["res://.godot/imported/heightmap -2,0.png-0b1542c591b65897617d6fd7e75c31a9.ctex"]
 
 [params]
 

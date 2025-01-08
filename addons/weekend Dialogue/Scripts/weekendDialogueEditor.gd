@@ -15,7 +15,7 @@ var next_id : int
 func _ready() -> void:
 	for node : DialogueConversationNodeData in dialogue_data.data:
 		var newNode : DialogueConversationNode = _add_new_dialogue_node()
-		newNode.initiliase(node)
+		newNode.initiliase(node,dialogue_data.characters)
 		
 		next_id = max(next_id,node.id)
 		
@@ -42,7 +42,7 @@ func _ready() -> void:
 
 func _on_add_node_pressed() -> void:
 	var newNode : DialogueConversationNode = _add_new_dialogue_node()
-	newNode.initilise_new(Vector2(100,100),next_id+1)
+	newNode.initilise_new(Vector2(100,100),next_id+1,dialogue_data.characters)
 	next_id += 1
 
 func _add_new_dialogue_node() -> DialogueConversationNode:

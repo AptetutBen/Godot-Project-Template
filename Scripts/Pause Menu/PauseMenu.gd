@@ -1,5 +1,7 @@
 extends Control
 
+@onready var button_group: TextButtonGroup = $"Button Group"
+
 func _ready() -> void:
 	visible = false
 	
@@ -15,6 +17,7 @@ func _input(event: InputEvent) -> void:
 func _pause():
 	FlowController.pause_game(self)
 	visible = true
+	button_group.enable()
 
 func _unpause():
 	FlowController.unpause_game()

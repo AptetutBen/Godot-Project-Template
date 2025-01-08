@@ -3,6 +3,7 @@ class_name DialogueData extends Resource
 @export var start_data : Array[DialogueStartNodeData]
 @export var data : Array[DialogueConversationNodeData]
 @export var connnections : Array[String]
+@export var characters : DialogueCharacters
 
 func get_random_dialogue() -> DialogueConversationNodeData:
 	return get_node_from_start(start_data.pick_random().first_node_id)

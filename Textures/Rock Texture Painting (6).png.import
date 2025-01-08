@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dm3fa3e8ikcpp"
-path="res://.godot/imported/sdf_0_-1.png-6681644d8e82018a90c33b3d4f695eeb.ctex"
+uid="uid://bpkt0b03a247a"
+path="res://.godot/imported/Rock Texture Painting (6).png-def2a5d50e00f6755477557480ea9166.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Data/Sea/sdf_0_-1.png"
-dest_files=["res://.godot/imported/sdf_0_-1.png-6681644d8e82018a90c33b3d4f695eeb.ctex"]
+source_file="res://Textures/Rock Texture Painting (6).png"
+dest_files=["res://.godot/imported/Rock Texture Painting (6).png-def2a5d50e00f6755477557480ea9166.ctex"]
 
 [params]
 

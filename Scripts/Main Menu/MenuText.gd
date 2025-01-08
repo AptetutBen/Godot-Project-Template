@@ -1,42 +1,36 @@
-class_name MenuText extends RichTextLabel
+class_name MenuText extends Control
 
-const template : String = "● [wave amp=50.0 freq=5.0 connected=1]#[/wave]"
+signal buttonAction
+signal highlight_button(index : int)
+signal on_click(index : int)
+
 var labelText : String
 var index : int
 
-@export var normalTheme: Theme 
-@export var highlightTheme : Theme 
+@onready var texture_rect: TextureRect = $"TextureRect"
 
-signal buttonAction
-signal onMouseClick(int)
+
 
 func _ready() -> void:
-	labelText = text
 	mouse_entered.connect(_on_mouse_entered)
 	mouse_exited.connect(_on_mouse_exited)
+	gui_input.connect(_gui_input)
 
 func trigger_action():
 	buttonAction.emit()
 
 func select_button() -> void:
-	text = template.replace("#",labelText)
+	texture_rect.visible = true
 
 func deselect_button() -> void:
-	text = labelText
-	
-func highlight() -> void:
-	theme = highlightTheme
-
-func dehighlight() -> void:
-	theme = normalTheme
-	
+	texture_rect.visible = false
 
 func _gui_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton && MOUSE_BUTTON_LEFT && event.is_pressed():
-		onMouseClick.emit(index)
+		on_click.emit(index)
 		
 func _on_mouse_entered() -> void:
-	highlight()
+	highlight_button.emit(index)
 
 func _on_mouse_exited() -> void:
-	dehighlight()
+	pass

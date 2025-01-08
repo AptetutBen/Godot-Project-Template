@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://bcnsy78pjwu1o"]
+
+[ext_resource type="PackedScene" uid="uid://dibcob5mpje7q" path="res://Models/grass.glb" id="1_eyyoe"]
+[ext_resource type="Shader" uid="uid://djdvvewfn86x2" path="res://Shaders/GrassShader.tres" id="2_eyyoe"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_txcs8"]
+frequency = 0.005
+fractal_type = 0
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_cpywb"]
+seamless = true
+seamless_blend_skirt = 0.3
+noise = SubResource("FastNoiseLite_txcs8")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qxjs6"]
+render_priority = 0
+shader = ExtResource("2_eyyoe")
+shader_parameter/WindNoise = SubResource("NoiseTexture2D_cpywb")
+shader_parameter/BaseColor = Color(0.958747, 0.841895, 0.607372, 1)
+shader_parameter/WindColor = Color(0.624971, 0.518627, 0.237358, 1)
+shader_parameter/FloatParameter = 1.23
+
+[node name="grass" instance=ExtResource("1_eyyoe")]
+
+[node name="Grass" parent="." index="0"]
+surface_material_override/0 = SubResource("ShaderMaterial_qxjs6")

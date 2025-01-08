@@ -345,7 +345,6 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-298.418, -319.923)
 preview_params/SDF = "Resource(\"res://Data/Sea/sdf 0,0.png\")"
 nodes/vertex/0/position = Vector2(980, 180)
 nodes/fragment/0/position = Vector2(4140, -2340)

@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cfbos3jrtyhg2" path="res://addons/weekend Dialogue/Scripts/weekendDialogueEditor.gd" id="1_hfyfc"]
 [ext_resource type="PackedScene" uid="uid://cufx4633uoge0" path="res://addons/weekend Dialogue/Prefabs/dialogue_node.tscn" id="2_5u2jf"]
-[ext_resource type="Resource" uid="uid://beraqctd78tcf" path="res://Data/Dialogue/Test Dialogue.tres" id="3_nympv"]
+[ext_resource type="Resource" uid="uid://bhe0ufssqo8hc" path="res://Data/Dialogue/Test Dialogue.tres" id="3_nympv"]
 [ext_resource type="PackedScene" uid="uid://degb4wkppnlpv" path="res://addons/weekend Dialogue/Prefabs/start_node.tscn" id="5_5axue"]
 [ext_resource type="Script" uid="uid://cqb8dqy20rc33" path="res://addons/weekend Dialogue/Scripts/TextEditorDialogueNode.gd" id="6_ngmty"]
 [ext_resource type="PackedScene" uid="uid://bp6ak451eog5l" path="res://addons/weekend Dialogue/Prefabs/set_variable_node.tscn" id="6_s2syb"]

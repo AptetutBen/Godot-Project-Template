@@ -2,13 +2,13 @@ extends Control
 
 @export var player: Player
 @onready var notification_icon: Control = %Notification
+@onready var notivication_pivot: Node2D = %"Notivication Pivot"
 
-var current_interact_object : InteractObject
+var current_tween : Tween
 
 func _ready() -> void:
 	visible = true
-	EventBus.enter_interact_object.connect(_on_enter_interact_object)
-	EventBus.exit_interact_object.connect(_on_exit_interact_object)
+	player.interact_change.connect(_on_interact_change)
 	notification_icon.visible = false;
 
 func _process(_delta: float) -> void:
@@ -19,12 +19,30 @@ func _process(_delta: float) -> void:
 	var notification_pos = FollowCamera.Instance.main_camera.unproject_position(player.notification_marker.global_position)
 	notification_icon.position = notification_pos
 
-func _on_enter_interact_object(interact_object:InteractObject):
-	current_interact_object = interact_object
-	notification_icon.visible = true;
+func _on_interact_change(has_interact : bool):
+	if has_interact:
+		_on_enter_interact_object()
+	else:
+		_on_exit_interact_object()
 
-func _on_exit_interact_object(interact_object:InteractObject):
-	if current_interact_object != interact_object:
+func _on_enter_interact_object():
+	if notification_icon.visible:
 		return
-	notification_icon.visible = false;
-	current_interact_object = null
+	notification_icon.visible = true;
+	
+	if current_tween != null:
+		current_tween.kill()
+	
+	notivication_pivot.scale = Vector2.ZERO
+	current_tween = create_tween()
+	current_tween.tween_property(notivication_pivot,"scale:y",1,0.4).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_BACK)
+	current_tween.parallel().tween_property(notivication_pivot,"scale:x",1,0.3).set_ease(Tween.EASE_OUT).set_trans(Tween.TRANS_ELASTIC)
+
+func _on_exit_interact_object():
+
+	if current_tween != null:
+		current_tween.kill()
+
+	current_tween = create_tween()
+	current_tween.tween_property(notivication_pivot,"scale",Vector2.ZERO,0.25).set_ease(Tween.EASE_IN).set_trans(Tween.TRANS_BACK)
+	current_tween.tween_callback(func (): notification_icon.visible = false)

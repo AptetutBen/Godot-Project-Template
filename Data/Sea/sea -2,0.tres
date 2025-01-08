@@ -1,0 +1,11 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://d0xw7el7dbv3h"]
+
+[ext_resource type="Shader" uid="uid://ckowacs8cksvo" path="res://Shaders/Sea.tres" id="1_1sqsi"]
+[ext_resource type="Texture2D" uid="uid://dpyp2ema0dlv" path="res://Data/Sea/sdf -2,-1.png" id="2_7w2re"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_1sqsi")
+shader_parameter/Sea_Colour = Color(0, 0.556062, 0.993539, 1)
+shader_parameter/WaveCount = 8.0
+shader_parameter/SDF = ExtResource("2_7w2re")

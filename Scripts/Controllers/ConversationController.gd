@@ -20,7 +20,8 @@ func display_conversation_text():
 	speaker_name_text.visible = true
 	await show_ui()
 	while (true):
-		await display_text(current_node.text)
+		for text in current_node.text.split("~"):
+			await display_text(text)
 		current_node = current_node.dialoge_data.get_next_node(current_node,0)
 		if current_node == null:
 			break
@@ -81,6 +82,7 @@ func display_text(text : String):
 	blinking_tween.tween_property(input_prompt_image,"visible",false,0)
 	blinking_tween.tween_interval(0.5)
 
+	AudioManager.play_sfx("click1")
 	input_pressed = false
 	while (!input_pressed):
 		await get_tree().process_frame
@@ -96,9 +98,10 @@ func _on_start_display_message(textArray : Array[String], title: String):
 	
 func _on_start_conversation(dialogue_node : DialogueConversationNodeData, _node : Node3D):
 	if dialogue_node == null:
-		printerr("Conversatino is null")
+		printerr("Conversation is null")
 		return
 	current_node = dialogue_node
+	speaker_name_text.text =current_node.get_character().name
 	display_conversation_text()
 
 

@@ -1,6 +1,9 @@
 class_name Player extends CharacterBody3D
 
 static var Instance : Player
+
+signal interact_change(_has_interact : bool)
+
 @export var speed : float = 7.0
 @export var run_speed : float = 10.0
 @export var gravity : float = 9.8
@@ -84,6 +87,8 @@ func _input(event):
 	
 	if event.is_action_pressed("Interact") && current_interact_object != null:
 		current_interact_object.interact()
+		current_interact_object = null
+		interact_change.emit(false)
 
 func _translate_player(delta : float):
 
@@ -136,11 +141,13 @@ func _translate_player(delta : float):
 
 func _on_enter_interact_object(interact_object:InteractObject):
 	current_interact_object = interact_object
+	interact_change.emit(true)
 
 func _on_exit_interact_object(interact_object:InteractObject):
 	if current_interact_object != interact_object:
 		return
 	current_interact_object = null
+	interact_change.emit(false)
 
 func _on_start_conversation(_dialogue_node, _node):
 	input = Vector2.ZERO

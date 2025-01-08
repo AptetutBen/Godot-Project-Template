@@ -17,3 +17,4 @@ shader = ExtResource("1_epiiv")
 shader_parameter/WindNoise = SubResource("NoiseTexture2D_cpywb")
 shader_parameter/BaseColor = Color(1, 1, 1, 1)
 shader_parameter/WindColor = Color(1, 1, 1, 1)
+shader_parameter/FloatParameter = 0.5

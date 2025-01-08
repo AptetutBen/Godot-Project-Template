@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="DialogueCharacters" load_steps=4 format=3 uid="uid://7nd280aiylm"]
+
+[ext_resource type="Script" uid="uid://cc84ikea41f6" path="res://addons/weekend Dialogue/Scripts/DialogueCharacter.gd" id="1_qn7nc"]
+[ext_resource type="Script" uid="uid://bagpaub04ow1s" path="res://addons/weekend Dialogue/Scripts/DialogueCharacters.gd" id="2_7pkmi"]
+
+[sub_resource type="Resource" id="Resource_qn7nc"]
+script = ExtResource("1_qn7nc")
+name = "Tania"
+id = 1
+metadata/_custom_type_script = ExtResource("1_qn7nc")
+
+[resource]
+script = ExtResource("2_7pkmi")
+characters = Array[ExtResource("1_qn7nc")]([SubResource("Resource_qn7nc")])
+metadata/_custom_type_script = ExtResource("2_7pkmi")

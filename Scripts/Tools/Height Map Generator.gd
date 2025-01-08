@@ -56,8 +56,6 @@ func _generate_heightmap():
 		for y in range(map_size * true_zoom):
 			
 			var cast_pos : Vector3 = Vector3(x,0,y) / true_zoom
-			
-			print(cast_pos)
 
 			var query = PhysicsRayQueryParameters3D.create(cast_pos+from_pos, cast_pos+to_pos)
 			var result = space_state.intersect_ray(query)
@@ -148,10 +146,10 @@ func _create_signed_distance_field(image: Image) -> void:
 			# Normalize the distance value and set the pixel
 			var distance_value: float = 0.5 + (nearest_dist / actual_falloff) * 0.5
 			distance_value = clamp(distance_value, 0.0, 1.0)  # Ensure values are clamped between 0 and 1
-			sdf.set_pixel(x, y, Color(distance_value, distance_value, distance_value))
+			sdf.set_pixel(x, y, Color(1-distance_value, 1-distance_value, 1-distance_value))
 
 	# Save the resulting SDF image
-	var save_path: String = "%s/%s_%d_%d.png" % [save_directory, sdf_output_file_name, section.x, section.y]
+	var save_path: String = "%s/%s %d,%d.png" % [save_directory, sdf_output_file_name, section.x, section.y]
 	sdf.save_png(save_path)
 
 	print("Finished Generating Signed Distance Field.")
