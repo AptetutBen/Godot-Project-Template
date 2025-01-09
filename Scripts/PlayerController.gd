@@ -95,7 +95,10 @@ func _translate_player(delta : float):
 	if input.length() > 0:
 		mesh.rotation.y = lerp_angle(mesh.rotation.y, atan2(input.x, input.y), 0.1)
 
-	var move_multipliyer = clampf(1-(Sea.Height - global_position.y),0.2,1)
+	var move_multipliyer = 1
+	
+	if !in_sequence:
+		move_multipliyer = clampf(1-(Sea.Height - global_position.y),0.2,1)
 	
 	input *= (speed if not is_running else run_speed) * move_multipliyer
 

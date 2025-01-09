@@ -73,6 +73,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_88j2r")
 buttons = [NodePath("Start Button"), NodePath("Options Button"), NodePath("Credits Button"), NodePath("Exit Button")]
+active = true
 
 [node name="Start Button" type="Control" parent="Buttons Pivot/Main Buttons"]
 custom_minimum_size = Vector2(0, 65)

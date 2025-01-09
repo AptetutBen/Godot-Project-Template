@@ -1,5 +1,6 @@
 class_name IntroSequences extends Node
 
+@export var start_sequence : IntroSequence
 @export var sequences : Array[IntroSequence]
 @onready var fade_panel: FadePanel = $"CanvasLayer/Fade Panel"
 
@@ -9,4 +10,5 @@ func start_default() -> void:
 
 func start_intro_sequence() -> void:
 	AudioManager.fade_current_song()
-	sequences.pick_random().start_sequence()
+	start_sequence.start_sequence()
+	#sequences.pick_random().start_sequence()
