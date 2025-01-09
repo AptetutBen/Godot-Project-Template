@@ -1,20 +1,21 @@
 [gd_resource type="Resource" script_class="DialogueData" load_steps=17 format=3 uid="uid://buv6ypax0b2cf"]
 
 [ext_resource type="Resource" uid="uid://7nd280aiylm" path="res://Data/Dialogue/Game Characters.tres" id="1_42ggt"]
-[ext_resource type="Script" uid="uid://rxyur4vwo6q0" path="res://addons/weekend Dialogue/Scripts/DialogueData.gd" id="1_e8qyd"]
-[ext_resource type="Script" uid="uid://dft5ylk4m7qpc" path="res://addons/weekend Dialogue/Scripts/DialogueNodeData.gd" id="2_txva4"]
-[ext_resource type="Script" uid="uid://cu8q576s5775e" path="res://addons/weekend Dialogue/Scripts/DialogueGetVariableNodeData.gd" id="4_pftqe"]
-[ext_resource type="Script" uid="uid://sqg6wt1txbp5" path="res://addons/weekend Dialogue/Scripts/DialogueOption.gd" id="5_ftgil"]
-[ext_resource type="Script" uid="uid://uv5we0y0dofd" path="res://addons/weekend Dialogue/Scripts/DialogueStartNodeData.gd" id="6_ftgil"]
-[ext_resource type="Script" uid="uid://mtq6i61w1mhi" path="res://addons/weekend Dialogue/Scripts/DialogueConversationNodeData.gd" id="6_yf41g"]
-[ext_resource type="Script" uid="uid://cb3i1ff7gerip" path="res://addons/weekend Dialogue/Scripts/DialogueSetVariableNodeData.gd" id="7_yf41g"]
+[ext_resource type="Script" uid="uid://rxyur4vwo6q0" path="res://addons/weekendDialogue/Scripts/DialogueData.gd" id="1_e8qyd"]
+[ext_resource type="Script" uid="uid://dft5ylk4m7qpc" path="res://addons/weekendDialogue/Scripts/DialogueNodeData.gd" id="2_txva4"]
+[ext_resource type="Script" uid="uid://cu8q576s5775e" path="res://addons/weekendDialogue/Scripts/DialogueGetVariableNodeData.gd" id="4_pftqe"]
+[ext_resource type="Script" uid="uid://sqg6wt1txbp5" path="res://addons/weekendDialogue/Scripts/DialogueOption.gd" id="5_ftgil"]
+[ext_resource type="Script" uid="uid://uv5we0y0dofd" path="res://addons/weekendDialogue/Scripts/DialogueStartNodeData.gd" id="6_ftgil"]
+[ext_resource type="Script" uid="uid://mtq6i61w1mhi" path="res://addons/weekendDialogue/Scripts/DialogueConversationNodeData.gd" id="6_yf41g"]
+[ext_resource type="Script" uid="uid://cb3i1ff7gerip" path="res://addons/weekendDialogue/Scripts/DialogueSetVariableNodeData.gd" id="7_yf41g"]
 
 [sub_resource type="Resource" id="Resource_yf41g"]
 script = ExtResource("6_ftgil")
 first_node_id = 13
 start_key = "default"
 id = 0
-position = Vector2(-600, 0)
+position = Vector2(420, 540)
+size = Vector2(0, 0)
 
 [sub_resource type="Resource" id="Resource_qykrk"]
 script = ExtResource("5_ftgil")
@@ -27,7 +28,8 @@ text = "Kia ora, mate! ‘Bout time you rocked up, aye. ~Thought you might’ve 
 options = Array[ExtResource("5_ftgil")]([SubResource("Resource_qykrk")])
 character_id = 1
 id = 7
-position = Vector2(80, 20)
+position = Vector2(1360, 700)
+size = Vector2(640, 620)
 
 [sub_resource type="Resource" id="Resource_der1h"]
 script = ExtResource("5_ftgil")
@@ -41,7 +43,8 @@ There's a camping grounds over a way, go set yourself up there and come see me a
 options = Array[ExtResource("5_ftgil")]([SubResource("Resource_der1h")])
 character_id = 1
 id = 8
-position = Vector2(460, 20)
+position = Vector2(2140, 1160)
+size = Vector2(700, 760)
 
 [sub_resource type="Resource" id="Resource_pm2rb"]
 script = ExtResource("7_yf41g")
@@ -50,7 +53,8 @@ save_type = 1
 saved_key = "tania_intro"
 saved_value = "true"
 id = 12
-position = Vector2(920, 220)
+position = Vector2(2940, 1680)
+size = Vector2(326, 296)
 
 [sub_resource type="Resource" id="Resource_domak"]
 script = ExtResource("4_pftqe")
@@ -60,7 +64,8 @@ connected_node_id_false = 7
 type = 0
 value = ""
 id = 13
-position = Vector2(-320, -20)
+position = Vector2(920, 500)
+size = Vector2(353, 337)
 
 [sub_resource type="Resource" id="Resource_twovt"]
 script = ExtResource("6_yf41g")
@@ -68,7 +73,8 @@ text = "You gotten yourself all turned around?~Just head east and you can't miss
 options = Array[ExtResource("5_ftgil")]([])
 character_id = 0
 id = 15
-position = Vector2(80, 360)
+position = Vector2(1380, 0)
+size = Vector2(680, 600)
 
 [resource]
 script = ExtResource("1_e8qyd")
