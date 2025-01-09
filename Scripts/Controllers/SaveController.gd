@@ -32,23 +32,31 @@ func clear_etheral_data() -> void:
 func get_value(key : String, default : String = "default") -> String:
 	return variable_dictionary.get(key,default)
 
-func set_value(key : String, value : String) -> void:
+func set_value(key : String, value : String, dosave : bool = true) -> void:
 	variable_dictionary.set(key,value)
+	if dosave:
+		save_data()
 
 func get_value_int(key : String, default : int) -> int:
 	return variable_dictionary.get(key,default)
 
-func set_value_int(key : String, value : int) -> void:
+func set_value_int(key : String, value : int, dosave : bool = true) -> void:
 	variable_dictionary.set(key,value)
+	if dosave:
+		save_data()
 	
-func set_value_bool(key : String, value : bool) -> void:
+func set_value_bool(key : String, value : bool, dosave : bool = true) -> void:
 	variable_dictionary.set(key,value)
+	if dosave:
+		save_data()
 
 func get_value_float(key : String, default : float) -> float:
 	return variable_dictionary.get(key,default)
 
-func set_value_float(key : String, value : float) -> void:
+func set_value_float(key : String, value : float, dosave : bool = true) -> void:
 	variable_dictionary.set(key,value)
+	if dosave:
+		save_data()
 	
 func get_value_bool(key : String, default : bool) -> bool:
 	return variable_dictionary.get(key,default)

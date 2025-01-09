@@ -5,7 +5,7 @@
 [node name="Set Variable Node" type="GraphNode"]
 offset_left = 62.0
 offset_top = 205.0
-offset_right = 319.0
+offset_right = 308.0
 offset_bottom = 404.0
 mouse_filter = 1
 position_offset = Vector2(62, 205)
@@ -24,46 +24,42 @@ script = ExtResource("1_vm7vk")
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/HBoxContainer"]
-layout_mode = 2
-text = "Variable: "
-
-[node name="Start Key Text Edit" type="TextEdit" parent="VBoxContainer/HBoxContainer"]
+[node name="Key Edit" type="TextEdit" parent="VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
+placeholder_text = "Key"
 scroll_fit_content_height = true
 scroll_fit_content_width = true
 
-[node name="OptionButton" type="OptionButton" parent="VBoxContainer"]
+[node name="Variable Type Option" type="OptionButton" parent="VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 selected = 0
 item_count = 4
 popup/item_0/text = "Boolean"
 popup/item_0/id = 0
-popup/item_1/text = "Integer"
+popup/item_1/text = "String"
 popup/item_1/id = 1
-popup/item_2/text = "String"
+popup/item_2/text = "Integer"
 popup/item_2/id = 2
 popup/item_3/text = "Float"
 popup/item_3/id = 3
 
+[node name="Value Edit" type="TextEdit" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Value"
+scroll_fit_content_height = true
+scroll_fit_content_width = true
+
 [node name="Boolean Checkbox" type="CheckBox" parent="VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 text = " Value"
 
-[node name="Value Entry" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/Value Entry"]
-layout_mode = 2
-text = "Value: "
-
-[node name="Text Edit" type="TextEdit" parent="VBoxContainer/Value Entry"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "String"
-scroll_fit_content_height = true
-scroll_fit_content_width = true
+[connection signal="text_changed" from="VBoxContainer/Key Edit" to="." method="_on_key_edit_text_changed"]
+[connection signal="item_selected" from="VBoxContainer/Variable Type Option" to="." method="_on_variable_type_option_item_selected"]
+[connection signal="text_changed" from="VBoxContainer/Value Edit" to="." method="_on_value_edit_text_changed"]
+[connection signal="toggled" from="VBoxContainer/Boolean Checkbox" to="." method="_on_boolean_checkbox_toggled"]

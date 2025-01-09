@@ -59,16 +59,14 @@ func save_node(connections : Array) -> void:
 	dialogue_data.text = text
 	dialogue_data.options.clear()
 	dialogue_data.id = id
-	print(character_id)
 	dialogue_data.character_id = character_id
 	
 	if connections.size() == 0:
 		return
-		
-	if options.size() == 0:
+	elif connections.size() == 1:
 		var data : DialogueOption = DialogueOption.new()
 		data.text = "default"
-		data.linking_node_id = connections[0][0]
+		data.linking_node_id = connections[0][1]
 		dialogue_data.options.append(data)
 	else:
 		for option : DialogueOptionUI in options:

@@ -1,6 +1,6 @@
 class_name DialogueSetVariableNodeData extends DialogueNodeData
 
-enum SaveType {SaveString, SaveBool, SaveInt, SaveFloat}
+enum SaveType {SaveBool,SaveString,SaveInt, SaveFloat}
 @export var connected_node_id : int  = -1
 @export var save_type : SaveType
 @export var saved_key : String

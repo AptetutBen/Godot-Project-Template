@@ -7,9 +7,9 @@ signal on_click(index : int)
 var labelText : String
 var index : int
 
+@export var key : String # used for remote activation and deactivation of button
+
 @onready var texture_rect: TextureRect = $"TextureRect"
-
-
 
 func _ready() -> void:
 	mouse_entered.connect(_on_mouse_entered)

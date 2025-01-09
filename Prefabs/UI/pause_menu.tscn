@@ -42,6 +42,7 @@ anchor_bottom = 1.0
 offset_right = 603.0
 grow_vertical = 2
 texture = SubResource("GradientTexture1D_xadrl")
+metadata/_edit_lock_ = true
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -50,6 +51,7 @@ anchor_bottom = 1.0
 offset_right = 338.0
 grow_vertical = 2
 color = Color(0.0357173, 0.100152, 0.126787, 1)
+metadata/_edit_lock_ = true
 
 [node name="Title" type="Label" parent="."]
 layout_mode = 1
@@ -78,7 +80,8 @@ offset_bottom = -186.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("4_n7qms")
-buttons = [NodePath("Resume Button"), NodePath("Quit Button")]
+buttons = [NodePath("Resume Button"), NodePath("Debug Menu"), NodePath("Quit Button")]
+active = true
 
 [node name="Resume Button" type="Control" parent="Button Group"]
 custom_minimum_size = Vector2(0, 65)
@@ -117,6 +120,48 @@ theme_override_fonts/normal_font = ExtResource("3_thy0x")
 theme_override_font_sizes/normal_font_size = 51
 bbcode_enabled = true
 text = "Resume"
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="Debug Menu" type="Control" parent="Button Group"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+script = ExtResource("6_jy3lh")
+
+[node name="TextureRect" type="TextureRect" parent="Button Group/Debug Menu"]
+self_modulate = Color(0.278532, 0.0895237, 0.177514, 1)
+custom_minimum_size = Vector2(0, 67.7)
+layout_mode = 2
+offset_left = -29.955
+offset_top = -15.0
+offset_right = 207.045
+offset_bottom = 83.0
+texture = SubResource("AtlasTexture_u50t2")
+
+[node name="MarginContainer" type="MarginContainer" parent="Button Group/Debug Menu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 0
+
+[node name="Text" type="RichTextLabel" parent="Button Group/Debug Menu/MarginContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 64.9)
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("5_3n05p")
+theme_override_fonts/normal_font = ExtResource("3_thy0x")
+theme_override_font_sizes/normal_font_size = 51
+bbcode_enabled = true
+text = "Debug"
 scroll_active = false
 autowrap_mode = 0
 vertical_alignment = 1
@@ -162,5 +207,104 @@ scroll_active = false
 autowrap_mode = 0
 vertical_alignment = 1
 
+[node name="Debug Group" type="VBoxContainer" parent="." node_paths=PackedStringArray("buttons")]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 384.0
+offset_top = 232.0
+offset_right = -612.0
+offset_bottom = -266.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_n7qms")
+buttons = [NodePath("Reset Data"), NodePath("Back")]
+
+[node name="Reset Data" type="Control" parent="Debug Group"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+script = ExtResource("6_jy3lh")
+
+[node name="TextureRect" type="TextureRect" parent="Debug Group/Reset Data"]
+self_modulate = Color(0.278532, 0.0895237, 0.177514, 1)
+custom_minimum_size = Vector2(0, 67.7)
+layout_mode = 2
+offset_left = -29.955
+offset_top = -15.0
+offset_right = 207.045
+offset_bottom = 83.0
+texture = SubResource("AtlasTexture_u50t2")
+
+[node name="MarginContainer" type="MarginContainer" parent="Debug Group/Reset Data"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 0
+
+[node name="Text" type="RichTextLabel" parent="Debug Group/Reset Data/MarginContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 64.9)
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("5_3n05p")
+theme_override_fonts/normal_font = ExtResource("3_thy0x")
+theme_override_font_sizes/normal_font_size = 51
+bbcode_enabled = true
+text = "Reset Data"
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
+[node name="Back" type="Control" parent="Debug Group"]
+custom_minimum_size = Vector2(0, 65)
+layout_mode = 2
+script = ExtResource("6_jy3lh")
+
+[node name="TextureRect" type="TextureRect" parent="Debug Group/Back"]
+self_modulate = Color(0.278532, 0.0895237, 0.177514, 1)
+custom_minimum_size = Vector2(0, 67.7)
+layout_mode = 2
+offset_left = -29.955
+offset_top = -15.0
+offset_right = 207.045
+offset_bottom = 83.0
+texture = SubResource("AtlasTexture_u50t2")
+
+[node name="MarginContainer" type="MarginContainer" parent="Debug Group/Back"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 30
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 30
+theme_override_constants/margin_bottom = 0
+
+[node name="Text" type="RichTextLabel" parent="Debug Group/Back/MarginContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 64.9)
+layout_mode = 2
+mouse_filter = 2
+theme = ExtResource("5_3n05p")
+theme_override_fonts/normal_font = ExtResource("3_thy0x")
+theme_override_font_sizes/normal_font_size = 51
+bbcode_enabled = true
+text = "Back"
+scroll_active = false
+autowrap_mode = 0
+vertical_alignment = 1
+
 [connection signal="buttonAction" from="Button Group/Resume Button" to="." method="_on_resume_button_button_action"]
+[connection signal="buttonAction" from="Button Group/Debug Menu" to="." method="_on_debug_menu_button_action"]
 [connection signal="buttonAction" from="Button Group/Quit Button" to="." method="_on_quit_button_button_action"]
+[connection signal="buttonAction" from="Debug Group/Reset Data" to="." method="_on_reset_data_button_action"]
+[connection signal="buttonAction" from="Debug Group/Back" to="." method="_on_debug_back_button_action"]

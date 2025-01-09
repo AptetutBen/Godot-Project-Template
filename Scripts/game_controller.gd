@@ -1,5 +1,7 @@
 class_name GameController extends Node
 
+static var Instance : GameController
+
 @onready var intro_sequences: IntroSequences = %IntroSequences
 @onready var camera: FollowCamera = %Camera
 
@@ -11,6 +13,8 @@ class_name GameController extends Node
 var road_blocks : Array[RoadBlock]
 
 func _ready() -> void:
+	
+	Instance = self
 	
 	# Check for debug
 	if !OS.has_feature("editor"):

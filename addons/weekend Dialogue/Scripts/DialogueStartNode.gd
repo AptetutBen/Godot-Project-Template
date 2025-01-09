@@ -13,6 +13,7 @@ func initiliase(data : DialogueNodeData):
 	title = name
 
 func initilise_new(pos : Vector2, node_number : int):
+	await self.ready
 	dialogue_data = DialogueStartNodeData.new()
 	dialogue_data.position = pos
 	id = node_number
@@ -25,7 +26,7 @@ func save_node(connections : Array) -> void:
 	dialogue_data.id = id
 	dialogue_data.start_key = start_key_text_edit.text
 	
-	if connections.size() == 1:
-		dialogue_data.first_node_id = connections[0][0]
-	elif connections.size() > 1:
-		printerr("Start node %s has more than one connection")	
+	if connections.size() == 0:
+		dialogue_data.first_node_id  = -1
+	else:
+		dialogue_data.first_node_id = connections[0][1]

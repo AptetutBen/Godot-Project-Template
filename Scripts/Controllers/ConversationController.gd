@@ -62,6 +62,7 @@ func hide_ui():
 	visible = false
 
 func display_text(text : String):
+	text = text.strip_edges()
 	main_text.visible_characters = 0
 	input_prompt_image.visible = false
 	main_text.text = text
@@ -101,7 +102,8 @@ func _on_start_conversation(dialogue_node : DialogueConversationNodeData, _node 
 		printerr("Conversation is null")
 		return
 	current_node = dialogue_node
-	speaker_name_text.text =current_node.get_character().name
+	if current_node.character_id > 0:
+		speaker_name_text.text = current_node.get_character().name
 	display_conversation_text()
 
 

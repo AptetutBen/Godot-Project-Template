@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cfbos3jrtyhg2" path="res://addons/weekend Dialogue/Scripts/weekendDialogueEditor.gd" id="1_hfyfc"]
 [ext_resource type="PackedScene" uid="uid://cufx4633uoge0" path="res://addons/weekend Dialogue/Prefabs/conversation_node.tscn" id="2_ewb42"]
-[ext_resource type="Resource" uid="uid://orbra4umqx6b" path="res://Data/Dialogue/Test Dialogue.tres" id="3_nympv"]
+[ext_resource type="Resource" uid="uid://buv6ypax0b2cf" path="res://Data/Dialogue/Test Dialogue.tres" id="3_nympv"]
 [ext_resource type="PackedScene" uid="uid://degb4wkppnlpv" path="res://addons/weekend Dialogue/Prefabs/start_node.tscn" id="5_5axue"]
 [ext_resource type="PackedScene" uid="uid://b55u1mq86cmfu" path="res://addons/weekend Dialogue/Prefabs/get_variable_node.tscn" id="5_ewb42"]
 [ext_resource type="PackedScene" uid="uid://bp6ak451eog5l" path="res://addons/weekend Dialogue/Prefabs/set_variable_node.tscn" id="6_s2syb"]
@@ -92,6 +92,7 @@ layout_mode = 0
 unique_name_in_owner = true
 size = Vector2i(100, 30)
 visible = true
+unfocusable = true
 script = ExtResource("8_uu681")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PopupMenu"]

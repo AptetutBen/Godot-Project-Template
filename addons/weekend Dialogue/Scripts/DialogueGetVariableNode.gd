@@ -62,9 +62,12 @@ func initiliase(data : DialogueNodeData):
 	key_edit.text = key
 	value = data.value
 	value_edit.text = value
+	type = data.type
+	value_edit.visible = data.type >= 3
 
 func initilise_new(pos : Vector2, node_number : int):
 	await self.ready
+	value_edit.visible = false
 	dialogue_data = DialogueGetVariableNodeData.new()
 	dialogue_data.position = pos
 	id = node_number

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogueData" load_steps=14 format=3 uid="uid://orbra4umqx6b"]
+[gd_resource type="Resource" script_class="DialogueData" load_steps=17 format=3 uid="uid://buv6ypax0b2cf"]
 
 [ext_resource type="Resource" uid="uid://7nd280aiylm" path="res://Data/Dialogue/Game Characters.tres" id="1_42ggt"]
 [ext_resource type="Script" uid="uid://rxyur4vwo6q0" path="res://addons/weekend Dialogue/Scripts/DialogueData.gd" id="1_e8qyd"]
@@ -7,55 +7,71 @@
 [ext_resource type="Script" uid="uid://sqg6wt1txbp5" path="res://addons/weekend Dialogue/Scripts/DialogueOption.gd" id="5_ftgil"]
 [ext_resource type="Script" uid="uid://uv5we0y0dofd" path="res://addons/weekend Dialogue/Scripts/DialogueStartNodeData.gd" id="6_ftgil"]
 [ext_resource type="Script" uid="uid://mtq6i61w1mhi" path="res://addons/weekend Dialogue/Scripts/DialogueConversationNodeData.gd" id="6_yf41g"]
-
-[sub_resource type="Resource" id="Resource_hm12j"]
-script = ExtResource("4_pftqe")
-key = "test1"
-connected_node_id_true = 6
-connected_node_id_false = 7
-type = 0
-value = "123"
-id = 4
-position = Vector2(260, 100)
+[ext_resource type="Script" uid="uid://cb3i1ff7gerip" path="res://addons/weekend Dialogue/Scripts/DialogueSetVariableNodeData.gd" id="7_yf41g"]
 
 [sub_resource type="Resource" id="Resource_yf41g"]
 script = ExtResource("6_ftgil")
-first_node_id = 0
+first_node_id = 13
 start_key = "default"
 id = 0
-position = Vector2(-80, 60)
+position = Vector2(-600, 0)
 
-[sub_resource type="Resource" id="Resource_ftgil"]
+[sub_resource type="Resource" id="Resource_qykrk"]
 script = ExtResource("5_ftgil")
 text = "default"
-linking_node_id = 0
+linking_node_id = 8
 
 [sub_resource type="Resource" id="Resource_k1qhg"]
 script = ExtResource("6_yf41g")
-text = "This varible is not correct"
-options = Array[ExtResource("5_ftgil")]([SubResource("Resource_ftgil")])
-character_id = 1
-id = 6
-position = Vector2(640, 60)
-
-[sub_resource type="Resource" id="Resource_qykrk"]
-script = ExtResource("6_yf41g")
-text = "This varible is correct"
-options = Array[ExtResource("5_ftgil")]([])
+text = "Kia ora, mate! ‘Bout time you rocked up, aye. ~Thought you might’ve gone walkabout. Reckon you’re here for the job, eh?"
+options = Array[ExtResource("5_ftgil")]([SubResource("Resource_qykrk")])
 character_id = 1
 id = 7
-position = Vector2(640, 320)
+position = Vector2(80, 20)
+
+[sub_resource type="Resource" id="Resource_der1h"]
+script = ExtResource("5_ftgil")
+text = "default"
+linking_node_id = 12
 
 [sub_resource type="Resource" id="Resource_vgxcl"]
 script = ExtResource("6_yf41g")
-text = ""
-options = Array[ExtResource("5_ftgil")]([])
+text = "Right, let’s not muck about. there's a lot to do, and I could use an extra pair of hands.~First thing first, you're gonna be here for a few days and their's hardly enough round in the ol' bach on wheels.~
+There's a camping grounds over a way, go set yourself up there and come see me about what's next."
+options = Array[ExtResource("5_ftgil")]([SubResource("Resource_der1h")])
 character_id = 1
 id = 8
-position = Vector2(1160, 220)
+position = Vector2(460, 20)
+
+[sub_resource type="Resource" id="Resource_pm2rb"]
+script = ExtResource("7_yf41g")
+connected_node_id = -1
+save_type = 1
+saved_key = "tania_intro"
+saved_value = "true"
+id = 12
+position = Vector2(920, 220)
+
+[sub_resource type="Resource" id="Resource_domak"]
+script = ExtResource("4_pftqe")
+key = "tania_intro"
+connected_node_id_true = 15
+connected_node_id_false = 7
+type = 0
+value = ""
+id = 13
+position = Vector2(-320, -20)
+
+[sub_resource type="Resource" id="Resource_twovt"]
+script = ExtResource("6_yf41g")
+text = "You gotten yourself all turned around?~Just head east and you can't miss it!"
+options = Array[ExtResource("5_ftgil")]([])
+character_id = 0
+id = 15
+position = Vector2(80, 360)
 
 [resource]
 script = ExtResource("1_e8qyd")
-data = Array[ExtResource("2_txva4")]([SubResource("Resource_hm12j"), SubResource("Resource_yf41g"), SubResource("Resource_k1qhg"), SubResource("Resource_qykrk"), SubResource("Resource_vgxcl")])
-connnections = Array[String](["Start Node_0,0,Get Variable Node_4,0", "Get Variable Node_4,0,Dialogue Node_6,0", "Get Variable Node_4,1,Dialogue Node_7,0", "Dialogue Node_6,0,Dialogue Node_8,0"])
+data = Array[ExtResource("2_txva4")]([SubResource("Resource_yf41g"), SubResource("Resource_k1qhg"), SubResource("Resource_vgxcl"), SubResource("Resource_pm2rb"), SubResource("Resource_domak"), SubResource("Resource_twovt")])
+connnections = Array[String](["Dialogue Node_7,0,Dialogue Node_8,0", "Start Node_0,0,Get Variable Node_13,0", "Get Variable Node_13,1,Dialogue Node_7,0", "Get Variable Node_13,0,Dialogue Node_15,0", "Dialogue Node_8,0,Set Variable Node_12,0"])
 characters = ExtResource("1_42ggt")
