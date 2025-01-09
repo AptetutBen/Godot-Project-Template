@@ -1,29 +1,37 @@
 extends Control
 
-@export var dialogueNodePrefab : PackedScene
+@export var dialogueConversationNodePrefab : PackedScene
 @export var dialogueStartNodePrefab : PackedScene
 @export var dialogueSetVariableNodePrefab : PackedScene
+@export var dialogueGetVariableNodePrefab : PackedScene
 
 @onready var dialogue_editor: GraphEdit = %"Dialogue Editor"
 @onready var text_editor: DialogueTextEditor = %"Text Editor"
 
+@onready var popup_menu: PopupMenu = %PopupMenu
+
 @export var dialogue_data : DialogueData
 
 var dialogue_nodes : Array[GraphNode]
-var next_id : int
+var next_id : int = 1
 
 func _ready() -> void:
-	for node : DialogueConversationNodeData in dialogue_data.data:
-		var newNode : DialogueConversationNode = _add_new_dialogue_node()
-		newNode.initiliase(node,dialogue_data.characters)
-		
-		next_id = max(next_id,node.id)
-		
-	for node in dialogue_data.start_data:
-		var newNode : DialogueStartNode = _add_new_start_dialogue_node()
-		newNode.initiliase(node)
-		
-		next_id = max(next_id,node.id)
+	for data : DialogueNodeData in dialogue_data.data:
+		if data is DialogueConversationNodeData:
+			var newNode : DialogueConversationNode = dialogueConversationNodePrefab.instantiate()
+			newNode.set_characters(dialogue_data.characters)
+			newNode.edit_node.connect(_on_node_edit_selected)
+			_set_node_exsisting(newNode,data)
+		elif data is DialogueSetVariableNodeData:
+			var newNode : DialogueSetVariableNode = dialogueSetVariableNodePrefab.instantiate()
+			_set_node_exsisting(newNode,data)
+		elif data is DialogueGetVariableNodeData:
+			var newNode : DialogueGetVariableNode = dialogueGetVariableNodePrefab.instantiate()
+			_set_node_exsisting(newNode,data)
+		elif data is DialogueStartNodeData:
+			var newNode : DialogueStartNode = dialogueStartNodePrefab.instantiate()
+			_set_node_exsisting(newNode,data)
+			
 	
 	for connection_string in dialogue_data.connnections:
 		var connection_parts : PackedStringArray = connection_string.split(",")
@@ -40,35 +48,13 @@ func _ready() -> void:
 		)
 		
 
-func _on_add_node_pressed() -> void:
-	var newNode : DialogueConversationNode = _add_new_dialogue_node()
-	newNode.initilise_new(Vector2(100,100),next_id+1,dialogue_data.characters)
-	next_id += 1
-
-func _add_new_dialogue_node() -> DialogueConversationNode:
-	var newNode : DialogueConversationNode = dialogueNodePrefab.instantiate() as DialogueConversationNode
-	dialogue_editor.add_child(newNode)
-	dialogue_nodes.append(newNode)
-	newNode.edit_node.connect(_on_node_edit_selected)
-	newNode.delete_node.connect(remove_dialogue_node)
-	return newNode
-
-func _on_add_start_node_pressed() -> void:
-	var newNode : DialogueStartNode = _add_new_start_dialogue_node()
-	newNode.initilise_new(Vector2(100,100),next_id + 1)
-	next_id += 1
-		
-func _add_new_start_dialogue_node() -> DialogueStartNode:
-	var newNode : DialogueStartNode = dialogueStartNodePrefab.instantiate() as DialogueStartNode
-	dialogue_editor.add_child(newNode)
-	dialogue_nodes.append(newNode)
-	newNode.delete_node.connect(remove_dialogue_node)
-	return newNode
+func _on_right_click(node : DialogueNode) -> void:
+	popup_menu.show_popup(node)
 
 func _on_node_edit_selected(node : DialogueConversationNode):
 	text_editor.enable(node)
 
-func remove_dialogue_node(node : DialogueConversationNode):
+func remove_node(node : DialogueNode):
 	var connections : Array
 	
 	for con in dialogue_editor.get_connection_list():
@@ -83,7 +69,6 @@ func remove_dialogue_node(node : DialogueConversationNode):
 
 func _on_save_pressed():
 	dialogue_data.data.clear()
-	dialogue_data.start_data.clear()
 	dialogue_data.connnections.clear()
 	
 	for node in dialogue_nodes:
@@ -92,14 +77,18 @@ func _on_save_pressed():
 		for con in dialogue_editor.get_connection_list():
 			if con.from_node == node.name:
 				var to_node : DialogueNode = get_dialogue_node(con.to_node)
-				connections.append([to_node.id,con.from_port])
+				connections.append([con.from_port,to_node.id])
 		
 		node.save_node(connections)
 		
 		if node is DialogueConversationNode:
-			dialogue_data.data.append(node.dialogeNodeData)
+			dialogue_data.data.append(node.dialogue_data)
 		elif node is DialogueStartNode:
-			dialogue_data.start_data.append(node.dialogeStartNodeData)
+			dialogue_data.data.append(node.dialogue_data)
+		elif node is DialogueSetVariableNode:
+			dialogue_data.data.append(node.dialogue_data)
+		elif node is DialogueGetVariableNode:
+			dialogue_data.data.append(node.dialogue_data)
 	
 	for con in dialogue_editor.get_connection_list():
 		var from_node : String = con.from_node
@@ -123,13 +112,13 @@ func connect_out_node(node_id : String):
 
 func _on_dialogue_editor_connection_request(from_node: StringName, from_port: int, to_node: StringName, to_port: int) -> void:
 	for con in dialogue_editor.get_connection_list():
-		if con.to_node == to_node and con.to_port == to_port:
-			return
+		if con.from_node == from_node and con.from_port == from_port:
+			_on_dialogue_editor_disconnection_request(con.from_node,con.from_port,con.to_node,con.to_port)
 	dialogue_editor.connect_node(from_node, from_port, to_node, to_port)
 
 	var from_node_inst = get_dialogue_node(from_node)
 	var to_node_inst = get_dialogue_node(to_node)
-
+	
 	from_node_inst.on_connect("output", from_port, to_node_inst, to_port)
 	to_node_inst.on_connect("input", to_port, from_node_inst, from_port)
 
@@ -145,9 +134,35 @@ func _on_dialogue_editor_disconnection_request(from_node: StringName, from_port:
 func get_dialogue_node(node_name : String) -> DialogueNode:
 	return dialogue_editor.find_child(node_name,false,false)
 
+# Adding nodes
+
+func _on_add_start_node_pressed() -> void:
+	_set_node_basics(dialogueStartNodePrefab.instantiate())
+
+func _on_add_node_pressed() -> void:
+	var newNode : DialogueConversationNode = dialogueConversationNodePrefab.instantiate() as DialogueConversationNode
+	newNode.edit_node.connect(_on_node_edit_selected)
+	newNode.set_characters(dialogue_data.characters)
+	_set_node_basics(newNode)
 
 func _on_add_set_variabe_node_pressed() -> void:
-	pass
-	#var newNode : DialogueSetVariableNode = _add_new_start_dialogue_node()
-	#newNode.initilise_new(Vector2(100,100),next_id + 1)
-	#next_id += 1
+	_set_node_basics( dialogueSetVariableNodePrefab.instantiate())
+
+func _on_add_get_variabe_node_pressed() -> void:
+	_set_node_basics(dialogueGetVariableNodePrefab.instantiate())
+
+func _set_node_basics(newNode : DialogueNode) -> void:
+	newNode.initilise_new(Vector2(100,100),next_id)
+	next_id += 1
+	add_node_common(newNode)
+
+func _set_node_exsisting(newNode : DialogueNode,data : DialogueNodeData):
+	newNode.initiliase(data)
+	next_id = max(next_id,data.id + 1)
+	add_node_common(newNode)
+
+func add_node_common(newNode : DialogueNode) -> void:
+	dialogue_editor.add_child(newNode)
+	dialogue_nodes.append(newNode)
+	newNode.delete_node.connect(remove_node)
+	newNode.right_click.connect(_on_right_click)

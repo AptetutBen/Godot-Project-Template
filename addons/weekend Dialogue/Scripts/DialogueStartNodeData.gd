@@ -1,7 +1,4 @@
-class_name DialogueStartNodeData extends Resource
+class_name DialogueStartNodeData extends DialogueNodeData
 
-@export var id : int
-@export var first_node_id : int
+@export var first_node_id : int = -1
 @export var start_key : String
-#@export var linking_node : String
-@export var position : Vector2

@@ -1,17 +1,15 @@
 class_name DialogueConversationNode extends DialogueNode
 
 signal edit_node(node: DialogueConversationNode)
-signal delete_node(node : DialogueConversationNode)
 
 @onready var preview_text: RichTextLabel = %"Preview Text"
 @onready var add_option_button: Button = %"Add Option Button"
-@onready var character_picker: OptionButton = %"Character Picker"
+@export var character_picker: OptionButton
 
 @export var option_prefab : PackedScene
 
 var text : String
 var character_id : int
-var dialogeNodeData : DialogueConversationNodeData
 
 var options : Array[DialogueOptionUI]
 
@@ -21,13 +19,11 @@ func _ready() -> void:
 	add_option_button.pressed.connect(_on_add_option_button_press)
 	character_picker.item_selected.connect(_on_item_selected)
 
-func initiliase(data : DialogueConversationNodeData,characters : DialogueCharacters):
-	for char : DialogueCharacter in characters.characters:
-		character_picker.add_item(char.name,char.id)
-	
-	dialogeNodeData = data
-	position_offset = dialogeNodeData.position
-	text = dialogeNodeData.text
+func initiliase(data : DialogueNodeData):
+	await self.ready
+	dialogue_data = data
+	position_offset = dialogue_data.position
+	text = dialogue_data.text
 	preview_text.text = text
 	id = data.id
 	name = "Dialogue Node_%s"%[str(id)]
@@ -37,32 +33,34 @@ func initiliase(data : DialogueConversationNodeData,characters : DialogueCharact
 		if option.text == "default":
 			continue
 		_build_option(option)
-	
-	#var item_index : int = character_picker.get_item_index(character_id)
-	character_picker.set
+	character_picker.select(character_id)
 
-func initilise_new(pos : Vector2, node_id : int,characters : DialogueCharacters):
-	
+func set_characters(characters : DialogueCharacters) -> void:
 	for char : DialogueCharacter in characters.characters:
 		character_picker.add_item(char.name,char.id)
-		
-	dialogeNodeData = DialogueConversationNodeData.new()
-	dialogeNodeData.position = pos
+	character_picker.allow_reselect = true
+
+
+func initilise_new(pos : Vector2, node_id : int):
+	await self.ready
+	dialogue_data = DialogueConversationNodeData.new()
+	character_picker.select(0)
+	dialogue_data.position = pos
 	position_offset = pos
 	id = node_id
 	name = "Dialogue Node_%s"%[node_id]
 	title = name
 	
 func _on_item_selected(index : int):
-	print(index)
 	character_id = index
 
 func save_node(connections : Array) -> void:
-	dialogeNodeData.position = position_offset
-	dialogeNodeData.text = text
-	dialogeNodeData.options.clear()
-	dialogeNodeData.id = id
-	dialogeNodeData.character_id = character_id
+	dialogue_data.position = position_offset
+	dialogue_data.text = text
+	dialogue_data.options.clear()
+	dialogue_data.id = id
+	print(character_id)
+	dialogue_data.character_id = character_id
 	
 	if connections.size() == 0:
 		return
@@ -71,21 +69,14 @@ func save_node(connections : Array) -> void:
 		var data : DialogueOption = DialogueOption.new()
 		data.text = "default"
 		data.linking_node_id = connections[0][0]
-		dialogeNodeData.options.append(data)
+		dialogue_data.options.append(data)
 	else:
 		for option : DialogueOptionUI in options:
 			option.save()
-			dialogeNodeData.options.append(option.dialogue_option)
+			dialogue_data.options.append(option.dialogue_option)
 	
 func _on_edit_button_pressed():
 	edit_node.emit(self)
-
-func _on_delete_request() -> void:
-	print("delete")
-	delete_node.emit(self)
-
-func _on_dragged(from: Vector2, to: Vector2) -> void:
-	dialogeNodeData.position = position_offset
 	
 func on_text_changed(new_text : String) -> void:
 	text = new_text
@@ -119,23 +110,8 @@ func _update_links():
 		set_slot_enabled_right(2,false)
 		for i in options.size():
 			set_slot_enabled_right(3 + i,true)
-			
-		
-func _on_preview_text_gui_input(event: InputEvent) -> void:
-	if event is InputEventMouseButton && event.is_pressed():
-		_on_edit_button_pressed()
-		selected = true
 
-func is_port_connected(self_port_type: String, self_port: int) -> bool:
-	for port_idx in ports_connected[self_port_type].keys():
-		if ports_connected[self_port_type][port_idx]:
-			return true
-	return false
-
-func on_connect(self_port_type: String, self_port: int, other_node: DialogueNode, other_port: int) -> void:
-	print("I am connected to ", other_node, " on ", self_port_type, " port ", other_port)
-	ports_connected[self_port_type][self_port] = true
-
-func on_disconnect(self_port_type: String, self_port: int, other_node: DialogueNode, other_port: int) -> void:
-	print("I am disconnected to ", other_node, " on ", self_port_type, " port ", other_port)
-	ports_connected[self_port_type][self_port] = false
+func _on_preview_text_gui_input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			edit_node.emit(self)

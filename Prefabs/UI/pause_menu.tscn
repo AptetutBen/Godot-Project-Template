@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" uid="uid://7oni0icddkt3" path="res://Scripts/Pause Menu/PauseMenu.gd" id="1_tm1hf"]
 [ext_resource type="FontFile" uid="uid://y2fjskeskhyt" path="res://Fonts/Chewy-Regular.ttf" id="3_thy0x"]
-[ext_resource type="Script" uid="uid://c0igtkxsnjsgj" path="res://Scripts/Main Menu/StartMenuButtonGroup.gd" id="4_n7qms"]
+[ext_resource type="Script" uid="uid://c0igtkxsnjsgj" path="res://Scripts/UI/TextButtonGroup.gd" id="4_n7qms"]
 [ext_resource type="Theme" uid="uid://chi28l03dgsy2" path="res://Themes/MenuTextStandard.tres" id="5_3n05p"]
 [ext_resource type="Texture2D" uid="uid://r50oq5df1ugk" path="res://Sprites/UI/UI Panels.png" id="5_oadjm"]
-[ext_resource type="Script" uid="uid://cqfqww5rcrh8n" path="res://Scripts/Main Menu/MenuText.gd" id="6_jy3lh"]
+[ext_resource type="Script" uid="uid://cqfqww5rcrh8n" path="res://Scripts/UI/MenuText.gd" id="6_jy3lh"]
 
 [sub_resource type="Gradient" id="Gradient_e2pts"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)

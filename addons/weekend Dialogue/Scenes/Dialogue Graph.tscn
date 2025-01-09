@@ -1,19 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://b4i8gaa812i43"]
 
 [ext_resource type="Script" uid="uid://cfbos3jrtyhg2" path="res://addons/weekend Dialogue/Scripts/weekendDialogueEditor.gd" id="1_hfyfc"]
-[ext_resource type="PackedScene" uid="uid://cufx4633uoge0" path="res://addons/weekend Dialogue/Prefabs/dialogue_node.tscn" id="2_5u2jf"]
-[ext_resource type="Resource" uid="uid://bhe0ufssqo8hc" path="res://Data/Dialogue/Test Dialogue.tres" id="3_nympv"]
+[ext_resource type="PackedScene" uid="uid://cufx4633uoge0" path="res://addons/weekend Dialogue/Prefabs/conversation_node.tscn" id="2_ewb42"]
+[ext_resource type="Resource" uid="uid://orbra4umqx6b" path="res://Data/Dialogue/Test Dialogue.tres" id="3_nympv"]
 [ext_resource type="PackedScene" uid="uid://degb4wkppnlpv" path="res://addons/weekend Dialogue/Prefabs/start_node.tscn" id="5_5axue"]
-[ext_resource type="Script" uid="uid://cqb8dqy20rc33" path="res://addons/weekend Dialogue/Scripts/TextEditorDialogueNode.gd" id="6_ngmty"]
+[ext_resource type="PackedScene" uid="uid://b55u1mq86cmfu" path="res://addons/weekend Dialogue/Prefabs/get_variable_node.tscn" id="5_ewb42"]
 [ext_resource type="PackedScene" uid="uid://bp6ak451eog5l" path="res://addons/weekend Dialogue/Prefabs/set_variable_node.tscn" id="6_s2syb"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xkana"]
-bg_color = Color(0.0920593, 0.0233568, 0.0649891, 1)
-shadow_size = 5
-shadow_offset = Vector2(5, 5)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pdwvp"]
-bg_color = Color(0.386777, 0.113947, 0.146998, 1)
+[ext_resource type="PackedScene" uid="uid://cr4v61ty3q5wg" path="res://addons/weekend Dialogue/Prefabs/text_editor.tscn" id="7_uu681"]
+[ext_resource type="Script" uid="uid://xc0dwosyh0b5" path="res://addons/weekend Dialogue/Scripts/node_popup_menu.gd" id="8_uu681"]
 
 [node name="DialogueGraph" type="Control"]
 layout_mode = 3
@@ -23,8 +17,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_hfyfc")
-dialogueNodePrefab = ExtResource("2_5u2jf")
+dialogueConversationNodePrefab = ExtResource("2_ewb42")
 dialogueStartNodePrefab = ExtResource("5_5axue")
+dialogueSetVariableNodePrefab = ExtResource("6_s2syb")
+dialogueGetVariableNodePrefab = ExtResource("5_ewb42")
 dialogue_data = ExtResource("3_nympv")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
@@ -52,7 +48,12 @@ text = "Add Start Node +"
 [node name="Add Set Variabe Node" type="Button" parent="VBoxContainer/Header"]
 custom_minimum_size = Vector2(153.03, 0)
 layout_mode = 2
-text = "Add Start Node +"
+text = "Add Set V Node +"
+
+[node name="Add Get Variabe Node" type="Button" parent="VBoxContainer/Header"]
+custom_minimum_size = Vector2(153.03, 0)
+layout_mode = 2
+text = "Add Has V Node +"
 
 [node name="Save Button" type="Button" parent="VBoxContainer/Header"]
 custom_minimum_size = Vector2(153.03, 0)
@@ -83,109 +84,33 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Text Editor" type="GraphNode" parent="VBoxContainer/Main Panel/Dialogue Editor"]
+[node name="Text Editor" parent="VBoxContainer/Main Panel/Dialogue Editor" instance=ExtResource("7_uu681")]
 unique_name_in_owner = true
-layout_mode = 0
-offset_left = 429.0
-offset_top = 144.0
-offset_right = 815.0
-offset_bottom = 432.0
-mouse_filter = 1
-theme_override_styles/panel = SubResource("StyleBoxFlat_xkana")
-theme_override_styles/titlebar = SubResource("StyleBoxFlat_pdwvp")
-position_offset = Vector2(429, 144)
-resizable = true
-draggable = false
-selectable = false
-title = "Text Editor"
-slot/0/left_enabled = false
-slot/0/left_type = 0
-slot/0/left_color = Color(1, 1, 1, 1)
-slot/0/left_icon = null
-slot/0/right_enabled = false
-slot/0/right_type = 0
-slot/0/right_color = Color(1, 1, 1, 1)
-slot/0/right_icon = null
-slot/0/draw_stylebox = true
-script = ExtResource("6_ngmty")
-
-[node name="Editor Group" type="VBoxContainer" parent="VBoxContainer/Main Panel/Dialogue Editor/Text Editor"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 120.68)
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="TextEdit" type="TextEdit" parent="VBoxContainer/Main Panel/Dialogue Editor/Text Editor/Editor Group"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_vertical = 3
-text = "This is sample text"
-deselect_on_focus_loss_enabled = false
-wrap_mode = 1
-
-[node name="Edit Buttons 1" type="HBoxContainer" parent="VBoxContainer/Main Panel/Dialogue Editor/Text Editor/Editor Group"]
-custom_minimum_size = Vector2(0, 22.69)
-layout_mode = 2
-
-[node name="Bold Button" type="Button" parent="VBoxContainer/Main Panel/Dialogue Editor/Text Editor/Editor Group/Edit Buttons 1"]
-layout_mode = 2
-text = "B"
-
-[node name="Italic Button" type="Button" parent="VBoxContainer/Main Panel/Dialogue Editor/Text Editor/Editor Group/Edit Buttons 1"]
-layout_mode = 2
-text = "I"
-
-[node name="Underline Button" type="Button" parent="VBoxContainer/Main Panel/Dialogue Editor/Text Editor/Editor Group/Edit Buttons 1"]
-layout_mode = 2
-text = "u"
-
-[node name="Wave Button" type="Button" parent="VBoxContainer/Main Panel/Dialogue Editor/Text Editor/Editor Group/Edit Buttons 1"]
-layout_mode = 2
-text = "wave"
-
-[node name="Shake Button" type="Button" parent="VBoxContainer/Main Panel/Dialogue Editor/Text Editor/Editor Group/Edit Buttons 1"]
-layout_mode = 2
-text = "shake"
-
-[node name="Tornado Button" type="Button" parent="VBoxContainer/Main Panel/Dialogue Editor/Text Editor/Editor Group/Edit Buttons 1"]
-layout_mode = 2
-text = "tornado"
-
-[node name="Edit Buttons 2" type="HBoxContainer" parent="VBoxContainer/Main Panel/Dialogue Editor/Text Editor/Editor Group"]
-custom_minimum_size = Vector2(0, 22.69)
-layout_mode = 2
-
-[node name="Fade Button" type="Button" parent="VBoxContainer/Main Panel/Dialogue Editor/Text Editor/Editor Group/Edit Buttons 2"]
-layout_mode = 2
-text = "fade"
-
-[node name="Raindow Button" type="Button" parent="VBoxContainer/Main Panel/Dialogue Editor/Text Editor/Editor Group/Edit Buttons 2"]
-layout_mode = 2
-text = "rainbow"
-
-[node name="ColorPickerButton" type="ColorPickerButton" parent="VBoxContainer/Main Panel/Dialogue Editor/Text Editor/Editor Group/Edit Buttons 2"]
-layout_mode = 2
-text = "co"
-color = Color(1, 1, 1, 1)
-edit_alpha = false
-
-[node name="Set Variable Node" parent="VBoxContainer/Main Panel/Dialogue Editor" instance=ExtResource("6_s2syb")]
 layout_mode = 0
 
 [node name="PopupMenu" type="PopupMenu" parent="."]
+unique_name_in_owner = true
+size = Vector2i(100, 30)
+visible = true
+script = ExtResource("8_uu681")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PopupMenu"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MenuButton" type="MenuButton" parent="PopupMenu/VBoxContainer"]
+layout_mode = 2
+text = "Delete"
 
 [connection signal="pressed" from="VBoxContainer/Header/Add Node" to="." method="_on_add_node_pressed"]
 [connection signal="pressed" from="VBoxContainer/Header/Add Start Node" to="." method="_on_add_start_node_pressed"]
 [connection signal="pressed" from="VBoxContainer/Header/Add Set Variabe Node" to="." method="_on_add_set_variabe_node_pressed"]
+[connection signal="pressed" from="VBoxContainer/Header/Add Get Variabe Node" to="." method="_on_add_get_variabe_node_pressed"]
 [connection signal="pressed" from="VBoxContainer/Header/Save Button" to="." method="_on_save_pressed"]
 [connection signal="connection_request" from="VBoxContainer/Main Panel/Dialogue Editor" to="." method="_on_dialogue_editor_connection_request"]
 [connection signal="delete_nodes_request" from="VBoxContainer/Main Panel/Dialogue Editor" to="." method="_on_dialogue_editor_delete_nodes_request"]
 [connection signal="disconnection_request" from="VBoxContainer/Main Panel/Dialogue Editor" to="." method="_on_dialogue_editor_disconnection_request"]
-[connection signal="pressed" from="VBoxContainer/Main Panel/Dialogue Editor/Text Editor/Editor Group/Edit Buttons 1/Bold Button" to="VBoxContainer/Main Panel/Dialogue Editor/Text Editor" method="_on_bold_button_press"]
-[connection signal="pressed" from="VBoxContainer/Main Panel/Dialogue Editor/Text Editor/Editor Group/Edit Buttons 1/Italic Button" to="VBoxContainer/Main Panel/Dialogue Editor/Text Editor" method="_on_italic_button_press"]
-[connection signal="pressed" from="VBoxContainer/Main Panel/Dialogue Editor/Text Editor/Editor Group/Edit Buttons 1/Underline Button" to="VBoxContainer/Main Panel/Dialogue Editor/Text Editor" method="_on_underline_button_press"]
-[connection signal="pressed" from="VBoxContainer/Main Panel/Dialogue Editor/Text Editor/Editor Group/Edit Buttons 1/Wave Button" to="VBoxContainer/Main Panel/Dialogue Editor/Text Editor" method="_on_wave_button_press"]
-[connection signal="pressed" from="VBoxContainer/Main Panel/Dialogue Editor/Text Editor/Editor Group/Edit Buttons 1/Shake Button" to="VBoxContainer/Main Panel/Dialogue Editor/Text Editor" method="_on_shake_button_press"]
-[connection signal="pressed" from="VBoxContainer/Main Panel/Dialogue Editor/Text Editor/Editor Group/Edit Buttons 1/Tornado Button" to="VBoxContainer/Main Panel/Dialogue Editor/Text Editor" method="_on_tornado_button_press"]
-[connection signal="pressed" from="VBoxContainer/Main Panel/Dialogue Editor/Text Editor/Editor Group/Edit Buttons 2/Fade Button" to="VBoxContainer/Main Panel/Dialogue Editor/Text Editor" method="_on_fade_button_press"]
-[connection signal="pressed" from="VBoxContainer/Main Panel/Dialogue Editor/Text Editor/Editor Group/Edit Buttons 2/Raindow Button" to="VBoxContainer/Main Panel/Dialogue Editor/Text Editor" method="_on_rainbow_button_press"]
+[connection signal="pressed" from="PopupMenu/VBoxContainer/MenuButton" to="PopupMenu" method="_on_delete_button_press"]

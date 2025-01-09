@@ -1,44 +1,34 @@
 class_name DialogueSetVariableNode extends DialogueNode 
 
-signal delete_node(node : DialogueStartNode)
-
-var dialogeVariableNodeData : DialogueSetVariableNodeData
-
 func _ready() -> void:
 	delete_request.connect(_on_delete_request)
 	dragged.connect(_on_dragged)
 	
-func initiliase(data : DialogueSetVariableNodeData):
-	dialogeVariableNodeData = data
-
-	position_offset = dialogeVariableNodeData.position
-	name= "Set Variable Node_%s"%[dialogeVariableNodeData.id]
+func initiliase(data : DialogueNodeData):
+	dialogue_data = data
+	id = data.id
+	position_offset = data.position
+	name= "Set Variable Node_%s"%[data.id]
 	title = name
 
 func initilise_new(pos : Vector2, node_number : int):
-	dialogeVariableNodeData = DialogueSetVariableNodeData.new()
-	dialogeVariableNodeData.position = pos
+	dialogue_data = DialogueSetVariableNodeData.new()
+	dialogue_data.position = pos
 	id = node_number
 	position_offset = pos
 	name = "Set Variable Node_%s"%[node_number]
 	title = name
 
 func save_node(connections : Array) -> void:
-	dialogeVariableNodeData.position = position_offset
-	dialogeVariableNodeData.id = id
+	dialogue_data.position = position_offset
+	dialogue_data.id = id
 	
 	if connections.size() == 0:
-		dialogeVariableNodeData.connected_node_id = -1
+		dialogue_data.connected_node_id = -1
 	if connections.size() == 1:
-		dialogeVariableNodeData.connected_node_id = connections[0][0]
+		dialogue_data.connected_node_id = connections[0][0]
 	elif connections.size() > 1:
-		printerr("Start node %s has more than one connection"%dialogeVariableNodeData.id)
-
-func _on_dragged(from: Vector2, to: Vector2) -> void:
-	dialogeVariableNodeData.position = position_offset
-
-func _on_delete_request() -> void:
-	delete_node.emit(self)
+		printerr("Start node %s has more than one connection"%dialogue_data.id)
 
 func is_port_connected(self_port_type: String, self_port: int) -> bool:
 	for port_idx in ports_connected[self_port_type].keys():

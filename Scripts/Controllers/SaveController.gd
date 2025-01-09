@@ -40,6 +40,9 @@ func get_value_int(key : String, default : int) -> int:
 
 func set_value_int(key : String, value : int) -> void:
 	variable_dictionary.set(key,value)
+	
+func set_value_bool(key : String, value : bool) -> void:
+	variable_dictionary.set(key,value)
 
 func get_value_float(key : String, default : float) -> float:
 	return variable_dictionary.get(key,default)
