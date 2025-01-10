@@ -13,6 +13,7 @@ extends Control
 
 @onready var popup_menu: PopupMenu = %PopupMenu
 @onready var file_dialog: FileDialog = %FileDialog
+@onready var add_menu: PopupMenu = $"Add Menu"
 
 @export var dialogue_data : DialogueData
 
@@ -28,6 +29,8 @@ func _ready() -> void:
 	if ResourceLoader.exists(settings.current_dialogue_data_path):
 		dialogue_data = load(settings.current_dialogue_data_path)
 		_build_graph()
+	
+	
 
 func _build_graph():
 	
@@ -167,10 +170,7 @@ func _on_add_start_node_pressed() -> void:
 	_set_node_basics(dialogueStartNodePrefab.instantiate())
 
 func _on_add_node_pressed() -> void:
-	var newNode : DialogueConversationNode = dialogueConversationNodePrefab.instantiate() as DialogueConversationNode
-	newNode.edit_node.connect(_on_node_edit_selected)
-	newNode.set_characters(dialogue_data.characters)
-	_set_node_basics(newNode)
+	add_menu. visible = true
 
 func _on_add_set_variabe_node_pressed() -> void:
 	_set_node_basics( dialogueSetVariableNodePrefab.instantiate())
@@ -182,6 +182,7 @@ func _set_node_basics(newNode : DialogueNode) -> void:
 	newNode.initilise_new(Vector2(100,100),next_id)
 	next_id += 1
 	add_node_common(newNode)
+	add_menu.visible = false
 
 func _set_node_exsisting(newNode : DialogueNode,data : DialogueNodeData):
 	newNode.initiliase(data)
@@ -193,3 +194,17 @@ func add_node_common(newNode : DialogueNode) -> void:
 	dialogue_nodes.append(newNode)
 	newNode.delete_node.connect(remove_node)
 	newNode.right_click.connect(_on_right_click)
+
+
+func _on_compare_variable_button_pressed() -> void:
+	pass # Replace with function body.
+
+func _on_add_conversation_node_pressed() -> void:
+	var newNode : DialogueConversationNode = dialogueConversationNodePrefab.instantiate() as DialogueConversationNode
+	newNode.edit_node.connect(_on_node_edit_selected)
+	newNode.set_characters(dialogue_data.characters)
+	_set_node_basics(newNode)
+
+
+func _on_add_menu_id_pressed(id: int) -> void:
+	pass # Replace with function body.

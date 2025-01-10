@@ -14,7 +14,7 @@ script = ExtResource("6_ftgil")
 first_node_id = 13
 start_key = "default"
 id = 0
-position = Vector2(420, 540)
+position = Vector2(240, 320)
 size = Vector2(0, 0)
 
 [sub_resource type="Resource" id="Resource_qykrk"]
@@ -64,12 +64,13 @@ connected_node_id_false = 7
 type = 0
 value = ""
 id = 13
-position = Vector2(920, 500)
+position = Vector2(740, 280)
 size = Vector2(353, 337)
 
 [sub_resource type="Resource" id="Resource_twovt"]
 script = ExtResource("6_yf41g")
-text = "You gotten yourself all turned around?~Just head east and you can't miss it!"
+text = "You gotten yourself all turned around?~Just head east and you can't miss the camp site!~
+Come see me after you have got yourself setup."
 options = Array[ExtResource("5_ftgil")]([])
 character_id = 0
 id = 15
