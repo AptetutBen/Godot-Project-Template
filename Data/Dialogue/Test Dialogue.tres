@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogueData" load_steps=17 format=3 uid="uid://buv6ypax0b2cf"]
+[gd_resource type="Resource" script_class="DialogueData" load_steps=17 format=3 uid="uid://bu0yb881128u8"]
 
 [ext_resource type="Resource" uid="uid://7nd280aiylm" path="res://Data/Dialogue/Game Characters.tres" id="1_42ggt"]
 [ext_resource type="Script" uid="uid://rxyur4vwo6q0" path="res://addons/weekendDialogue/Scripts/DialogueData.gd" id="1_e8qyd"]
@@ -69,10 +69,10 @@ size = Vector2(353, 337)
 
 [sub_resource type="Resource" id="Resource_twovt"]
 script = ExtResource("6_yf41g")
-text = "You gotten yourself all turned around?~Just head east and you can't miss the camp site!~
+text = "You gotten {p:0.5}yourself{s:0.5} all turned {s:r}around?~Just head east and you can't miss the camp site!~
 Come see me after you have got yourself setup."
 options = Array[ExtResource("5_ftgil")]([])
-character_id = 0
+character_id = 1
 id = 15
 position = Vector2(1380, 0)
 size = Vector2(680, 600)

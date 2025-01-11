@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b4i8gaa812i43"]
+[gd_scene load_steps=10 format=3 uid="uid://b4i8gaa812i43"]
 
 [ext_resource type="Script" uid="uid://cfbos3jrtyhg2" path="res://addons/weekendDialogue/Scripts/weekendDialogueEditor.gd" id="1_hfyfc"]
 [ext_resource type="PackedScene" uid="uid://cufx4633uoge0" path="res://addons/weekendDialogue/Prefabs/conversation_node.tscn" id="2_ewb42"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b55u1mq86cmfu" path="res://addons/weekendDialogue/Prefabs/get_variable_node.tscn" id="5_ewb42"]
 [ext_resource type="Resource" uid="uid://q4mi3ka231pf" path="res://addons/weekendDialogue/settings.tres" id="6_janmk"]
 [ext_resource type="PackedScene" uid="uid://bp6ak451eog5l" path="res://addons/weekendDialogue/Prefabs/set_variable_node.tscn" id="6_s2syb"]
+[ext_resource type="Resource" uid="uid://bu0yb881128u8" path="res://Data/Dialogue/Test Dialogue.tres" id="7_4ce0u"]
 [ext_resource type="PackedScene" uid="uid://cr4v61ty3q5wg" path="res://addons/weekendDialogue/Prefabs/text_editor.tscn" id="7_uu681"]
 [ext_resource type="Script" uid="uid://xc0dwosyh0b5" path="res://addons/weekendDialogue/Scripts/node_popup_menu.gd" id="8_uu681"]
 
@@ -22,6 +23,7 @@ dialogueStartNodePrefab = ExtResource("5_5axue")
 dialogueSetVariableNodePrefab = ExtResource("6_s2syb")
 dialogueGetVariableNodePrefab = ExtResource("5_ewb42")
 settings = ExtResource("6_janmk")
+dialogue_data = ExtResource("7_4ce0u")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
@@ -70,10 +72,47 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+connections = Array[Dictionary]([{
+"from_node": &"Dialogue Node_7",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Dialogue Node_8",
+"to_port": 0
+}, {
+"from_node": &"Start Node_0",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Get Variable Node_13",
+"to_port": 0
+}, {
+"from_node": &"Get Variable Node_13",
+"from_port": 1,
+"keep_alive": false,
+"to_node": &"Dialogue Node_7",
+"to_port": 0
+}, {
+"from_node": &"Get Variable Node_13",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Dialogue Node_15",
+"to_port": 0
+}, {
+"from_node": &"Dialogue Node_8",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Set Variable Node_12",
+"to_port": 0
+}])
 
 [node name="Text Editor" parent="VBoxContainer/Main Panel/Dialogue Editor" instance=ExtResource("7_uu681")]
 unique_name_in_owner = true
+visible = false
 layout_mode = 0
+offset_left = 241.0
+offset_top = 145.0
+offset_right = 627.0
+offset_bottom = 433.0
+position_offset = Vector2(241, 145)
 
 [node name="PopupMenu" type="PopupMenu" parent="."]
 unique_name_in_owner = true

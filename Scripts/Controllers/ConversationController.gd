@@ -1,5 +1,8 @@
 class_name ConversationController extends Control
 
+const text_speed : float = 0.01
+const text_hyper_multiplyer : float = 0.2
+
 @onready var main_text: RichTextLabel = %"Main Text"
 @onready var speaker_name_text: Label = %"Speaker Name Text"
 @onready var input_prompt_image: TextureRect = %"Input Prompt Image"
@@ -8,6 +11,9 @@ class_name ConversationController extends Control
 var input_pressed : bool
 var current_node : DialogueConversationNodeData
 
+var effect_list := {}
+var effect_pointer : int
+var speed_multiplyer : int = 1 
 
 
 func _ready() -> void:
@@ -61,20 +67,70 @@ func hide_ui():
 	
 	visible = false
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("UI Accept") || event.is_action_pressed("UI Accept"):
+		speed_multiplyer = text_hyper_multiplyer  
+		input_pressed = true
+	if event.is_action_released("UI Accept")  || event.is_action_released("UI Accept"):
+		speed_multiplyer = 1
+
 func display_text(text : String):
+	effect_list.clear()
 	text = text.strip_edges()
+	
+	var current_text_speed : float = text_speed
+	
+	# Build Effects
+	
+	effect_pointer = 0
+	var clean_text : Array[String]
+	var builder_index : int = 0
+	
+	while (builder_index < text.length()):
+		if text[builder_index] == "{":
+			var finish_index = text.find("}", builder_index)
+			if finish_index < 0:
+				printerr("no closing effect bracket")
+				builder_index+=1
+				continue
+				
+			var command_length = finish_index - builder_index - 1
+			var command = text.substr(builder_index +1, command_length)
+			effect_list[builder_index] = command
+			builder_index+= command_length + 2
+			continue
+			
+		clean_text.append(text[builder_index])
+		builder_index+=1
+	
 	main_text.visible_characters = 0
 	input_prompt_image.visible = false
-	main_text.text = text
+	main_text.text = String("").join(clean_text)
+	
 	input_pressed = false
 	for i in main_text.text.length():
+		
+		# Check for effects
+		
+		if effect_list.has(i):
+			
+			var split_pos : int = effect_list[i].find(":")
+			var key : String = effect_list[i].substr(0,effect_list[i].find(":"))
+			var value : String = effect_list[i].substr(split_pos +1,-1)
+			
+			match effect_list[i][0]:
+				"p":
+					await get_tree().create_timer(float(value ) * speed_multiplyer).timeout
+				"s":
+					current_text_speed = float(value) if value != "r" else text_speed
+			
 		main_text.visible_characters = i+1
 		if main_text.text[i] != " ":
 			AudioManager.play_sfx("Key Tap",0.2,randf_range(0.8,1.2))
-		if input_pressed:
-			main_text.visible_characters = -1
-			break
-		await get_tree().create_timer(0.01).timeout
+		#if input_pressed:
+			#main_text.visible_characters = -1
+			#break
+		await get_tree().create_timer(current_text_speed * speed_multiplyer).timeout
 	
 	var blinking_tween = create_tween()
 	blinking_tween.set_loops()
@@ -88,11 +144,6 @@ func display_text(text : String):
 	while (!input_pressed):
 		await get_tree().process_frame
 	blinking_tween.stop()
-	
-	
-func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("UI Accept") || event.is_action_pressed("Interact"):
-		input_pressed = true
 
 func _on_start_display_message(textArray : Array[String], title: String):
 	display_message_text(textArray,title)

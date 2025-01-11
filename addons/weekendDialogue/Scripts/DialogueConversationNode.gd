@@ -6,11 +6,13 @@ signal edit_node(node: DialogueConversationNode)
 @onready var preview_text: RichTextLabel = %"Preview Text"
 @onready var add_option_button: Button = %"Add Option Button"
 @export var character_picker: OptionButton
+@onready var text_edit: TextEdit = %TextEdit
 
 @export var option_prefab : PackedScene
 
 var text : String
 var character_id : int
+var wysiwyg_mode : bool
 
 var options : Array[DialogueOptionUI]
 
@@ -26,6 +28,9 @@ func initiliase(data : DialogueNodeData):
 	position_offset = dialogue_data.position
 	text = dialogue_data.text
 	preview_text.text = text
+	preview_text.visible = false
+	text_edit.visible = true
+	text_edit.text = text
 	id = data.id
 	size = data.size
 	name = "Dialogue Node_%s"%[str(id)]
@@ -77,10 +82,15 @@ func save_node(connections : Array) -> void:
 	
 func _on_edit_button_pressed():
 	edit_node.emit(self)
+
+func editor_text_changed():
+	text = text_edit.text
+	preview_text.text = text
 	
 func on_text_changed(new_text : String) -> void:
 	text = new_text
 	preview_text.text = text
+	text_edit.text = text
 	
 func _on_add_option_button_press():
 	var newOptionsUI : DialogueOptionUI = _add_option()
@@ -115,3 +125,17 @@ func _on_preview_text_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			edit_node.emit(self)
+
+
+func _on_editor_button_pressed() -> void:
+	wysiwyg_mode = !wysiwyg_mode
+	
+	if wysiwyg_mode:
+		text_edit.visible = false
+		preview_text.visible = true
+		edit_node.emit(self)
+	else:
+		text_edit.visible = true
+		preview_text.visible = false
+		edit_node.emit(null)
+	

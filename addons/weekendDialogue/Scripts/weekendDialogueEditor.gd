@@ -29,8 +29,6 @@ func _ready() -> void:
 	if ResourceLoader.exists(settings.current_dialogue_data_path):
 		dialogue_data = load(settings.current_dialogue_data_path)
 		_build_graph()
-	
-	
 
 func _build_graph():
 	
@@ -73,6 +71,10 @@ func _on_right_click(node : DialogueNode) -> void:
 	popup_menu.show_popup(node)
 
 func _on_node_edit_selected(node : DialogueConversationNode):
+	if node == null:
+		text_editor.visible = false
+		return
+	
 	text_editor.enable(node)
 
 func _on_open_file():
