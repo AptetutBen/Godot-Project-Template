@@ -63,7 +63,6 @@ func set_to_wide_fow(duration : float = 0) -> void:
 		var fov_tween : Tween = get_tree().create_tween()
 		fov_tween.tween_property(main_camera,"fov",fov_narrow,duration).set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)		
 
-
 func _process(delta: float) -> void:
 	if camera_hijacked:
 		return

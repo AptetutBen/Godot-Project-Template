@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b55u1mq86cmfu" path="res://addons/weekendDialogue/Prefabs/get_variable_node.tscn" id="5_ewb42"]
 [ext_resource type="Resource" uid="uid://q4mi3ka231pf" path="res://addons/weekendDialogue/settings.tres" id="6_janmk"]
 [ext_resource type="PackedScene" uid="uid://bp6ak451eog5l" path="res://addons/weekendDialogue/Prefabs/set_variable_node.tscn" id="6_s2syb"]
-[ext_resource type="Resource" uid="uid://bu0yb881128u8" path="res://Data/Dialogue/Test Dialogue.tres" id="7_4ce0u"]
+[ext_resource type="Resource" uid="uid://bumtm5ll3huco" path="res://Data/Dialogue/Test Dialogue.tres" id="7_4ce0u"]
 [ext_resource type="PackedScene" uid="uid://cr4v61ty3q5wg" path="res://addons/weekendDialogue/Prefabs/text_editor.tscn" id="7_uu681"]
 [ext_resource type="Script" uid="uid://xc0dwosyh0b5" path="res://addons/weekendDialogue/Scripts/node_popup_menu.gd" id="8_uu681"]
 
@@ -91,16 +91,16 @@ connections = Array[Dictionary]([{
 "to_node": &"Dialogue Node_7",
 "to_port": 0
 }, {
-"from_node": &"Get Variable Node_13",
-"from_port": 0,
-"keep_alive": false,
-"to_node": &"Dialogue Node_15",
-"to_port": 0
-}, {
 "from_node": &"Dialogue Node_8",
 "from_port": 0,
 "keep_alive": false,
 "to_node": &"Set Variable Node_12",
+"to_port": 0
+}, {
+"from_node": &"Get Variable Node_13",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Dialogue Node_16",
 "to_port": 0
 }])
 

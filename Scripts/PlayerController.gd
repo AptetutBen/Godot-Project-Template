@@ -41,6 +41,7 @@ func _ready() -> void:
 	EventBus.start_conversation.connect(_on_start_conversation)
 	EventBus.finish_conversation.connect(_on_finish_conversation)
 	EventBus.start_display_message.connect(_on_start_conversation)
+	EventBus.enable_player.connect(_enabled)
 	
 	last_footstep_position = position
 	
@@ -170,3 +171,17 @@ func _on_start_conversation(_dialogue_node, _node):
 func _on_finish_conversation():
 	is_running = false
 	enabled = true
+
+func _enabled(is_enabled : bool):
+	if is_enabled:
+		_enable()
+	else:
+		_disable()
+
+func _enable():
+	enabled = true
+
+func _disable():
+	input = Vector2.ZERO
+	velocity = Vector3.ZERO
+	enabled = false

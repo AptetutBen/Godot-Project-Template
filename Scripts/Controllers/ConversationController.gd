@@ -118,7 +118,7 @@ func display_text(text : String):
 			var key : String = effect_list[i].substr(0,effect_list[i].find(":"))
 			var value : String = effect_list[i].substr(split_pos +1,-1)
 			
-			match effect_list[i][0]:
+			match key:
 				"p":
 					await get_tree().create_timer(float(value ) * speed_multiplyer).timeout
 				"s":

@@ -4,6 +4,8 @@ static var Instance : GameController
 
 @onready var intro_sequences: IntroSequences = %IntroSequences
 @onready var camera: FollowCamera = %Camera
+@onready var iris: Iris = %Iris
+@onready var confirmation_panel: ConfirmationPanel = %ConfirmationPanel
 
 @onready var road_block_parent: Node3D = $"Road Blocks"
 
