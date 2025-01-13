@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dam7a04xib2ns"]
 
-[ext_resource type="PackedScene" uid="uid://oo1lm1m6ghrs" path="res://Models/Flax.glb" id="1_gpk0t"]
+[ext_resource type="PackedScene" uid="uid://oo1lm1m6ghrs" path="res://Models/Plants/Flax.glb" id="1_gpk0t"]
 [ext_resource type="Shader" uid="uid://djdvvewfn86x2" path="res://Shaders/GrassShader.tres" id="2_v7bny"]
 
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_fgsvt"]

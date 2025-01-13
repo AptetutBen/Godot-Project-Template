@@ -1,5 +1,6 @@
 @tool
-extends Control
+class_name WeekendDialogueEditor extends Control
+static var Instance : WeekendDialogueEditor
 
 @export var dialogueConversationNodePrefab : PackedScene
 @export var dialogueStartNodePrefab : PackedScene
@@ -7,6 +8,7 @@ extends Control
 @export var dialogueGetVariableNodePrefab : PackedScene
 
 @export var settings : dialogueSettings
+@onready var save_button: Button = %"Save Button"
 
 @onready var dialogue_editor: GraphEdit = %"Dialogue Editor"
 @onready var text_editor: DialogueTextEditor = %"Text Editor"
@@ -20,7 +22,10 @@ extends Control
 var dialogue_nodes : Array[GraphNode]
 var next_id : int = 1
 
+var is_unsaved : bool
+
 func _ready() -> void:
+	Instance = self
 	file_dialog.file_selected.connect(on_select_file)
 	if settings == null:
 		printerr("Settings file not found")
@@ -66,9 +71,15 @@ func _build_graph():
 			connection_parts[2],
 			int(connection_parts[3])
 		)
+	WeekendDialogueEditor.Instance._show_saved()
+
+func deselect_nodes():
+	for node in dialogue_nodes:
+		node.selected = false
 		
 func _on_right_click(node : DialogueNode) -> void:
 	popup_menu.show_popup(node)
+	popup_menu.position = get_global_mouse_position()
 
 func _on_node_edit_selected(node : DialogueConversationNode):
 	if node == null:
@@ -79,8 +90,13 @@ func _on_node_edit_selected(node : DialogueConversationNode):
 
 func _on_open_file():
 	file_dialog.visible = true
+	file_dialog.position = get_global_mouse_position()
 
 func on_select_file(path:String):
+	var new_data = load(path)
+	if !(new_data is DialogueData):
+		printerr("This is not a DialogueData resource")
+		return
 	dialogue_data = load(path)
 	settings.current_dialogue_data_path = path
 	ResourceSaver.save(settings)
@@ -132,7 +148,21 @@ func _on_save_pressed():
 	
 	ResourceSaver.save(dialogue_data)
 	print("Data Saved")
+	_show_saved()
 
+func show_unsaved():
+	if is_unsaved:
+		return
+	
+	is_unsaved = true
+	save_button.text = "* Save"
+	save_button.add_theme_color_override("font_color",Color.RED)
+
+func _show_saved():
+	is_unsaved = false
+	save_button.text = "Save"
+	save_button.add_theme_color_override("font_color",Color.WHITE)
+	
 func _find_node(node_name : StringName) -> GraphNode:
 	for node : GraphNode in dialogue_nodes:
 		if node.name == node_name:
@@ -153,6 +183,7 @@ func _on_dialogue_editor_connection_request(from_node: StringName, from_port: in
 	
 	from_node_inst.on_connect("output", from_port, to_node_inst, to_port)
 	to_node_inst.on_connect("input", to_port, from_node_inst, from_port)
+	show_unsaved()
 
 func _on_dialogue_editor_disconnection_request(from_node: StringName, from_port: int, to_node: StringName, to_port: int) -> void:
 	dialogue_editor.disconnect_node(from_node, from_port, to_node, to_port)
@@ -162,6 +193,7 @@ func _on_dialogue_editor_disconnection_request(from_node: StringName, from_port:
 
 	from_node_inst.on_disconnect("output", from_port, to_node_inst, to_port)
 	to_node_inst.on_disconnect("input", to_port, from_node_inst, from_port)
+	show_unsaved()
 
 func get_dialogue_node(node_name : String) -> DialogueNode:
 	return dialogue_editor.find_child(node_name,false,false)
@@ -173,6 +205,7 @@ func _on_add_start_node_pressed() -> void:
 
 func _on_add_node_pressed() -> void:
 	add_menu. visible = true
+	add_menu.position = get_global_mouse_position()
 
 func _on_add_set_variabe_node_pressed() -> void:
 	_set_node_basics( dialogueSetVariableNodePrefab.instantiate())
@@ -185,6 +218,7 @@ func _set_node_basics(newNode : DialogueNode) -> void:
 	next_id += 1
 	add_node_common(newNode)
 	add_menu.visible = false
+	show_unsaved()
 
 func _set_node_exsisting(newNode : DialogueNode,data : DialogueNodeData):
 	newNode.initiliase(data)
@@ -197,7 +231,6 @@ func add_node_common(newNode : DialogueNode) -> void:
 	newNode.delete_node.connect(remove_node)
 	newNode.right_click.connect(_on_right_click)
 
-
 func _on_compare_variable_button_pressed() -> void:
 	pass # Replace with function body.
 
@@ -209,4 +242,15 @@ func _on_add_conversation_node_pressed() -> void:
 
 
 func _on_add_menu_id_pressed(id: int) -> void:
-	pass # Replace with function body.
+	match id:
+		0:
+			_on_add_start_node_pressed()
+		1:
+			_on_add_conversation_node_pressed()
+		2:
+			_on_add_get_variabe_node_pressed()
+		3:
+			pass
+		4:
+			_on_add_set_variabe_node_pressed()
+			

@@ -191,3 +191,11 @@ func end_day_sequence() -> void:
 		_transition(current_camera_zone.offset,current_camera_zone.angle)
 	else:
 		_transition(default_offset,0)
+
+func zoom_in() -> void:
+	var current_tween : Tween = get_tree().create_tween()
+	current_tween.tween_property(main_camera,"position",main_camera.basis.z * 2,0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT_IN)
+	
+func reset_zoom() -> void:
+	var current_tween : Tween = get_tree().create_tween()
+	current_tween.tween_property(main_camera,"position",main_camera.basis.z * 2,0.5).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_OUT_IN)

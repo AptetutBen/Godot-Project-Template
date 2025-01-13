@@ -7,6 +7,7 @@ const text_hyper_multiplyer : float = 0.2
 @onready var speaker_name_text: Label = %"Speaker Name Text"
 @onready var input_prompt_image: TextureRect = %"Input Prompt Image"
 @onready var pivot: Node2D = %Pivot
+@onready var speaker_name: Panel = %"Speaker Name"
 
 var input_pressed : bool
 var current_node : DialogueConversationNodeData
@@ -23,7 +24,7 @@ func _ready() -> void:
 	EventBus.finish_conversation.connect(_on_finish_conversation)
 
 func display_conversation_text():
-	speaker_name_text.visible = true
+	speaker_name.visible = true
 	await show_ui()
 	while (true):
 		for text in current_node.text.split("~"):
@@ -37,7 +38,7 @@ func display_conversation_text():
 
 func display_message_text(textArray : Array[String], title : String):
 	speaker_name_text.text = title
-	speaker_name_text.visible = title != ""
+	speaker_name.visible = title != ""
 	await show_ui()
 	for text in textArray:
 		await display_text(text)
@@ -115,14 +116,22 @@ func display_text(text : String):
 		if effect_list.has(i):
 			
 			var split_pos : int = effect_list[i].find(":")
-			var key : String = effect_list[i].substr(0,effect_list[i].find(":"))
-			var value : String = effect_list[i].substr(split_pos +1,-1)
+			var key : String
+			var value : String
+			
+			if split_pos < 0:
+				key = effect_list[i]
+			else:		
+				key = effect_list[i].substr(0,effect_list[i].find(":"))
+				value = effect_list[i].substr(split_pos +1,-1)
 			
 			match key:
 				"p":
 					await get_tree().create_timer(float(value ) * speed_multiplyer).timeout
 				"s":
 					current_text_speed = float(value) if value != "r" else text_speed
+				"z":
+					FollowCamera.Instance.zoom_in()
 			
 		main_text.visible_characters = i+1
 		if main_text.text[i] != " ":

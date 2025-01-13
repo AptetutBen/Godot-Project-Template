@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="dialogueSettings" load_steps=2 format=3 uid="uid://q4mi3ka231pf"]
+[gd_resource type="Resource" script_class="dialogueSettings" load_steps=2 format=3 uid="uid://c4d10k6x7fi0n"]
 
 [ext_resource type="Script" uid="uid://cxvxdxr2x1the" path="res://addons/weekendDialogue/Scripts/settings.gd" id="1_rg2a4"]
 

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogueData" load_steps=18 format=3 uid="uid://bumtm5ll3huco"]
+[gd_resource type="Resource" script_class="DialogueData" load_steps=18 format=3 uid="uid://cgpptm6x0c6s2"]
 
 [ext_resource type="Resource" uid="uid://7nd280aiylm" path="res://Data/Dialogue/Game Characters.tres" id="1_42ggt"]
 [ext_resource type="Script" uid="uid://rxyur4vwo6q0" path="res://addons/weekendDialogue/Scripts/DialogueData.gd" id="1_e8qyd"]
@@ -54,7 +54,7 @@ saved_key = "tania_intro"
 saved_value = "true"
 id = 12
 position = Vector2(2940, 1680)
-size = Vector2(246, 160)
+size = Vector2(326, 296)
 
 [sub_resource type="Resource" id="Resource_domak"]
 script = ExtResource("4_pftqe")
@@ -65,7 +65,7 @@ type = 0
 value = ""
 id = 13
 position = Vector2(740, 280)
-size = Vector2(281, 170)
+size = Vector2(353, 337)
 
 [sub_resource type="Resource" id="Resource_twovt"]
 script = ExtResource("6_yf41g")
@@ -74,17 +74,17 @@ Come see me after you have got yourself setup."
 options = Array[ExtResource("5_ftgil")]([])
 character_id = 1
 id = 15
-position = Vector2(2040, 60)
-size = Vector2(680, 600)
+position = Vector2(2360, -60)
+size = Vector2(700, 500)
 
 [sub_resource type="Resource" id="Resource_hm12j"]
 script = ExtResource("6_yf41g")
-text = "You seem like someone who's world travelled. Per chance, are you familuare with the game of gewnt?"
+text = "You seem like someone who's world travelled{z}. Per chance, are you familuare with the game of gewnt?"
 options = Array[ExtResource("5_ftgil")]([])
 character_id = 0
 id = 16
-position = Vector2(1640, -600)
-size = Vector2(580, 460)
+position = Vector2(2360, -540)
+size = Vector2(700, 460)
 
 [resource]
 script = ExtResource("1_e8qyd")

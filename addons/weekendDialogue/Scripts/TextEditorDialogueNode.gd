@@ -23,6 +23,7 @@ func enable(node: DialogueConversationNode):
 	current_node.node_deselected.connect(_on_current_node_deselect)
 	get_parent().move_child(self,-1)
 	text_edit.text = current_node.text
+	text_edit.set_caret_column(1000)
 
 func _on_text_changed():
 	if current_node == null:

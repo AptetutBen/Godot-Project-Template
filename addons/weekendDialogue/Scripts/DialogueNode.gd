@@ -44,10 +44,11 @@ func is_port_connected(self_port_type: String, self_port: int) -> bool:
 	return false
 
 func on_connect(self_port_type: String, self_port: int, other_node: DialogueNode, other_port: int) -> void:
-	print("I am connected to ", other_node, " on ", self_port_type, " port ", other_port)
-	
+	#print("I am connected to ", other_node, " on ", self_port_type, " port ", other_port)
+	WeekendDialogueEditor.Instance.show_unsaved()
 	ports_connected[self_port_type][self_port] = true
 
 func on_disconnect(self_port_type: String, self_port: int, other_node: DialogueNode, other_port: int) -> void:
-	print("I am disconnected to ", other_node, " on ", self_port_type, " port ", other_port)
+	#print("I am disconnected to ", other_node, " on ", self_port_type, " port ", other_port)
+	WeekendDialogueEditor.Instance.show_unsaved()
 	ports_connected[self_port_type][self_port] = false

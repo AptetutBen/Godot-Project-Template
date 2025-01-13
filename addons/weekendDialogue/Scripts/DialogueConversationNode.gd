@@ -21,6 +21,7 @@ func _ready() -> void:
 	dragged.connect(_on_dragged)
 	add_option_button.pressed.connect(_on_add_option_button_press)
 	character_picker.item_selected.connect(_on_item_selected)
+	text_edit.focus_entered.connect(on_focus_entered)
 
 func initiliase(data : DialogueNodeData):
 	await self.ready
@@ -86,15 +87,22 @@ func _on_edit_button_pressed():
 func editor_text_changed():
 	text = text_edit.text
 	preview_text.text = text
+	WeekendDialogueEditor.Instance.show_unsaved()
 	
 func on_text_changed(new_text : String) -> void:
 	text = new_text
 	preview_text.text = text
 	text_edit.text = text
+	WeekendDialogueEditor.Instance.show_unsaved()
+
+func on_focus_entered():
+	WeekendDialogueEditor.Instance.deselect_nodes()
+	selected = true
 	
 func _on_add_option_button_press():
 	var newOptionsUI : DialogueOptionUI = _add_option()
 	newOptionsUI.initialise_new()
+	WeekendDialogueEditor.Instance.show_unsaved()
 
 func _build_option(data : DialogueOption):
 	var newOptionsUI : DialogueOptionUI = _add_option()
@@ -112,6 +120,7 @@ func on_remove_option(option : DialogueOptionUI):
 	options.erase(option)
 	option.queue_free()
 	_update_links()
+	WeekendDialogueEditor.Instance.show_unsaved()
 	
 func _update_links():
 	if options.size() == 0:
@@ -125,9 +134,11 @@ func _on_preview_text_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
 			edit_node.emit(self)
+			on_focus_entered()
 
 
 func _on_editor_button_pressed() -> void:
+	on_focus_entered()
 	wysiwyg_mode = !wysiwyg_mode
 	
 	if wysiwyg_mode:

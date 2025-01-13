@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=4 uid="uid://cv22r6q8x872v"]
 
-[ext_resource type="Texture2D" uid="uid://bagvr471ons2v" path="res://Models/Daisies_Gradient Texture.png" id="1_idjc6"]
+[ext_resource type="Texture2D" uid="uid://bagvr471ons2v" path="res://Models/Plants/Daisies_Gradient Texture.png" id="1_idjc6"]
 [ext_resource type="Material" uid="uid://moetmftq1qqn" path="res://Materials/Diasies.tres" id="2_fwynm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0aam3"]

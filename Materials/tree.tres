@@ -1,6 +1,6 @@
 [gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://c54cx1f3btu1r"]
 
-[ext_resource type="Texture2D" uid="uid://ba6smisxpuwce" path="res://Models/Pine Tree_Gradient Texture.png" id="1_rvpuv"]
+[ext_resource type="Texture2D" uid="uid://ba6smisxpuwce" path="res://Models/Plants/Pine Tree_Gradient Texture.png" id="1_rvpuv"]
 
 [resource]
 albedo_texture = ExtResource("1_rvpuv")
