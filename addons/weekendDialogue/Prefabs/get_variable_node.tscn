@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b55u1mq86cmfu"]
+[gd_scene load_steps=3 format=3 uid="uid://b55u1mq86cmfu"]
 
 [ext_resource type="Script" uid="uid://8rgifwiqdkss" path="res://addons/weekendDialogue/Scripts/DialogueGetVariableNode.gd" id="1_3ourd"]
+[ext_resource type="Theme" uid="uid://di2blioe5dqny" path="res://addons/weekendDialogue/Themes/NodeTheme.tres" id="1_ufruk"]
 
 [node name="Get Variable Node" type="GraphNode"]
 offset_left = 62.0
@@ -8,6 +9,7 @@ offset_top = 205.0
 offset_right = 343.0
 offset_bottom = 345.0
 mouse_filter = 1
+theme = ExtResource("1_ufruk")
 position_offset = Vector2(62, 205)
 title = "Get Variable"
 slot/0/left_enabled = true

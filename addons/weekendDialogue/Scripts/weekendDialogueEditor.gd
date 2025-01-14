@@ -6,6 +6,7 @@ static var Instance : WeekendDialogueEditor
 @export var dialogueStartNodePrefab : PackedScene
 @export var dialogueSetVariableNodePrefab : PackedScene
 @export var dialogueGetVariableNodePrefab : PackedScene
+@export var dialogueCompareVariableNodePrefab : PackedScene
 
 @export var settings : dialogueSettings
 @onready var save_button: Button = %"Save Button"
@@ -16,6 +17,8 @@ static var Instance : WeekendDialogueEditor
 @onready var popup_menu: PopupMenu = %PopupMenu
 @onready var file_dialog: FileDialog = %FileDialog
 @onready var add_menu: PopupMenu = $"Add Menu"
+
+@onready var file_name_label: Label = %"File Name Label"
 
 @export var dialogue_data : DialogueData
 
@@ -32,15 +35,22 @@ func _ready() -> void:
 		return
 	
 	if ResourceLoader.exists(settings.current_dialogue_data_path):
-		dialogue_data = load(settings.current_dialogue_data_path)
-		_build_graph()
+		_load_data(settings.current_dialogue_data_path)
+
+func _load_data(path : String):
+	dialogue_data = load(path)
+	file_name_label.text = path.get_file()
+	_build_graph()
 
 func _build_graph():
-	
-	for node in dialogue_nodes:
-		remove_node(node)
+	for node : DialogueNode in dialogue_nodes:
+		remove_node(node,false)
 	next_id = 1
+	dialogue_nodes.clear()
+	dialogue_editor.clear_connections()
 		
+	await get_tree().process_frame
+	
 	for data : DialogueNodeData in dialogue_data.data:
 		if data is DialogueConversationNodeData:
 			var newNode : DialogueConversationNode = dialogueConversationNodePrefab.instantiate()
@@ -56,7 +66,11 @@ func _build_graph():
 		elif data is DialogueStartNodeData:
 			var newNode : DialogueStartNode = dialogueStartNodePrefab.instantiate()
 			_set_node_exsisting(newNode,data)
-			
+		elif data is DialogueCompareVariableNodeData:
+			var newNode : DialogueCompareVariableNode = dialogueCompareVariableNodePrefab.instantiate()
+			_set_node_exsisting(newNode,data)
+	
+	await get_tree().process_frame
 	
 	for connection_string in dialogue_data.connnections:
 		var connection_parts : PackedStringArray = connection_string.split(",")
@@ -97,12 +111,11 @@ func on_select_file(path:String):
 	if !(new_data is DialogueData):
 		printerr("This is not a DialogueData resource")
 		return
-	dialogue_data = load(path)
 	settings.current_dialogue_data_path = path
 	ResourceSaver.save(settings)
-	_build_graph();
+	_load_data(path)
 
-func remove_node(node : DialogueNode):
+func remove_node(node : DialogueNode, remove_from_array = true):
 	var connections : Array
 	
 	for con in dialogue_editor.get_connection_list():
@@ -112,7 +125,8 @@ func remove_node(node : DialogueNode):
 	for con in connections:
 		_on_dialogue_editor_disconnection_request(con.from_node,con.from_port,con.to_node,con.to_port)
 
-	dialogue_nodes.erase(node)
+	if remove_from_array:
+		dialogue_nodes.erase(node)
 	node.queue_free()
 
 func _on_save_pressed():
@@ -137,7 +151,9 @@ func _on_save_pressed():
 			dialogue_data.data.append(node.dialogue_data)
 		elif node is DialogueGetVariableNode:
 			dialogue_data.data.append(node.dialogue_data)
-	
+		elif node is DialogueCompareVariableNode:
+			dialogue_data.data.append(node.dialogue_data)
+			
 	for con in dialogue_editor.get_connection_list():
 		var from_node : String = con.from_node
 		var from_port : int = con.from_port
@@ -199,13 +215,21 @@ func get_dialogue_node(node_name : String) -> DialogueNode:
 	return dialogue_editor.find_child(node_name,false,false)
 
 # Adding nodes
+func _on_add_node_pressed() -> void:
+	add_menu. visible = true
+	add_menu.position = get_global_mouse_position()
 
 func _on_add_start_node_pressed() -> void:
 	_set_node_basics(dialogueStartNodePrefab.instantiate())
 
-func _on_add_node_pressed() -> void:
-	add_menu. visible = true
-	add_menu.position = get_global_mouse_position()
+func _on_add_compare_variable_node_pressed() -> void:
+	_set_node_basics(dialogueCompareVariableNodePrefab.instantiate())
+
+func _on_add_conversation_node_pressed() -> void:
+	var newNode : DialogueConversationNode = dialogueConversationNodePrefab.instantiate() as DialogueConversationNode
+	newNode.edit_node.connect(_on_node_edit_selected)
+	newNode.set_characters(dialogue_data.characters)
+	_set_node_basics(newNode)
 
 func _on_add_set_variabe_node_pressed() -> void:
 	_set_node_basics( dialogueSetVariableNodePrefab.instantiate())
@@ -231,16 +255,6 @@ func add_node_common(newNode : DialogueNode) -> void:
 	newNode.delete_node.connect(remove_node)
 	newNode.right_click.connect(_on_right_click)
 
-func _on_compare_variable_button_pressed() -> void:
-	pass # Replace with function body.
-
-func _on_add_conversation_node_pressed() -> void:
-	var newNode : DialogueConversationNode = dialogueConversationNodePrefab.instantiate() as DialogueConversationNode
-	newNode.edit_node.connect(_on_node_edit_selected)
-	newNode.set_characters(dialogue_data.characters)
-	_set_node_basics(newNode)
-
-
 func _on_add_menu_id_pressed(id: int) -> void:
 	match id:
 		0:
@@ -250,7 +264,7 @@ func _on_add_menu_id_pressed(id: int) -> void:
 		2:
 			_on_add_get_variabe_node_pressed()
 		3:
-			pass
+			_on_add_compare_variable_node_pressed()
 		4:
 			_on_add_set_variabe_node_pressed()
 			

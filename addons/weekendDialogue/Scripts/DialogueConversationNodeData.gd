@@ -8,4 +8,3 @@ var dialoge_data : DialogueData
 
 func get_character() -> DialogueCharacter:
 	return dialoge_data.characters.get_character(character_id)
-	

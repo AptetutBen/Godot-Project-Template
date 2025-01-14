@@ -160,12 +160,14 @@ func _on_start_display_message(textArray : Array[String], title: String):
 func _on_start_conversation(dialogue_node : DialogueConversationNodeData, _node : Node3D):
 	if dialogue_node == null:
 		printerr("Conversation is null")
+		await get_tree().process_frame
+		await hide_ui()
+		EventBus.finish_conversation.emit()
 		return
 	current_node = dialogue_node
 	if current_node.character_id > 0:
 		speaker_name_text.text = current_node.get_character().name
 	display_conversation_text()
-
 
 func _on_finish_conversation():
 	visible = false

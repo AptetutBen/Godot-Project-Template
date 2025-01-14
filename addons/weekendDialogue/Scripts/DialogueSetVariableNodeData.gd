@@ -15,5 +15,5 @@ func get_next_node():
 		SaveType.SaveInt:
 			SaveController.set_value_int(saved_key,int(saved_value))
 		SaveType.SaveFloat:
-			SaveController.set_value_int(saved_key,float(saved_value))
+			SaveController.set_value_float(saved_key,float(saved_value))
 	return connected_node_id

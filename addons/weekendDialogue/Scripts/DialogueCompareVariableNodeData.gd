@@ -2,20 +2,15 @@ class_name DialogueCompareVariableNodeData extends DialogueNodeData
 
 @export var key : String
 @export var default_connected_node : int = -1
-@export var connections = []
+@export var connections = {}
 
-func get_next_node():
-	
+func get_next_node() -> int:
 	if connections.size() == 0:
 		return default_connected_node
 	
-	var saved_value = SaveController.get_value(key,"")
+	var saved_value : String = SaveController.get_value(key,"")
 	
-	if saved_value == "":
-		return default_connected_node
+	if connections.has(saved_value):
+		return connections[saved_value]
 	
-	for connection : String in connections:
-		if connection[0] == saved_value:
-			return connection[1]
-			
 	return default_connected_node

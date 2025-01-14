@@ -44,6 +44,7 @@ size_flags_vertical = 3
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+theme_override_colors/background_color = Color(0.211436, 0.140996, 0.119504, 1)
 text = "This is sample text"
 deselect_on_focus_loss_enabled = false
 wrap_mode = 1

@@ -1,14 +1,42 @@
-[gd_scene load_steps=10 format=3 uid="uid://b4i8gaa812i43"]
+[gd_scene load_steps=14 format=3 uid="uid://b4i8gaa812i43"]
 
 [ext_resource type="Script" uid="uid://cfbos3jrtyhg2" path="res://addons/weekendDialogue/Scripts/weekendDialogueEditor.gd" id="1_hfyfc"]
 [ext_resource type="PackedScene" uid="uid://cufx4633uoge0" path="res://addons/weekendDialogue/Prefabs/conversation_node.tscn" id="2_ewb42"]
 [ext_resource type="PackedScene" uid="uid://degb4wkppnlpv" path="res://addons/weekendDialogue/Prefabs/start_node.tscn" id="5_5axue"]
 [ext_resource type="PackedScene" uid="uid://b55u1mq86cmfu" path="res://addons/weekendDialogue/Prefabs/get_variable_node.tscn" id="5_ewb42"]
-[ext_resource type="Resource" uid="uid://c4d10k6x7fi0n" path="res://addons/weekendDialogue/settings.tres" id="6_janmk"]
+[ext_resource type="Resource" uid="uid://bf0l0ipvqec58" path="res://addons/weekendDialogue/settings.tres" id="6_janmk"]
 [ext_resource type="PackedScene" uid="uid://bp6ak451eog5l" path="res://addons/weekendDialogue/Prefabs/set_variable_node.tscn" id="6_s2syb"]
-[ext_resource type="Resource" uid="uid://cgpptm6x0c6s2" path="res://Data/Dialogue/Test Dialogue.tres" id="7_4ce0u"]
+[ext_resource type="Resource" uid="uid://b2ptsp7w1qp0x" path="res://Data/Dialogue/Test Dialogue.tres" id="7_4ce0u"]
 [ext_resource type="PackedScene" uid="uid://cr4v61ty3q5wg" path="res://addons/weekendDialogue/Prefabs/text_editor.tscn" id="7_uu681"]
 [ext_resource type="Script" uid="uid://xc0dwosyh0b5" path="res://addons/weekendDialogue/Scripts/node_popup_menu.gd" id="8_uu681"]
+[ext_resource type="PackedScene" uid="uid://i0vfncqcp0lx" path="res://addons/weekendDialogue/Prefabs/compare_variable_node.tscn" id="9_aycla"]
+[ext_resource type="Theme" uid="uid://di2blioe5dqny" path="res://addons/weekendDialogue/Themes/NodeTheme.tres" id="10_hu7hx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efhne"]
+bg_color = Color(0.0920593, 0.0233568, 0.0649891, 1)
+border_width_left = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.717647, 0.196078, 0.105882, 1)
+corner_radius_bottom_right = 15
+corner_radius_bottom_left = 15
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1lmvo"]
+content_margin_left = 15.0
+content_margin_top = 10.0
+content_margin_right = 3.0
+content_margin_bottom = 10.0
+bg_color = Color(0.386777, 0.113947, 0.146998, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_color = Color(0.8, 0.215686, 0.0901961, 1)
+corner_radius_top_left = 15
+corner_radius_top_right = 15
+shadow_size = 5
+shadow_offset = Vector2(5, 5)
 
 [node name="DialogueGraph" type="Control"]
 layout_mode = 3
@@ -22,6 +50,7 @@ dialogueConversationNodePrefab = ExtResource("2_ewb42")
 dialogueStartNodePrefab = ExtResource("5_5axue")
 dialogueSetVariableNodePrefab = ExtResource("6_s2syb")
 dialogueGetVariableNodePrefab = ExtResource("5_ewb42")
+dialogueCompareVariableNodePrefab = ExtResource("9_aycla")
 settings = ExtResource("6_janmk")
 dialogue_data = ExtResource("7_4ce0u")
 
@@ -46,17 +75,18 @@ text = "Add Node +"
 unique_name_in_owner = true
 custom_minimum_size = Vector2(153.03, 0)
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 text = "Save"
 
 [node name="Main Panel" type="HBoxContainer" parent="VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Panel" type="Panel" parent="VBoxContainer/Main Panel"]
-custom_minimum_size = Vector2(197.45, 0)
+[node name="Size Panel" type="Panel" parent="VBoxContainer/Main Panel"]
+custom_minimum_size = Vector2(232.77, 0)
 layout_mode = 2
 
-[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Main Panel/Panel"]
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Main Panel/Size Panel"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,55 +98,57 @@ theme_override_constants/margin_top = 5
 theme_override_constants/margin_right = 5
 theme_override_constants/margin_bottom = 5
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Main Panel/Panel/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Main Panel/Size Panel/MarginContainer"]
 layout_mode = 2
 
-[node name="Open File Button" type="Button" parent="VBoxContainer/Main Panel/Panel/MarginContainer/VBoxContainer"]
+[node name="Open File Button" type="Button" parent="VBoxContainer/Main Panel/Size Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Open File"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Main Panel/Panel/MarginContainer/VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Main Panel/Size Panel/MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/Main Panel/Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="File Name Label" type="Label" parent="VBoxContainer/Main Panel/Size Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
 layout_mode = 2
-text = "Name of File"
+text = "Test Dialogue.tres"
 
-[node name="Label2" type="Label" parent="VBoxContainer/Main Panel/Panel/MarginContainer/VBoxContainer/VBoxContainer"]
-layout_mode = 2
-text = "Location of File"
-
-[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Main Panel/Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer/Main Panel/Size Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 
-[node name="Label3" type="Label" parent="VBoxContainer/Main Panel/Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="Label3" type="Label" parent="VBoxContainer/Main Panel/Size Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Characters"
 horizontal_alignment = 1
 
-[node name="Button" type="Button" parent="VBoxContainer/Main Panel/Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="Button" type="Button" parent="VBoxContainer/Main Panel/Size Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Select Character File"
 
-[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/Main Panel/Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="HSeparator2" type="HSeparator" parent="VBoxContainer/Main Panel/Size Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 
-[node name="Control" type="MarginContainer" parent="VBoxContainer/Main Panel/Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+[node name="Control" type="MarginContainer" parent="VBoxContainer/Main Panel/Size Panel/MarginContainer/VBoxContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Main Panel/Panel/MarginContainer/VBoxContainer/VBoxContainer/Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/Main Panel/Size Panel/MarginContainer/VBoxContainer/VBoxContainer/Control"]
 layout_mode = 2
 
-[node name="Character Name" type="TextEdit" parent="VBoxContainer/Main Panel/Panel/MarginContainer/VBoxContainer/VBoxContainer/Control/VBoxContainer"]
+[node name="Character Name" type="TextEdit" parent="VBoxContainer/Main Panel/Size Panel/MarginContainer/VBoxContainer/VBoxContainer/Control/VBoxContainer"]
 custom_minimum_size = Vector2(0, 38.67)
 layout_mode = 2
 placeholder_text = "Character Name:"
 
-[node name="Panel" type="Panel" parent="VBoxContainer/Main Panel/Panel/MarginContainer/VBoxContainer/VBoxContainer/Control/VBoxContainer"]
+[node name="Panel" type="Panel" parent="VBoxContainer/Main Panel/Size Panel/MarginContainer/VBoxContainer/VBoxContainer/Control/VBoxContainer"]
 custom_minimum_size = Vector2(0, 166.36)
 layout_mode = 2
 
-[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Main Panel/Panel/MarginContainer/VBoxContainer/VBoxContainer/Control/VBoxContainer/Panel"]
+[node name="ColorRect" type="ColorRect" parent="VBoxContainer/Main Panel/Size Panel/MarginContainer/VBoxContainer/VBoxContainer/Control/VBoxContainer/Panel"]
 layout_mode = 0
 offset_left = 5.0
 offset_top = 8.0
@@ -125,7 +157,7 @@ offset_bottom = 119.0
 color = Color(0.31, 0.31, 0.31, 1)
 metadata/_edit_group_ = true
 
-[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Main Panel/Panel/MarginContainer/VBoxContainer/VBoxContainer/Control/VBoxContainer/Panel/ColorRect"]
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Main Panel/Size Panel/MarginContainer/VBoxContainer/VBoxContainer/Control/VBoxContainer/Panel/ColorRect"]
 custom_minimum_size = Vector2(50.4, 96.99)
 layout_mode = 1
 anchors_preset = 15
@@ -138,7 +170,7 @@ offset_bottom = -7.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="VBoxContainer/Main Panel/Panel/MarginContainer/VBoxContainer/VBoxContainer/Control/VBoxContainer/Panel"]
+[node name="Button" type="Button" parent="VBoxContainer/Main Panel/Size Panel/MarginContainer/VBoxContainer/VBoxContainer/Control/VBoxContainer/Panel"]
 layout_mode = 0
 offset_left = 85.0
 offset_top = 85.0
@@ -146,7 +178,7 @@ offset_right = 113.0
 offset_bottom = 116.0
 text = "+"
 
-[node name="Label" type="Label" parent="VBoxContainer/Main Panel/Panel/MarginContainer/VBoxContainer/VBoxContainer/Control/VBoxContainer/Panel"]
+[node name="Label" type="Label" parent="VBoxContainer/Main Panel/Size Panel/MarginContainer/VBoxContainer/VBoxContainer/Control/VBoxContainer/Panel"]
 layout_mode = 2
 offset_left = 4.0
 offset_top = 135.0
@@ -159,37 +191,6 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-connections = Array[Dictionary]([{
-"from_node": &"Dialogue Node_7",
-"from_port": 0,
-"keep_alive": false,
-"to_node": &"Dialogue Node_8",
-"to_port": 0
-}, {
-"from_node": &"Start Node_0",
-"from_port": 0,
-"keep_alive": false,
-"to_node": &"Get Variable Node_13",
-"to_port": 0
-}, {
-"from_node": &"Get Variable Node_13",
-"from_port": 1,
-"keep_alive": false,
-"to_node": &"Dialogue Node_7",
-"to_port": 0
-}, {
-"from_node": &"Dialogue Node_8",
-"from_port": 0,
-"keep_alive": false,
-"to_node": &"Set Variable Node_12",
-"to_port": 0
-}, {
-"from_node": &"Get Variable Node_13",
-"from_port": 0,
-"keep_alive": false,
-"to_node": &"Dialogue Node_16",
-"to_port": 0
-}])
 
 [node name="Text Editor" parent="VBoxContainer/Main Panel/Dialogue Editor" instance=ExtResource("7_uu681")]
 unique_name_in_owner = true
@@ -199,7 +200,11 @@ offset_left = 241.0
 offset_top = 145.0
 offset_right = 627.0
 offset_bottom = 433.0
+theme = ExtResource("10_hu7hx")
+theme_override_styles/panel = SubResource("StyleBoxFlat_efhne")
+theme_override_styles/titlebar = SubResource("StyleBoxFlat_1lmvo")
 position_offset = Vector2(241, 145)
+title = "WYSIWYG Text Editor"
 
 [node name="PopupMenu" type="PopupMenu" parent="."]
 unique_name_in_owner = true
@@ -234,7 +239,7 @@ item_4/id = 4
 
 [connection signal="pressed" from="VBoxContainer/Header/Add Node" to="." method="_on_add_node_pressed"]
 [connection signal="pressed" from="VBoxContainer/Header/Save Button" to="." method="_on_save_pressed"]
-[connection signal="pressed" from="VBoxContainer/Main Panel/Panel/MarginContainer/VBoxContainer/Open File Button" to="." method="_on_open_file"]
+[connection signal="pressed" from="VBoxContainer/Main Panel/Size Panel/MarginContainer/VBoxContainer/Open File Button" to="." method="_on_open_file"]
 [connection signal="connection_request" from="VBoxContainer/Main Panel/Dialogue Editor" to="." method="_on_dialogue_editor_connection_request"]
 [connection signal="delete_nodes_request" from="VBoxContainer/Main Panel/Dialogue Editor" to="." method="_on_dialogue_editor_delete_nodes_request"]
 [connection signal="disconnection_request" from="VBoxContainer/Main Panel/Dialogue Editor" to="." method="_on_dialogue_editor_disconnection_request"]

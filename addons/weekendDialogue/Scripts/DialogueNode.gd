@@ -8,10 +8,13 @@ var dialogue_data : DialogueNodeData
 
 var id : int
 
-var ports_connected = {
-	"input": {},
-	"output": {}
-}
+# port number, node id
+var output_ports_connected :Dictionary[int,int]
+
+#var ports_connected = {
+	#"input": {},
+	#"output": {}
+#}
 
 func _ready() -> void:
 	delete_request.connect(_on_delete_request)
@@ -37,18 +40,23 @@ func _on_delete_request() -> void:
 func _on_dragged(from: Vector2, to: Vector2) -> void:
 	dialogue_data.position = position_offset
 
-func is_port_connected(self_port_type: String, self_port: int) -> bool:
-	for port_idx in ports_connected[self_port_type].keys():
-		if ports_connected[self_port_type][port_idx]:
-			return true
-	return false
+func get_port_connected_id(self_port: int) -> int:
+	if output_ports_connected.has(self_port):
+		return output_ports_connected[self_port]
+	return -1
 
 func on_connect(self_port_type: String, self_port: int, other_node: DialogueNode, other_port: int) -> void:
 	#print("I am connected to ", other_node, " on ", self_port_type, " port ", other_port)
+	if self_port_type == "input" :
+		return
+	output_ports_connected[self_port] = other_node.id
 	WeekendDialogueEditor.Instance.show_unsaved()
-	ports_connected[self_port_type][self_port] = true
+	#ports_connected[self_port_type][self_port] = true
 
 func on_disconnect(self_port_type: String, self_port: int, other_node: DialogueNode, other_port: int) -> void:
 	#print("I am disconnected to ", other_node, " on ", self_port_type, " port ", other_port)
+	if self_port_type == "input" :
+		return
+	output_ports_connected[self_port] = other_node.id
 	WeekendDialogueEditor.Instance.show_unsaved()
-	ports_connected[self_port_type][self_port] = false
+	#ports_connected[self_port_type][self_port] = false

@@ -6,6 +6,7 @@ class_name NPC extends Node
 
 var player : Player
 var start_rotation_y : float
+var conversation_start_node_id : String = "default"
 
 func _ready() -> void:
 	player = Player.Instance
@@ -15,7 +16,12 @@ func _ready() -> void:
 	EventBus.finish_conversation.connect(_on_finish_conversation)
 
 func _on_interact():
-	var node : DialogueConversationNodeData = dialogue_data.get_node_from_start("test")
+	var node : DialogueConversationNodeData = dialogue_data.get_node_from_start(conversation_start_node_id)
+	
+	if node == null:
+		printerr("Node is returning Null from start node: %s"%conversation_start_node_id)
+	
+	
 	EventBus.start_conversation.emit(node,self)
 	
 func _on_start_conversation(_dialogue_node, _node):

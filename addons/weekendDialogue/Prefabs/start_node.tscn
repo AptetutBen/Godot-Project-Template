@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://degb4wkppnlpv"]
+[gd_scene load_steps=3 format=3 uid="uid://degb4wkppnlpv"]
 
+[ext_resource type="Theme" uid="uid://di2blioe5dqny" path="res://addons/weekendDialogue/Themes/NodeTheme.tres" id="1_2mxi1"]
 [ext_resource type="Script" uid="uid://cg3lwkbg3ebf5" path="res://addons/weekendDialogue/Scripts/DialogueStartNode.gd" id="1_j8w7g"]
 
 [node name="Start Node" type="GraphNode"]
@@ -8,6 +9,7 @@ offset_top = 205.0
 offset_right = 283.0
 offset_bottom = 284.0
 mouse_filter = 1
+theme = ExtResource("1_2mxi1")
 position_offset = Vector2(62, 205)
 title = "Start"
 slot/0/left_enabled = false

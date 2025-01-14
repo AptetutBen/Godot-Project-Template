@@ -33,7 +33,7 @@ func get_value(key : String, default : String = "default") -> String:
 	return variable_dictionary.get(key,default)
 
 func set_value(key : String, value : String, dosave : bool = true) -> void:
-	variable_dictionary.set(key,value)
+	variable_dictionary.set(key,str(value))
 	if dosave:
 		save_data()
 

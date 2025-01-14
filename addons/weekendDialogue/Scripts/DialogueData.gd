@@ -7,23 +7,25 @@ class_name DialogueData extends Resource
 func get_node_from_start(key : String) -> DialogueConversationNodeData:
 	for node : DialogueNodeData in data:
 		if node is DialogueStartNodeData:
-			return get_dialogue_node(node.first_node_id)
+			if node.start_key == key:
+				return get_dialogue_node(node.first_node_id)
 	printerr("Can't find start node id: %s" % [key])
 	return null
 
 
 func get_dialogue_node(id : int) -> DialogueConversationNodeData:
+	if id < 0:
+		return null
+	
 	for node : DialogueNodeData in data:
 		if node.id == id:
-			if node is DialogueGetVariableNodeData:
-				return get_dialogue_node(node.get_next_node())
-			if node is DialogueSetVariableNodeData:
-				return get_dialogue_node(node.get_next_node())
 			if node is DialogueStartNodeData:
 				return get_dialogue_node(node.first_node_id)
 			if node is DialogueConversationNodeData:
 				node.dialoge_data = self
 				return node
+			else:
+				return get_dialogue_node(node.get_next_node())
 	printerr("Can't find node id: %s" % [id])
 	return null
 

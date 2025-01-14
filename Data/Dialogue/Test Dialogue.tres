@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogueData" load_steps=18 format=3 uid="uid://cgpptm6x0c6s2"]
+[gd_resource type="Resource" script_class="DialogueData" load_steps=30 format=3 uid="uid://b2ptsp7w1qp0x"]
 
 [ext_resource type="Resource" uid="uid://7nd280aiylm" path="res://Data/Dialogue/Game Characters.tres" id="1_42ggt"]
 [ext_resource type="Script" uid="uid://rxyur4vwo6q0" path="res://addons/weekendDialogue/Scripts/DialogueData.gd" id="1_e8qyd"]
@@ -8,13 +8,14 @@
 [ext_resource type="Script" uid="uid://uv5we0y0dofd" path="res://addons/weekendDialogue/Scripts/DialogueStartNodeData.gd" id="6_ftgil"]
 [ext_resource type="Script" uid="uid://mtq6i61w1mhi" path="res://addons/weekendDialogue/Scripts/DialogueConversationNodeData.gd" id="6_yf41g"]
 [ext_resource type="Script" uid="uid://cb3i1ff7gerip" path="res://addons/weekendDialogue/Scripts/DialogueSetVariableNodeData.gd" id="7_yf41g"]
+[ext_resource type="Script" uid="uid://bsphg330vd3cx" path="res://addons/weekendDialogue/Scripts/DialogueCompareVariableNodeData.gd" id="8_k1qhg"]
 
 [sub_resource type="Resource" id="Resource_yf41g"]
 script = ExtResource("6_ftgil")
-first_node_id = 13
+first_node_id = 17
 start_key = "default"
 id = 0
-position = Vector2(240, 320)
+position = Vector2(-20, 420)
 size = Vector2(0, 0)
 
 [sub_resource type="Resource" id="Resource_qykrk"]
@@ -28,8 +29,8 @@ text = "Kia ora, mate! ‘Bout time you rocked up, aye. ~Thought you might’ve 
 options = Array[ExtResource("5_ftgil")]([SubResource("Resource_qykrk")])
 character_id = 1
 id = 7
-position = Vector2(1360, 700)
-size = Vector2(640, 620)
+position = Vector2(1320, 520)
+size = Vector2(700, 640)
 
 [sub_resource type="Resource" id="Resource_der1h"]
 script = ExtResource("5_ftgil")
@@ -43,7 +44,7 @@ There's a camping grounds over a way, go set yourself up there and come see me a
 options = Array[ExtResource("5_ftgil")]([SubResource("Resource_der1h")])
 character_id = 1
 id = 8
-position = Vector2(2140, 1160)
+position = Vector2(2140, 1080)
 size = Vector2(700, 760)
 
 [sub_resource type="Resource" id="Resource_pm2rb"]
@@ -53,8 +54,8 @@ save_type = 1
 saved_key = "tania_intro"
 saved_value = "true"
 id = 12
-position = Vector2(2940, 1680)
-size = Vector2(326, 296)
+position = Vector2(2980, 2060)
+size = Vector2(246, 157)
 
 [sub_resource type="Resource" id="Resource_domak"]
 script = ExtResource("4_pftqe")
@@ -64,8 +65,8 @@ connected_node_id_false = 7
 type = 0
 value = ""
 id = 13
-position = Vector2(740, 280)
-size = Vector2(353, 337)
+position = Vector2(1040, 40)
+size = Vector2(281, 168)
 
 [sub_resource type="Resource" id="Resource_twovt"]
 script = ExtResource("6_yf41g")
@@ -74,20 +75,110 @@ Come see me after you have got yourself setup."
 options = Array[ExtResource("5_ftgil")]([])
 character_id = 1
 id = 15
-position = Vector2(2360, -60)
+position = Vector2(2160, 340)
 size = Vector2(700, 500)
+
+[sub_resource type="Resource" id="Resource_bnknm"]
+script = ExtResource("5_ftgil")
+text = "default"
+linking_node_id = 15
 
 [sub_resource type="Resource" id="Resource_hm12j"]
 script = ExtResource("6_yf41g")
-text = "You seem like someone who's world travelled{z}. Per chance, are you familuare with the game of gewnt?"
-options = Array[ExtResource("5_ftgil")]([])
-character_id = 0
+text = "You seem like someone who's world travelled{z}. Per chance, are you familre with the game of [rainbow freq=0.2 sat=10 val=20]gewnt?[/rainbow]"
+options = Array[ExtResource("5_ftgil")]([SubResource("Resource_bnknm")])
+character_id = 1
 id = 16
-position = Vector2(2360, -540)
+position = Vector2(1320, 0)
 size = Vector2(700, 460)
+
+[sub_resource type="Resource" id="Resource_buxa3"]
+script = ExtResource("8_k1qhg")
+key = "test_counter"
+default_connected_node = 21
+connections = {
+"1": 18,
+"2": 22,
+"3": -1
+}
+id = 17
+position = Vector2(220, 420)
+size = Vector2(281, 233)
+
+[sub_resource type="Resource" id="Resource_bbt70"]
+script = ExtResource("5_ftgil")
+text = "default"
+linking_node_id = 19
+
+[sub_resource type="Resource" id="Resource_a1vgv"]
+script = ExtResource("6_yf41g")
+text = "1"
+options = Array[ExtResource("5_ftgil")]([SubResource("Resource_bbt70")])
+character_id = 0
+id = 18
+position = Vector2(600, 520)
+size = Vector2(321, 222)
+
+[sub_resource type="Resource" id="Resource_he8uv"]
+script = ExtResource("7_yf41g")
+connected_node_id = -1
+save_type = 1
+saved_key = "test_counter"
+saved_value = "2"
+id = 19
+position = Vector2(960, 580)
+size = Vector2(246, 157)
+
+[sub_resource type="Resource" id="Resource_6pn5d"]
+script = ExtResource("7_yf41g")
+connected_node_id = -1
+save_type = 1
+saved_key = "test_counter"
+saved_value = "1"
+id = 20
+position = Vector2(960, 360)
+size = Vector2(246, 157)
+
+[sub_resource type="Resource" id="Resource_mw8ig"]
+script = ExtResource("5_ftgil")
+text = "default"
+linking_node_id = 20
+
+[sub_resource type="Resource" id="Resource_rp5do"]
+script = ExtResource("6_yf41g")
+text = "Default"
+options = Array[ExtResource("5_ftgil")]([SubResource("Resource_mw8ig")])
+character_id = 0
+id = 21
+position = Vector2(600, 280)
+size = Vector2(321, 222)
+
+[sub_resource type="Resource" id="Resource_57eq3"]
+script = ExtResource("5_ftgil")
+text = "default"
+linking_node_id = 23
+
+[sub_resource type="Resource" id="Resource_035w5"]
+script = ExtResource("6_yf41g")
+text = "2"
+options = Array[ExtResource("5_ftgil")]([SubResource("Resource_57eq3")])
+character_id = 0
+id = 22
+position = Vector2(600, 760)
+size = Vector2(321, 222)
+
+[sub_resource type="Resource" id="Resource_a6m5n"]
+script = ExtResource("7_yf41g")
+connected_node_id = -1
+save_type = 1
+saved_key = "test_counter"
+saved_value = "3"
+id = 23
+position = Vector2(960, 800)
+size = Vector2(246, 157)
 
 [resource]
 script = ExtResource("1_e8qyd")
-data = Array[ExtResource("2_txva4")]([SubResource("Resource_yf41g"), SubResource("Resource_k1qhg"), SubResource("Resource_vgxcl"), SubResource("Resource_pm2rb"), SubResource("Resource_domak"), SubResource("Resource_twovt"), SubResource("Resource_hm12j")])
-connnections = Array[String](["Dialogue Node_7,0,Dialogue Node_8,0", "Start Node_0,0,Get Variable Node_13,0", "Get Variable Node_13,1,Dialogue Node_7,0", "Dialogue Node_8,0,Set Variable Node_12,0", "Get Variable Node_13,0,Dialogue Node_16,0"])
+data = Array[ExtResource("2_txva4")]([SubResource("Resource_yf41g"), SubResource("Resource_k1qhg"), SubResource("Resource_vgxcl"), SubResource("Resource_pm2rb"), SubResource("Resource_domak"), SubResource("Resource_twovt"), SubResource("Resource_hm12j"), SubResource("Resource_buxa3"), SubResource("Resource_a1vgv"), SubResource("Resource_he8uv"), SubResource("Resource_6pn5d"), SubResource("Resource_rp5do"), SubResource("Resource_035w5"), SubResource("Resource_a6m5n")])
+connnections = Array[String](["Get Variable Node_13,1,Dialogue Node_7,0", "Dialogue Node_7,0,Dialogue Node_8,0", "Dialogue Node_8,0,Set Variable Node_12,0", "Get Variable Node_13,0,Dialogue Node_16,0", "Dialogue Node_16,0,Dialogue Node_15,0", "Start Node_0,0,Compare Variable Node_17,0", "Compare Variable Node_17,1,Dialogue Node_18,0", "Dialogue Node_18,0,Set Variable Node_19,0", "Compare Variable Node_17,0,Dialogue Node_21,0", "Dialogue Node_21,0,Set Variable Node_20,0", "Compare Variable Node_17,2,Dialogue Node_22,0", "Dialogue Node_22,0,Set Variable Node_23,0"])
 characters = ExtResource("1_42ggt")

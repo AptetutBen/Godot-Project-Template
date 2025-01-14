@@ -1,14 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://i0vfncqcp0lx"]
+[gd_scene load_steps=4 format=3 uid="uid://i0vfncqcp0lx"]
 
-[ext_resource type="Script" uid="uid://8rgifwiqdkss" path="res://addons/weekendDialogue/Scripts/DialogueGetVariableNode.gd" id="1_cdeqv"]
-[ext_resource type="PackedScene" uid="uid://da0digpeup2bd" path="res://addons/weekendDialogue/Prefabs/dialoge_option.tscn" id="2_hi3a7"]
+[ext_resource type="Script" uid="uid://ds2ithh5u8qfr" path="res://addons/weekendDialogue/Scripts/DialogueCompareValueNode.gd" id="1_hi3a7"]
+[ext_resource type="Theme" uid="uid://di2blioe5dqny" path="res://addons/weekendDialogue/Themes/NodeTheme.tres" id="1_quo4g"]
+[ext_resource type="PackedScene" uid="uid://da0digpeup2bd" path="res://addons/weekendDialogue/Prefabs/dialogue_option.tscn" id="2_hi3a7"]
 
 [node name="Compare Variable Node" type="GraphNode"]
 offset_left = 1.0
 offset_top = 4.0
 offset_right = 282.0
-offset_bottom = 236.0
+offset_bottom = 120.0
 mouse_filter = 1
+theme = ExtResource("1_quo4g")
 position_offset = Vector2(62, 205)
 title = "Compare Variable"
 slot/0/left_enabled = true
@@ -29,34 +31,8 @@ slot/1/right_type = 0
 slot/1/right_color = Color(1, 1, 1, 1)
 slot/1/right_icon = null
 slot/1/draw_stylebox = true
-slot/2/left_enabled = false
-slot/2/left_type = 0
-slot/2/left_color = Color(1, 1, 1, 1)
-slot/2/left_icon = null
-slot/2/right_enabled = true
-slot/2/right_type = 0
-slot/2/right_color = Color(1, 1, 1, 1)
-slot/2/right_icon = null
-slot/2/draw_stylebox = true
-slot/3/left_enabled = false
-slot/3/left_type = 0
-slot/3/left_color = Color(1, 1, 1, 1)
-slot/3/left_icon = null
-slot/3/right_enabled = true
-slot/3/right_type = 0
-slot/3/right_color = Color(1, 1, 1, 1)
-slot/3/right_icon = null
-slot/3/draw_stylebox = true
-slot/4/left_enabled = false
-slot/4/left_type = 0
-slot/4/left_color = Color(1, 1, 1, 1)
-slot/4/left_icon = null
-slot/4/right_enabled = true
-slot/4/right_type = 0
-slot/4/right_color = Color(1, 1, 1, 1)
-slot/4/right_icon = null
-slot/4/draw_stylebox = true
-script = ExtResource("1_cdeqv")
+script = ExtResource("1_hi3a7")
+option_prefab = ExtResource("2_hi3a7")
 
 [node name="Key Edit" type="TextEdit" parent="."]
 unique_name_in_owner = true
@@ -78,14 +54,5 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Default Value"
 horizontal_alignment = 2
-
-[node name="Option1" parent="." instance=ExtResource("2_hi3a7")]
-layout_mode = 2
-
-[node name="Option2" parent="." instance=ExtResource("2_hi3a7")]
-layout_mode = 2
-
-[node name="Option3" parent="." instance=ExtResource("2_hi3a7")]
-layout_mode = 2
 
 [connection signal="pressed" from="HBoxContainer/Add Button" to="." method="_on_add_button_pressed"]

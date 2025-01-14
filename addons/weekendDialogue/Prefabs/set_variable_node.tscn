@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bp6ak451eog5l"]
+[gd_scene load_steps=3 format=3 uid="uid://bp6ak451eog5l"]
 
+[ext_resource type="Theme" uid="uid://di2blioe5dqny" path="res://addons/weekendDialogue/Themes/NodeTheme.tres" id="1_j5e43"]
 [ext_resource type="Script" uid="uid://2oac5sn467u7" path="res://addons/weekendDialogue/Scripts/DialogueSetVariableNode.gd" id="1_vm7vk"]
 
 [node name="Set Variable Node" type="GraphNode"]
@@ -8,6 +9,7 @@ offset_top = 205.0
 offset_right = 308.0
 offset_bottom = 404.0
 mouse_filter = 1
+theme = ExtResource("1_j5e43")
 position_offset = Vector2(62, 205)
 title = "Set Variable"
 slot/0/left_enabled = true
