@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://b55u1mq86cmfu" path="res://addons/weekendDialogue/Prefabs/get_variable_node.tscn" id="5_ewb42"]
 [ext_resource type="Resource" uid="uid://bf0l0ipvqec58" path="res://addons/weekendDialogue/settings.tres" id="6_janmk"]
 [ext_resource type="PackedScene" uid="uid://bp6ak451eog5l" path="res://addons/weekendDialogue/Prefabs/set_variable_node.tscn" id="6_s2syb"]
-[ext_resource type="Resource" uid="uid://b2ptsp7w1qp0x" path="res://Data/Dialogue/Test Dialogue.tres" id="7_4ce0u"]
+[ext_resource type="Resource" uid="uid://coeeku6e5lpjh" path="res://Data/Dialogue/Test Dialogue.tres" id="7_4ce0u"]
 [ext_resource type="PackedScene" uid="uid://cr4v61ty3q5wg" path="res://addons/weekendDialogue/Prefabs/text_editor.tscn" id="7_uu681"]
 [ext_resource type="Script" uid="uid://xc0dwosyh0b5" path="res://addons/weekendDialogue/Scripts/node_popup_menu.gd" id="8_uu681"]
 [ext_resource type="PackedScene" uid="uid://i0vfncqcp0lx" path="res://addons/weekendDialogue/Prefabs/compare_variable_node.tscn" id="9_aycla"]
@@ -191,6 +191,79 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+connections = Array[Dictionary]([{
+"from_node": &"Get Variable Node_13",
+"from_port": 1,
+"keep_alive": false,
+"to_node": &"Dialogue Node_7",
+"to_port": 0
+}, {
+"from_node": &"Dialogue Node_7",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Dialogue Node_8",
+"to_port": 0
+}, {
+"from_node": &"Dialogue Node_8",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Set Variable Node_12",
+"to_port": 0
+}, {
+"from_node": &"Get Variable Node_13",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Dialogue Node_16",
+"to_port": 0
+}, {
+"from_node": &"Dialogue Node_16",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Dialogue Node_15",
+"to_port": 0
+}, {
+"from_node": &"Start Node_0",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Compare Variable Node_17",
+"to_port": 0
+}, {
+"from_node": &"Compare Variable Node_17",
+"from_port": 1,
+"keep_alive": false,
+"to_node": &"Dialogue Node_18",
+"to_port": 0
+}, {
+"from_node": &"Dialogue Node_18",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Set Variable Node_19",
+"to_port": 0
+}, {
+"from_node": &"Compare Variable Node_17",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Dialogue Node_21",
+"to_port": 0
+}, {
+"from_node": &"Dialogue Node_21",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Set Variable Node_20",
+"to_port": 0
+}, {
+"from_node": &"Compare Variable Node_17",
+"from_port": 2,
+"keep_alive": false,
+"to_node": &"Dialogue Node_22",
+"to_port": 0
+}, {
+"from_node": &"Dialogue Node_22",
+"from_port": 0,
+"keep_alive": false,
+"to_node": &"Set Variable Node_23",
+"to_port": 0
+}])
 
 [node name="Text Editor" parent="VBoxContainer/Main Panel/Dialogue Editor" instance=ExtResource("7_uu681")]
 unique_name_in_owner = true

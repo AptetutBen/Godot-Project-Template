@@ -77,6 +77,8 @@ func _on_variable_type_option_item_selected(index: int) -> void:
 	set_value_input()
 
 func _on_boolean_checkbox_toggled(toggled_on: bool) -> void:
+	if save_type != 0:
+		return
 	if toggled_on:
 		value = "true"
 	else:

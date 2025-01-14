@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="DialogueData" load_steps=30 format=3 uid="uid://b2ptsp7w1qp0x"]
+[gd_resource type="Resource" script_class="DialogueData" load_steps=30 format=3 uid="uid://coeeku6e5lpjh"]
 
 [ext_resource type="Resource" uid="uid://7nd280aiylm" path="res://Data/Dialogue/Game Characters.tres" id="1_42ggt"]
 [ext_resource type="Script" uid="uid://rxyur4vwo6q0" path="res://addons/weekendDialogue/Scripts/DialogueData.gd" id="1_e8qyd"]
@@ -15,7 +15,7 @@ script = ExtResource("6_ftgil")
 first_node_id = 17
 start_key = "default"
 id = 0
-position = Vector2(-20, 420)
+position = Vector2(240, 540)
 size = Vector2(0, 0)
 
 [sub_resource type="Resource" id="Resource_qykrk"]
@@ -29,7 +29,7 @@ text = "Kia ora, mate! ‘Bout time you rocked up, aye. ~Thought you might’ve 
 options = Array[ExtResource("5_ftgil")]([SubResource("Resource_qykrk")])
 character_id = 1
 id = 7
-position = Vector2(1320, 520)
+position = Vector2(1000, 2220)
 size = Vector2(700, 640)
 
 [sub_resource type="Resource" id="Resource_der1h"]
@@ -44,7 +44,7 @@ There's a camping grounds over a way, go set yourself up there and come see me a
 options = Array[ExtResource("5_ftgil")]([SubResource("Resource_der1h")])
 character_id = 1
 id = 8
-position = Vector2(2140, 1080)
+position = Vector2(1800, 2700)
 size = Vector2(700, 760)
 
 [sub_resource type="Resource" id="Resource_pm2rb"]
@@ -54,7 +54,7 @@ save_type = 1
 saved_key = "tania_intro"
 saved_value = "true"
 id = 12
-position = Vector2(2980, 2060)
+position = Vector2(2600, 3240)
 size = Vector2(246, 157)
 
 [sub_resource type="Resource" id="Resource_domak"]
@@ -65,7 +65,7 @@ connected_node_id_false = 7
 type = 0
 value = ""
 id = 13
-position = Vector2(1040, 40)
+position = Vector2(220, 2700)
 size = Vector2(281, 168)
 
 [sub_resource type="Resource" id="Resource_twovt"]
@@ -75,7 +75,7 @@ Come see me after you have got yourself setup."
 options = Array[ExtResource("5_ftgil")]([])
 character_id = 1
 id = 15
-position = Vector2(2160, 340)
+position = Vector2(1800, 3560)
 size = Vector2(700, 500)
 
 [sub_resource type="Resource" id="Resource_bnknm"]
@@ -89,7 +89,7 @@ text = "You seem like someone who's world travelled{z}. Per chance, are you fami
 options = Array[ExtResource("5_ftgil")]([SubResource("Resource_bnknm")])
 character_id = 1
 id = 16
-position = Vector2(1320, 0)
+position = Vector2(1000, 3260)
 size = Vector2(700, 460)
 
 [sub_resource type="Resource" id="Resource_buxa3"]
@@ -102,7 +102,7 @@ connections = {
 "3": -1
 }
 id = 17
-position = Vector2(220, 420)
+position = Vector2(720, 540)
 size = Vector2(281, 233)
 
 [sub_resource type="Resource" id="Resource_bbt70"]
@@ -116,8 +116,8 @@ text = "1"
 options = Array[ExtResource("5_ftgil")]([SubResource("Resource_bbt70")])
 character_id = 0
 id = 18
-position = Vector2(600, 520)
-size = Vector2(321, 222)
+position = Vector2(1500, 980)
+size = Vector2(393, 326)
 
 [sub_resource type="Resource" id="Resource_he8uv"]
 script = ExtResource("7_yf41g")
@@ -126,7 +126,7 @@ save_type = 1
 saved_key = "test_counter"
 saved_value = "2"
 id = 19
-position = Vector2(960, 580)
+position = Vector2(2000, 1180)
 size = Vector2(246, 157)
 
 [sub_resource type="Resource" id="Resource_6pn5d"]
@@ -136,7 +136,7 @@ save_type = 1
 saved_key = "test_counter"
 saved_value = "1"
 id = 20
-position = Vector2(960, 360)
+position = Vector2(2040, 740)
 size = Vector2(246, 157)
 
 [sub_resource type="Resource" id="Resource_mw8ig"]
@@ -150,8 +150,8 @@ text = "Default"
 options = Array[ExtResource("5_ftgil")]([SubResource("Resource_mw8ig")])
 character_id = 0
 id = 21
-position = Vector2(600, 280)
-size = Vector2(321, 222)
+position = Vector2(1500, 580)
+size = Vector2(393, 326)
 
 [sub_resource type="Resource" id="Resource_57eq3"]
 script = ExtResource("5_ftgil")
@@ -164,8 +164,8 @@ text = "2"
 options = Array[ExtResource("5_ftgil")]([SubResource("Resource_57eq3")])
 character_id = 0
 id = 22
-position = Vector2(600, 760)
-size = Vector2(321, 222)
+position = Vector2(1520, 1520)
+size = Vector2(393, 326)
 
 [sub_resource type="Resource" id="Resource_a6m5n"]
 script = ExtResource("7_yf41g")
@@ -174,7 +174,7 @@ save_type = 1
 saved_key = "test_counter"
 saved_value = "3"
 id = 23
-position = Vector2(960, 800)
+position = Vector2(2120, 1700)
 size = Vector2(246, 157)
 
 [resource]

@@ -20,7 +20,7 @@ func _on_interact():
 	
 	if node == null:
 		printerr("Node is returning Null from start node: %s"%conversation_start_node_id)
-	
+		return
 	
 	EventBus.start_conversation.emit(node,self)
 	

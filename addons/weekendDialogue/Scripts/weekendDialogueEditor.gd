@@ -70,8 +70,6 @@ func _build_graph():
 			var newNode : DialogueCompareVariableNode = dialogueCompareVariableNodePrefab.instantiate()
 			_set_node_exsisting(newNode,data)
 	
-	await get_tree().process_frame
-	
 	for connection_string in dialogue_data.connnections:
 		var connection_parts : PackedStringArray = connection_string.split(",")
 
