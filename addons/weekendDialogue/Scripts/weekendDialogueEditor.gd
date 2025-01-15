@@ -27,6 +27,9 @@ var next_id : int = 1
 
 var is_unsaved : bool
 
+var temp_to_from_node : String
+var temp_to_from_port : int
+
 func _ready() -> void:
 	Instance = self
 	file_dialog.file_selected.connect(on_select_file)
@@ -217,30 +220,31 @@ func _on_add_node_pressed() -> void:
 	add_menu. visible = true
 	add_menu.position = get_global_mouse_position()
 
-func _on_add_start_node_pressed() -> void:
-	_set_node_basics(dialogueStartNodePrefab.instantiate())
+func _on_add_start_node_pressed() -> DialogueNode:
+	return _set_node_basics(dialogueStartNodePrefab.instantiate())
 
-func _on_add_compare_variable_node_pressed() -> void:
-	_set_node_basics(dialogueCompareVariableNodePrefab.instantiate())
+func _on_add_compare_variable_node_pressed() -> DialogueNode:
+	return _set_node_basics(dialogueCompareVariableNodePrefab.instantiate())
 
-func _on_add_conversation_node_pressed() -> void:
+func _on_add_conversation_node_pressed() -> DialogueNode:
 	var newNode : DialogueConversationNode = dialogueConversationNodePrefab.instantiate() as DialogueConversationNode
 	newNode.edit_node.connect(_on_node_edit_selected)
 	newNode.set_characters(dialogue_data.characters)
-	_set_node_basics(newNode)
+	return _set_node_basics(newNode)
 
-func _on_add_set_variabe_node_pressed() -> void:
-	_set_node_basics( dialogueSetVariableNodePrefab.instantiate())
+func _on_add_set_variabe_node_pressed() -> DialogueNode:
+	return _set_node_basics( dialogueSetVariableNodePrefab.instantiate())
 
-func _on_add_get_variabe_node_pressed() -> void:
-	_set_node_basics(dialogueGetVariableNodePrefab.instantiate())
+func _on_add_get_variabe_node_pressed() -> DialogueNode:
+	return _set_node_basics(dialogueGetVariableNodePrefab.instantiate())
 
-func _set_node_basics(newNode : DialogueNode) -> void:
+func _set_node_basics(newNode : DialogueNode) -> DialogueNode:
 	newNode.initilise_new(Vector2(100,100),next_id)
 	next_id += 1
 	add_node_common(newNode)
 	add_menu.visible = false
 	show_unsaved()
+	return newNode
 
 func _set_node_exsisting(newNode : DialogueNode,data : DialogueNodeData):
 	newNode.initiliase(data)
@@ -254,15 +258,27 @@ func add_node_common(newNode : DialogueNode) -> void:
 	newNode.right_click.connect(_on_right_click)
 
 func _on_add_menu_id_pressed(id: int) -> void:
+	var new_node : DialogueNode
 	match id:
 		0:
-			_on_add_start_node_pressed()
+			new_node = _on_add_start_node_pressed()
 		1:
-			_on_add_conversation_node_pressed()
+			new_node = _on_add_conversation_node_pressed()
 		2:
-			_on_add_get_variabe_node_pressed()
+			new_node = _on_add_get_variabe_node_pressed()
 		3:
-			_on_add_compare_variable_node_pressed()
+			new_node = _on_add_compare_variable_node_pressed()
 		4:
-			_on_add_set_variabe_node_pressed()
-			
+			new_node = _on_add_set_variabe_node_pressed()
+
+func _on_dialogue_editor_connection_from_empty(to_node: StringName, to_port: int, release_position: Vector2) -> void:
+	temp_to_from_node = to_node
+	temp_to_from_port = to_port
+	add_menu.visible = true
+	add_menu.position = get_global_mouse_position()
+
+func _on_dialogue_editor_connection_to_empty(from_node: StringName, from_port: int, release_position: Vector2) -> void:
+	temp_to_from_node = from_node
+	temp_to_from_port = from_port
+	add_menu.visible = true
+	add_menu.position = get_global_mouse_position()
